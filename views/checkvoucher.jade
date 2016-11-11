@@ -1,0 +1,38 @@
+extends layout
+
+block content
+	form.ui.form#checkvoucher(name='checkvoucher', method='post', action='/checkvoucher')
+		h4.ui.dividing.header Issue Check Voucher
+		.field
+			.two.fields
+				.field
+					label Name
+					.ui.input
+						input(name="name", type='text', placeholder='Name')
+
+				.field
+					label Date
+					.ui.calendar#checkDate
+						.ui.input.left.icon
+							i.calendar.icon
+							input(name="date", type="text", placeholder="Date")
+
+		.field
+			label Amount
+			.ui.input
+				input(name="amount", type="number", placeholder="Amount...")
+
+		.field
+			label Particulars
+			select(name="particulars").ui.fluid.search.selection.dropdown
+				option(value="") Choose Particulars
+				for particular in metadata.items
+					option(value=particular)= particular
+
+		.ui.primary.submit.button Submit
+		.ui.button Print
+		.ui.error.message
+
+	script(type='text/javascript' src='javascripts/scripts.js')
+	script.
+		console.log($('#rangestart').calendar('get date'));

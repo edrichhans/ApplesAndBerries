@@ -1,0 +1,38 @@
+extends layout
+
+block content
+	form.ui.form#AR(name='AR', method='post', action='/AR')
+		h4.ui.dividing.header Issue Acknowledgement Receipt
+		.field
+			.two.fields
+				.field
+					label Name
+					.ui.input
+						input(name="name", type='text', placeholder='Name')
+
+				.field
+					label Date
+					.ui.calendar#checkDate
+						.ui.input.left.icon
+							i.calendar.icon
+							input(name="date", type="text", placeholder="Date")
+
+
+		.field#pettyCash-particulars
+			.two.fields
+				.field
+					label Particulars
+					.ui.input
+						input(name='particulars', type='text', placeholder='Name')
+
+				.field
+					label Amount
+					.ui.input
+						input(name="amount", type="number", placeholder="Amount...")
+
+		.ui.primary.submit.button Submit
+		.ui.error.message
+
+	script(type='text/javascript' src='javascripts/scripts.js')
+	script.
+		console.log($('#rangestart').calendar('get date'));
