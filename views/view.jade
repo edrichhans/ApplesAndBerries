@@ -1,0 +1,99 @@
+extends layout
+
+block content
+	form.ui.form#view(name='view', method='post', action='/view')
+		h4.dividing.ui.header View Transactions
+		.field
+			label Choose transaction
+			select(name='chooseTransaction').ui.fluid.search.dropdown
+				option(value='') Select
+				option(value='paySlip') Pay Slip
+				option(value='AR') Acknowledgement Receipts
+				option(value='pettyCash') Petty Cash
+				option(value='checkVoucher') Check Voucher
+
+		if type == "paySlip"
+			table.ui.celled.table
+				thead
+					tr
+						th Advice Number
+						th eID
+						th Name
+						th Start Date
+						th End Date
+						th Deductibles
+						th Allowance
+						th PhilHealth
+						th SSS
+						th HDMF
+						th ER PhilHealth
+						th ER SSS
+						th ER HDMF
+						th Net
+					tr
+						for item in transactions
+							tbody
+								td= item.adviceNumber
+								td.eID(value=item.eID)= item.eID
+								td= item.startDate
+								td= item.endDate
+								td= item.deductibles
+								td= item.allowance
+								td= item.PHreduc
+								td= item.SSSreduc
+								td= item.HDMFreduc
+								td= item.EmployerPH
+								td= item.EmployerSSS
+								td= item.EmployerHDMF
+								td= item.total
+		if type == "AR" || type == "checkVoucher"
+			table.ui.celled.table
+				thead
+					tr
+						th Advice Number
+						th Name
+						th Date
+						th Particulars
+						th Amount
+					tr
+						for item in transactions
+							tbody
+								td= item.adviceNumber
+								td= item.name
+								td= item.date
+								td= item.particulars
+								td= item.amount
+		if type == "pettyCash"
+			table.ui.celled.table
+				thead
+					tr
+						th Advice Number
+						th Name
+						th Date
+						th Items
+						th Price
+					tr
+						for item in transactions
+							each i, index in item.items
+								if index == 0
+									tbody
+										td= item.adviceNumber
+										td= item.name
+										td= item.date
+										td= i[0]
+										td= i[1]	
+								else
+									tbody
+										td
+										td
+										td
+										td= i[0]
+										td= i[1]
+
+		button.ui.button.submit(type='submit') Submit
+		.ui.button#print-button Print
+
+	script(type='text/javascript' src='javascripts/scripts.js')
+	script(type='text/javascript').
+		var employees =!{JSON.stringify(employees)};
+	script(src='javascripts/table.js')

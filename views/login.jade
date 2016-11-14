@@ -5,7 +5,7 @@ block content
 		.column
 			h2.ui.teal.image.header
 				.content Login to your account
-			form.ui.large.form(name='login', method='post', action='/login')
+			form.ui.large.form#login(name='login', method='post', action='/login')
 				.ui.stacked.segment
 					.field
 						.ui.input
@@ -13,6 +13,7 @@ block content
 					.field
 						.ui.input
 							input(name="password", type="password", placeholder="Password")
+								
 				button.ui.fluid.large.teal.submit.button Login
 				.ui.error.message
 	div(style="margin: 1%;")

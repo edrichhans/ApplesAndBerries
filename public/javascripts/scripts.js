@@ -11,10 +11,18 @@ $('#checkDate').calendar({
 });
 
 $('#add-field').click(function(){
-	$('#pettyCash-particulars').append('<div class="two fields"><div class="field"><label>Particulars</label><div class="ui input"><input name="name" type="text" placeholder="Name"/></div></div><div class="field"><label>Amount</label><div class="ui input"><input name="amount" type="number" placeholder="Amount..."/></div></div></div>')
+	$('#pettyCash-particulars').append('<div class="two fields"><div class="field"><label>Particulars</label><div class="ui input"><input name="name" type="text" placeholder="Name"/></div></div><div class="field"><label>Amount</label><div class="ui input"><input name="amount" type="number" placeholder="Amount..."/></div></div></div>');
 });
 
 $('.ui.dropdown').dropdown();
+
+$('#add-deductibles').click(function(){
+	$('#deductibles-side').after('<div class="field"><div class="two fields"><div class="field"><label>Deductibles</label><div class="ui input"><input name="deductibles-name" type="text" placeholder="Item"></div></div><div class="field"><label>Amount</label><div class="ui input"><input name="deductibles" type="number" placeholder="Amount..."></div></div></div></div>');
+});
+
+$('#add-allowance').click(function(){
+	$('#allowance-side').after('<div class="field"><div class="two fields"><div class="field"><label>Allowance</label><div class="ui input"><input name="allowance-name" type="text" placeholder="Item"></div></div><div class="field"><label>Amount</label><div class="ui input"><input name="allowance" type="number" placeholder="Amount..."></div></div></div></div>');
+});
 
 $('.ui.form#payslip')
 	.form({
@@ -247,6 +255,28 @@ $('.ui.form#addemployee')
 				{
 					type: 'empty',
 					prompt: 'Please enter dependents'
+				}
+			]
+		}
+	});
+
+$('.ui.form#login')
+	.form({
+		username:{
+			identifier: 'username',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please enter username'
+				}
+			]
+		},
+		password:{
+			identifier: 'password',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please enter password'
 				}
 			]
 		}

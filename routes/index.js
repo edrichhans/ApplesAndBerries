@@ -29,7 +29,7 @@ router.get('/*', function(req, res, next){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index', { title: 'Express' });
+	res.render('index', { title: 'Apples and Berries Payroll System' });
 });
 
 router.get('/payslip', function(req, res, next){
@@ -153,7 +153,7 @@ router.get('/pettycash', function(req, res, next){
 
 router.post('/pettycash', function(req, res){
 	var db = req.db;
-	var checkVoucher = db.get('pettyCash');
+	var pettyCash = db.get('pettyCash');
 	var adviceNumbers = db.get('adviceNumbers');
 	var name = req.body.name;
 	var date = req.body.date;
@@ -173,7 +173,7 @@ router.post('/pettycash', function(req, res){
 	adviceNumbers.findOne({"name": "pettyCash"}, function (err, doc) {
 		currentAdviceNumber = doc.number;
 		adviceNumbers.update({"name": "pettyCash"}, {$inc:{"number": 1}});
-		checkVoucher.insert({
+		pettyCash.insert({
 			"adviceNumber": currentAdviceNumber,
 			"name": name,
 			"date": date,
@@ -283,8 +283,10 @@ router.post('/login',function(req, res){
 	sess = req.session;
 
 	users.findOne({"username": username}, function(err,	user){
+		console.log(username);
 		if(!user){
 			res.render('login', {error: "Invalid username or password"});
+			console.log('cannot find');
 		}
 		else{
 			if(req.body.password == user.password){
@@ -294,6 +296,7 @@ router.post('/login',function(req, res){
 			}
 			else{
 				res.render('login', {error: "Invalid username or password"});
+				console.log('wrong passwored');
 			}
 		}
 	});
@@ -311,6 +314,34 @@ router.get('/logout', function(req, res, next){
 });
 
 //========================================================
+
+router.get('/view', function(req, res, next){
+	res.render('view');
+});
+
+router.post('/view', function(req, res){
+	var db = req.db;
+	var paySlip = db.get('paySlip');
+	var AR = db.get('AR');
+	var checkVoucher = db.get('checkVoucher');
+	var pettyCash = db.get('pettyCash');
+	var Employees = db.get('Employees');
+	var transaction = req.body.chooseTransaction;
+	var startDate = req.body.startDate;
+	var endDate = req.body.endDate;
+
+	var table = db.get(transaction);
+
+	table.find({},function(err, docs){
+		Employees.find({}, function(err, people){
+			res.render('view', {
+				type: transaction,
+				transactions: docs,
+				employees: people
+			});
+		});
+	});
+});
 
 // router.get('/createPhilHealthTable', function(req, res, next){
 // 	var db = req.db;

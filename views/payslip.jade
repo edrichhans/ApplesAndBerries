@@ -17,18 +17,6 @@ block content
 				option(value="apples") Apples
 				option(value="berries") Berries
 
-		.field
-			.two.fields
-				.field
-					label Deductibles
-					.ui.input
-						input(name="deductibles", type="number", placeholder="Amount...")
-
-				.field
-					label Allowance
-					.ui.input
-						input(name="allowance", type="number", placeholder="Amount...")
-
 		.two.fields
 			.field
 				label Start Date
@@ -43,8 +31,39 @@ block content
 						i.calendar.icon
 						input(name="endDate", type='text', placeholder="end")
 
+		.field
+			.ui.grid
+				.eight.wide.column
+					.field#deductibles-side
+						.two.fields
+							.field
+								label Deductibles
+								.ui.input
+									input(name="deductibles-name", type="text", placeholder="Item")
+							.field
+								label Amount
+								.ui.input
+									input(name="deductibles", type="number", placeholder="Amount...")
+					.field
+						.ui.button#add-deductibles Add Deductibles
+
+				.eight.wide.column
+					.field#allowance-side
+						.two.fields
+							.field
+								label Allowance
+								.ui.input
+									input(name="allowance-name", type="text", placeholder="Item")
+							.field
+								label Amount
+								.ui.input
+									input(name="allowance", type="number", placeholder="Amount...")
+					.field
+						.ui.button#add-allowance Add Allowance
+
+
 		.ui.primary.submit.button Submit
-		.ui.button Print
+		.ui.button#print-button Print
 		.ui.error.message
 
 	script(type='text/javascript' src='javascripts/scripts.js')
