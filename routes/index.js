@@ -52,10 +52,29 @@ router.post('/payslip', function(req, res){
 	var adviceNumbers = db.get("adviceNumbers");
 	var eID = parseInt(req.body.employeeDropdown);
 	var company = req.body.companyDropdown;
-	var deductibles = parseFloat(req.body.deductibles);
-	var allowance = parseFloat(req.body.allowance);
+	var deductibles_name = req.body.deductibles_name;
+	var deductibles = req.body.deductibles;
+	var allowance_name = req.body.allowance_name;
+	var allowance = req.body.allowance;
 	var startDate = req.body.startDate;
 	var endDate = req.body.endDate;
+
+	var issuedBy = req.session.username;
+
+	if(deductibles.constructor === Array){
+		for(var i=0; i<deductibles.length;i++) deductibles[i] = parseFloat(deductibles[i]);
+	}
+	else{
+		deductibles = [parseFloat(deductibles)];
+		deductibles_name = [deductibles_name];
+	}
+	if(allowance.constructor === Array){
+		for(var i=0; i<allowance.length;i++) allowance[i] = parseFloat(allowance[i]);
+	}
+	else{
+		allowance = [parseFloat(allowance)];
+		allowance_name = [allowance_name];
+	}
 
 	var currentAdviceNumber;
 
@@ -69,8 +88,13 @@ router.post('/payslip', function(req, res){
 		else return salary*0.02;
 	}
 
-	console.log("eID: ");
-	console.log(eID);
+	function getSum(arr){
+		var result = 0;
+		for(var i = 0; i < arr.length; i++){
+			result += arr[i];
+		}
+		return result;
+	}
 
 	Employees.findOne({"eID": eID}, function(err, employee){
 		console.log("employee");
@@ -84,8 +108,11 @@ router.post('/payslip', function(req, res){
 				paySlip.insert({
 					"eID": eID,
 					"adviceNumber": currentAdviceNumber,
+					"issuedBy": issuedBy,
 					"company": company,
+					"deductibles_name": deductibles_name,
 					"deductibles": deductibles,
+					"allowance_name": allowance_name,
 					"allowance": allowance,
 					"startDate": startDate,
 					"endDate": endDate,
@@ -95,7 +122,7 @@ router.post('/payslip', function(req, res){
 					"EmployerPH": PHdoc.share,
 					"EmployerSSS": ER,
 					"EmployerHDMF": employee.salary*0.02,
-					"total": employee.salary - deductibles + allowance - PHdoc.share - EE - HDMF
+					"total": employee.salary - getSum(deductibles) + getSum(allowance) - PHdoc.share - EE - HDMF
 				});
 				// console.log(PHdoc);
 				// console.log(SSSdoc);
@@ -127,6 +154,8 @@ router.post('/checkvoucher', function(req, res){
 	var amount = req.body.amount;
 	var particulars = req.body.particulars;
 
+	var issuedBy = req.session.username;
+
 	var currentAdviceNumber;
 
 	adviceNumbers.findOne({"name": "checkVoucher"}, function (err, doc) {
@@ -134,6 +163,7 @@ router.post('/checkvoucher', function(req, res){
 		adviceNumbers.update({"name": "checkVoucher"}, {$inc:{"number": 1}});
 		checkVoucher.insert({
 			"adviceNumber": currentAdviceNumber,
+			"issuedBy": issuedBy,
 			"name": name,
 			"date": date,
 			"amount": amount,
@@ -157,17 +187,23 @@ router.post('/pettycash', function(req, res){
 	var adviceNumbers = db.get('adviceNumbers');
 	var name = req.body.name;
 	var date = req.body.date;
-	var amount = parseFloat(req.body.amount);
+	var amount = req.body.amount;
 	var particulars = req.body.particulars;
-	var data = req.body;
+
+	var issuedBy = req.session.username;
 
 	var currentAdviceNumber;
 
 	var items = [];
 
 	//remodel data
-	for(i=0; i < data.name.length; i++){
-		items.push([data.name[i], parseFloat(data.amount[i])]);
+	if(particulars.constructor === Array){
+		for(i=0; i < particulars.length; i++){
+			items.push([particulars[i], parseFloat(amount[i])]);
+		}
+	}
+	else{
+		items.push([particulars, parseFloat(amount)]);
 	}
 
 	adviceNumbers.findOne({"name": "pettyCash"}, function (err, doc) {
@@ -175,6 +211,7 @@ router.post('/pettycash', function(req, res){
 		adviceNumbers.update({"name": "pettyCash"}, {$inc:{"number": 1}});
 		pettyCash.insert({
 			"adviceNumber": currentAdviceNumber,
+			"issuedBy": issuedBy,
 			"name": name,
 			"date": date,
 			"items": items
@@ -197,6 +234,8 @@ router.post('/AR', function(req, res){
 	var amount = parseFloat(req.body.amount);
 	var particulars = req.body.particulars;
 
+	var issuedBy = req.session.username;
+
 	var currentAdviceNumber;
 
 	adviceNumbers.findOne({"name": "AR"}, function (err, doc) {
@@ -204,6 +243,7 @@ router.post('/AR', function(req, res){
 		adviceNumbers.update({"name": "AR"}, {$inc:{"number": 1}});
 		AR.insert({
 			"adviceNumber": currentAdviceNumber,
+			"issuedBy": issuedBy,
 			"name": name,
 			"date": date,
 			"particulars": particulars,

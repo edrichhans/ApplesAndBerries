@@ -34,33 +34,35 @@ block content
 		.field
 			.ui.grid
 				.eight.wide.column
-					.field#deductibles-side
+					.field
 						.two.fields
 							.field
 								label Deductibles
 								.ui.input
-									input(name="deductibles-name", type="text", placeholder="Item")
+									input(name="deductibles_name", type="text", placeholder="Item")
 							.field
 								label Amount
 								.ui.input
 									input(name="deductibles", type="number", placeholder="Amount...")
-					.field
-						.ui.button#add-deductibles Add Deductibles
+					.field#deductibles-side
+						.ui.button#add-deductibles Add a row
+						.ui.button#delete-deductibles Delete a row
+
 
 				.eight.wide.column
-					.field#allowance-side
+					.field
 						.two.fields
 							.field
 								label Allowance
 								.ui.input
-									input(name="allowance-name", type="text", placeholder="Item")
+									input(name="allowance_name", type="text", placeholder="Item")
 							.field
 								label Amount
 								.ui.input
 									input(name="allowance", type="number", placeholder="Amount...")
-					.field
-						.ui.button#add-allowance Add Allowance
-
+					.field#allowance-side
+						.ui.button#add-allowance Add a row
+						.ui.button#delete-allowance Delete a row
 
 		.ui.primary.submit.button Submit
 		.ui.button#print-button Print

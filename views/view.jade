@@ -13,16 +13,20 @@ block content
 				option(value='checkVoucher') Check Voucher
 
 		if type == "paySlip"
-			table.ui.celled.table
+			table.ui.celled.small.table
 				thead
 					tr
-						th Advice Number
+						th AN
+						th Issued By
 						th eID
 						th Name
+						th Base Salary
 						th Start Date
 						th End Date
 						th Deductibles
+						th Amount
 						th Allowance
+						th Amount
 						th PhilHealth
 						th SSS
 						th HDMF
@@ -34,10 +38,13 @@ block content
 						for item in transactions
 							tbody
 								td= item.adviceNumber
+								td= item.issuedBy
 								td.eID(value=item.eID)= item.eID
 								td= item.startDate
 								td= item.endDate
+								td= item.deductibles_name
 								td= item.deductibles
+								td= item.allowance_name
 								td= item.allowance
 								td= item.PHreduc
 								td= item.SSSreduc
@@ -51,6 +58,7 @@ block content
 				thead
 					tr
 						th Advice Number
+						th Issued By
 						th Name
 						th Date
 						th Particulars
@@ -59,6 +67,7 @@ block content
 						for item in transactions
 							tbody
 								td= item.adviceNumber
+								td= item.issuedBy
 								td= item.name
 								td= item.date
 								td= item.particulars
@@ -68,6 +77,7 @@ block content
 				thead
 					tr
 						th Advice Number
+						th Issued By
 						th Name
 						th Date
 						th Items
@@ -78,6 +88,7 @@ block content
 								if index == 0
 									tbody
 										td= item.adviceNumber
+										td= item.issuedBy
 										td= item.name
 										td= item.date
 										td= i[0]
