@@ -10,8 +10,9 @@ var monk = require('monk');
 var db = monk(process.env.MONGOLAB_URI || 'localhost:27017/ApplesAndBerries');
 // var url = 'mongodb://' + process.env.MONGOLAB_URI || 'mongodb://localhost:27017/POS';
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var financials = require('./routes/financials');
+var employees = require('./routes/employees');
+var login = require('./routes/login');
 
 var app = express();
 var MongoClient = mongo.MongoClient;
@@ -35,8 +36,9 @@ app.use(function(req, res, next){
 	next();
 });
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/', financials);
+app.use('/employees', employees);
+app.use('/login', login)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
