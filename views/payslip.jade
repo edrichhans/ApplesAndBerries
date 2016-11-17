@@ -5,14 +5,14 @@ block content
 		h4.ui.dividing.header Issue Payslip
 		.field
 			label Choose Employee
-			select(name="employeeDropdown").ui.fluid.search.dropdown
+			select(name="employeeDropdown").ui.fluid.search.dropdown#employeeDropdown
 				option(value="") Select Employee
 				each employee, index in employees
 					option(value=employee.eID)= employee.name
 
 		.field
 			label Choose Company
-			select(name="companyDropdown").ui.fluid.search.dropdown
+			select(name="companyDropdown").ui.fluid.search.dropdown#companyDropdown
 				option(value="") Select Company
 				option(value="apples") Apples
 				option(value="berries") Berries
@@ -34,15 +34,15 @@ block content
 		.field
 			.ui.grid
 				.eight.wide.column
-					.field
+					.field.deductibles
 						.two.fields
 							.field
 								label Deductibles
-								.ui.input
+								.ui.input.deductibles-name
 									input(name="deductibles_name", type="text", placeholder="Item")
 							.field
 								label Amount
-								.ui.input
+								.ui.input.deductibles-amount
 									input(name="deductibles", type="number", placeholder="Amount...")
 					.field#deductibles-side
 						.ui.button#add-deductibles Add a row
@@ -50,24 +50,81 @@ block content
 
 
 				.eight.wide.column
-					.field
+					.field.allowance
 						.two.fields
 							.field
 								label Allowance
-								.ui.input
+								.ui.input.allowance-name
 									input(name="allowance_name", type="text", placeholder="Item")
 							.field
 								label Amount
-								.ui.input
+								.ui.input.allowance-amount
 									input(name="allowance", type="number", placeholder="Amount...")
 					.field#allowance-side
 						.ui.button#add-allowance Add a row
 						.ui.button#delete-allowance Delete a row
 
-		.ui.primary.submit.button Submit
-		.ui.button#print-button Print
+		.ui.modal
+			i.close.icon
+			.header Pay Slip Preview
+			.content
+				.ui.grid
+					.two.wide.column.right-align
+						| Name: 
+					.five.wide.column
+						#name.div-underline
+							span.indent
+					.three.wide.column.right-align
+						| Date Issued:
+					.six.wide.column
+						#dateToday.div-underline
+							span.indent
+
+					.two.wide.column.right-align
+						| Company: 
+					.fourteen.wide.column
+						#company.div-underline
+							span.indent
+					.two.wide.column.right-align
+						| Date Start:
+					.five.wide.column
+						#dateStart.div-underline
+							span.indent
+					.three.wide.column.right-align
+						| Date End:
+					.six.wide.column
+						#dateEnd.div-underline
+							span.indent
+					.eight.wide.column
+						table.ui.small.compact.celled.table#deductibles-table
+							thead
+								tr
+									th Deductibles
+									th Amount
+							tbody
+					.eight.wide.column
+						table.ui.small.compact.celled.table#allowance-table
+							thead
+								tr
+									th Allowance
+									th Amount
+							tbody
+					br
+					.four.wide.right.floated.column
+						| Total: 
+						#total.div-underline
+							span
+			.actions
+				.ui.disabled.primary.button.submit Submit
+				.ui.button.print Print
+
+		.ui.primary.button#payslip-preview Preview
 		.ui.error.message
 
+	script(type='text/javascript').
+		var employees =!{JSON.stringify(employees)};
+		var philHealth =!{JSON.stringify(philHealth)};
+		var sss =!{JSON.stringify(sss)};
 	script(type='text/javascript' src='javascripts/scripts.js')
 	script.
 		console.log($('#rangestart').calendar('get date'));

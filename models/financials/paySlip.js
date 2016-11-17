@@ -1,10 +1,18 @@
 exports.get = function(req, callBack){
 	var db = req.db;
-	Employees = db.get('Employees');
+	var PhilHealth = db.get("PhilHealth");
+	var Employees = db.get("Employees");
+	var SSS = db.get("SSS");
 
-	Employees.find({}, function(err, doc){
+	PhilHealth.find({}, function(err, ph){
 		if(err) return callBack(err);
-		callBack(null, doc);
+		SSS.find({},function(err1, sss){
+			if(err1) return callBack(err1);
+				Employees.find({}, function(err2, doc){
+					if(err2) return callBack(err2);
+					callBack(null, doc, ph, sss);
+				});
+		});
 	});
 }
 

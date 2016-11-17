@@ -6,3 +6,23 @@ body {
 a {
   color: #00B7FF;
 }
+
+@media print{
+	.content{
+		width: 8.5in;
+		height: 5.5in 
+	}
+}
+
+.right-align{
+	text-align: right;
+}
+
+.indent{
+	text-indent: 4em;
+	display: inline-block;
+}
+
+.div-underline{
+	border-bottom: 1px solid;
+}

@@ -7,6 +7,7 @@ var pettyCashRoute = require('../models/financials/pettyCash');
 var ARRoute = require('../models/financials/AR');
 var viewRoute = require('../models/financials/view');
 var loginRoute = require('../models/login/login');
+var thirteenthRoute = require('../models/financials/thirteenth');
 
 // var auth = require('../middlewares/auth');
 
@@ -48,7 +49,7 @@ router.post('/login',function(req, res){
 router.get('/logout', function(req, res, next){
 	loginRoute.logout(req, res, function(){
 		res.redirect('/');
-	})
+	});
 });
 
 /* GET home page. */
@@ -57,9 +58,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/payslip', function(req, res, next){
-	paySlipRoute.get(req, function(err, doc){
+	paySlipRoute.get(req, function(err, doc, ph, sss){
 		res.render('payslip',{
-			"employees": doc
+			"employees": doc,
+			"philHealth": ph,
+			"sss": sss
 		});
 	});
 });
@@ -69,7 +72,6 @@ router.post('/payslip', function(req, res){
 		res.redirect('/');
 	});
 });
-
 
 router.get('/checkvoucher', function(req, res, next){
 	checkVoucherRoute.get(req, function(err, doc){
@@ -105,11 +107,6 @@ router.post('/AR', function(req, res){
 	});
 });
 
-//=========================== login ======================================
-
-
-//========================================================
-
 router.get('/view', function(req, res, next){
 	res.render('view');
 });
@@ -122,6 +119,14 @@ router.post('/view', function(req, res){
 			employees: people
 		});
 	})
+});
+
+router.get('/thirteenth', function(req, res){
+	thirteenthRoute.get(req, function(err, doc){
+		res.render('thirteenth',{
+			"employees": doc
+		});
+	});
 });
 
 module.exports = router;
