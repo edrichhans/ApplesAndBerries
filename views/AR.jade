@@ -7,13 +7,13 @@ block content
 			.two.fields
 				.field
 					label Name
-					.ui.input
+					.ui.input#name-input
 						input(name="name", type='text', placeholder='Name')
 
 				.field
 					label Date
 					.ui.calendar#checkDate
-						.ui.input.left.icon
+						.ui.input.left.icon#date-input
 							i.calendar.icon
 							input(name="date", type="text", placeholder="Date")
 
@@ -22,18 +22,45 @@ block content
 			.two.fields
 				.field
 					label Particulars
-					.ui.input
+					.ui.input#particulars-input
 						input(name='particulars', type='text', placeholder='Name')
 
 				.field
 					label Amount
-					.ui.input
+					.ui.input#amount-input
 						input(name="amount", type="number", placeholder="Amount...")
 
-		.ui.primary.submit.button Submit
-		.ui.button#print-button Print
+		.ui.modal
+			i.close.icon
+			.header Acknowledgement Receipt Preview
+			.content
+				.ui.grid
+					.two.wide.column.right-align
+						| Name: 
+					.five.wide.column
+						#name.div-underline
+							span.indent
+					.three.wide.column.right-align
+						| Date Issued:
+					.six.wide.column
+						#dateToday.div-underline
+							span.indent
+
+					.two.wide.column.right-align
+						| Particulars:
+					.five.wide.column
+						#particulars.div-underline
+							span.indent
+					.three.wide.column.right-align
+						| Amount:
+					.six.wide.column
+						#amount.div-underline
+							span.indent
+			.actions
+				.ui.disabled.primary.button.submit Submit
+				.ui.button.print Print
+
+		.ui.primary.button#AR-preview Preview
 		.ui.error.message
 
 	script(type='text/javascript' src='javascripts/scripts.js')
-	script.
-		console.log($('#rangestart').calendar('get date'));

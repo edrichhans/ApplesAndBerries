@@ -11,7 +11,7 @@ $('#checkDate').calendar({
 });
 
 $('#add-field').click(function(){
-	$('#pettyCash-particulars').append('<div class="two fields"><div class="field"><label>Particulars</label><div class="ui input"><input name="particulars" type="text" placeholder="Name"/></div></div><div class="field"><label>Amount</label><div class="ui input"><input name="amount" type="number" placeholder="Amount..."/></div></div></div>');
+	$('#pettyCash-particulars').append('<div class="two fields pettyCash-field"><div class="field"><label>Particulars</label><div class="ui input particulars-input"><input name="particulars" type="text" placeholder="Name"/></div></div><div class="field"><label>Amount</label><div class="ui input amount-input"><input name="amount" type="number" placeholder="Amount..."/></div></div></div>');
 });
 
 $('.ui.dropdown').dropdown();
@@ -34,6 +34,49 @@ $('#delete-allowance').click(function(){
 
 $('.submit').click(function(){
 	$('form').submit();
+});
+
+$('#pettyCash-preview').click(function(){
+	var total = 0;
+	$('#name span').text($('#name-input input').val());
+	$('#dateToday span').text($('#date-input input').val());
+	$('.pettyCash-field').each(function(){
+		total += parseFloat($(this).find('.amount-input input').val())
+		$('table#particulars-table tbody').append("<tr><td>" + $(this).find('.particulars-input input').val() + "</td><td>" + $(this).find('.amount-input input').val() + "</td></tr>");
+	});
+
+	$('#total span').text(total);
+
+	$('.ui.modal')
+		.modal({
+			onHide: function(){
+				$('.ui.modal').find('tbody tr').remove();
+			}
+		})
+		.modal('setting', 'transition', 'horizontal flip')
+		.modal('show');
+});
+
+$('#checkVoucher-preview').click(function(){
+	$('#name span').text($('#name-input input').val());
+	$('#dateToday span').text($('#date-input input').val());
+	$('#particulars span').text($('#particularsDropdown').val());
+	$('#amount span').text($('#amount-input input').val());
+
+	$('.ui.modal')
+		.modal('setting', 'transition', 'horizontal flip')
+		.modal('show');
+});
+
+$('#AR-preview').click(function(){
+	$('#name span').text($('#name-input input').val());
+	$('#dateToday span').text($('#date-input input').val());
+	$('#particulars span').text($('#particulars-input input').val());
+	$('#amount span').text($('#amount-input input').val());
+
+	$('.ui.modal')
+		.modal('setting', 'transition', 'horizontal flip')
+		.modal('show');
 });
 
 $('#payslip-preview').click(function(){
@@ -62,8 +105,9 @@ $('#payslip-preview').click(function(){
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
 	var phVal = $.grep(philHealth, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
 	var sssVal = $.grep(sss, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
+	var hdmfVal = getHDMF(employee[0].salary);
 
-	var total = employee[0].salary - deductibles_sum + allowance_sum - phVal[0].share - parseFloat(sssVal[0].totalEE) - getHDMF(employee[0].salary);
+	var total = employee[0].salary - deductibles_sum + allowance_sum - phVal[0].share - parseFloat(sssVal[0].totalEE) - hdmfVal;
 
 	var m_names = new Array("Jan", "Feb", "Mar", 
 	"Apr", "May", "Jun", "Jul", "Aug", "Sep", 
@@ -78,6 +122,10 @@ $('#payslip-preview').click(function(){
 	$('#dateStart span').text($('#rangestart .ui.input input').val());
 	$('#dateEnd span').text($('#rangeend .ui.input input').val());
 	$('#company span').text($('#companyDropdown').val().toUpperCase());
+
+	$('#philHealth span').text(phVal[0].share);
+	$('#SSS span').text(sssVal[0].totalEE);
+	$('#HDMF span').text(hdmfVal);
 
 	$('.deductibles').each(function(){
 		$('table#deductibles-table tbody').append('<tr><td>'+ $(this).find(".deductibles-name input").val() +'</td><td>'+ $(this).find(".deductibles-amount input").val() +'</td></tr>')
@@ -99,7 +147,6 @@ $('#payslip-preview').click(function(){
 });
 
 $('.print').click(function(){
-
 	$('.ui.modal .content').printThis();
 	$('.submit').toggleClass('disabled');
 });

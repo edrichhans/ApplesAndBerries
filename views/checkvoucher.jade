@@ -7,30 +7,59 @@ block content
 			.two.fields
 				.field
 					label Name
-					.ui.input
+					.ui.input#name-input
 						input(name="name", type='text', placeholder='Name')
 
 				.field
 					label Date
 					.ui.calendar#checkDate
-						.ui.input.left.icon
+						.ui.input.left.icon#date-input
 							i.calendar.icon
 							input(name="date", type="text", placeholder="Date")
 
 		.field
 			label Amount
-			.ui.input
+			.ui.input#amount-input
 				input(name="amount", type="number", placeholder="Amount...")
 
 		.field
 			label Particulars
-			select(name="particulars").ui.fluid.search.selection.dropdown
+			select(name="particulars").ui.fluid.search.selection.dropdown#particularsDropdown
 				option(value="") Choose Particulars
 				for particular in metadata.items
 					option(value=particular)= particular
 
-		.ui.primary.submit.button Submit
-		.ui.button#print-button Print
+		.ui.modal
+			i.close.icon
+			.header Check Voucher Preview
+			.content
+				.ui.grid
+					.two.wide.column.right-align
+						| Name: 
+					.five.wide.column
+						#name.div-underline
+							span.indent
+					.three.wide.column.right-align
+						| Date Issued:
+					.six.wide.column
+						#dateToday.div-underline
+							span.indent
+
+					.two.wide.column.right-align
+						| Particulars:
+					.five.wide.column
+						#particulars.div-underline
+							span.indent
+					.three.wide.column.right-align
+						| Amount:
+					.six.wide.column
+						#amount.div-underline
+							span.indent
+			.actions
+				.ui.disabled.primary.button.submit Submit
+				.ui.button.print Print
+
+		.ui.primary.button#checkVoucher-preview Preview
 		.ui.error.message
 
 	script(type='text/javascript' src='javascripts/scripts.js')

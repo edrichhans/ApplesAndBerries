@@ -7,33 +7,63 @@ block content
 			.two.fields
 				.field
 					label Name
-					.ui.input
+					.ui.input#name-input
 						input(name="name", type='text', placeholder='Name')
 
 				.field
 					label Date
 					.ui.calendar#checkDate
-						.ui.input.left.icon
+						.ui.input.left.icon#date-input
 							i.calendar.icon
 							input(name="date", type="text", placeholder="Date")
 
 
 		.field#pettyCash-particulars
-			.two.fields
+			.two.fields.pettyCash-field
 				.field
 					label Particulars
-					.ui.input
+					.ui.input.particulars-input
 						input(name='particulars', type='text', placeholder='Name')
 
 				.field
 					label Amount
-					.ui.input
+					.ui.input.amount-input
 						input(name="amount", type="number", placeholder="Amount...")
 
 		.field
 			.ui.button#add-field Add Field
-		.ui.primary.submit.button Submit
-		.ui.button#print-button Print
+
+		.ui.modal
+			i.close.icon
+			.header Petty Cash Preview
+			.content
+				.ui.grid
+					.two.wide.column.right-align
+						| Name: 
+					.five.wide.column
+						#name.div-underline
+							span.indent
+					.three.wide.column.right-align
+						| Date Issued:
+					.six.wide.column
+						#dateToday.div-underline
+							span.indent
+					table.ui.small.compact.celled.table#particulars-table
+						thead
+							tr
+								th Particulars
+								th Amount
+						tbody
+					br
+					.four.wide.right.floated.column
+						| Total: 
+						#total.div-underline
+							span
+			.actions
+				.ui.disabled.primary.button.submit Submit
+				.ui.button.print Print
+
+		.ui.primary.button#pettyCash-preview Preview
 		.ui.error.message
 
 	script(type='text/javascript' src='javascripts/scripts.js')
