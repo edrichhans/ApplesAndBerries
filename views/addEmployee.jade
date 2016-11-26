@@ -1,12 +1,19 @@
 extends layout
 
 block content
-	form.ui.form#addemployee(name='addemployee', method='post', action='/addemployee')
+	form.ui.form#addemployee(name='addemployee', method='post', action='/employees/addemployee')
 		h4.ui.dividing.header Add employee
-		.field
-			label Name
-			.ui.input
-				input(name="name", type='text', placeholder='Name')
+		.two.fields
+			.field
+				label Name
+				.ui.input
+					input(name="name", type='text', placeholder='Name')
+			.field
+				label Start Date of Employment
+				.ui.calendar#startDate
+					.ui.input.left.icon
+						i.calendar.icon
+						input(name="start", type="text", placeholder="Date")
 
 		.field
 			label Birthday
@@ -40,6 +47,4 @@ block content
 		.ui.primary.submit.button Submit
 		.ui.error.message
 
-	script(type='text/javascript' src='javascripts/scripts.js')
-	script.
-		console.log($('#rangestart').calendar('get date'));
+	script(type='text/javascript' src='/javascripts/scripts.js')

@@ -3,6 +3,7 @@ exports.insert = function(req, res, callBack){
 	var Employees = db.get("Employees");
 	var adviceNumbers = db.get("adviceNumbers");
 	var name = req.body.name;
+	var start = req.body.start;
 	var birthday = req.body.birthday;
 	var position = parseInt(req.body.position);
 	var status = parseInt(req.body.status);
@@ -13,6 +14,7 @@ exports.insert = function(req, res, callBack){
 		Employees.insert({
 			"eID": doc.number,
 			"name": name,
+			"startDate": start,
 			"birthday": birthday,
 			"position": position,
 			"status": status,

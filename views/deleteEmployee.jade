@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	form.ui.form(name='deleteEmployee', method='post', action='/deleteEmployee')
+	form.ui.form(name='deleteEmployee', method='post', action='/employees/deleteEmployee')
 		h4.ui.dividing.header Delete Employee
 		.field
 			select.ui.fluid.search.dropdown(name='eID')

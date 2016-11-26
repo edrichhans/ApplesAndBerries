@@ -10,6 +10,10 @@ $('#checkDate').calendar({
 	type: 'date',
 });
 
+$('#startDate').calendar({
+	type: 'date'
+});
+
 $('#add-field').click(function(){
 	$('#pettyCash-particulars').append('<div class="two fields pettyCash-field"><div class="field"><label>Particulars</label><div class="ui input particulars-input"><input name="particulars" type="text" placeholder="Name"/></div></div><div class="field"><label>Amount</label><div class="ui input amount-input"><input name="amount" type="number" placeholder="Amount..."/></div></div></div>');
 });
@@ -80,35 +84,55 @@ $('#AR-preview').click(function(){
 });
 
 $('#payslip-preview').click(function(){
-	var deductibles_sum = 0;
-	var allowance_sum = 0;
-
-	$('.deductibles-amount input').each(function(){
-		deductibles_sum += parseFloat($(this).val());
-	});
-	$('.allowance-amount input').each(function(){
-		allowance_sum += parseFloat($(this).val());
-	});
-
-	function getHDMF(salary){
-		if(salary <= 1500) return salary*0.01;
-		else return salary*0.02;
-	}
-
-	for(var i = 0; i < philHealth.length; i++){
-		if(philHealth[i].range.to == null) philHealth[i].range.to = Infinity;
-	}
-	for(var i = 0; i < sss.length; i++){
-		if(sss[i].range.to == null) sss[i].range.to = Infinity;
-	}
-
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
-	var phVal = $.grep(philHealth, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
-	var sssVal = $.grep(sss, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
-	var hdmfVal = getHDMF(employee[0].salary);
 
-	var total = employee[0].salary - deductibles_sum + allowance_sum - phVal[0].share - parseFloat(sssVal[0].totalEE) - hdmfVal;
+	if($('.checkbox#thirteenth input').val() == '0'){
+		var deductibles_sum = 0;
+		var allowance_sum = 0;
 
+		$('.deductibles-amount input').each(function(){
+			deductibles_sum += parseFloat($(this).val());
+		});
+		$('.allowance-amount input').each(function(){
+			allowance_sum += parseFloat($(this).val());
+		});
+
+		function getHDMF(salary){
+			if(salary <= 1500) return salary*0.01;
+			else return salary*0.02;
+		}
+
+		for(var i = 0; i < philHealth.length; i++){
+			if(philHealth[i].range.to == null) philHealth[i].range.to = Infinity;
+		}
+		for(var i = 0; i < sss.length; i++){
+			if(sss[i].range.to == null) sss[i].range.to = Infinity;
+		}
+
+		var phVal = $.grep(philHealth, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
+		var sssVal = $.grep(sss, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
+		var hdmfVal = getHDMF(employee[0].salary);
+
+		var total = employee[0].salary - deductibles_sum + allowance_sum - phVal[0].share - parseFloat(sssVal[0].totalEE) - hdmfVal;
+
+
+		$('#philHealth span').text(phVal[0].share);
+		$('#SSS span').text(sssVal[0].totalEE);
+		$('#HDMF span').text(hdmfVal);
+
+		$('.deductibles').each(function(){
+			$('table#deductibles-table tbody').append('<tr><td>'+ $(this).find(".deductibles-name input").val() +'</td><td>'+ $(this).find(".deductibles-amount input").val() +'</td></tr>')
+		})
+
+		$('.allowance').each(function(){
+			$('table#allowance-table tbody').append('<tr><td>'+ $(this).find(".allowance-name input").val() +'</td><td>'+ $(this).find(".allowance-amount input").val() +'</td></tr>')
+		})
+		$('#total span').text(total);
+	}
+	else{
+		$('#total span').text(employee[0].salary);
+	}
+	$('#gross span').text(employee[0].salary);
 	var m_names = new Array("Jan", "Feb", "Mar", 
 	"Apr", "May", "Jun", "Jul", "Aug", "Sep", 
 	"Oct", "Nov", "Dec");
@@ -123,23 +147,13 @@ $('#payslip-preview').click(function(){
 	$('#dateEnd span').text($('#rangeend .ui.input input').val());
 	$('#company span').text($('#companyDropdown').val().toUpperCase());
 
-	$('#philHealth span').text(phVal[0].share);
-	$('#SSS span').text(sssVal[0].totalEE);
-	$('#HDMF span').text(hdmfVal);
-
-	$('.deductibles').each(function(){
-		$('table#deductibles-table tbody').append('<tr><td>'+ $(this).find(".deductibles-name input").val() +'</td><td>'+ $(this).find(".deductibles-amount input").val() +'</td></tr>')
-	})
-
-	$('.allowance').each(function(){
-		$('table#allowance-table tbody').append('<tr><td>'+ $(this).find(".allowance-name input").val() +'</td><td>'+ $(this).find(".allowance-amount input").val() +'</td></tr>')
-	})
-	$('#total span').text(total);
-
 	$('.ui.modal')
 		.modal({
 			onHide: function(){
 				$('.ui.modal').find('tbody tr').remove();
+				$('#philHealth span').text('N/A');
+				$('#SSS span').text('N/A');
+				$('#HDMF span').text('N/A');
 			}
 		})
 		.modal('setting', 'transition', 'horizontal flip')
@@ -154,6 +168,23 @@ $('.print').click(function(){
 $('#employeeDropdown').change(function(){
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
 	$('#name span').text(employee[0].name);
+});
+
+$('.checkbox#thirteenth').checkbox({
+	onChecked: function(){
+		$('.checkbox#thirteenth input').val(1);
+		$('form').attr('action', '/thirteenth');
+		$('form').attr('name', '/thirteenth');
+		$('.allowance').find('input').prop('disabled', true);
+		$('.deductibles').find('input').prop('disabled', true);
+	},
+	onUnchecked: function(){
+		$('.checkbox#thirteenth input').val(0);
+		$('form').attr('action', '/payslip');
+		$('form').attr('name', '/payslip');
+		$('.allowance').find('input').prop('disabled', false);
+		$('.deductibles').find('input').prop('disabled', false);
+	}
 });
 
 //==================================================================
@@ -177,24 +208,24 @@ $('.ui.form#payslip')
 				}
 			]
 		},
-		deductibles:{
-			identifier: 'deductibles',
-			rules:[
-				{
-					type: 'empty',
-					prompt: 'Please enter deductibles'
-				}
-			]
-		},
-		allowance:{
-			identifier: 'allowance',
-			rules:[
-				{
-					type: 'empty',
-					prompt: 'Please enter allowance'
-				}
-			]
-		},
+		// deductibles:{
+		// 	identifier: 'deductibles',
+		// 	rules:[
+		// 		{
+		// 			type: 'empty',
+		// 			prompt: 'Please enter deductibles'
+		// 		}
+		// 	]
+		// },
+		// allowance:{
+		// 	identifier: 'allowance',
+		// 	rules:[
+		// 		{
+		// 			type: 'empty',
+		// 			prompt: 'Please enter allowance'
+		// 		}
+		// 	]
+		// },
 		startDate:{
 			identifier: 'startDate',
 			rules:[

@@ -9,8 +9,9 @@ router.get('/add', function(req, res, next){
 });
 
 router.post('/addemployee', function(req, res){
+	console.log("pasok");
 	addEmployeeRoute.insert(req, res, function(){
-		res.redirect('/add');
+		res.redirect('/');
 	});
 });
 
@@ -24,7 +25,7 @@ router.get('/delete', function(req, res, next){
 
 router.post('/deleteEmployee', function(req, res){
 	deleteEmployeeRoute.delete(req, res, function(){
-		res.redirect('/delete');
+		res.redirect('/');
 	});
 });
 

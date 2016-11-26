@@ -1,0 +1,48 @@
+extends layout
+
+block content
+	h1.ui.dividing.header Update Computations
+	select(name="updateDropdown").ui.fluid.search.dropdown#updateDropdown
+		option(value="") Select Company
+		option(value="SSS") SSS
+		option(value="PhilHealth") PhilHealth
+		option(value="BIR") BIR Tax
+	br
+
+	form.ui.form#SSS(name='updateSSSComp', method='post', action='/updateSSSComp').hide
+		h4.ui.dividing.header Update SSS Table
+		.field
+			table.ui.celled.table#SSSTable
+				thead
+					tr
+						th From
+						th To
+						th Credit
+						th Total ER
+						th Total EE
+						th EC
+						th Total
+				tbody
+		.field
+			.ui.button.submit#SSSSubmit Submit
+
+	form.ui.form#PhilHealth(name='updatePHComp', method='post', action='/updatePHComp').hide
+		h4.ui.dividing.header Update PhilHealth Table
+		.field
+			table.ui.celled.table#PHTable
+				thead
+					tr
+						th Bracket
+						th From
+						th To
+						th Base
+						th Premium
+						th Share
+				tbody
+		.field
+			.ui.button.submit#PHSubmit Submit
+
+	script(type='text/javascript', src='/javascripts/update.js')
+	script(type='text/javascript').
+		var philHealth =!{JSON.stringify(PH)};
+		var sss =!{JSON.stringify(SSS)};
