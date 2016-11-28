@@ -1,14 +1,3 @@
-var getAdviceNumber = function(adviceNumbers){
-	var currentAdviceNumber;
-
-	adviceNumbers.findOne({"name": "paySlip"}, function (err, doc) {
-		currentAdviceNumber = doc.number;
-		adviceNumbers.update({"name": "paySlip"}, {$inc:{"number": 1}});
-	});
-
-	return currentAdviceNumber;
-}
-
 var thirteenthMonth = function(months){
 	if(months < 12) return months;
 	else return 12;
@@ -38,6 +27,7 @@ exports.insert = function(req, res, callBack){
 	var PhilHealth = db.get("PhilHealth");
 	var Employees = db.get("Employees");
 	var SSS = db.get("SSS");
+	var bir = db.get("bir");
 	var adviceNumbers = db.get("adviceNumbers");
 	var eID = parseInt(req.body.employeeDropdown);
 	var company = req.body.companyDropdown;
@@ -65,7 +55,12 @@ exports.insert = function(req, res, callBack){
 		allowance_name = [allowance_name];
 	}
 
-	var currentAdviceNumber = getAdviceNumber(adviceNumbers);
+	var currentAdviceNumber;
+
+	adviceNumbers.findOne({"name": "paySlip"}, function (err, doc) {
+		adviceNumbers.update({"name": "paySlip"}, {$inc:{"number": 1}});
+		currentAdviceNumber = doc.number;
+	});
 
 	function getHDMF(salary){
 		if(salary <= 1500) return salary*0.01;
@@ -124,10 +119,18 @@ exports.thirteenth = function(req, res, callBack){
 	var company = req.body.companyDropdown;
 	var adviceNumbers = db.get('adviceNumbers');
 	var m_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	var paySlip = db.get('paySlip');
+
+	var issuedBy = req.session.username;
 
 	var dateIssued = new Date();
 
-	var currentAdviceNumber = getAdviceNumber(adviceNumbers);
+	var currentAdviceNumber;
+
+	adviceNumbers.findOne({"name": "paySlip"}, function (err, doc) {
+		adviceNumbers.update({"name": "paySlip"}, {$inc:{"number": 1}});
+		currentAdviceNumber = doc.number;
+	});
 
 	Employees.findOne({"eID": eID}, function(err, employee){
 		var date = employee.startDate;
@@ -156,5 +159,6 @@ exports.thirteenth = function(req, res, callBack){
 			"EmployerHDMF": employee.salary*0.02,
 			"total": total
 		});
-	})
+	});
+	callBack();
 }
