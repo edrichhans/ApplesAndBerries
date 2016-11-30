@@ -109,16 +109,38 @@ $('#payslip-preview').click(function(){
 			if(sss[i].range.to == null) sss[i].range.to = Infinity;
 		}
 
+		var dep = employee[0].dependents;
+		if(dep >= 4){
+			dep = 4;
+		}
+
 		var phVal = $.grep(philHealth, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
 		var sssVal = $.grep(sss, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
 		var hdmfVal = getHDMF(employee[0].salary);
+		var birVal = $.grep(bir, function(p){ return (p.dep == dep)});
 
-		var total = employee[0].salary - deductibles_sum + allowance_sum - phVal[0].share - parseFloat(sssVal[0].totalEE) - hdmfVal;
+		var hash = metadata.hash;
+
+		var bracket = 0;
+		for(bracket = 0; bracket < (birVal[0].ranges).length; bracket++){
+			if(employee[0].salary < (birVal[0].ranges)[bracket]){
+				break;
+			}
+		}
+		bracket -= 1;
+
+		var tax = ((employee[0].salary - (birVal[0].ranges)[bracket]) * hash[bracket][1]) + hash[bracket][0];
+		tax = Math.round(tax*100)/100
+
+		console.log(tax);
+
+		var total = employee[0].salary - deductibles_sum + allowance_sum - phVal[0].share - parseFloat(sssVal[0].totalEE) - hdmfVal - tax;
 
 
 		$('#philHealth span').text(phVal[0].share);
 		$('#SSS span').text(sssVal[0].totalEE);
 		$('#HDMF span').text(hdmfVal);
+		$('#BIR span').text(tax);
 
 		$('.deductibles').each(function(){
 			$('table#deductibles-table tbody').append('<tr><td>'+ $(this).find(".deductibles-name input").val() +'</td><td>'+ $(this).find(".deductibles-amount input").val() +'</td></tr>')

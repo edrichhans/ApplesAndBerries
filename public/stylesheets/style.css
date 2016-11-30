@@ -23,6 +23,11 @@ a {
 	display: inline-block;
 }
 
+.indent-1{
+	text-indent: 1em;
+	display: inline-block;
+}
+
 .div-underline{
 	border-bottom: 1px solid;
 }

@@ -8,6 +8,8 @@ exports.get = function(req, callBack){
 	var PhilHealth = db.get("PhilHealth");
 	var Employees = db.get("Employees");
 	var SSS = db.get("SSS");
+	var BIR = db.get("BIR");
+	var metadata = db.get("metadata");
 
 	PhilHealth.find({}, function(err, ph){
 		if(err) return callBack(err);
@@ -15,7 +17,13 @@ exports.get = function(req, callBack){
 			if(err1) return callBack(err1);
 				Employees.find({}, function(err2, doc){
 					if(err2) return callBack(err2);
-					callBack(null, doc, ph, sss);
+					BIR.find({}, function(err3, bir){
+						if(err3) return callBack(err3);
+						metadata.findOne({"name": "BIR"},function(err4, metadata){
+							if(err4) return callBack(err4);
+							callBack(null, doc, ph, sss, bir, metadata);
+						});
+					});
 				});
 		});
 	});
@@ -27,8 +35,9 @@ exports.insert = function(req, res, callBack){
 	var PhilHealth = db.get("PhilHealth");
 	var Employees = db.get("Employees");
 	var SSS = db.get("SSS");
-	var bir = db.get("bir");
+	var BIR = db.get("BIR");
 	var adviceNumbers = db.get("adviceNumbers");
+	var metadata = db.get("metadata");
 	var eID = parseInt(req.body.employeeDropdown);
 	var company = req.body.companyDropdown;
 	var deductibles_name = req.body.deductibles_name;
@@ -75,37 +84,61 @@ exports.insert = function(req, res, callBack){
 		return result;
 	}
 
+	var hash = [];
+	metadata.findOne({"name": "BIR"}, function(err, docs){
+		hash = docs.hash;
+	});
+
 	Employees.findOne({"eID": eID}, function(err, employee){
 		console.log("employee");
 		console.log(employee.name);
 		PhilHealth.findOne({"range.to": {$gte: employee.salary}, "range.from": {$lte: employee.salary}}, function(err, PHdoc){
 			SSS.findOne({"range.to": {$gte: employee.salary}, "range.from": {$lte: employee.salary}}, function(err, SSSdoc){
-				var EE = parseFloat(SSSdoc.totalEE);
-				var ER = parseFloat(SSSdoc.totalER);
-				var HDMF = getHDMF(employee.salary);
+				var dep = employee.dependents;
+				if(employee.dependents >= 4){
+					dep = 4;
+				}
+				BIR.findOne({"dep": dep}, function(err, BIRdoc){
+					var range = BIRdoc.ranges;
+					var i = 0;
+					for(i = 0; i < range.length; i++){
+						if(employee.salary < range[i]){
+							break;
+						}
+					}
+					i -= 1;
+					var tax = ((employee.salary - range[i]) * hash[i][1]) + hash[i][0];
+					tax = Math.round(tax*100)/100
 
-				paySlip.insert({
-					"eID": eID,
-					"adviceNumber": currentAdviceNumber,
-					"issuedBy": issuedBy,
-					"dateIssued": new Date(),
-					"company": company,
-					"deductibles_name": deductibles_name,
-					"deductibles": deductibles,
-					"allowance_name": allowance_name,
-					"allowance": allowance,
-					"startDate": startDate,
-					"endDate": endDate,
-					"PHreduc": PHdoc.share,
-					"SSSreduc": EE,
-					"HDMFreduc": HDMF,
-					"EmployerPH": PHdoc.share,
-					"EmployerSSS": ER,
-					"EmployerHDMF": employee.salary*0.02,
-					"total": employee.salary - getSum(deductibles) + getSum(allowance) - PHdoc.share - EE - HDMF
+					var EE = parseFloat(SSSdoc.totalEE);
+					var ER = parseFloat(SSSdoc.totalER);
+					var HDMF = getHDMF(employee.salary);
+					HDMF = Math.round(HDMF*100)/100;
+
+					paySlip.insert({
+						"eID": eID,
+						"adviceNumber": currentAdviceNumber,
+						"issuedBy": issuedBy,
+						"dateIssued": new Date(),
+						"company": company,
+						"deductibles_name": deductibles_name,
+						"deductibles": deductibles,
+						"allowance_name": allowance_name,
+						"allowance": allowance,
+						"startDate": startDate,
+						"endDate": endDate,
+						"PHreduc": PHdoc.share,
+						"SSSreduc": EE,
+						"HDMFreduc": HDMF,
+						"EmployerPH": PHdoc.share,
+						"EmployerSSS": ER,
+						"EmployerHDMF": employee.salary*0.02,
+						"BIR": tax,
+						"total": employee.salary - getSum(deductibles) + getSum(allowance) - PHdoc.share - EE - HDMF - tax
+					});
+					// console.log(PHdoc);
+					// console.log(SSSdoc);
 				});
-				// console.log(PHdoc);
-				// console.log(SSSdoc);
 			});
 		});
 	});

@@ -58,11 +58,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/payslip', function(req, res, next){
-	paySlipRoute.get(req, function(err, doc, ph, sss){
+	paySlipRoute.get(req, function(err, doc, ph, sss, bir, metadata){
 		res.render('payslip',{
 			"employees": doc,
 			"philHealth": ph,
-			"sss": sss
+			"sss": sss,
+			"bir": bir,
+			"metadata": metadata
 		});
 	});
 });

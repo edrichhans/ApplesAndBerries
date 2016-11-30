@@ -106,19 +106,24 @@ block content
 							span.indent
 					.two.wide.column.right-align
 						| PhilHealth:
-					.three.wide.column
+					.two.wide.column
 						#philHealth.div-underline
-							span.indent
-					.two.wide.column.right-align
+							span.indent-1
+					.one.wide.column.right-align
 						| SSS:
 					.three.wide.column
 						#SSS.div-underline
-							span.indent
+							span.indent-1
 					.two.wide.column.right-align
 						| HDMF:
-					.three.wide.column
+					.two.wide.column
 						#HDMF.div-underline
-							span.indent
+							span.indent-1
+					.one.wide.column.right-align
+						| BIR:
+					.three.wide.column
+						#BIR.div-underline
+							span.indent-1
 
 					.eight.wide.column
 						table.ui.small.compact.celled.table#deductibles-table
@@ -150,6 +155,8 @@ block content
 		var employees =!{JSON.stringify(employees)};
 		var philHealth =!{JSON.stringify(philHealth)};
 		var sss =!{JSON.stringify(sss)};
+		var bir =!{JSON.stringify(bir)};
+		var metadata =!{JSON.stringify(metadata)};
 	script(type='text/javascript' src='javascripts/scripts.js')
 	script.
 		console.log($('#rangestart').calendar('get date'));

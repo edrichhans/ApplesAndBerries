@@ -33,6 +33,7 @@ block content
 						th ER PhilHealth
 						th ER SSS
 						th ER HDMF
+						th BIR Tax
 						th Net
 					tr
 						for item in transactions
@@ -52,6 +53,7 @@ block content
 								td= item.EmployerPH
 								td= item.EmployerSSS
 								td= item.EmployerHDMF
+								th= item.BIR
 								td= item.total
 		if type == "AR" || type == "checkVoucher"
 			table.ui.celled.table
