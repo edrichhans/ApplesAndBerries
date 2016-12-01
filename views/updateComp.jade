@@ -42,7 +42,28 @@ block content
 		.field
 			.ui.button.submit#PHSubmit Submit
 
+	form.ui.form#BIR(name='updateBIRComp', method='post', action='/updateBIRComp').hide
+		h4.ui.dividing.header Update BIR Tax Table
+		.field
+			table.ui.celled.table#BIRTable
+				thead
+					tr
+						th Dependents
+						th 1
+						th 2
+						th 3
+						th 4
+						th 5
+						th 6
+						th 7
+						th 8
+				tbody
+		.field
+			.ui.button.submit#BIRSubmit Submit
+
 	script(type='text/javascript', src='/javascripts/update.js')
 	script(type='text/javascript').
 		var philHealth =!{JSON.stringify(PH)};
 		var sss =!{JSON.stringify(SSS)};
+		var bir =!{JSON.stringify(BIR)};
+		var metadata =!{JSON.stringify(metadata[0])};

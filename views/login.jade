@@ -9,7 +9,7 @@ block content
 				.ui.stacked.segment
 					.field
 						.ui.input
-							input(name="username", type="text", placeholder="Username")
+							input#username(name="username", type="text", placeholder="Username")
 					.field
 						.ui.input
 							input(name="password", type="password", placeholder="Password")
@@ -17,3 +17,8 @@ block content
 				button.ui.fluid.large.teal.submit.button Login
 				.ui.error.message
 	div(style="margin: 1%;")
+
+	script(type='text/javascript').
+		$(document).ready(function(){
+			$('#username').focus();
+		});		

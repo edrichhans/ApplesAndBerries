@@ -8,23 +8,23 @@ exports.get = function(req, callBack){
 	var PhilHealth = db.get("PhilHealth");
 	var Employees = db.get("Employees");
 	var SSS = db.get("SSS");
-	var BIR = db.get("BIR");
-	var metadata = db.get("metadata");
+	var BIR = db.get("BIRTemp");
+	var metadata = db.get("metadataTemp");
 
 	PhilHealth.find({}, function(err, ph){
 		if(err) return callBack(err);
 		SSS.find({},function(err1, sss){
 			if(err1) return callBack(err1);
-				Employees.find({}, function(err2, doc){
-					if(err2) return callBack(err2);
-					BIR.find({}, function(err3, bir){
-						if(err3) return callBack(err3);
-						metadata.findOne({"name": "BIR"},function(err4, metadata){
-							if(err4) return callBack(err4);
-							callBack(null, doc, ph, sss, bir, metadata);
-						});
+			Employees.find({}, function(err2, doc){
+				if(err2) return callBack(err2);
+				BIR.find({}, function(err3, bir){
+					if(err3) return callBack(err3);
+					metadata.findOne({"name": "BIR"},function(err4, metadata){
+						if(err4) return callBack(err4);
+						callBack(null, doc, ph, sss, bir, metadata);
 					});
 				});
+			});
 		});
 	});
 }

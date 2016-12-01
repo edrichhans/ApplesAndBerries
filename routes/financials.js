@@ -130,10 +130,12 @@ router.post('/view', function(req, res){
 });
 
 router.get('/updateComp', function(req, res){
-	updateCompRoute.get(req, res, function(err, SSS, PH){
+	updateCompRoute.get(req, res, function(err, SSS, PH, BIR, metadata){
 		res.render('updateComp', {
 			"SSS": SSS,
-			"PH": PH
+			"PH": PH,
+			"BIR": BIR,
+			"metadata": metadata
 		});
 	});
 });
@@ -146,6 +148,12 @@ router.post('/updateSSSComp', function(req, res){
 
 router.post('/updatePHComp', function(req, res){
 	updateCompRoute.updatePH(req, res, function(){
+		res.redirect('/');
+	});
+});
+
+router.post('/updateBIRComp', function(req, res){
+	updateCompRoute.updateBIR(req, res, function(){
 		res.redirect('/');
 	});
 });
