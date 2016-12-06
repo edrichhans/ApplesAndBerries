@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var mongo = require('mongodb');
 var monk = require('monk');
+var spawn = require('child_process').spawn;
 var db = monk(process.env.MONGOLAB_URI || 'localhost:27017/ApplesAndBerries');
 // var url = 'mongodb://' + process.env.MONGOLAB_URI || 'mongodb://localhost:27017/POS';
 
@@ -28,7 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use(session({secret: 'shhhhh'}));
 
@@ -36,6 +37,10 @@ app.use(function(req, res, next){
 	req.db = db;
 	next();
 });
+
+app.use('/', login);
+app.use('/', financials);
+app.use('/employees', employees);
 
 app.get('/', function(req, res, next) {
 	res.render('index', { title: 'Apples and Berries Payroll System' });
@@ -45,10 +50,20 @@ app.get('/controlpanel', function(req, res, next){
 	res.render('controlpanel', {title: 'Apples and Berries Payroll System'});
 });
 
-app.use('/', login);
-app.use('/', financials);
-app.use('/employees', employees);
-
+app.get('/backup', function(req, res, next){
+	var args = ['--db', 'ApplesAndBerries', '-o', 'backup']
+		, mongodump = spawn('mongodump', args);
+	mongodump.stdout.on('data', (data) => {
+		console.log('stdout: ' + data);
+	});
+	mongodump.stderr.on('data', (data) => {
+		console.log('stderr: ' + data);
+	});
+	mongodump.on('exit', (code) => {
+		console.log('mongodump exited with code ' + code);
+	});
+	res.redirect('/');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
