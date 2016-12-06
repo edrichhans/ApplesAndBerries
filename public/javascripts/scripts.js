@@ -216,6 +216,7 @@ $('.button#chooseEditEmployee').click(function(event){
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
 	employee = employee[0];
 
+	$('input#eID').val(employee.eID);
 	$('input#inputName').val(employee.name);
 	$('input#inputStartDate').val(employee.startDate);
 	$('input#inputBirthday').val(employee.birthday);

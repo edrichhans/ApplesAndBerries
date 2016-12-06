@@ -13,6 +13,7 @@ block content
 
 	form.ui.form.hide#editEmployee(name='addemployee', method='post', action='/employees/editEmployee')
 		h4.ui.dividing.header Edit employee
+		input#eID.hide(name="eID" readonly)
 		.two.fields
 			.field
 				label Name
