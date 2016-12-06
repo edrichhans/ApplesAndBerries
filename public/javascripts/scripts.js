@@ -209,6 +209,25 @@ $('.checkbox#thirteenth').checkbox({
 	}
 });
 
+//==================== Edit Employee ===============================
+
+$('button #chooseEditEmployee').click(function(event){
+	event.preventDefault();
+	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
+	employee = employee[0];
+
+	$('input #inputName').val(employee.name);
+	$('input #inputStartDate').val(employee.startDate);
+	$('input #inputBirthday').val(employee.birthday);
+	$('select #selectPosition').val((employee.eID));
+	$('select #selectStatus').val((employee.status));
+	$('input #inputDependents').val(employee.dependents);
+	$('input #inputBaseSalary').val(employee.salary);
+
+	$('form #selectEmployee').addClass('hide');
+	$('form #editEmployee').removeClass('hide');
+});
+
 //==================================================================
 $('.ui.form#payslip')
 	.form({
@@ -463,6 +482,38 @@ $('.ui.form#login')
 				{
 					type: 'empty',
 					prompt: 'Please enter password'
+				}
+			]
+		}
+	});
+
+$('.ui.form#addUser')
+	.form({
+		username:{
+			identifier: 'username',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please enter username'
+				}
+			]
+		},
+		password:{
+			identifier: 'password',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please enter password'
+				}
+			]
+		},
+		repass:{
+			identifier: 'repass',
+			rules:[
+				{
+					type: 'empty',
+					type: 'match[password]',
+					prompt: 'Passwords don\'t match'
 				}
 			]
 		}

@@ -31,3 +31,25 @@ exports.logout = function(req, res, callBack){
 		}
 	});
 }
+
+exports.addUser = function(req, res, callBack){
+	var db = req.db;
+	var users = db.get('Users');
+	var username = req.body.username;
+	var password = req.body.password;
+	var repass = req.body.repass;
+
+	users.findOne({"username": username}, function(err, doc){
+		if(doc){
+			return callBack(0);
+		}
+		if(username && password && repass && password == repass){
+			users.insert({
+				"username": username,
+				"password": password,
+				"rights": "user"
+			});
+		}
+		callBack(1);
+	});
+}

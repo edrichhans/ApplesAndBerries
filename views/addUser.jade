@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	form.ui.form#addUser(name='addemployee', method='post', action='/addUser')
+		h4.ui.dividing.header Create User
+		.field
+			label Enter New Username
+			.ui.input
+				input(name="username", type='text', placeholder='username')
+		.field
+			label Enter Password
+			.ui.input
+				input(name="password", type='password', placeholder='password')
+		.field
+			label Retype Password
+			.ui.input
+				input(name="repass", type='password', placeholder='retype')
+		.ui.primary.submit.button Submit
+		.ui.error.message
+
+	script(type='text/javascript' src='/javascripts/scripts.js')

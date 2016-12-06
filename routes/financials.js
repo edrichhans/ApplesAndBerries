@@ -1,21 +1,17 @@
 var express = require('express');
-var session = require('express-session');
 var router = express.Router();
 var paySlipRoute = require('../models/financials/paySlip');
 var checkVoucherRoute = require('../models/financials/checkVoucher');
 var pettyCashRoute = require('../models/financials/pettyCash');
 var ARRoute = require('../models/financials/AR');
 var viewRoute = require('../models/financials/view');
-var loginRoute = require('../models/login/login');
 var updateCompRoute = require('../models/financials/updateComp');
 
 // var auth = require('../middlewares/auth');
 
 var sess;
 
-router.use(session({secret: 'shhhhh'}));
-
-router.get(['/employees/*', '/updateComp'], function(req, res, next){
+router.get(['/updateComp'], function(req, res, next){
 	sess = req.session;
 	if(sess.rights == 'admin'){
 		next();
@@ -23,33 +19,6 @@ router.get(['/employees/*', '/updateComp'], function(req, res, next){
 	else{
 		res.redirect('/');
 	}
-});
-
-router.get('/*', function(req, res, next){
-	sess = req.session;
-	if(['/login', '/logout'].indexOf(req.url) !== -1
-		|| sess.username)
-		next();
-	else{
-		res.redirect('/login');
-	}
-});
-
-router.get('/login',function(req, res, next){
-	res.render('login');
-});
-
-router.post('/login',function(req, res, next){
-	loginRoute.login(req, res, function(success){
-		if(success) res.redirect('/');
-		if(!success) res.render('login', {error: "Invalid username or password"});
-	});
-});
-
-router.get('/logout', function(req, res, next){
-	loginRoute.logout(req, res, function(){
-		res.redirect('/');
-	});
 });
 
 /* GET home page. */

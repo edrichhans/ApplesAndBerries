@@ -35,26 +35,26 @@ block content
 						th ER HDMF
 						th BIR Tax
 						th Net
-					tr
-						for item in transactions
-							tbody
-								td= item.adviceNumber
-								td= item.issuedBy
-								td.eID(value=item.eID)= item.eID
-								td= item.startDate
-								td= item.endDate
-								td= item.deductibles_name
-								td= item.deductibles
-								td= item.allowance_name
-								td= item.allowance
-								td= item.PHreduc
-								td= item.SSSreduc
-								td= item.HDMFreduc
-								td= item.EmployerPH
-								td= item.EmployerSSS
-								td= item.EmployerHDMF
-								th= item.BIR
-								td= item.total
+				tbody
+					for item in transactions
+						tr
+							td= item.adviceNumber
+							td= item.issuedBy
+							td.eID(value=item.eID)= item.eID
+							td= item.startDate
+							td= item.endDate
+							td= item.deductibles_name
+							td= item.deductibles
+							td= item.allowance_name
+							td= item.allowance
+							td= item.PHreduc
+							td= item.SSSreduc
+							td= item.HDMFreduc
+							td= item.EmployerPH
+							td= item.EmployerSSS
+							td= item.EmployerHDMF
+							td= item.BIR
+							td= item.total
 		if type == "AR" || type == "checkVoucher"
 			table.ui.celled.table
 				thead
@@ -65,15 +65,15 @@ block content
 						th Date
 						th Particulars
 						th Amount
-					tr
-						for item in transactions
-							tbody
-								td= item.adviceNumber
-								td= item.issuedBy
-								td= item.name
-								td= item.date
-								td= item.particulars
-								td= item.amount
+				tbody
+					for item in transactions
+						tr
+							td= item.adviceNumber
+							td= item.issuedBy
+							td= item.name
+							td= item.date
+							td= item.particulars
+							td= item.amount
 		if type == "pettyCash"
 			table.ui.celled.table
 				thead
@@ -84,24 +84,24 @@ block content
 						th Date
 						th Items
 						th Price
-					tr
-						for item in transactions
-							each i, index in item.items
-								if index == 0
-									tbody
-										td= item.adviceNumber
-										td= item.issuedBy
-										td= item.name
-										td= item.date
-										td= i[0]
-										td= i[1]	
-								else
-									tbody
-										td
-										td
-										td
-										td= i[0]
-										td= i[1]
+				tbody
+					for item in transactions
+						each i, index in item.items
+							if index == 0
+								tr
+									td= item.adviceNumber
+									td= item.issuedBy
+									td= item.name
+									td= item.date
+									td= i[0]
+									td= i[1]	
+							else
+								tbody
+									td
+									td
+									td
+									td= i[0]
+									td= i[1]
 
 		button.ui.button.submit(type='submit') Submit
 		.ui.button#print-button Print

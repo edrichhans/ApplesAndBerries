@@ -1,0 +1,62 @@
+extends layout
+
+block content
+	form.ui.form#selectEmployee
+		h4.ui.dividing.header Select Employee
+		.field
+			select.ui.fluid.search.dropdown#employeeDropdown(name='eID')
+				option(value="") Select Employee
+				each employee, index in employees
+					option(value= employee.eID)= employee.name
+
+		button.ui.submit.button#chooseEditEmployee Submit
+
+	form.ui.form.hide#editEmployee(name='addemployee', method='post', action='/employees/addemployee')
+		h4.ui.dividing.header Edit employee
+		.two.fields
+			.field
+				label Name
+				.ui.input
+					input#inputName(name="name", type='text', placeholder='Name' readonly)
+			.field
+				label Start Date of Employment
+				.ui.calendar#startDate
+					.ui.input.left.icon
+						i.calendar.icon
+						input#inputStartDate(name="start", type="text", placeholder="Date" readonly)
+
+		.field
+			label Birthday
+			.ui.calendar#checkDate
+				.ui.input.left.icon
+					i.calendar.icon
+					input#inputBirthday(name="birthday", type="text", placeholder="Date" readonly)
+
+		.fields
+			.field
+				label Position
+				select(name='position').ui.fluid.search.dropdown#selectPosition
+					option(value="") Select Option...
+					option(value=0) Teacher
+					option(value=1) Admin
+					option(value=2) Staff
+			.field
+				label Civil Status
+				select(name='status').ui.fluid.search.dropdown#selectStatus
+					option(value="") Select Option...
+					option(value=0) Single
+					option(value=1) Married
+			.field
+				label Dependents
+					.ui.input
+						input#inputDependents(name="dependents", type="number", placeholder="How many?")
+			.field
+				label Base Salary
+					.ui.input
+						input#inputBaseSalary(name="salary", type="number", placeholder="Salary")
+		.ui.primary.submit.button Submit
+		.ui.error.message
+
+	script(type='text/javascript').
+		var employees =!{JSON.stringify(employees)};
+	script(type='text/javascript' src='/javascripts/scripts.js')

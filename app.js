@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var session = require('express-session');
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk(process.env.MONGOLAB_URI || 'localhost:27017/ApplesAndBerries');
@@ -30,15 +30,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use(session({secret: 'shhhhh'}));
 
 app.use(function(req, res, next){
 	req.db = db;
 	next();
 });
 
+app.use('/', login);
 app.use('/', financials);
 app.use('/employees', employees);
-app.use('/login', login)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
