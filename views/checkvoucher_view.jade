@@ -1,0 +1,77 @@
+//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
+//- script(src="semantic/dist/semantic.min.js")
+extends layout
+
+block content
+
+	// <script src="http://semantic-ui.com/javascript/library/tablesort.js"></script>
+	.ui.page.container
+		// FIXED TOP NAVBAR
+		.ui.borderless.main.menu.fixed
+			// logo ilagay to sa gitna kung keri
+			.header.item(href="/")
+				img.logo(src="icons/apple.png")
+				| A&B
+			a.item(href="/")
+				i.large.home.icon
+				| Home
+			.ui.right.floated.item
+				.ui.icon.input
+					input(type="text", placeholder="Search...")
+					i.search.icon
+				.ui.simple.dropdown.item(class="tabindex=")
+					| UserPic
+					i.user.icon
+					i.dropdown.icon
+					.ui.menu
+						a.left.floated.item
+							i.edit.icon
+								| Edit Profile
+						a.item
+							i.settings.icon
+								| Sign Out
+		.ui.middle.aligned.center.aligned.grid
+			// Table Title
+			.row
+				.ui.center.aligned
+					h1 Check Voucher
+			.row
+			// buttons
+			.row
+				.four.wide.column.right.floated
+					button.ui.button(onclick="location.replace('/checkvoucher')") ADD
+					.ui.button EDIT
+					.ui.button DELETE
+			.ui.fitted.divider
+			// Table Proper
+			.column.row
+				table.ui.table.fluid.selectable.sortable
+					thead
+						tr
+							th.collapsing AN#
+							th.two.wide Issued By
+							th.three.wide Name
+							th.two.wide Date
+							th Particulars
+							th.two.wide Amount
+					tbody
+						for item in transactions
+							tr
+								td= item.adviceNumber
+								td= item.issuedBy
+								td= item.name
+								td= item.date
+								td= item.particulars
+								td= item.amount
+			// PRINT BUTTON
+			.ten.column.row
+				.right.floated.fluid.column
+					.ui.fluid.button#print-button Print
+			.row
+
+	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+	script(type='text/javascript' src='javascripts/scripts.js')
+	script(type='text/javascript').
+		$('#print-button').click(function(){
+			$('table').printThis();
+		});

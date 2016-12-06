@@ -1,0 +1,50 @@
+extends layout
+
+block content
+	form.ui.form#addemployee(name='addemployee', method='post', action='/employees/addemployee')
+		h4.ui.dividing.header Add employee
+		.two.fields
+			.field
+				label Name
+				.ui.input
+					input(name="name", type='text', placeholder='Name')
+			.field
+				label Start Date of Employment
+				.ui.calendar#startDate
+					.ui.input.left.icon
+						i.calendar.icon
+						input(name="start", type="text", placeholder="Date")
+
+		.field
+			label Birthday
+			.ui.calendar#checkDate
+				.ui.input.left.icon
+					i.calendar.icon
+					input(name="birthday", type="text", placeholder="Date")
+
+		.fields
+			.field
+				label Position
+				select(name='position').ui.fluid.search.dropdown
+					option(value="") Select Option...
+					option(value=0) Teacher
+					option(value=1) Admin
+					option(value=2) Staff
+			.field
+				label Civil Status
+				select(name='status').ui.fluid.search.dropdown
+					option(value="") Select Option...
+					option(value=0) Single
+					option(value=1) Married
+			.field
+				label Dependents
+					.ui.input
+						input(name="dependents", type="number", placeholder="How many?")
+			.field
+				label Base Salary
+					.ui.input
+						input(name="salary", type="number", placeholder="Salary")
+		.ui.primary.submit.button Submit
+		.ui.error.message
+
+	script(type='text/javascript' src='/javascripts/scripts.js')

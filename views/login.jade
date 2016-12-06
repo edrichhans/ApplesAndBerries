@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	.ui.middle.aligned.center.grid
+		.column
+			h2.ui.teal.image.header
+				.content Login to your account
+			form.ui.large.form#login(name='login', method='post', action='/login')
+				.ui.stacked.segment
+					.field
+						.ui.input
+							input#username(name="username", type="text", placeholder="Username")
+					.field
+						.ui.input
+							input(name="password", type="password", placeholder="Password")
+								
+				button.ui.fluid.large.teal.submit.button Login
+				.ui.error.message
+	div(style="margin: 1%;")
+
+	script(type='text/javascript').
+		$(document).ready(function(){
+			$('#username').focus();
+		});		

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	form.ui.form(name='deleteEmployee', method='post', action='/employees/deleteEmployee')
+		h4.ui.dividing.header Delete Employee
+		.field
+			select.ui.fluid.search.dropdown(name='eID')
+				option(value="") Select Employee
+				each employee, index in employees
+					option(value= employee.eID)= employee.name
+
+		button.ui.submit.button Submit
