@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	form.ui.form#SSS(name='updateSSSComp', method='post', action='/updateSSSComp')
+		h4.ui.dividing.header Update SSS Table
+		.field
+			table.ui.celled.table#SSSTable
+				thead
+					tr
+						th From
+						th To
+						th Credit
+						th Total ER
+						th Total EE
+						th EC
+						th Total
+				tbody
+		.field
+			.ui.button.submit#SSSSubmit Submit
+
+	script(type='text/javascript', src='/javascripts/update.js')
+	script(type='text/javascript').
+		var sss =!{JSON.stringify(SSS)};
+		var metadata =!{JSON.stringify(metadata[0])};

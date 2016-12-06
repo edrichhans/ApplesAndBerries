@@ -37,6 +37,14 @@ app.use(function(req, res, next){
 	next();
 });
 
+app.get('/', function(req, res, next) {
+	res.render('index', { title: 'Apples and Berries Payroll System' });
+});
+
+app.get('/controlpanel', function(req, res, next){
+	res.render('controlpanel', {title: 'Apples and Berries Payroll System'});
+});
+
 app.use('/', login);
 app.use('/', financials);
 app.use('/employees', employees);

@@ -34,3 +34,13 @@ exports.insert = function(req, res, callBack){
 		}, callBack());
 	});
 }
+
+exports.view = function(req, res, callBack){
+	var db = req.db;
+	var checkVoucher = db.get('checkVoucher');
+
+	checkVoucher.find({},function(err, docs){
+		if(err) return callBack(err);
+		callBack(null, docs);
+	});
+}

@@ -36,3 +36,13 @@ exports.insert = function(req, res, callBack){
 	});
 	callBack();
 }
+
+exports.view = function(req, res, callBack){
+	var db = req.db;
+	var pettyCash = db.get('pettyCash');
+
+	pettyCash.find({},function(err, docs){
+		if(err) return callBack(err);
+		callBack(null, docs);
+	});
+}

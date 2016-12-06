@@ -139,20 +139,20 @@ $('#BIRSubmit.submit').click(function(){
 	sendAjax([hash, values], "/updateBIRComp");
 });
 
-$('#updateDropdown').change(function(){
-	if($(this).val() == 'SSS'){
-		$('#SSS').removeClass('hide');
-		$('#PhilHealth').addClass('hide');
-		$('#BIR').addClass('hide');
-	}
-	else if($(this).val() == 'PhilHealth'){
-		$('#PhilHealth').removeClass('hide');	
-		$('#SSS').addClass('hide');
-		$('#BIR').addClass('hide');
-	}
-	else if($(this).val() == 'BIR'){
-		$('#PhilHealth').addClass('hide');	
-		$('#SSS').addClass('hide');
-		$('#BIR').removeClass('hide');
-	}
-});
+// $('#updateDropdown').change(function(){
+// 	if($(this).val() == 'SSS'){
+// 		$('#SSS').removeClass('hide');
+// 		$('#PhilHealth').addClass('hide');
+// 		$('#BIR').addClass('hide');
+// 	}
+// 	else if($(this).val() == 'PhilHealth'){
+// 		$('#PhilHealth').removeClass('hide');	
+// 		$('#SSS').addClass('hide');
+// 		$('#BIR').addClass('hide');
+// 	}
+// 	else if($(this).val() == 'BIR'){
+// 		$('#PhilHealth').addClass('hide');	
+// 		$('#SSS').addClass('hide');
+// 		$('#BIR').removeClass('hide');
+// 	}
+// });

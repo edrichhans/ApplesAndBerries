@@ -22,10 +22,6 @@ router.get(['/updateComp'], function(req, res, next){
 });
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-	res.render('index', { title: 'Apples and Berries Payroll System' });
-});
-
 router.get('/payslip', function(req, res, next){
 	paySlipRoute.get(req, function(err, doc, ph, sss, bir, metadata){
 		res.render('payslip',{
@@ -80,7 +76,7 @@ router.get('/AR', function(req, res, next){
 
 router.post('/AR', function(req, res){
 	ARRoute.insert(req, res, function(){
-		res.redirect('/AR');
+		res.redirect('/AR_view');
 	});
 });
 
@@ -124,6 +120,30 @@ router.post('/updatePHComp', function(req, res){
 router.post('/updateBIRComp', function(req, res){
 	updateCompRoute.updateBIR(req, res, function(){
 		res.redirect('/');
+	});
+});
+
+router.get('/AR_view', function(req, res){
+	ARRoute.view(req, res, function(err, docs){
+		res.render('AR_view', {
+			transactions: docs
+		});
+	});
+});
+
+router.get('/checkvoucher_view', function(req, res){
+	checkVoucherRoute.view(req, res, function(err, docs){
+		res.render('checkvoucher_view', {
+			transactions: docs
+		});
+	});
+});
+
+router.get('/pettycash_view', function(req, res){
+	pettyCashRoute.view(req, res, function(err, docs){
+		res.render('pettycash_view', {
+			transactions: docs
+		});
 	});
 });
 
