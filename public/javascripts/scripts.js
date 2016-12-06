@@ -211,21 +211,21 @@ $('.checkbox#thirteenth').checkbox({
 
 //==================== Edit Employee ===============================
 
-$('button #chooseEditEmployee').click(function(event){
+$('.button#chooseEditEmployee').click(function(event){
 	event.preventDefault();
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
 	employee = employee[0];
 
-	$('input #inputName').val(employee.name);
-	$('input #inputStartDate').val(employee.startDate);
-	$('input #inputBirthday').val(employee.birthday);
-	$('select #selectPosition').val((employee.eID));
-	$('select #selectStatus').val((employee.status));
-	$('input #inputDependents').val(employee.dependents);
-	$('input #inputBaseSalary').val(employee.salary);
+	$('input#inputName').val(employee.name);
+	$('input#inputStartDate').val(employee.startDate);
+	$('input#inputBirthday').val(employee.birthday);
+	$('select#selectPosition').val((employee.position).toString()).change();
+	$('select#selectStatus').val((employee.status).toString()).change();
+	$('input#inputDependents').val(employee.dependents);
+	$('input#inputBaseSalary').val(employee.salary);
 
-	$('form #selectEmployee').addClass('hide');
-	$('form #editEmployee').removeClass('hide');
+	$('form#selectEmployee').addClass('hide');
+	$('form#editEmployee').removeClass('hide');
 });
 
 //==================================================================

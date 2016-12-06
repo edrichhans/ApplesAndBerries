@@ -25,12 +25,25 @@ exports.getEdit = function(req, callBack){
 	});
 }
 
-// exports.postEdit = function(req, res, callBack){
-// 	var db = req.db;
-// 	var eID = req.body.eID
-// 	var Employees = db.get("Employees");
+exports.postEdit = function(req, res, callBack){
+	var db = req.db;
+	var eID = req.body.eID;
+	var position = req.body.position;
+	var status = req.body.status;
+	var dependents = req.body.dependents;
+	var salary = req.body.salary;
 
-// 	Employees.findOne({"eID": eID}, function(err, doc){
-		
-// 	});
-// }
+	var Employees = db.get("Employees");
+
+	console.log(eID);
+
+	Employees.update({"eID": parseInt(eID)}, {
+		$set:{
+			"position": position,
+			"status": parseInt(status),
+			"dependents": parseInt(dependents),
+			"salary": parseFloat(salary)
+		}
+	});
+	callBack();
+}

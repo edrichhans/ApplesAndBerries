@@ -9,9 +9,9 @@ block content
 				each employee, index in employees
 					option(value= employee.eID)= employee.name
 
-		button.ui.submit.button#chooseEditEmployee Submit
+		button.ui.button#chooseEditEmployee Select
 
-	form.ui.form.hide#editEmployee(name='addemployee', method='post', action='/employees/addemployee')
+	form.ui.form.hide#editEmployee(name='addemployee', method='post', action='/employees/editEmployee')
 		h4.ui.dividing.header Edit employee
 		.two.fields
 			.field
@@ -20,17 +20,15 @@ block content
 					input#inputName(name="name", type='text', placeholder='Name' readonly)
 			.field
 				label Start Date of Employment
-				.ui.calendar#startDate
-					.ui.input.left.icon
-						i.calendar.icon
-						input#inputStartDate(name="start", type="text", placeholder="Date" readonly)
+				.ui.input.left.icon
+					i.calendar.icon
+					input#inputStartDate(name="start", type="text", placeholder="Date" readonly)
 
 		.field
 			label Birthday
-			.ui.calendar#checkDate
-				.ui.input.left.icon
-					i.calendar.icon
-					input#inputBirthday(name="birthday", type="text", placeholder="Date" readonly)
+			.ui.input.left.icon
+				i.calendar.icon
+				input#inputBirthday(name="birthday", type="text", placeholder="Date" readonly)
 
 		.fields
 			.field
