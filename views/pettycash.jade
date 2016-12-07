@@ -1,21 +1,24 @@
 extends layout
 
 block content
-	form.ui.form#pettycash(name='pettycash', method='post', action='/pettycash')
-		h4.ui.dividing.header Issue Petty Cash
+	.two.fields.center
 		.field
-			.two.fields
-				.field
-					label Name
-					.ui.input#name-input
-						input(name="name", type='text', placeholder='Name')
+			i.dollar.icon.massive.purple
+		.field
+			h2.ui.dividing.header Petty Cash
+	form.ui.box.center.form#pettycash(name='pettycash', method='post', action='/pettycash')
+		
+		.field
+			label Name
+			.ui.input#name-input
+				input(name="name", type='text', placeholder='Name')
 
-				.field
-					label Date
-					.ui.calendar#checkDate
-						.ui.input.left.icon#date-input
-							i.calendar.icon
-							input(name="date", type="text", placeholder="Date")
+		.field
+			label Date
+			.ui.calendar#checkDate
+				.ui.input.left.icon#date-input
+					i.calendar.icon
+					input(name="date", type="text", placeholder="Date")
 
 
 		.field#pettyCash-particulars
@@ -32,6 +35,9 @@ block content
 
 		.field
 			.ui.button#add-field Add Field
+			.ui.primary.button#pettyCash-preview Preview
+
+		.ui.error.message
 
 		.ui.modal
 			i.close.icon
@@ -62,9 +68,6 @@ block content
 			.actions
 				.ui.disabled.primary.button.submit Submit
 				.ui.button.print Print
-
-		.ui.primary.button#pettyCash-preview Preview
-		.ui.error.message
 
 	script(type='text/javascript' src='javascripts/scripts.js')
 	script.
