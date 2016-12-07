@@ -15,8 +15,12 @@ $('#startDate').calendar({
 });
 
 $('#add-field').click(function(){
-	$('#pettyCash-particulars').append('<div class="two fields pettyCash-field"><div class="field"><label>Particulars</label><div class="ui input particulars-input"><input name="particulars" type="text" placeholder="Name"/></div></div><div class="field"><label>Amount</label><div class="ui input amount-input"><input name="amount" type="number" placeholder="Amount..."/></div></div></div>');
+	$('#pettyCash-particulars').append('<div class="two fields pettyCash-field addition"><div class="field"><label>Particulars</label><div class="ui input particulars-input"><input name="particulars" type="text" placeholder="Name"/></div></div><div class="field"><label>Amount</label><div class="ui input amount-input"><input name="amount" type="number" placeholder="Amount..."/></div></div></div>');
 });
+$('#remove-field').click(function(){
+	$('.addition').slice(-1).remove();
+});
+
 
 $('.ui.dropdown').dropdown();
 
