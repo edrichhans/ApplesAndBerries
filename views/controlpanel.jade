@@ -70,6 +70,19 @@ block content
 					.hidden.content
 						| Create a new user
 			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/deleteUser')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 Delete User
+							.row
+							.row
+					.hidden.content
+						| Delete an existing user
+			.column
 				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/backup')")
 					.visible.content
 						.ui.grid

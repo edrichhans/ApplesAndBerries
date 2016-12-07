@@ -53,3 +53,21 @@ exports.addUser = function(req, res, callBack){
 		callBack(1);
 	});
 }
+
+exports.getUsers = function(req, res, callBack){
+	var db = req.db;
+	var users = db.get('Users');
+
+	users.find({}, function(err, doc){
+		if(err) return callBack(err);
+		callBack(null, doc);
+	});
+}
+
+exports.deleteUser = function(req, res, callBack){
+	var db = req.db;
+	var users = db.get('Users');
+	var username = req.body.username;
+
+	users.remove({"username": username}, callBack(1));
+}
