@@ -51,11 +51,11 @@ block content
 			.field
 				label Dependents
 					.ui.input
-						input#inputDependents(name="dependents", type="number", placeholder="How many?")
+						input#inputDependents(name="dependents", type="number", placeholder="How many?" min="0")
 			.field
 				label Base Salary
 					.ui.input
-						input#inputBaseSalary(name="salary", type="number", placeholder="Salary")
+						input#inputBaseSalary(name="salary", type="number", placeholder="Salary" min="0")
 		.ui.primary.button#confirm Submit
 		.ui.error.message
 

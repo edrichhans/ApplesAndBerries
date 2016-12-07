@@ -476,7 +476,74 @@ $('.ui.form#addemployee')
 			]
 		}
 	});
-
+$('.ui.form#editEmployee')
+	.form({
+		name:{
+			identifier: 'name',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please enter name'
+				}
+			]
+		},
+		start:{
+			identifier: 'start',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please select birthday'
+				}
+			]
+		},
+		birthday:{
+			identifier: 'birthday',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please select birthday'
+				}
+			]
+		},
+		position:{
+			identifier: 'position',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please select position'
+				}
+			]
+		},
+		status:{
+			identifier: 'status',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please select status'
+				}
+			]
+		},
+		salary:{
+			identifier: 'salary',
+			rules:[
+				{
+					type: 'empty',
+					type   : 'integer[0..]',
+					prompt: 'Please enter salary'
+				}
+			]
+		},
+		dependents:{
+			identifier: 'dependents',
+			rules:[
+				{
+					type: 'empty',
+					type   : 'integer[0..]',
+					prompt: 'Please enter dependents'
+				}
+			]
+		}
+	});
 $('.ui.form#login')
 	.form({
 		username:{
