@@ -71,6 +71,10 @@ var sendAjax = function(values, link){
 }
 
 $('#BIRSubmit.submit').click(function(){
+	$('.small.modal').modal('show');
+})
+
+$('#confirmBIR').click(function(){
 	var values = [];
 	var hash = [{"name":"BIR", "hash":[]}];
 	$('#BIRTable tbody tr').each(function(index, doc){
@@ -98,5 +102,4 @@ $('#BIRSubmit.submit').click(function(){
 		}
 	});
 	sendAjax([hash, values], "/updateBIRComp");
-	$('.small.modal').modal('show');
 });

@@ -52,6 +52,10 @@ var sendAjax = function(values, link){
 }
 
 $('#PHSubmit.submit').click(function(){
+	$('.small.modal').modal('show');
+});
+
+$('#confirmPH').click(function(){
 	var values = [];
 	$('#PHTable tbody tr').each(function(index, doc){
 		var dict = {bracket: parseFloat($(doc).find('.bracket').val()), range: {from: parseFloat($(doc).find('.from').val()), to: parseFloat($(doc).find('.to').val())}, base: parseFloat($(doc).find('.base').val()), premium: parseFloat($(doc).find('.premium').val()), share: parseFloat($(doc).find('.share').val())}

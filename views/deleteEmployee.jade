@@ -13,4 +13,19 @@ block content
 				each employee, index in employees
 					option(value= employee.eID)= employee.name
 
-		button.ui.submit.button Submit
+		.ui.button#confirm Submit
+
+		.ui.small.modal
+			.header Confirm
+			.content
+				| Confirm Delete Employee
+			.actions
+				.ui.positive.submit.right.button OK
+
+	script.
+		$('#confirm').click(function(){
+			$('.small.modal').modal('show');
+		});
+		$('.submit').click(function(){
+			$('form').submit()
+		})

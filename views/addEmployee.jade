@@ -49,17 +49,17 @@ block content
 				.ui.input
 					input(name="salary", type="number", placeholder="Salary")
 		.ui.error.message
-		.ui.primary.submit.button Submit
+		.ui.primary.button#confirm Submit
 
-	.ui.small.modal
-		.header Confirm
-		.content
-			| Confirm Add Employee
-		.actions
-			.ui.positive.right.button OK
+		.ui.small.modal
+			.header Confirm
+			.content
+				| Confirm Add Employee
+			.actions
+				.ui.positive.submit.right.button OK
 
 	script(type='text/javascript' src='/javascripts/scripts.js')
 	script.
-		$('.submit').click(function(){
+		$('#confirm').click(function(){
 			$('.small.modal').modal('show');
 		});

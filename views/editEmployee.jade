@@ -56,9 +56,20 @@ block content
 				label Base Salary
 					.ui.input
 						input#inputBaseSalary(name="salary", type="number", placeholder="Salary")
-		.ui.primary.submit.button Submit
+		.ui.primary.button#confirm Submit
 		.ui.error.message
+
+		.ui.small.modal
+			.header Confirm
+			.content
+				| Confirm Edit Employee
+			.actions
+				.ui.positive.submit.right.button OK
 
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};
 	script(type='text/javascript' src='/javascripts/scripts.js')
+	script.
+		$('#confirm').click(function(){
+			$('.small.modal').modal('show');
+		});

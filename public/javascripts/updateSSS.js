@@ -50,6 +50,10 @@ var sendAjax = function(values, link){
 }
 
 $('#SSSSubmit.submit').click(function(){
+	$('.small.modal').modal('show');
+});
+
+$('#confirmSSS').click(function(){
 	var values = [];
 	$('#SSSTable tbody tr').each(function(index, doc){
 		var dict = {range: {from: parseFloat($(doc).find('.from').val()), to: parseFloat($(doc).find('.to').val())}, credit: parseFloat($(doc).find('.credit').val()), totalER: parseFloat($(doc).find('.totalER').val()), totalEE: parseFloat($(doc).find('.totalEE').val()), EC: parseFloat($(doc).find('.EC').val()), total: parseFloat($(doc).find('.total').val())}
