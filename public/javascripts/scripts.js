@@ -199,6 +199,10 @@ $('.checkbox#thirteenth').checkbox({
 		$('form').attr('name', '/thirteenth');
 		$('.allowance').find('input').prop('disabled', true);
 		$('.deductibles').find('input').prop('disabled', true);
+		$('#add-deductibles').addClass('disabled');
+		$('#delete-deductibles').addClass('disabled');
+		$('#add-allowance').addClass('disabled');
+		$('#delete-allowance').addClass('disabled');
 	},
 	onUnchecked: function(){
 		$('.checkbox#thirteenth input').val(0);
@@ -206,6 +210,10 @@ $('.checkbox#thirteenth').checkbox({
 		$('form').attr('name', '/payslip');
 		$('.allowance').find('input').prop('disabled', false);
 		$('.deductibles').find('input').prop('disabled', false);
+		$('#add-deductibles').removeClass('disabled');
+		$('#delete-deductibles').removeClass('disabled');
+		$('#add-allowance').removeClass('disabled');
+		$('#delete-allowance').removeClass('disabled');
 	}
 });
 
