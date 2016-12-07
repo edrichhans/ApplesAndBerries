@@ -1,8 +1,12 @@
 extends layout
 
 block content
-	form.ui.form#payslip(name='payslip', method='post', action='/payslip')
-		h4.ui.dividing.header Issue Payslip
+	.two.fields.center2
+		.field
+			i.money.icon.massive.red
+		.field
+			h2.ui.dividing.header Issue Payslip
+	form.ui.form.center2.box#payslip(name='payslip', method='post', action='/payslip')
 		.field
 			label Choose Employee
 			select(name="employeeDropdown").ui.fluid.search.dropdown#employeeDropdown

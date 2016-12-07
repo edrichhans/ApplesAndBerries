@@ -1,11 +1,15 @@
 extends layout
 
 block content
-	form.ui.form(name='deleteEmployee', method='post', action='/employees/deleteEmployee')
-		h4.ui.dividing.header Delete Employee
+	.two.fields.center2
+		.field
+			i.remove.user.icon.massive.red
+		.field
+			h2.ui.dividing.header Delete Employee
+	form.ui.form.center2.box(name='deleteEmployee', method='post', action='/employees/deleteEmployee')
 		.field
 			select.ui.fluid.search.dropdown(name='eID')
-				option(value="") Select Employee
+				option(value = "") Select Employee
 				each employee, index in employees
 					option(value= employee.eID)= employee.name
 
