@@ -43,11 +43,11 @@ block content
 		.field
 			label Dependents
 				.ui.input
-					input(name="dependents", type="number", placeholder="How many?")
+					input(name="dependents", type="number", placeholder="How many?" min="0")
 		.field
 			label Base Salary
 				.ui.input
-					input(name="salary", type="number", placeholder="Salary")
+					input(name="salary", type="number", placeholder="Salary" min="0")
 		.ui.error.message
 		.ui.primary.button#confirm Submit
 

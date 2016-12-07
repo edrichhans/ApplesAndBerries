@@ -34,9 +34,9 @@ html
 								.ui.left.icon.input
 									i.lock.icon
 									input(type="password", name="password", placeholder="Password")
-							button.ui.fluid.large.red.submit.four.wide.button Login
+							button.ui.fluid.large.red.four.wide.button Login
 						.ui.error.message
-					//- .ui.message
+					//- .ui.message	
 					//- 	| New to us? 
 					//- 	a(href="#") Sign Up
 					//- 	br
@@ -46,6 +46,17 @@ html
 				$('#username').focus();
 			});
 		script(type='text/javascript' src='javascripts/scripts.js')
+		script(type='text/javascript' src='javascripts/jquery.form.js')
+		script.
+			$('form#login')
+				.ajaxForm({
+					error : function (response) {
+						alert('Invalid Username or Password');
+					},
+					success : function(){
+						window.location.replace('/');
+					}
+				});
 	//- .ui.middle.aligned.center.grid
 	//- 	.column
 	//- 		h2.ui.teal.image.header
