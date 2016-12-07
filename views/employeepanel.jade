@@ -1,0 +1,61 @@
+//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
+//- script(src="semantic/dist/semantic.min.js")
+extends layout
+
+block content
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		.row
+		.row
+		.row
+		// Title
+		.row
+			.ui.center.aligned
+				h1 Employees 
+		.row
+		// 1st ROW Buttons
+		.four.column.wide.row
+			.column
+				button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/add')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 Add Employee
+							.row
+							.row
+					.hidden.content
+						| Add a new employee
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/editEmployee')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 Edit Employee
+							.row
+							.row
+					.hidden.content
+						| Edit an existing employee
+		// 2nd ROW Buttons
+		.four.column.wide.row
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/delete')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 Delete Employee
+							.row
+							.row
+					.hidden.content
+						| Delete an existing employee
+		.row
+		.row
+
+	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
