@@ -12,34 +12,35 @@ html
 
 		//- https://github.com/mdehoog/Semantic-UI-Calendar
 	body
-		.ui.center.aligned.grid
-			.row
-			.row
-			.row
-			.row
-				.ui.basic.segment.center.aligned
-					h1
-						| Apples & Berries
-						br
-						| Payroll System
-			.five.wide.column
-				form.ui.large.form#login(name='login', method='post', action='/login')
-					.ui.stacked.segment
-						.field
-							.ui.left.icon.input
-								i.user.icon
-								input(type="text", name="username", placeholder="Username")
-						.field
-							.ui.left.icon.input
-								i.lock.icon
-								input(type="password", name="password", placeholder="Password")
-						button.ui.fluid.large.red.submit.four.wide.button Login
-					.ui.error.message
-				.ui.message
-					| New to us? 
-					a(href="#") Sign Up
-					br
-					a(href="#") Forgot Password
+		.ui.page.container
+			.ui.center.aligned.grid
+				.row
+				.row
+				.row
+				.row
+					.ui.basic.segment.center.aligned
+						h1
+							| Apples & Berries
+							br
+							| Payroll System
+				.five.wide.column
+					form.ui.large.form#login(name='login', method='post', action='/login')
+						.ui.stacked.segment
+							.field
+								.ui.left.icon.input
+									i.user.icon
+									input#username(type="text", name="username", placeholder="Username")
+							.field
+								.ui.left.icon.input
+									i.lock.icon
+									input(type="password", name="password", placeholder="Password")
+							button.ui.fluid.large.red.submit.four.wide.button Login
+						.ui.error.message
+					//- .ui.message
+					//- 	| New to us? 
+					//- 	a(href="#") Sign Up
+					//- 	br
+					//- 	a(href="#") Forgot Password
 		script(type='text/javascript').
 			$(document).ready(function(){
 				$('#username').focus();
