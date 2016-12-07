@@ -3,111 +3,86 @@
 extends layout
 
 block content
-	.ui.page.container
-		// FIXED TOP NAVBAR
-		.ui.borderless.main.menu.fixed
-			// logo ilagay to sa gitna kung keri
-			.header.item(href="#")
-				img.logo(src="icons/apple.png")
-				| A&B
-			a.item(href='/')
-				i.large.home.icon
-				| Home
-			.ui.right.floated.item
-				.ui.icon.input
-					input(type="text", placeholder="Search...")
-					i.search.icon
-				.ui.simple.dropdown.item(class="tabindex=")
-					| UserPic	
-					i.user.icon
-					i.dropdown.icon
-					.ui.menu
-						a.left.floated.item
-							i.edit.icon
-							|	Edit Profile
-						a.item
-							i.settings.icon
-							|	Sign Out
-		.ui.middle.aligned.center.aligned.grid.stackable.doubling
-			.row
-			.row
-			.row
-			// Title
-			.row
-				.ui.center.aligned
-					h1 Control Panel 
-			.row
-			// 1st ROW Buttons
-			.four.column.wide.row
-				.column
-					button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/BIR')")
-						.visible.content
-							.ui.grid
-								.row
-								.row
-								.row
-									.ui.container
-										h1 B I R
-								.row
-								.row
-						.hidden.content
-							| Update tax rates
-				.column
-					.ui.animated.fade.red.button.fluid(tabindex="0")
-						.visible.content
-							.ui.grid
-								.row
-								.row
-								.row
-									.ui.container
-										h1 Pag-IBIG
-								.row						
-								.row
-						.hidden.content
-							| Update HDMF
-				.column
-					.ui.animated.fade.button.red.fluid(button="", tabindex="0")
-						.visible.content
-							.ui.grid
-								.row
-								.row
-								.row
-									.ui.container
-										h1 PhilHealth
-								.row					
-								.row
-						.ui.hidden.content
-							.ui.center.aligned.fluid
-								| Update PhilHealth
-			// 2nd ROW Buttons
-			.four.column.wide.row
-				.column
-					.ui.animated.fade.red.button.fluid(tabindex="0")
-						.visible.content
-							.ui.grid
-								.row
-								.row
-								.row
-									.ui.container
-										h1 S S S
-								.row
-								.row
-						.hidden.content
-							| Update SSS fees
-				.column
-					.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/backup')")
-						.visible.content
-							.ui.grid
-								.row
-								.row
-								.row
-									.ui.container
-										h1 Back up
-								.row
-								.row
-						.hidden.content
-							| Back up files
-			.row
-			.row
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		.row
+		.row
+		.row
+		// Title
+		.row
+			.ui.center.aligned
+				h1 Control Panel 
+		.row
+		// 1st ROW Buttons
+		.four.column.wide.row
+			.column
+				button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/BIR')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 B I R
+							.row
+							.row
+					.hidden.content
+						| Update tax rates
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 Pag-IBIG
+							.row						
+							.row
+					.hidden.content
+						| Update HDMF
+			.column
+				.ui.animated.fade.button.red.fluid(button="", tabindex="0")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 PhilHealth
+							.row					
+							.row
+					.ui.hidden.content
+						.ui.center.aligned.fluid
+							| Update PhilHealth
+		// 2nd ROW Buttons
+		.four.column.wide.row
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 S S S
+							.row
+							.row
+					.hidden.content
+						| Update SSS fees
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/backup')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 Back up
+							.row
+							.row
+					.hidden.content
+						| Back up files
+		.row
+		.row
 
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
