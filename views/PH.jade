@@ -1,6 +1,9 @@
 extends layout
 
 block content
+	br
+	br
+	br
 	form.ui.form#PhilHealth(name='updatePHComp', method='post', action='/updatePHComp')
 		h4.ui.dividing.header Update PhilHealth Table
 		.field
@@ -16,6 +19,13 @@ block content
 				tbody
 		.field
 			.ui.button.submit#PHSubmit Submit
+
+	.ui.small.modal
+		.header Success
+		.content
+			| Update Success
+		.actions
+			.ui.positive.right.button OK
 
 	script(type='text/javascript', src='/javascripts/updatePH.js')
 	script(type='text/javascript').

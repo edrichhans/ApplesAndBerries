@@ -59,4 +59,5 @@ $('#PHSubmit.submit').click(function(){
 	});
 	sendAjax(values, "/updatePHComp");
 	console.log(values);
+	$('.small.modal').modal('show');
 });

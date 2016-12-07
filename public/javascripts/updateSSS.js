@@ -57,4 +57,5 @@ $('#SSSSubmit.submit').click(function(){
 	});
 	sendAjax(values, "/updateSSSComp");
 	console.log(values);
+	$('.small.modal').modal('show');
 });

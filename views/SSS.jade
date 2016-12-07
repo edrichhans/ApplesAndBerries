@@ -1,6 +1,9 @@
 extends layout
 
 block content
+	br
+	br
+	br
 	form.ui.form#SSS(name='updateSSSComp', method='post', action='/updateSSSComp')
 		h4.ui.dividing.header Update SSS Table
 		.field
@@ -17,6 +20,13 @@ block content
 				tbody
 		.field
 			.ui.button.submit#SSSSubmit Submit
+
+	.ui.small.modal
+		.header Success
+		.content
+			| Update Success
+		.actions
+			.ui.positive.right.button OK
 
 	script(type='text/javascript', src='/javascripts/updateSSS.js')
 	script(type='text/javascript').

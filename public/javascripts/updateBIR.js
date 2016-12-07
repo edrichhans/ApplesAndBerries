@@ -98,4 +98,5 @@ $('#BIRSubmit.submit').click(function(){
 		}
 	});
 	sendAjax([hash, values], "/updateBIRComp");
+	$('.small.modal').modal('show');
 });
