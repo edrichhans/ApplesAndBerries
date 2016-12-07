@@ -14,7 +14,7 @@ router.get('/*', function(req, res, next){
 	}
 });
 
-router.get(['/addUser'], function(req, res, next){
+router.get(['/addUser', '/deleteUser'], function(req, res, next){
 	sess = req.session;
 	if(sess.rights == 'admin'){
 		next();
@@ -47,7 +47,21 @@ router.post('/addUser', function(req, res, next){
 		if(!status) res.redirect('/addUser');
 		else res.redirect('/');
 	});
-})
+});
+
+router.get('/deleteUser', function(req, res){
+	loginRoute.getUsers(req, res, function(err, doc){
+		res.render('deleteUser',{
+			"users": doc
+		});
+	});
+});
+
+router.post('/deleteUser', function(req, res, next){
+	loginRoute.deleteUser(req, res, function(status){
+		res.redirect('/');
+	});
+});
 
 router.get('/logout', function(req, res, next){
 	loginRoute.logout(req, res, function(){

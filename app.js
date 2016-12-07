@@ -53,7 +53,13 @@ app.use('/employees', employees);
 
 
 app.get('/', function(req, res, next) {
-	res.render('index', { title: 'Apples and Berries Payroll System' });
+	sess = req.session;
+	if(sess.rights == 'admin'){
+		res.render('index', { title: 'Apples and Berries Payroll System' });
+	}
+	else if(sess.rights == 'user'){
+		res.render('indexUser', { title: 'Apples and Berries Payroll System' });
+	}
 });
 
 app.get('/controlpanel', function(req, res, next){
