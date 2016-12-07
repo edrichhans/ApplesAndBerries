@@ -1,20 +1,24 @@
 extends layout
 
 block content
-	form.ui.form#addUser(name='addemployee', method='post', action='/addUser')
-		h4.ui.dividing.header Create User
+	.two.fields.center2
+		.field
+			i.add.user.icon.massive.red
+		.field
+			h2.ui.dividing.header Create User
+	form.ui.form.box.center2#addUser(name='addemployee', method='post', action='/addUser')
 		.field
 			label Enter New Username
 			.ui.input
-				input(name="username", type='text', placeholder='username')
+				input(name="username", type='text', placeholder='Username')
 		.field
 			label Enter Password
 			.ui.input
-				input(name="password", type='password', placeholder='password')
+				input(name="password", type='password', placeholder='Password')
 		.field
 			label Retype Password
 			.ui.input
-				input(name="repass", type='password', placeholder='retype')
+				input(name="repass", type='password', placeholder='Retype Password')
 		.ui.primary.submit.button Submit
 		.ui.error.message
 
