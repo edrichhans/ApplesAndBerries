@@ -147,6 +147,15 @@ router.get('/pettycash_view', function(req, res){
 	});
 });
 
+router.get('/payslip_view', function(req, res){
+	paySlipRoute.view(req, res, function(err, docs, people){
+		res.render('payslip_view', {
+			transactions: docs,
+			employees: people
+		});
+	});
+});
+
 router.get('/BIR', function(req, res){
 	updateCompRoute.getBIR(req, res, function(err, BIR, metadata){
 		res.render('BIR', {
