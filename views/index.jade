@@ -4,123 +4,97 @@
 extends layout
 
 block content
-	.ui.page.container
-		// FIXED TOP NAVBAR
-		.ui.borderless.main.menu.fixed
-			// logo ilagay to sa gitna kung keri
-			.header.item(href="#")
-				img.logo(src="icons/apple.png")
-				| A&B
-			a.item(href='/')
-				i.large.home.icon
-				| Home
-			.ui.right.floated.item
-				.ui.icon.input
-					input(type="text", placeholder="Search...")
-					i.search.icon
-				.ui.simple.dropdown.item(class="tabindex=")
-					| UserPic	
-					i.user.icon
-					i.dropdown.icon
-					.ui.menu
-						a.left.floated.item
-							i.edit.icon
-								| Edit Profile
-						a.item
-							i.settings.icon
-								| Sign Out
-
-		.ui.middle.aligned.center.aligned.grid.stackable.doubling
-			//- .row
-			//- .row
-			.row
-			// Title
-			.row
-				.ui.center.aligned
-					h1 Main Menu
-			.row
-			// 1st ROW Buttons
-			.four.column.wide.row
-				.column
-					button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/')")
-						.visible.content
-							img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/employee_white.png")					
-							h3
-								| Employee
-								br
-								| Management
-
-						.hidden.content
-							| Add Employee
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		//- .row
+		//- .row
+		.row
+		// Title
+		.row
+			.ui.center.aligned
+				h1 Main Menu
+		.row
+		// 1st ROW Buttons
+		.four.column.wide.row
+			.column
+				button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/employee_white.png")					
+						h3
+							| Employee
 							br
-							| Edit Employee
+							| Management
+
+					.hidden.content
+						| Add Employee
+						br
+						| Edit Employee
+						br
+						| Delete Employee
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/payslip_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/payslip.png")
+						h3
+							| Payslip
 							br
-							| Delete Employee
-				.column
-					.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/payslip_view')")
-						.visible.content
-							img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/payslip.png")
-							h3
-								| Payslip
-								br
-								| Module
+							| Module
 
-						.hidden.content
-							| Issue Payslip
-				.column
-					.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/controlpanel')")
-						.visible.content
-							img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/settings.png")
-							h3
-								| Control
-								br
-								| Panel
+					.hidden.content
+						| Issue Payslip
+			.column
+				.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/controlpanel')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/settings.png")
+						h3
+							| Control
+							br
+							| Panel
 
-						.ui.hidden.content
-							.ui.center.aligned.fluid
-								| Update Tax Table
-								br
-								| Update Gov't Fees
-			// 2nd ROW Buttons
-			.four.column.wide.row
-				.column
-					.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
-						.visible.content
-							img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
+					.ui.hidden.content
+						.ui.center.aligned.fluid
+							| Update Tax Table
+							br
+							| Update Gov't Fees
+		// 2nd ROW Buttons
+		.four.column.wide.row
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
 
-							h3
-								| Acknowledgmet
-								br
-								| Receipt
+						h3
+							| Acknowledgmet
+							br
+							| Receipt
 
-						.hidden.content
-							| Issue Acknowledgment Receipt
-				.column
-					.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
-						.visible.content
-							img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
-							h3
-								| Check
-								br
-								| Voucher
+					.hidden.content
+						| Issue Acknowledgment Receipt
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
+						h3
+							| Check
+							br
+							| Voucher
 
-						.hidden.content
-							| Issue Check Voucher
+					.hidden.content
+						| Issue Check Voucher
 
-				.column
-					.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
-						.visible.content
-							img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
-							h3
-								| Petty
-								br
-								| Cash
-						.ui.hidden.content
-							.ui.text.container.fluid
-								h5
-									| Issue Petty Cash
-			.row
-			.row
+			.column
+				.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
+						h3
+							| Petty
+							br
+							| Cash
+					.ui.hidden.content
+						.ui.text.container.fluid
+							h5
+								| Issue Petty Cash
+		.row
+		.row
 
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
 
