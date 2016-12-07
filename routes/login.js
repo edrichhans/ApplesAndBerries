@@ -25,6 +25,8 @@ router.get(['/addUser', '/deleteUser'], function(req, res, next){
 });
 
 router.get('/login',function(req, res, next){
+	sess = req.session;
+	if(sess.username) res.redirect('/');
 	res.render('login');
 });
 
