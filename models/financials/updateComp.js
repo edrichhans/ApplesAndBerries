@@ -1,24 +1,24 @@
-exports.get = function(req, res, callBack){
-	var db = req.db;
-	var SSS = db.get('SSS');
-	var PH = db.get('PhilHealth');
-	var BIR = db.get('BIR');
-	var metadata = db.get('metadata');
+// exports.get = function(req, res, callBack){
+// 	var db = req.db;
+// 	var SSS = db.get('SSS');
+// 	var PH = db.get('PhilHealth');
+// 	var BIR = db.get('BIR');
+// 	var metadata = db.get('metadata');
 
-	SSS.find({}, function(err, sssdoc){
-		if(err) return callBack(err);
-		PH.find({}, function(err2, phdoc){
-			if(err2) return callBack(err2);
-			BIR.find({}, function(err3, birdoc){
-				if(err3) return callBack(err3);
-				metadata.find({"name": "BIR"}, function(err4, metadata){
-					if(err4) return callBack(err4);
-					callBack(null, sssdoc, phdoc, birdoc, metadata);
-				});
-			});
-		});
-	});
-}
+// 	SSS.find({}, function(err, sssdoc){
+// 		if(err) return callBack(err);
+// 		PH.find({}, function(err2, phdoc){
+// 			if(err2) return callBack(err2);
+// 			BIR.find({}, function(err3, birdoc){
+// 				if(err3) return callBack(err3);
+// 				metadata.find({"name": "BIR"}, function(err4, metadata){
+// 					if(err4) return callBack(err4);
+// 					callBack(null, sssdoc, phdoc, birdoc, metadata);
+// 				});
+// 			});
+// 		});
+// 	});
+// }
 
 exports.updateSSS = function(req, res, callBack){
 	var db = req.db;
@@ -72,4 +72,38 @@ exports.updateBIR = function(req, res, callBack){
 
 	console.log(body[0]);
 	console.log(body[1]);
+}
+
+exports.getBIR = function(req, res, callBack){
+	var db = req.db;
+	var BIR = db.get('BIR');
+	var metadata = db.get('metadata');
+
+	BIR.find({}, function(err3, birdoc){
+		if(err3) return callBack(err3);
+		metadata.find({"name": "BIR"}, function(err4, metadata){
+			if(err4) return callBack(err4);
+			callBack(null, birdoc, metadata);
+		});
+	});
+}
+
+exports.getPH = function(req, res, callBack){
+	var db = req.db;
+	var PH = db.get('PhilHealth');
+
+	PH.find({}, function(err, phdoc){
+		if(err) return callBack(err);
+			callBack(null, phdoc);
+	});
+}
+
+exports.getSSS = function(req, res, callBack){
+	var db = req.db;
+	var SSS = db.get('SSS');
+
+	SSS.find({}, function(err, sssdoc){
+		if(err) return callBack(err);
+			callBack(null, sssdoc);
+	});
 }

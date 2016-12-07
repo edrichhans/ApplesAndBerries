@@ -1,6 +1,9 @@
 extends layout
 
 block content
+	br
+	br
+	br
 	form.ui.form#BIR(name='updateBIRComp', method='post', action='/updateBIRComp')
 		h4.ui.dividing.header Update BIR Tax Table
 		.field
@@ -20,7 +23,14 @@ block content
 		.field
 			.ui.button.submit#BIRSubmit Submit
 
-	script(type='text/javascript', src='/javascripts/update.js')
+	.ui.small.modal
+		.header Confirm
+		.content
+			| Confirm Update?
+		.actions
+			.ui.positive.right.button#confirmBIR OK
+
+	script(type='text/javascript', src='/javascripts/updateBIR.js')
 	script(type='text/javascript').
 		var bir =!{JSON.stringify(BIR)};
 		var metadata =!{JSON.stringify(metadata[0])};

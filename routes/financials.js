@@ -147,6 +147,40 @@ router.get('/pettycash_view', function(req, res){
 	});
 });
 
+router.get('/payslip_view', function(req, res){
+	paySlipRoute.view(req, res, function(err, docs, people){
+		res.render('payslip_view', {
+			transactions: docs,
+			employees: people
+		});
+	});
+});
+
+router.get('/BIR', function(req, res){
+	updateCompRoute.getBIR(req, res, function(err, BIR, metadata){
+		res.render('BIR', {
+			"BIR": BIR,
+			"metadata": metadata
+		});
+	});
+});
+
+router.get('/PH', function(req, res){
+	updateCompRoute.getPH(req, res, function(err, PH){
+		res.render('PH', {
+			"PH": PH
+		});
+	});
+});
+
+router.get('/SSS', function(req, res){
+	updateCompRoute.getSSS(req, res, function(err, SSS){
+		res.render('SSS', {
+			"SSS": SSS
+		});
+	});
+});
+
 module.exports = router;
 
 //========================================================

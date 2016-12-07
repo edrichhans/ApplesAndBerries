@@ -12,5 +12,29 @@ html
 
 		//- https://github.com/mdehoog/Semantic-UI-Calendar
 	body
-		.ui.container
+		.ui.page.container
+			// FIXED TOP NAVBAR
+			.ui.borderless.main.menu.fixed
+				// logo ilagay to sa gitna kung keri
+				.header.item(href="/")
+					img.logo(src="/icons/apple.png")
+					| A&B
+				a.item(href="/")
+					i.large.home.icon
+					| Home
+				.ui.right.floated.item
+					.ui.icon.input
+						input(type="text", placeholder="Search...")
+						i.search.icon
+					.ui.simple.dropdown.item(class="tabindex=")
+						| UserPic
+						i.user.icon
+						i.dropdown.icon
+						.ui.menu
+							a.left.floated.item
+								i.edit.icon
+									| Edit Profile
+							a.item(href="/logout")
+								i.settings.icon
+									| Sign Out
 			block content

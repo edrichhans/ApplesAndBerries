@@ -195,3 +195,17 @@ exports.thirteenth = function(req, res, callBack){
 	});
 	callBack();
 }
+
+exports.view = function(req, res, callBack){
+	var db = req.db;
+	var paySlip = db.get('paySlip');
+	var Employees = db.get('Employees');
+
+	paySlip.find({},function(err, docs){
+		if(err) return callBack(err);
+		Employees.find({}, function(err1, people){
+			if(err1) return callBack(err1);
+			callBack(null, docs, people);
+		});
+	});
+}

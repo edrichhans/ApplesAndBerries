@@ -31,7 +31,10 @@ router.get('/login',function(req, res, next){
 router.post('/login',function(req, res, next){
 	loginRoute.login(req, res, function(success){
 		if(success) res.redirect('/');
-		if(!success) res.render('login', {error: "Invalid username or password"});
+		else{
+			res.send(500);
+		}
+		// if(!success) res.render('login', {error: "Invalid username or password"});
 	});
 });
 

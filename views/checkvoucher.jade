@@ -1,21 +1,24 @@
 extends layout
 
 block content
-	form.ui.form#checkvoucher(name='checkvoucher', method='post', action='/checkvoucher')
-		h4.ui.dividing.header Issue Check Voucher
+	.two.fields.center2
 		.field
-			.two.fields
-				.field
-					label Name
-					.ui.input#name-input
-						input(name="name", type='text', placeholder='Name')
+			i.money.icon.massive.red
+		.field
+			h2.ui.dividing.header Check Voucher
+	form.ui.box.center2.form#checkvoucher(name='checkvoucher', method='post', action='/checkvoucher')
 
-				.field
-					label Date
-					.ui.calendar#checkDate
-						.ui.input.left.icon#date-input
-							i.calendar.icon
-							input(name="date", type="text", placeholder="Date")
+		.field
+			label Name
+			.ui.input#name-input
+				input(name="name", type='text', placeholder='Name')
+
+		.field
+			label Date
+			.ui.calendar#checkDate
+				.ui.input.left.icon#date-input
+					i.calendar.icon
+					input(name="date", type="text", placeholder="Date")
 
 		.field
 			label Amount

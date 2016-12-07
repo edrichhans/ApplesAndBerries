@@ -1,6 +1,9 @@
 extends layout
 
 block content
+	br
+	br
+	br
 	form.ui.form#PhilHealth(name='updatePHComp', method='post', action='/updatePHComp')
 		h4.ui.dividing.header Update PhilHealth Table
 		.field
@@ -17,7 +20,13 @@ block content
 		.field
 			.ui.button.submit#PHSubmit Submit
 
-	script(type='text/javascript', src='/javascripts/update.js')
+	.ui.small.modal
+		.header Confirm
+		.content
+			| Confirm Update?
+		.actions
+			.ui.positive.right.button#confirmPH OK
+
+	script(type='text/javascript', src='/javascripts/updatePH.js')
 	script(type='text/javascript').
 		var philHealth =!{JSON.stringify(PH)};
-		var metadata =!{JSON.stringify(metadata[0])};

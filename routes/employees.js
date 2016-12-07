@@ -52,4 +52,8 @@ router.post('/editEmployee', function(req, res){
 	});
 });
 
+router.get('/', function(req, res){
+	res.render('employeepanel');
+})
+
 module.exports = router;

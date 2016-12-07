@@ -1,6 +1,9 @@
 extends layout
 
 block content
+	br
+	br
+	br
 	form.ui.form#SSS(name='updateSSSComp', method='post', action='/updateSSSComp')
 		h4.ui.dividing.header Update SSS Table
 		.field
@@ -18,7 +21,13 @@ block content
 		.field
 			.ui.button.submit#SSSSubmit Submit
 
-	script(type='text/javascript', src='/javascripts/update.js')
+	.ui.small.modal
+		.header Confirm
+		.content
+			| Confirm Update?
+		.actions
+			.ui.positive.right.button#confirmSSS OK
+
+	script(type='text/javascript', src='/javascripts/updateSSS.js')
 	script(type='text/javascript').
 		var sss =!{JSON.stringify(SSS)};
-		var metadata =!{JSON.stringify(metadata[0])};

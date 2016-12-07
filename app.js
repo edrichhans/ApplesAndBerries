@@ -37,10 +37,20 @@ app.use(function(req, res, next){
 	req.db = db;
 	next();
 });
+app.get(['/controlpanel', '/BIR', '/SSS', 'PH'], function(req, res, next){
+	sess = req.session;
+	if(sess.rights == 'admin'){
+		next();
+	}
+	else{
+		res.redirect('/');
+	}
+});
 
 app.use('/', login);
 app.use('/', financials);
 app.use('/employees', employees);
+
 
 app.get('/', function(req, res, next) {
 	res.render('index', { title: 'Apples and Berries Payroll System' });

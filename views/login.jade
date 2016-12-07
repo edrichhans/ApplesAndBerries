@@ -1,24 +1,75 @@
-extends layout
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', type='text/css', href='/semantic/dist/semantic.min.css')
+		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
+		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
+		script(type='text/javascript', src='/javascripts/printThis.js')
+		script(type='text/javascript', src='/bower_components/semantic-ui-calendar/dist/calendar.min.js')
+		link(rel='stylesheet', type='text/css', href='/bower_components/semantic-ui-calendar/dist/calendar.min.css')
+		link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
 
-block content
-	.ui.middle.aligned.center.grid
-		.column
-			h2.ui.teal.image.header
-				.content Login to your account
-			form.ui.large.form#login(name='login', method='post', action='/login')
-				.ui.stacked.segment
-					.field
-						.ui.input
-							input#username(name="username", type="text", placeholder="Username")
-					.field
-						.ui.input
-							input(name="password", type="password", placeholder="Password")
+		//- https://github.com/mdehoog/Semantic-UI-Calendar
+	body
+		.ui.page.container
+			.ui.center.aligned.grid
+				.row
+				.row
+				.row
+				.row
+					.ui.basic.segment.center.aligned
+						h1
+							| Apples & Berries
+							br
+							| Payroll System
+				.five.wide.column
+					form.ui.large.form#login(name='login', method='post', action='/login')
+						.ui.stacked.segment
+							.field
+								.ui.left.icon.input
+									i.user.icon
+									input#username(type="text", name="username", placeholder="Username")
+							.field
+								.ui.left.icon.input
+									i.lock.icon
+									input(type="password", name="password", placeholder="Password")
+							button.ui.fluid.large.red.four.wide.button Login
+						.ui.error.message
+					//- .ui.message	
+					//- 	| New to us? 
+					//- 	a(href="#") Sign Up
+					//- 	br
+					//- 	a(href="#") Forgot Password
+		script(type='text/javascript').
+			$(document).ready(function(){
+				$('#username').focus();
+			});
+		script(type='text/javascript' src='javascripts/scripts.js')
+		script(type='text/javascript' src='javascripts/jquery.form.js')
+		script.
+			$('form#login')
+				.ajaxForm({
+					error : function (response) {
+						alert('Invalid Username or Password');
+					},
+					success : function(){
+						window.location.replace('/');
+					}
+				});
+	//- .ui.middle.aligned.center.grid
+	//- 	.column
+	//- 		h2.ui.teal.image.header
+	//- 			.content Login to your account
+	//- 		form.ui.large.form#login(name='login', method='post', action='/login')
+	//- 			.ui.stacked.segment
+	//- 				.field
+	//- 					.ui.input
+	//- 						input#username(name="username", type="text", placeholder="Username")
+	//- 				.field
+	//- 					.ui.input
+	//- 						input(name="password", type="password", placeholder="Password")
 								
-				button.ui.fluid.large.teal.submit.button Login
-				.ui.error.message
-	div(style="margin: 1%;")
-
-	script(type='text/javascript').
-		$(document).ready(function(){
-			$('#username').focus();
-		});		
+	//- 			button.ui.fluid.large.teal.submit.button Login
+	//- 			.ui.error.message
+	//- div(style="margin: 1%;")

@@ -419,6 +419,15 @@ $('.ui.form#addemployee')
 				}
 			]
 		},
+		start:{
+			identifier: 'start',
+			rules:[
+				{
+					type: 'empty',
+					prompt: 'Please select birthday'
+				}
+			]
+		},
 		birthday:{
 			identifier: 'birthday',
 			rules:[
@@ -451,6 +460,7 @@ $('.ui.form#addemployee')
 			rules:[
 				{
 					type: 'empty',
+					type   : 'integer[0..]',
 					prompt: 'Please enter salary'
 				}
 			]
@@ -460,6 +470,7 @@ $('.ui.form#addemployee')
 			rules:[
 				{
 					type: 'empty',
+					type   : 'integer[0..]',
 					prompt: 'Please enter dependents'
 				}
 			]
