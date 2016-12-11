@@ -35,3 +35,13 @@ exports.view = function(req, res, callBack){
 		callBack(null, docs);
 	});
 }
+
+exports.get = function(req, callBack){
+	var db = req.db;
+	var adviceNumbers = db.get('adviceNumbers');
+
+	adviceNumbers.find({"name": "AR"}, function(err1, an){
+		if(err1) return callBack(err1);
+		callBack(null, an);
+	});
+}

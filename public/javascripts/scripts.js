@@ -52,6 +52,8 @@ $('#pettyCash-preview').click(function(){
 		total += parseFloat($(this).find('.amount-input input').val())
 		$('table#particulars-table tbody').append("<tr><td>" + $(this).find('.particulars-input input').val() + "</td><td>" + $(this).find('.amount-input input').val() + "</td></tr>");
 	});
+	$('#AN span').text(an[0].number);
+	console.log(an[0].number);
 
 	$('#total span').text(total);
 
@@ -70,6 +72,7 @@ $('#checkVoucher-preview').click(function(){
 	$('#dateToday span').text($('#date-input input').val());
 	$('#particulars span').text($('#particularsDropdown').val());
 	$('#amount span').text($('#amount-input input').val());
+	$('#AN span').text(an.number);
 
 	$('.ui.modal')
 		.modal('setting', 'transition', 'horizontal flip')
@@ -81,6 +84,7 @@ $('#AR-preview').click(function(){
 	$('#dateToday span').text($('#date-input input').val());
 	$('#particulars span').text($('#particulars-input input').val());
 	$('#amount span').text($('#amount-input input').val());
+	$('#AN span').text(an.number);
 
 	$('.ui.modal')
 		.modal('setting', 'transition', 'horizontal flip')
@@ -172,6 +176,8 @@ $('#payslip-preview').click(function(){
 	$('#dateStart span').text($('#rangestart .ui.input input').val());
 	$('#dateEnd span').text($('#rangeend .ui.input input').val());
 	$('#company span').text($('#companyDropdown').val().toUpperCase());
+	$('#AN span').text(an.number);
+	// console.log(an);
 
 	$('.ui.modal')
 		.modal({
@@ -180,6 +186,7 @@ $('#payslip-preview').click(function(){
 				$('#philHealth span').text('N/A');
 				$('#SSS span').text('N/A');
 				$('#HDMF span').text('N/A');
+				$('#AN span').text('N/A');
 			}
 		})
 		.modal('setting', 'transition', 'horizontal flip')

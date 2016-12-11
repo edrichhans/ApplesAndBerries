@@ -38,27 +38,32 @@ block content
 			.header Acknowledgement Receipt Preview
 			.content
 				.ui.grid
+					.one.wide.column.right-align
+						| AN:
+					.two.wide.column
+						#AN.div-underline.center-align
+							span
 					.two.wide.column.right-align
 						| Name: 
-					.five.wide.column
-						#name.div-underline
-							span.indent
+					.four.wide.column
+						#name.div-underline.center-align
+							span
 					.three.wide.column.right-align
 						| Date Issued:
-					.six.wide.column
-						#dateToday.div-underline
-							span.indent
+					.four.wide.column
+						#dateToday.div-underline.center-align
+							span
 
 					.two.wide.column.right-align
 						| Particulars:
 					.five.wide.column
-						#particulars.div-underline
-							span.indent
+						#particulars.div-underline.center-align
+							span
 					.three.wide.column.right-align
 						| Amount:
 					.six.wide.column
-						#amount.div-underline
-							span.indent
+						#amount.div-underline.center-align
+							span
 			.actions
 				.ui.disabled.primary.button.submit Submit
 				.ui.button.print Print
@@ -66,4 +71,7 @@ block content
 		.ui.primary.button#AR-preview Preview
 		.ui.error.message
 
+
+	script(type='text/javascript').
+		var an =!{JSON.stringify(an)};
 	script(type='text/javascript' src='javascripts/scripts.js')

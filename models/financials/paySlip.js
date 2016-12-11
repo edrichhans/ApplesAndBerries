@@ -10,6 +10,7 @@ exports.get = function(req, callBack){
 	var SSS = db.get("SSS");
 	var BIR = db.get("BIRTemp");
 	var metadata = db.get("metadataTemp");
+	var adviceNumbers = db.get('adviceNumbers');
 
 	PhilHealth.find({}, function(err, ph){
 		if(err) return callBack(err);
@@ -21,7 +22,10 @@ exports.get = function(req, callBack){
 					if(err3) return callBack(err3);
 					metadata.findOne({"name": "BIR"},function(err4, metadata){
 						if(err4) return callBack(err4);
-						callBack(null, doc, ph, sss, bir, metadata);
+						adviceNumbers.findOne({"name": "paySlip"}, function(err5, an){
+							if(err5) return callBack(err5);
+							callBack(null, doc, ph, sss, bir, metadata, an);
+						});	
 					});
 				});
 			});

@@ -23,13 +23,14 @@ router.get(['/updateComp'], function(req, res, next){
 
 /* GET home page. */
 router.get('/payslip', function(req, res, next){
-	paySlipRoute.get(req, function(err, doc, ph, sss, bir, metadata){
+	paySlipRoute.get(req, function(err, doc, ph, sss, bir, metadata, an){
 		res.render('payslip',{
 			"employees": doc,
 			"philHealth": ph,
 			"sss": sss,
 			"bir": bir,
-			"metadata": metadata
+			"metadata": metadata,
+			"an": an
 		});
 	});
 });
@@ -47,9 +48,10 @@ router.post('/thirteenth', function(req, res){
 });
 
 router.get('/checkvoucher', function(req, res, next){
-	checkVoucherRoute.get(req, function(err, doc){
+	checkVoucherRoute.get(req, function(err, doc, an){
 		res.render('checkvoucher', {
-			"metadata": doc
+			"metadata": doc,
+			"an": an
 		});
 	});
 });
@@ -61,7 +63,11 @@ router.post('/checkvoucher', function(req, res){
 });
 
 router.get('/pettycash', function(req, res, next){
-	res.render('pettycash');
+	pettyCashRoute.get(req, function(err, an){
+		res.render('pettycash', {
+			"an": an
+		});
+	});
 });
 
 router.post('/pettycash', function(req, res){
@@ -71,7 +77,11 @@ router.post('/pettycash', function(req, res){
 });
 
 router.get('/AR', function(req, res, next){
-	res.render('AR');
+	ARRoute.get(req, function(err, an){
+		res.render('pettycash', {
+			"an": an
+		});
+	});
 });
 
 router.post('/AR', function(req, res){

@@ -18,6 +18,10 @@ a{
 	text-align: right;
 }
 
+.center-align{
+	text-align: center;
+}
+
 .indent{
 	text-indent: 4em;
 	display: inline-block;

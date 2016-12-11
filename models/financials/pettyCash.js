@@ -40,9 +40,20 @@ exports.insert = function(req, res, callBack){
 exports.view = function(req, res, callBack){
 	var db = req.db;
 	var pettyCash = db.get('pettyCash');
+	var adviceNumbers = db.get('adviceNumbers');
 
 	pettyCash.find({},function(err, docs){
 		if(err) return callBack(err);
 		callBack(null, docs);
+	});
+}
+
+exports.get = function(req, callBack){
+	var db = req.db;
+	var adviceNumbers = db.get('adviceNumbers');
+
+	adviceNumbers.find({"name": "pettyCash"}, function(err1, an){
+		if(err1) return callBack(err1);
+		callBack(null, an);
 	});
 }
