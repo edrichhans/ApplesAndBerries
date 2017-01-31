@@ -78,7 +78,7 @@ router.post('/pettycash', function(req, res){
 
 router.get('/AR', function(req, res, next){
 	ARRoute.get(req, function(err, an){
-		res.render('pettycash', {
+		res.render('AR', {
 			"an": an
 		});
 	});
