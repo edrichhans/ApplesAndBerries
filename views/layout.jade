@@ -9,32 +9,59 @@ html
 		script(type='text/javascript', src='/bower_components/semantic-ui-calendar/dist/calendar.min.js')
 		link(rel='stylesheet', type='text/css', href='/bower_components/semantic-ui-calendar/dist/calendar.min.css')
 		link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+		script.
+			$('.ui.sidebar').sidebar({
+				context: $('.bottom.segment')
+			}).sidebar('attach events', '.menu .item');
 
 		//- https://github.com/mdehoog/Semantic-UI-Calendar
 	body
-		.ui.page.container
-			// FIXED TOP NAVBAR
-			.ui.borderless.main.menu.fixed
-				// logo ilagay to sa gitna kung keri
-				.header.item(href="/")
-					img.logo(src="/icons/apple.png")
-					| A&B
-				a.item(href="/")
-					i.large.home.icon
-					| Home
-				.ui.right.floated.item
-					.ui.icon.input
-						input(type="text", placeholder="Search...")
-						i.search.icon
-					.ui.simple.dropdown.item(class="tabindex=")
-						| UserPic
-						i.user.icon
-						i.dropdown.icon
-						.ui.menu
-							a.left.floated.item
-								i.edit.icon
-									| Edit Profile
-							a.item(href="/logout")
-								i.settings.icon
-									| Sign Out
-			block content
+		// FIXED TOP NAVBAR
+		.ui.top.borderless.main.menu.fixed
+			// logo ilagay to sa gitna kung keri
+			a.item.sidebar-button
+				i.sidebar.icon
+			.header.item(href="/")
+				img.logo(src="/icons/apple.png")
+				| A&B
+			a.item(href="/")
+				i.large.home.icon
+				| Home
+			.ui.right.floated.item
+				.ui.icon.input
+					input(type="text", placeholder="Search...")
+					i.search.icon
+				.ui.simple.dropdown.item(class="tabindex=")
+					| UserPic
+					i.user.icon
+					i.dropdown.icon
+					.ui.menu
+						a.left.floated.item
+							i.edit.icon
+								| Edit Profile
+						a.item(href="/logout")
+							i.settings.icon
+								| Sign Out
+		.ui.bottom.attached.segment.pushable
+			.ui.inverted.labeled.icon.left.inline.vertical.sidebar.menu
+				a.item
+					i.users.icon
+						| Employee Management
+				a.item
+					i.money.icon
+						| Payslip Module
+				a.item
+					i.settings.icon
+						| Control Panel
+				a.item
+					i.file.text.icon
+						| Acknowledgement Receipt
+				a.item
+					i.payment.icon
+						| Check Voucher
+				a.item
+					i.money.item
+						| Petty Cash
+			.pusher
+				.ui.page.container
+					block content
