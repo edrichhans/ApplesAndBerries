@@ -1,4 +1,3 @@
-doctype html
 html
 	head
 		title= title
@@ -9,14 +8,46 @@ html
 		script(type='text/javascript', src='/bower_components/semantic-ui-calendar/dist/calendar.min.js')
 		link(rel='stylesheet', type='text/css', href='/bower_components/semantic-ui-calendar/dist/calendar.min.css')
 		link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
-		script.
-			$('.ui.sidebar').sidebar({
-				context: $('.bottom.segment')
-			}).sidebar('attach events', '.menu .item');
 
 		//- https://github.com/mdehoog/Semantic-UI-Calendar
 	body
 		// FIXED TOP NAVBAR
+		.ui.inverted.left.vertical.sidebar.menu(style="overflow: visible !important;")
+			.item
+				i.grid.layout.icon
+				| Menu
+			.ui.left.pointing.dropdown.item
+				//- span.text
+				i.users.icon
+				i.dropdown.icon
+				| Employee Management
+				.menu
+					a.item
+						| a
+					a.item
+						| b
+			a.item
+				//- span.text
+				i.money.icon
+				| Payslip Module
+			.ui.left.pointing.dropdown.item
+				//- span.text
+				i.dropdown.icon
+				i.settings.icon
+				| Control Panel
+				.menu
+					a.item
+						| a
+					a.item
+			a.item
+				i.file.text.icon
+				| Acknowledgement Receipt
+			a.item
+				i.payment.icon
+				| Check Voucher
+			a.item
+				i.money.icon
+				| Petty Cash
 		.ui.top.borderless.main.menu.fixed
 			// logo ilagay to sa gitna kung keri
 			a.item.sidebar-button
@@ -42,26 +73,18 @@ html
 						a.item(href="/logout")
 							i.settings.icon
 								| Sign Out
-		.ui.bottom.attached.segment.pushable
-			.ui.inverted.labeled.icon.left.inline.vertical.sidebar.menu
-				a.item
-					i.users.icon
-						| Employee Management
-				a.item
-					i.money.icon
-						| Payslip Module
-				a.item
-					i.settings.icon
-						| Control Panel
-				a.item
-					i.file.text.icon
-						| Acknowledgement Receipt
-				a.item
-					i.payment.icon
-						| Check Voucher
-				a.item
-					i.money.item
-						| Petty Cash
-			.pusher
-				.ui.page.container
-					block content
+		.pusher
+			.ui.page.container
+				block content
+		script.
+			$('.ui.sidebar').sidebar('attach events', '.item.sidebar-button');
+		script.
+			$('.dropdown').dropdown({on: 'hover'});
+			$('.sidebar .dropdown').dropdown({
+				onShow: function(){
+					$('.sidebar').css('z-index', 103);
+				},
+				onHide: function(){
+					$('.sidebar').css('z-index', 1);
+				}
+			});

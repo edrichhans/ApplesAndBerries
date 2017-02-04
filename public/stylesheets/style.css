@@ -59,3 +59,14 @@ a{
 	height: 100%;
 	padding: 20px;
 }
+
+#menu-row {
+	margin-top: 6rem;
+	padding: 2.5rem;
+}
+
+#view-row{
+	margin-top: 6rem;
+	padding: 2.5rem;
+	padding-bottom: 0;
+}
