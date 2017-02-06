@@ -22,10 +22,12 @@ html
 				i.dropdown.icon
 				| Employee Management
 				.menu
-					a.item
-						| a
-					a.item
-						| b
+					a.item(href='/employees/add')
+						| Add Employee
+					a.item(href='/employees/editEmployee')
+						| Edit Employee
+					a.item(href='/employees/delete')
+						| Delete Employee
 			a.item
 				//- span.text
 				i.money.icon
@@ -53,7 +55,7 @@ html
 			a.item.sidebar-button
 				i.sidebar.icon
 			.header.item(href="/")
-				img.logo(src="/icons/apple.png")
+				img.logo(src="/images/Logo.png")
 				| A&B
 			a.item(href="/")
 				i.large.home.icon

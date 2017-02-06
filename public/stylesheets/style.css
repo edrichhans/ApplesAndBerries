@@ -49,8 +49,9 @@ a{
 .center2 {
 	margin-left: 25%;
 	width: 50%;
-	height: 100%;
+	/*height: 100%;*/
 	padding: 20px;
+	/*padding-top: 5rem;*/
 }
 
 .center1 {
@@ -61,7 +62,7 @@ a{
 }
 
 #menu-row {
-	margin-top: 6rem;
+	margin-top: 2rem;
 	padding: 2.5rem;
 }
 
@@ -69,4 +70,8 @@ a{
 	margin-top: 6rem;
 	padding: 2.5rem;
 	padding-bottom: 0;
+}
+
+.ui.page.container{
+	padding-top: 4rem;
 }
