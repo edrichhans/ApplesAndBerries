@@ -163,6 +163,7 @@ router.get('/payslip_view', function(req, res){
 			transactions: docs,
 			employees: people
 		});
+		console.log(docs);
 	});
 });
 

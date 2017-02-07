@@ -1,5 +1,3 @@
-//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
-//- script(src="semantic/dist/semantic.min.js")
 extends layout
 
 block content
@@ -12,10 +10,9 @@ block content
 				h1 Pay Slip
 		// buttons
 		.row
-			.four.wide.column.right.floated
-				button.ui.button(onclick="location.replace('/payslip')") ADD
-				.ui.button EDIT
-				.ui.button DELETE
+			button.ui.button(onclick="location.replace('/payslip')") ADD
+			.ui.button EDIT
+			.ui.button DELETE
 		.ui.fitted.divider
 		// Table Proper
 		.column.row.sixteen.wide
@@ -43,19 +40,17 @@ block content
 							th BIR Tax
 							th Net
 					tbody
-						for item in transactions
+						each item, index in transactions
 							tr
 								td= item.adviceNumber
 								td= item.issuedBy
 								td.eID(value=item.eID)= item.eID
-								td=	item.eID
-								td= item.eID
 								td= item.startDate
-								td= item.endDate
-								td= item.deductibles_name
-								td= item.deductibles
-								td= item.allowance_name
-								td= item.allowance
+								td.endDate= item.endDate
+								//- td
+								//- td= item.deductibles
+								//- // td= item.allowance_name
+								//- td= item.allowance
 								td= item.PHreduc
 								td= item.SSSreduc
 								td= item.HDMFreduc
@@ -74,4 +69,5 @@ block content
 	script(type='text/javascript' src='javascripts/scripts.js')
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};
+		var transactions =!{JSON.stringify(transactions)};
 	script(src='javascripts/table.js')

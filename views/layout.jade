@@ -16,7 +16,7 @@ html
 			.item
 				i.grid.layout.icon
 				| Menu
-			.ui.left.pointing.dropdown.item
+			.ui.left.pointing.dropdown.item#employee-dropdown
 				//- span.text
 				i.users.icon
 				i.dropdown.icon
@@ -28,28 +28,37 @@ html
 						| Edit Employee
 					a.item(href='/employees/delete')
 						| Delete Employee
-			a.item
+			a.item(href = '/payslip_view')
 				//- span.text
 				i.money.icon
 				| Payslip Module
-			.ui.left.pointing.dropdown.item
+			a.item(href='/AR_view')
+				i.file.text.icon
+				| Acknowledgement Receipt
+			a.item('checkvoucher_view')
+				i.payment.icon
+				| Check Voucher
+			a.item(href='pettycash_view')
+				i.money.icon
+				| Petty Cash
+			.ui.left.pointing.dropdown.item#controlpanel-dropdown
 				//- span.text
 				i.dropdown.icon
 				i.settings.icon
 				| Control Panel
 				.menu
-					a.item
-						| a
-					a.item
-			a.item
-				i.file.text.icon
-				| Acknowledgement Receipt
-			a.item
-				i.payment.icon
-				| Check Voucher
-			a.item
-				i.money.icon
-				| Petty Cash
+					a.item(href='/BIR')
+						| BIR
+					a.item(href='/SSS')
+						| SSS
+					a.item(href='/PH')
+						| PhilHealth
+					a.item(href='/addUser')
+						| Add User
+					a.item(href='/deleteUser')
+						| Delete User
+					a.item(href='/backup')
+						| Backup
 		.ui.top.borderless.main.menu.fixed
 			// logo ilagay to sa gitna kung keri
 			a.item.sidebar-button
@@ -81,12 +90,18 @@ html
 		script.
 			$('.ui.sidebar').sidebar('attach events', '.item.sidebar-button');
 		script.
-			$('.dropdown').dropdown({on: 'hover'});
 			$('.sidebar .dropdown').dropdown({
+				onHide: function(){
+					$('.sidebar').css('z-index', 1);
+				},
 				onShow: function(){
 					$('.sidebar').css('z-index', 103);
 				},
-				onHide: function(){
-					$('.sidebar').css('z-index', 1);
-				}
+				on: 'hover',
+			});
+			$('#employee-dropdown').click(function(){
+				window.location.href = '/employees';
+			});
+			$('#controlpanel-dropdown').click(function(){
+				window.location.href = '/controlpanel';
 			});
