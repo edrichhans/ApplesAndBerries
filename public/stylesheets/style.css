@@ -75,3 +75,7 @@ a{
 .ui.page.container{
 	padding-top: 4rem;
 }
+
+.header-print{
+	font-size: 24px;
+}

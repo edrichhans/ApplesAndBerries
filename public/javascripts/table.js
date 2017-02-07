@@ -29,5 +29,7 @@ if(employees){
 }
 
 $('#print-button').click(function(){
-	$('table').printThis();
+	$('table').printThis({
+		header: "<img style='width: 20%;' src='images/header.png'></img><div class='header-print'>Payslip</div>"
+	});
 });

@@ -44,6 +44,9 @@ block content
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
 	script(type='text/javascript' src='javascripts/scripts.js')
 	script(type='text/javascript').
-		$('#print-button').click(function(){
-			$('table').printThis();
+	$('#print-button').click(function(){
+		$('table').printThis({
+			header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 20%;' src='images/header.png'></img></div>"
 		});
+	});
+	
