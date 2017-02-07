@@ -89,6 +89,11 @@ html
 				block content
 		script.
 			$('.ui.sidebar').sidebar('attach events', '.item.sidebar-button');
+			$('.ui.sidebar').sidebar({
+				dimPage: false,
+				closable: false
+			});
+
 		script.
 			$('.sidebar .dropdown').dropdown({
 				onHide: function(){
