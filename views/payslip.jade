@@ -75,18 +75,24 @@ block content
 		.ui.modal
 			i.close.icon
 			.header Pay Slip Preview
-			.content
+			.content(style="padding-top: 0;")
+				img.ui.centered.medium.image(src='images/header.png', style='padding-bottom: 1.5rem;')
 				.ui.grid
+					.one.wide.column.right-align
+						| AN:
+					.two.wide.column
+						#AN.div-underline.center-align
+							span.center-align
 					.two.wide.column.right-align
 						| Name: 
-					.five.wide.column
-						#name.div-underline
-							span.indent
+					.four.wide.column
+						#name.div-underline.center-align
+							span.center-align
 					.three.wide.column.right-align
 						| Date Issued:
-					.six.wide.column
-						#dateToday.div-underline
-							span.indent
+					.four.wide.column
+						#dateToday.div-underline.center-align
+							span.center-align
 
 					.two.wide.column.right-align
 						| Company: 
@@ -96,13 +102,13 @@ block content
 					.two.wide.column.right-align
 						| Date Start:
 					.five.wide.column
-						#dateStart.div-underline
-							span.indent
+						#dateStart.div-underline.center-align
+							span.center-align
 					.three.wide.column.right-align
 						| Date End:
 					.six.wide.column
-						#dateEnd.div-underline
-							span.indent
+						#dateEnd.div-underline.center-align
+							span.center-align
 					.two.wide.column.right-align
 						| Gross:
 					.fourteen.wide.column
@@ -116,18 +122,18 @@ block content
 					.one.wide.column.right-align
 						| SSS:
 					.three.wide.column
-						#SSS.div-underline
-							span.indent-1
+						#SSS.div-underline.center-align
+							span
 					.two.wide.column.right-align
 						| HDMF:
 					.two.wide.column
-						#HDMF.div-underline
-							span.indent-1
+						#HDMF.div-underline.center-align
+							span
 					.one.wide.column.right-align
 						| BIR:
 					.three.wide.column
-						#BIR.div-underline
-							span.indent-1
+						#BIR.div-underline.center-align
+							span
 
 					.eight.wide.column
 						table.ui.small.compact.celled.table#deductibles-table
@@ -161,6 +167,7 @@ block content
 		var sss =!{JSON.stringify(sss)};
 		var bir =!{JSON.stringify(bir)};
 		var metadata =!{JSON.stringify(metadata)};
+		var an =!{JSON.stringify(an)};
 	script(type='text/javascript' src='javascripts/scripts.js')
 	script.
 		console.log($('#rangestart').calendar('get date'));

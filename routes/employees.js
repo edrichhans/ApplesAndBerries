@@ -53,7 +53,13 @@ router.post('/editEmployee', function(req, res){
 });
 
 router.get('/', function(req, res){
-	res.render('employeepanel');
-})
+	var db = req.db;
+	var Employees = db.get("Employees");
+	Employees.find({}, function(err, doc){
+		res.render('employeepanel', {
+			"employees": doc
+		});
+	});
+});
 
 module.exports = router;

@@ -1,10 +1,14 @@
 exports.get = function(req, callBack){
 	var db = req.db;
 	var metadata = db.get("metadata");
+	var adviceNumbers = db.get('adviceNumbers');
 
 	metadata.findOne({"name": "Particulars"}, function(err, doc){
 		if(err) return callBack(err);
-		callBack(null, doc);
+		adviceNumbers.findOne({"name": "checkVoucher"}, function(err1, an){
+			if(err1) return callBack(err1);
+			callBack(null, doc, an);
+		});
 	});
 }
 
