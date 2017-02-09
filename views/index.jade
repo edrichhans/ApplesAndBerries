@@ -5,14 +5,10 @@ extends layout
 
 block content
 	.ui.middle.aligned.center.aligned.grid.stackable.doubling
-		.row
-		.row
-		.row
 		// Title
-		.row
+		.row#menu-row
 			.ui.center.aligned
 				h1 Main Menu
-		.row
 		// 1st ROW Buttons
 		.four.column.wide.row
 			.column
@@ -95,8 +91,6 @@ block content
 						.ui.text.container.fluid
 							h5
 								| Issue Petty Cash
-		.row
-		.row
 
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
 

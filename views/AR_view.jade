@@ -7,18 +7,14 @@ block content
 	// <script src="http://semantic-ui.com/javascript/library/tablesort.js"></script>
 	.ui.middle.aligned.center.aligned.grid
 		// Table Title
-		.row
-		.row
-		.row
+		.row#menu-row
 			.ui.center.aligned
 				h1 Acknowledgment Receipt
-		.row
 		// buttons
 		.row
-			.four.wide.column.right.floated
-				button.ui.button(onclick="location.replace('/AR')") ADD
-				.ui.button EDIT
-				.ui.button DELETE
+			button.ui.button(onclick="location.replace('/AR')") ADD
+			.ui.button EDIT
+			.ui.button DELETE
 		.ui.fitted.divider
 		// Table Proper
 		.column.row
@@ -50,5 +46,7 @@ block content
 	script(type='text/javascript' src='javascripts/scripts.js')
 	script(type='text/javascript').
 		$('#print-button').click(function(){
-			$('table').printThis();
+			$('table').printThis({
+				header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 20%;' src='images/header.png'></img></div>"
+			});
 		});
