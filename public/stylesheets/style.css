@@ -1,5 +1,5 @@
 body{
-	padding: 50px;
+	/*padding: 50px;*/
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -61,11 +61,6 @@ a{
 	padding: 20px;
 }
 
-#menu-row {
-	margin-top: 2rem;
-	padding: 2.5rem;
-}
-
 #view-row{
 	margin-top: 1rem;
 	padding: 2.5rem;
@@ -78,4 +73,36 @@ a{
 
 .header-print{
 	font-size: 24px;
+}
+
+.custom-menu {
+	display: none;
+	z-index: 1000;
+	position: fixed;
+	overflow: hidden;
+	border: 1px solid #CCC;
+	white-space: nowrap;
+	font-family: sans-serif;
+	background: #FFF;
+	color: #333;
+	border-radius: 5px;
+	list-style: none;
+	padding-left: 0;
+}
+
+.custom-menu li {
+	padding: 8px 12px;
+	cursor: pointer;
+}
+
+.custom-menu li:hover {
+	background-color: #DEF;
+}
+
+.ui.middle.center.aligned.grid {
+	margin: -14px 0;
+}
+
+table {
+	margin: 0 1rem;
 }

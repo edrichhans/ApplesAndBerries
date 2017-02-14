@@ -1,18 +1,22 @@
 extends layout
 
 block content
-	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+	ul.custom-menu
+		li(data-action="edit") Edit
+		li(data-action="delete") Delete
+	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
 		.row#menu-row
-			.ui.center.aligned
-				h1 Employees 
+			.ui.inverted.segment(style="width: 100%; height: 15%; padding: 30;	border-radius: 0px !important; background: #BDBEBF !important")
+				.ui.center.aligned
+					h1 Employees
+		//- .row
+		//- 	button.ui.button(onclick="location.replace('/employees/add')") ADD
+		//- 	button.ui.button(onclick="location.replace('/employees/editEmployee')") EDIT
+		//- 	button.ui.button(onclick="location.replace('/employees/delete')") DELETE
 		.row
-			button.ui.button(onclick="location.replace('/employees/add')") ADD
-			button.ui.button(onclick="location.replace('/employees/editEmployee')") EDIT
-			button.ui.button(onclick="location.replace('/employees/delete')") DELETE
-		column.row.sixteen.wide
-			.column.sixteen.wide.middle.floated
-				table.ui.table.fluid.collapsing.selectable.line.sortable.top.aligned
+			.ui.container
+				table.ui.very.basic.table.sortable.selectable
 					thead
 						tr
 							th eID
@@ -25,8 +29,8 @@ block content
 							th Salary
 					tbody
 						for employee in employees
-							tr
-								td= employee.eID
+							tr.employee
+								td(data-eid=employee.eID)= employee.eID
 								td= employee.name
 								td= employee.startDate
 								td= employee.birthday
@@ -42,6 +46,7 @@ block content
 									td Marries
 								td= employee.dependents
 								td= employee.salary
+
 		//- .four.column.wide.row
 		//- 	.column
 		//- 		button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/add')")
@@ -85,3 +90,45 @@ block content
 		//- 			.hidden.content
 		//- 				| Delete an existing employee
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+	script(type='text/javascript').
+		// Trigger action when the contexmenu is about to be shown
+		$('tr').on("contextmenu", function (event) {
+			// Avoid the real one
+			event.preventDefault();
+			// Show contextmenu
+			$(".custom-menu").attr('data-eid', $(this).children().first().attr('data-eid'));
+			$(".custom-menu").finish().toggle(100).
+			// In the right position (the mouse)
+			css({
+				top: event.pageY - 13 + "px",
+				left: event.pageX + "px"
+			});
+		});
+
+
+		// If the document is clicked somewhere
+		$(document).bind("mousedown", function (e) {
+			// If the clicked element is not the menu
+			if (!$(e.target).parents(".custom-menu").length > 0) {
+				// Hide it
+				$(".custom-menu").hide(100);
+			}
+		});
+
+
+		// If the menu element is clicked
+		$(".custom-menu li").click(function(){
+			// This is the triggered action name
+			switch($(this).attr("data-action")) {
+				// A case for each action. Your actions here
+				case "edit":
+					
+					//- alert($(this).parent().attr('data-eid'));
+					break;
+				case "delete":
+					alert("second");
+					break;
+			}			
+				// Hide it AFTER the action was triggered
+			$(".custom-menu").hide(100);
+		});
