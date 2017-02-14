@@ -12,6 +12,7 @@ exports.delete = function(req, res, callBack){
 	var db = req.db;
 	var eID = req.body.eID
 	var Employees = db.get("Employees");
+	console.log(eID);
 	Employees.remove({"eID": parseInt(eID)}, callBack());
 }
 
