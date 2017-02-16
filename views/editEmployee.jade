@@ -1,21 +1,14 @@
 extends layout
 
 block content
-	.two.fields.center2
-		.field
-			i.user.icon.massive.red
-		.field
-			h2.ui.dividing.header Edit Employee
-	form.ui.form.center2.box#selectEmployee
-		.field
-			select.ui.fluid.search.dropdown#employeeDropdown(name='eID')
-				option(value="") Select Employee
-				each employee, index in employees
-					option(value= employee.eID)= employee.name
+	.ui.middle.center.aligned.grid.stackable.doubling
+		// Title
+		.row#menu-row
+			.ui.inverted.segment(style="width: 100%; height: 15%; padding: 30;	border-radius: 0px !important; background: #BDBEBF !important")
+				.ui.center.aligned
+					h1 Edit Employee
 
-		button.ui.button#chooseEditEmployee Select
-
-	form.ui.form.hide.center2.box#editEmployee(name='addemployee', method='post', action='/employees/editEmployee')
+	form.ui.form.center2.box#editEmployee(name='addemployee', method='post', action='/employees/editEmployee')
 		input#eID.hide(name="eID" readonly)
 		.two.fields
 			.field
@@ -68,6 +61,19 @@ block content
 
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};
+		function getParameterByName(name, url) {
+			if (!url) {
+				url = window.location.href;
+			}
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+					results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+		var eID = getParameterByName('eID');
+		console.log(eID);
 	script(type='text/javascript' src='/javascripts/scripts.js')
 	script.
 		$('#confirm').click(function(){
