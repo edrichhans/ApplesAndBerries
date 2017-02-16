@@ -11,81 +11,52 @@ html
 
 		//- https://github.com/mdehoog/Semantic-UI-Calendar
 	body
-		// FIXED TOP NAVBAR
-		.ui.inverted.left.vertical.sidebar.menu(style="overflow: visible !important;")
-			.item
-				i.grid.layout.icon
-				| Menu
-			.ui.left.pointing.dropdown.item#employee-dropdown
-				//- span.text
-				i.users.icon
-				i.dropdown.icon
-				| Employee Management
-				.menu
-					a.item(href='/employees/add')
-						| Add Employee
-					a.item(href='/employees/editEmployee')
-						| Edit Employee
-					a.item(href='/employees/delete')
-						| Delete Employee
-			a.item(href = '/payslip_view')
-				//- span.text
-				i.money.icon
-				| Payslip Module
-			a.item(href='/AR_view')
-				i.file.text.icon
-				| Acknowledgement Receipt
-			a.item('checkvoucher_view')
-				i.payment.icon
-				| Check Voucher
-			a.item(href='pettycash_view')
-				i.money.icon
-				| Petty Cash
-			.ui.left.pointing.dropdown.item#controlpanel-dropdown
-				//- span.text
-				i.settings.icon
-				i.dropdown.icon
-				| Control Panel
-				.menu
-					a.item(href='/BIR')
-						| BIR
-					a.item(href='/SSS')
-						| SSS
-					a.item(href='/PH')
-						| PhilHealth
-					a.item(href='/addUser')
-						| Add User
-					a.item(href='/deleteUser')
-						| Delete User
-					a.item(href='/backup')
-						| Backup
-		.ui.top.borderless.main.menu.fixed
-			// logo ilagay to sa gitna kung keri
-			a.item.sidebar-button
-				i.sidebar.icon
-			.header.item(href="/")
-				img.logo(src="/images/Logo.png")
-				| A&B
-			a.item(href="/")
-				i.large.home.icon
-				| Home
-			.ui.right.floated.item
-				.ui.icon.input
-					input(type="text", placeholder="Search...")
-					i.search.icon
-				.ui.simple.dropdown.item(class="tabindex=")
-					| UserPic
-					i.user.icon
-					i.dropdown.icon
-					.ui.menu
-						a.left.floated.item
-							i.edit.icon
-								| Edit Profile
-						a.item(href="/logout")
-							i.settings.icon
-								| Sign Out
-		.pusher
-			.ui.page.container
+		.ui.grid(style="height: 100%;")
+			.ui.two.wide.column(style="padding-right: 0")
+				.ui.vertical.fluid.inverted.labeled.icon.menu(style="height: 100%; background: #3D3E3F !important")
+					.item
+						img(src="/images/Logo.png")
+					a.item(href = '/payslip_view')
+						i.money.icon
+						| Payslip Module
+					a.item(href='/AR_view')
+						i.file.text.icon
+						| AR
+					a.item(href='/checkvoucher_view')
+						i.payment.icon
+						| Check Voucher
+					a.item(href='/pettycash_view')
+						i.money.icon
+						| Petty Cash
+					a.item(href='/employees')
+						i.users.icon
+						| Employees
+			.ui.fourteen.wide.column(style="padding-left: 0; padding-bottom: 0")
+				.ui.top.inverted.borderless.mini.menu.fluid(style="margin: 0; border-radius: 0px !important;")
+					// logo ilagay to sa gitna kung keri
+					a.item.sidebar-button
+						i.sidebar.icon
+					.header.item(href="/")
+						img.logo(src="/images/Logo.png")
+						| A&B
+					a.item(href="/")
+						i.large.home.icon
+						| Home
+					.ui.right.floated.item
+						.ui.icon.input
+							input(type="text", placeholder="Search...")
+							i.search.icon
+						.ui.simple.dropdown.item(class="tabindex=")
+							| UserPic
+							i.user.icon
+							i.dropdown.icon
+							.ui.menu
+								a.left.floated.item
+									i.edit.icon
+										| Edit Profile
+								a.item(href="/logout")
+									i.settings.icon
+										| Sign Out
 				block content
 		script.
 			$('.ui.sidebar').sidebar('attach events', '.item.sidebar-button');
@@ -103,6 +74,7 @@ html
 					$('.sidebar').css('z-index', 103);
 				},
 				on: 'hover',
+				dimPage: false
 			});
 			$('#employee-dropdown').click(function(){
 				window.location.href = '/employees';
@@ -110,3 +82,52 @@ html
 			$('#controlpanel-dropdown').click(function(){
 				window.location.href = '/controlpanel';
 			});
+
+		//- FIXED TOP NAVBAR
+		//- .ui.inverted.left.vertical.sidebar.menu(style="overflow: visible !important;")
+		//- 	.item
+		//- 		i.grid.layout.icon
+		//- 		| Menu
+		//- 	.ui.left.pointing.dropdown.item#employee-dropdown
+		//- 		//- span.text
+		//- 		i.users.icon
+		//- 		i.dropdown.icon
+		//- 		| Employee Management
+		//- 		.menu
+		//- 			a.item(href='/employees/add')
+		//- 				| Add Employee
+		//- 			a.item(href='/employees/editEmployee')
+		//- 				| Edit Employee
+		//- 			a.item(href='/employees/delete')
+		//- 				| Delete Employee
+		//- 	a.item(href = '/payslip_view')
+		//- 		//- span.text
+		//- 		i.money.icon
+		//- 		| Payslip Module
+		//- 	a.item(href='/AR_view')
+		//- 		i.file.text.icon
+		//- 		| Acknowledgement Receipt
+		//- 	a.item('checkvoucher_view')
+		//- 		i.payment.icon
+		//- 		| Check Voucher
+		//- 	a.item(href='pettycash_view')
+		//- 		i.money.icon
+		//- 		| Petty Cash
+		//- 	.ui.left.pointing.dropdown.item#controlpanel-dropdown
+		//- 		//- span.text
+		//- 		i.settings.icon
+		//- 		i.dropdown.icon
+		//- 		| Control Panel
+		//- 		.menu
+		//- 			a.item(href='/BIR')
+		//- 				| BIR
+		//- 			a.item(href='/SSS')
+		//- 				| SSS
+		//- 			a.item(href='/PH')
+		//- 				| PhilHealth
+		//- 			a.item(href='/addUser')
+		//- 				| Add User
+		//- 			a.item(href='/deleteUser')
+		//- 				| Delete User
+		//- 			a.item(href='/backup')
+		//- 				| Backup

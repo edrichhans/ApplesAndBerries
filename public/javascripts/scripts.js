@@ -230,9 +230,9 @@ $('.checkbox#thirteenth').checkbox({
 
 //==================== Edit Employee ===============================
 
-$('.button#chooseEditEmployee').click(function(event){
-	event.preventDefault();
-	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
+// $('.button#chooseEditEmployee').click(function(event){
+$(document).ready(function(){
+	var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
 	employee = employee[0];
 
 	$('input#eID').val(employee.eID);
