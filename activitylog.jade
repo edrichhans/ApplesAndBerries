@@ -4,11 +4,10 @@ html
     script(type='text/javascript', src='public\javascripts\jquery-3.1.1.min.js')
     script.
       $(function() {
-      var people = [];
-      $.getJSON('log.log', function(data) {
-      $.each(data, function(i, f) {
-      var logtbl = "<tr>" + "<td>" + f.level + "</td>" +
-      "<td>" + f.issuedBy + "</td>" + "<td>" + f.message + "</td>" +
+      $.getJSON('log.json', function(data) {
+      $.each(data, function(f) {
+      var logtbl = "<tr>" + "<td>" + f.issuedBy + "</td>" +
+      "<td>" + f.level + "</td>" + "<td>" + f.message + "</td>" +
       "<td>" + f.issuedToEID + "</td>" + "<td>" + f.issuedTo + "</td>" +
       "<td>" + f.timestamp + "</td>" + "</tr>"
       $(logtbl).appendTo("#logdata tbody");
@@ -18,6 +17,6 @@ html
   body
     .wrapper
       .logs
-        table#logdata(border='2')
+        table#logdata
           thead
           tbody
