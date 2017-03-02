@@ -61,6 +61,7 @@ router.post('/payslip', function(req, res){
 			issuedBy: req.session.username,
 			issuedTo: req.body.employeeDropdown
 		});
+		res.status(200);
 		res.redirect('/');
 	});
 });
