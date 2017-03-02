@@ -10,7 +10,7 @@ chai.use(chaiHttp);
 describe("Payslip", function(){
 	var url = local;
 	describe("Insert", function(){
-		it("returns status 200", function(){
+		it("returns status 200", function(done){
 			chai.request(server)
 				.post('/payslip')
 				.send({
@@ -19,10 +19,10 @@ describe("Payslip", function(){
 					issuedBy: 'edrichhans',
 					"dateIssued": new Date(),
 					"company": "Apples",
-					"deductibles_name": "deductibles_name",
-					"deductibles": 500,
-					"allowance_name": "allowance_name",
-					"allowance": 1000,
+					"deductibles_name": ["deductibles_name"],
+					"deductibles": [500],
+					"allowance_name": ["allowance_name"],
+					"allowance": [1000],
 					"startDate": "March 1, 2017",
 					"endDate": "March 30, 2017",
 					"PHreduc": 300,
@@ -36,6 +36,8 @@ describe("Payslip", function(){
 				})
 			.end(function(err, res){
 				res.should.have.status(200);
+				res.should.be.a.json;
+				// res.body.should.have.property("SUCCESS");
 				done();
 			});
 		});

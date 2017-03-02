@@ -93,6 +93,8 @@ exports.insert = function(req, res, callBack){
 		hash = docs.hash;
 	});
 
+	var jsondata;
+
 	Employees.findOne({"eID": eID}, function(err, employee){
 		console.log("employee");
 		console.log(employee.name);
@@ -119,7 +121,7 @@ exports.insert = function(req, res, callBack){
 					var HDMF = getHDMF(employee.salary);
 					HDMF = Math.round(HDMF*100)/100;
 
-					paySlip.insert({
+					jsondata = {
 						"eID": eID,
 						"adviceNumber": currentAdviceNumber,
 						"issuedBy": issuedBy,
@@ -139,7 +141,9 @@ exports.insert = function(req, res, callBack){
 						"EmployerHDMF": employee.salary*0.02,
 						"BIR": tax,
 						"total": employee.salary - getSum(deductibles) + getSum(allowance) - PHdoc.share - EE - HDMF - tax
-					}, function(err, doc){
+					}
+
+					paySlip.insert(jsondata, function(err, doc){
 						if(err){
 							res.status(500).send("Insert error");
 						}
@@ -150,7 +154,7 @@ exports.insert = function(req, res, callBack){
 			});
 		});
 	});
-	callBack();
+	callBack(jsondata);
 }
 
 exports.thirteenth = function(req, res, callBack){
