@@ -18,7 +18,6 @@ router.get('/add', function(req, res, next){
 });
 
 router.post('/addemployee', function(req, res){
-	console.log("pasok");
 	addEmployeeRoute.insert(req, res, function(){
 		res.redirect('/');
 	});

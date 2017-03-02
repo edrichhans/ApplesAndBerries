@@ -1,0 +1,24 @@
+{
+  "name": "applesandberries",
+  "description": "Apples and Berries Payroll App",
+  "main": "js/scripts.js",
+  "authors": [
+    "JBEAD <jbead191@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "payslip"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic-ui-calendar": "^0.0.3"
+  }
+}

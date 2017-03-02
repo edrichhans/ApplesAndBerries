@@ -1,0 +1,73 @@
+extends layout
+
+block content
+
+	// <script src="http://semantic-ui.com/javascript/library/tablesort.js"></script>
+	.ui.middle.aligned.center.aligned.grid
+		// Table Title
+		.row#view-row
+			.ui.center.aligned
+				h1 Pay Slip
+		// buttons
+		.row
+			button.ui.button(onclick="location.replace('/payslip')") ADD
+			.ui.button EDIT
+			.ui.button DELETE
+		.ui.fitted.divider
+		// Table Proper
+		.column.row.sixteen.wide
+			.column.sixteen.wide.middle.floated(style="overflow: scroll; width: 100%;")
+				table.ui.table.fluid.collapsing.selectable.line.sortable.top.aligned
+					thead
+						tr
+							th AN
+							th Issued By
+							th eID
+							th Name
+							th Base Salary
+							th Start Date
+							th End Date
+							th Deductibles
+							th Amount
+							th Allowance
+							th Amount
+							th PhilHealth
+							th SSS
+							th HDMF
+							th ER PhilHealth
+							th ER SSS
+							th ER HDMF
+							th BIR Tax
+							th Net
+					tbody
+						each item, index in transactions
+							tr
+								td= item.adviceNumber
+								td= item.issuedBy
+								td.eID(value=item.eID)= item.eID
+								td= item.startDate
+								td.endDate= item.endDate
+								//- td
+								//- td= item.deductibles
+								//- // td= item.allowance_name
+								//- td= item.allowance
+								td= item.PHreduc
+								td= item.SSSreduc
+								td= item.HDMFreduc
+								td= item.EmployerPH
+								td= item.EmployerSSS
+								td= item.EmployerHDMF
+								td= item.BIR
+								td= item.total
+		// PRINT BUTTON
+		.ten.column.row
+			.right.floated.fluid.column
+				.ui.fluid.button#print-button Print
+		.row
+
+	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+	script(type='text/javascript' src='javascripts/scripts.js')
+	script(type='text/javascript').
+		var employees =!{JSON.stringify(employees)};
+		var transactions =!{JSON.stringify(transactions)};
+	script(src='javascripts/table.js')

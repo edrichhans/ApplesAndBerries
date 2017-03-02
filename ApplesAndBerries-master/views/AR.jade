@@ -1,0 +1,78 @@
+extends layout
+
+block content
+	.two.fields.center2
+		.field
+			i.barcode.icon.massive.red
+		.field
+			h2.ui.dividing.header Acknowledgement Receipt
+	form.ui.box.center2.form#AR(name='AR', method='post', action='/AR')
+
+		.field
+			label Name
+			.ui.input#name-input
+				input(name="name", type='text', placeholder='Name')
+
+		.field
+			label Date
+			.ui.calendar#checkDate
+				.ui.input.left.icon#date-input
+					i.calendar.icon
+					input(name="date", type="text", placeholder="Date")
+
+
+		.field#pettyCash-particulars
+			.two.fields
+				.field
+					label Particulars
+					.ui.input#particulars-input
+						input(name='particulars', type='text', placeholder='Name')
+
+				.field
+					label Amount
+					.ui.input#amount-input
+						input(name="amount", type="number", placeholder="Amount...")
+
+		.ui.modal
+			i.close.icon
+			.header Acknowledgement Receipt Preview
+			.content(style="padding-top: 0;")
+				img.ui.centered.medium.image(src='images/header.png', style='padding-bottom: 1.5rem;')
+				.ui.grid
+					.one.wide.column.right-align
+						| AN:
+					.two.wide.column
+						#AN.div-underline.center-align
+							span
+					.two.wide.column.right-align
+						| Name: 
+					.four.wide.column
+						#name.div-underline.center-align
+							span
+					.three.wide.column.right-align
+						| Date Issued:
+					.four.wide.column
+						#dateToday.div-underline.center-align
+							span
+
+					.two.wide.column.right-align
+						| Particulars:
+					.five.wide.column
+						#particulars.div-underline.center-align
+							span
+					.three.wide.column.right-align
+						| Amount:
+					.six.wide.column
+						#amount.div-underline.center-align
+							span
+			.actions
+				.ui.disabled.primary.button.submit Submit
+				.ui.button.print Print
+
+		.ui.primary.button#AR-preview Preview
+		.ui.error.message
+
+
+	script(type='text/javascript').
+		var an =!{JSON.stringify(an)};
+	script(type='text/javascript' src='javascripts/scripts.js')

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	.ui.middle.aligned.center.grid
+		.column
+			h2.ui.teal.image.header
+				.content Admin Login
+			form.ui.large.form(name='adminLogin', method='post', action='/adminLogin')
+				.ui.stacked.segment
+					.field
+						.ui.input
+							input(name="username", type="text", placeholder="Username")
+					.field
+						.ui.input
+							input(name="password", type="password", placeholder="Password")
+				button.ui.fluid.large.teal.submit.button Login
+				.ui.error.message

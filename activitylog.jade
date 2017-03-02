@@ -1,0 +1,29 @@
+//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
+//- script(src="semantic/dist/semantic.min.js")
+extends layout
+
+block content
+
+// Table Title
+		.row#menu-row
+			.ui.center.aligned
+				h1 Activity Log
+		// Table Proper
+		.row
+			table.ui.table.fluid
+				thead
+					tr
+						th.two.wide Timestamp
+						th.collapsing Employee #
+						th.three.wide Employee Name
+						th.two.wide Action
+						th.two.wide Item Number
+				tbody
+					for item in activitylog
+						tr
+							td= item.Timestamp
+							td= item.EmployeeNumber
+							td= item.EmployeeName
+							td= item.Action
+							td= item.ItemNumber
+							
