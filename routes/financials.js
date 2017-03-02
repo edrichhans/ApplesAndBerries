@@ -6,6 +6,26 @@ var pettyCashRoute = require('../models/financials/pettyCash');
 var ARRoute = require('../models/financials/AR');
 var viewRoute = require('../models/financials/view');
 var updateCompRoute = require('../models/financials/updateComp');
+var winston = require('winston');
+
+var wlogger = new winston.Logger({
+	transports: [
+		new (winston.transports.File)({
+			level: 'info',
+			filename: 'log.log',
+			handleExcpetions: true,
+			json: true,
+			colorize: false
+		}),
+		new winston.transports.Console({
+			level: 'debug',
+			handleExcpetions: true,
+			json: false,
+			colorize: true
+		})
+	],
+	exitOnError: false
+});
 
 // var auth = require('../middlewares/auth');
 
@@ -37,12 +57,21 @@ router.get('/payslip', function(req, res, next){
 
 router.post('/payslip', function(req, res){
 	paySlipRoute.insert(req, res, function(){
+		wlogger.log('info', 'Payslip Issued', {
+			issuedBy: req.session.username,
+			issuedTo: req.body.employeeDropdown
+		});
+		res.status(200);
 		res.redirect('/');
 	});
 });
 
 router.post('/thirteenth', function(req, res){
 	paySlipRoute.thirteenth(req, res, function(){
+		wlogger.log('info', 'Thirteenth Month Pay Issued', {
+			issuedBy: req.session.username,
+			issuedTo: req.body.employeeDropdown
+		});		
 		res.redirect('/');
 	});
 });
@@ -58,6 +87,10 @@ router.get('/checkvoucher', function(req, res, next){
 
 router.post('/checkvoucher', function(req, res){
 	checkVoucherRoute.insert(req, res, function(){
+		wlogger.log('info', 'Check Voucher Issued', {
+			issuedBy: req.session.username,
+			issuedTo: req.body.name
+		});
 		res.redirect('/');
 	});
 });
@@ -72,6 +105,10 @@ router.get('/pettycash', function(req, res, next){
 
 router.post('/pettycash', function(req, res){
 	pettyCashRoute.insert(req, res, function(){
+		wlogger.log('info', 'Petty Cash Issued', {
+			issuedBy: req.session.username,
+			issuedTo: req.body.name
+		});		
 		res.redirect('/pettycash');
 	});
 });
@@ -86,6 +123,10 @@ router.get('/AR', function(req, res, next){
 
 router.post('/AR', function(req, res){
 	ARRoute.insert(req, res, function(){
+		wlogger.log('info', 'Acknowledgement Receipt Issued', {
+			issuedBy: req.session.username,
+			issuedTo: req.body.name
+		});		
 		res.redirect('/AR_view');
 	});
 });
@@ -117,18 +158,27 @@ router.get('/updateComp', function(req, res){
 
 router.post('/updateSSSComp', function(req, res){
 	updateCompRoute.updateSSS(req, res, function(){
+		wlogger.log('info', 'SSS Updated!', {
+			issuedBy: req.session.username,
+		});		
 		res.redirect('/');
 	});
 });
 
 router.post('/updatePHComp', function(req, res){
 	updateCompRoute.updatePH(req, res, function(){
+		wlogger.log('info', 'PhilHealth Updated!', {
+			issuedBy: req.session.username,
+		});		
 		res.redirect('/');
 	});
 });
 
 router.post('/updateBIRComp', function(req, res){
 	updateCompRoute.updateBIR(req, res, function(){
+		wlogger.log('info', 'BIR Updated!', {
+			issuedBy: req.session.username,
+		});		
 		res.redirect('/');
 	});
 });

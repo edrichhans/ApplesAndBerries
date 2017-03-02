@@ -139,6 +139,10 @@ exports.insert = function(req, res, callBack){
 						"EmployerHDMF": employee.salary*0.02,
 						"BIR": tax,
 						"total": employee.salary - getSum(deductibles) + getSum(allowance) - PHdoc.share - EE - HDMF - tax
+					}, function(err, doc){
+						if(err){
+							res.status(500).send("Insert error");
+						}
 					});
 					// console.log(PHdoc);
 					// console.log(SSSdoc);
@@ -170,6 +174,9 @@ exports.thirteenth = function(req, res, callBack){
 	});
 
 	Employees.findOne({"eID": eID}, function(err, employee){
+		if(err){
+			res.status(500).send('findOne error');
+		}
 		var date = employee.startDate;
 
 		date = date.split(/[ ,]+/);
@@ -195,6 +202,10 @@ exports.thirteenth = function(req, res, callBack){
 			"EmployerSSS": 0,
 			"EmployerHDMF": employee.salary*0.02,
 			"total": total
+		}, function(err, doc){
+			if(err){
+				res.status(500).send('Insert error');
+			}
 		});
 	});
 	callBack();

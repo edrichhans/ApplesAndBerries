@@ -1,29 +1,23 @@
-//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
-//- script(src="semantic/dist/semantic.min.js")
-extends layout
-
-block content
-
-// Table Title
-		.row#menu-row
-			.ui.center.aligned
-				h1 Activity Log
-		// Table Proper
-		.row
-			table.ui.table.fluid
-				thead
-					tr
-						th.two.wide Timestamp
-						th.collapsing Employee #
-						th.three.wide Employee Name
-						th.two.wide Action
-						th.two.wide Item Number
-				tbody
-					for item in activitylog
-						tr
-							td= item.Timestamp
-							td= item.EmployeeNumber
-							td= item.EmployeeName
-							td= item.Action
-							td= item.ItemNumber
-							
+doctype html
+html
+  head
+    script(type='text/javascript', src='public\javascripts\jquery-3.1.1.min.js')
+    script.
+      $(function() {
+      var people = [];
+      $.getJSON('log.log', function(data) {
+      $.each(data, function(i, f) {
+      var logtbl = "<tr>" + "<td>" + f.level + "</td>" +
+      "<td>" + f.issuedBy + "</td>" + "<td>" + f.message + "</td>" +
+      "<td>" + f.issuedToEID + "</td>" + "<td>" + f.issuedTo + "</td>" +
+      "<td>" + f.timestamp + "</td>" + "</tr>"
+      $(logtbl).appendTo("#logdata tbody");
+      });
+      });
+      });
+  body
+    .wrapper
+      .logs
+        table#logdata(border='2')
+          thead
+          tbody

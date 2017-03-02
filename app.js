@@ -8,6 +8,8 @@ var session = require('express-session');
 var mongo = require('mongodb');
 var monk = require('monk');
 var spawn = require('child_process').spawn;
+var winston = require('winston');
+
 var db = monk(process.env.MONGOLAB_URI || 'localhost:27017/ApplesAndBerries');
 // var url = 'mongodb://' + process.env.MONGOLAB_URI || 'mongodb://localhost:27017/POS';
 
@@ -82,6 +84,7 @@ app.get('/backup', function(req, res, next){
 	mongodump.on('exit', (code) => {
 		console.log('mongodump exited with code ' + code);
 	});
+	winston.log('info', "Backup");
 	res.redirect('/');
 });
 
