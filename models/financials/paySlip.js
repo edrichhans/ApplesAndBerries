@@ -96,6 +96,9 @@ exports.insert = function(req, res, callBack){
 	var jsondata;
 
 	Employees.findOne({"eID": eID}, function(err, employee){
+		if(err){
+			res.status(500).send("Employee find error");
+		}
 		console.log("employee");
 		console.log(employee.name);
 		PhilHealth.findOne({"range.to": {$gte: employee.salary}, "range.from": {$lte: employee.salary}}, function(err, PHdoc){
