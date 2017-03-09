@@ -20,9 +20,9 @@ var login = require('./routes/login');
 var app = express();
 var MongoClient = mongo.MongoClient;
 
-app.listen(8000);
+app.listen(3000);
 
-console.log('> server running on port 8000');	
+console.log('> server running on port 3000');	
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,0 +1,35 @@
+{
+  "name": "wtddjs",
+  "version": "0.0.0",
+  "description": "Web Test-Driven Development with JavaScript (NodeJs)",
+  "main": "server.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jhannes/wtddjs"
+  },
+  "keywords": [
+    "webdriver",
+    "nodejs",
+    "tdd",
+    "mocha"
+  ],
+  "author": "Johannes Brodwall <johannes@brodwall.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhannes/wtddjs/issues"
+  },
+  "homepage": "https://github.com/jhannes/wtddjs",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.20.1",
+    "phantomjs": "^1.9.7-8",
+    "selenium-standalone": "2.42.2-2.9.0-2",
+    "webdriverjs": "^1.7.1"
+  },
+  "dependencies": {
+    "express": "^4.4.4"
+  }
+}
