@@ -321,3 +321,47 @@
 [0mGET /icons/main_menu/petty_cash.png [36m304 [0m363.155 ms - -[0m
 [0mGET /icons/main_menu/payslip.png [36m304 [0m356.588 ms - -[0m
 [0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m189.380 ms - -[0m
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 3000
+[0mGET / [36m302 [0m472.931 ms - 56[0m
+[0mGET /login [32m200 [0m11624.624 ms - 1927[0m
+[0mGET /stylesheets/style.css [32m200 [0m205.137 ms - 1394[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [32m200 [0m210.116 ms - 86713[0m
+[0mGET /javascripts/printThis.js [32m200 [0m243.392 ms - 10125[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [32m200 [0m250.672 ms - 1844[0m
+[0mGET /javascripts/jquery.form.js [32m200 [0m27.808 ms - 45167[0m
+[0mGET /javascripts/scripts.js [32m200 [0m64.944 ms - 14845[0m
+[0mGET /semantic/dist/semantic.min.js [32m200 [0m257.448 ms - 276139[0m
+[0mGET /semantic/dist/semantic.min.css [32m200 [0m266.515 ms - 541240[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [32m200 [0m126.728 ms - 17886[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [32m200 [0m133.753 ms - 71896[0m
+[0mGET /favicon.ico [36m302 [0m2.938 ms - 28[0m
+[0mGET /login [36m304 [0m75.185 ms - -[0m
+[0mPOST /login [36m302 [0m5217.990 ms - 23[0m
+[0mGET / [32m200 [0m1990.495 ms - 5377[0m
+[0mGET / [36m304 [0m94.036 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m265.568 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m262.708 ms - -[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m269.467 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m511.417 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m510.964 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m508.949 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m345.346 ms - -[0m
+[0mGET /icons/main_menu/receipt1.png [32m200 [0m195.533 ms - 11077[0m
+[0mGET /images/Logo.png [32m200 [0m223.497 ms - 17169[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m57.067 ms - -[0m
+[0mGET /icons/main_menu/payslip.png [32m200 [0m260.949 ms - 11859[0m
+[0mGET /icons/main_menu/settings.png [32m200 [0m271.614 ms - 15520[0m
+[0mGET /icons/main_menu/employee_white.png [32m200 [0m310.650 ms - 13342[0m
+[0mGET /icons/main_menu/check_voucher1.png [32m200 [0m343.330 ms - 5060[0m
+[0mGET /icons/main_menu/petty_cash.png [32m200 [0m273.171 ms - 16890[0m

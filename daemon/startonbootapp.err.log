@@ -20,3 +20,6 @@ Error: Can't set headers after they are sent.
 js-bson: Failed to load c++ bson extension, using pure JS version
 Fri, 03 Mar 2017 14:17:51 GMT express-session deprecated undefined resave option; provide resave option at app.js:40:9
 Fri, 03 Mar 2017 14:17:51 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:40:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Thu, 09 Mar 2017 09:20:18 GMT express-session deprecated undefined resave option; provide resave option at app.js:40:9
+Thu, 09 Mar 2017 09:20:18 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:40:9

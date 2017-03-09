@@ -38,3 +38,5 @@ Stacktrace:   at System.Management.ManagementScope._Clone(ManagementScope scope,
 2017-03-04 19:03:25 - Send SIGINT 5056
 2017-03-04 19:03:25 - SIGINT to 5056 failed - Killing as fallback
 2017-03-04 19:03:25 - Finished startonbootapp.exe
+2017-03-09 17:19:44 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AF\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file "C:\Users\AF\Documents\CS Subjects\CS 192\Project\app.js" --log "Start-On-Boot-App wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2017-03-09 17:19:44 - Started 3880
