@@ -56,11 +56,12 @@ router.get('/payslip', function(req, res, next){
 });
 
 router.post('/payslip', function(req, res){
-	paySlipRoute.insert(req, res, function(){
+	paySlipRoute.insert(req, res, function(jsondata){
 		wlogger.log('info', 'Payslip Issued', {
 			issuedBy: req.session.username,
 			issuedTo: req.body.employeeDropdown
 		});
+		// console.log(res.body);
 		res.status(200);
 		res.redirect('/');
 	});
