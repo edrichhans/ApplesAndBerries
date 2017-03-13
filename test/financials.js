@@ -14,16 +14,6 @@ describe("Payslip", function(){
 	describe("Display page", function(){
 		it("returns status 200", function(done){
 			chai.request(server)
-				.get('/payslip_view')
-				.end(function(err, res){
-					res.should.have.status(200);
-					done();
-				});
-		});
-	});
-	describe("Display form", function(){
-		it("returns status 200", function(done){
-			chai.request(server)
 				.get('/payslip')
 				.end(function(err, res){
 					res.should.have.status(200);

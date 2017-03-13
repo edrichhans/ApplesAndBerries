@@ -46,7 +46,7 @@ html
 						.ui.icon.input
 							input(type="text", placeholder="Search...")
 							i.search.icon
-						.ui.simple.dropdown.item(class="tabindex=")
+						.ui.simple.dropdown.item#dropdown(class="tabindex=")
 							| UserPic
 							i.user.icon
 							i.dropdown.icon
@@ -54,7 +54,7 @@ html
 								a.left.floated.item
 									i.edit.icon
 										| Edit Profile
-								a.item(href="/logout")
+								a.item#logoutbtn(href="/logout")
 									i.settings.icon
 										| Sign Out
 				block content

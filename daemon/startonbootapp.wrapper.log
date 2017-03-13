@@ -1,0 +1,14 @@
+2017-03-12 04:35:56 - Stopping startonbootapp.exe
+2017-03-12 04:35:56 - ProcessKill 3880
+2017-03-12 04:35:57 - Found child process: 3888 Name: conhost.exe
+2017-03-12 04:35:57 - Found child process: 3248 Name: node.exe
+2017-03-12 04:35:57 - Stopping process 3888
+2017-03-12 04:35:57 - Send SIGINT 3888
+2017-03-12 04:35:57 - SIGINT to 3888 failed - Killing as fallback
+2017-03-12 04:35:57 - Stopping process 3248
+2017-03-12 04:35:57 - Send SIGINT 3248
+2017-03-12 04:35:57 - SIGINT to 3248 failed - Killing as fallback
+2017-03-12 04:35:57 - Stopping process 3880
+2017-03-12 04:35:57 - Send SIGINT 3880
+2017-03-12 04:35:57 - SIGINT to 3880 failed - Killing as fallback
+2017-03-12 04:35:57 - Finished startonbootapp.exe

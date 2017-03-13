@@ -90,6 +90,7 @@
 {"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-03T17:53:14.979Z"}
 {"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-03T17:54:41.565Z"}
 {"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-04T02:39:26.985Z"}
+<<<<<<< HEAD
 {"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-05T13:13:24.801Z"}
 {"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-05T13:13:57.000Z"}
 {"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-05T13:23:04.514Z"}
@@ -464,3 +465,5 @@
 {"level":"info","message":"BIR Updated!","timestamp":"2017-03-13T06:21:13.741Z"}
 {"level":"info","message":"SSS Updated!","timestamp":"2017-03-13T06:21:13.923Z"}
 {"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-13T06:21:14.087Z"}
+=======
+>>>>>>> origin/AF
