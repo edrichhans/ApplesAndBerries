@@ -12,7 +12,7 @@ block content
 		// 1st ROW Buttons
 		.four.column.wide.row
 			.column
-				button.ui.animated.fade.red.button.fluid#employee(tabindex="0" onclick="location.replace('/employees')")
+				button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/employee_white.png")
 						h3
@@ -27,7 +27,7 @@ block content
 						br
 						| Delete Employee
 			.column
-				.ui.animated.fade.red.button.fluid#payslip(tabindex="0" onclick="location.replace('/payslip_view')")
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/payslip_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/payslip.png")
 						h3
@@ -38,7 +38,7 @@ block content
 					.hidden.content
 						| Issue Payslip
 			.column
-				.ui.animated.fade.button.red.fluid#controlpanel(button="", tabindex="0" onclick="location.replace('/controlpanel')")
+				.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/controlpanel')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/settings.png")
 						h3
@@ -56,7 +56,7 @@ block content
 		// 2nd ROW Buttons
 		.four.column.wide.row
 			.column
-				.ui.animated.fade.red.button.fluid#arview(tabindex="0" onclick="location.replace('/AR_view')")
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
 
@@ -68,7 +68,7 @@ block content
 					.hidden.content
 						| Issue Acknowledgment Receipt
 			.column
-				.ui.animated.fade.red.button.fluid#checkvoucher(tabindex="0" onclick="location.replace('/checkvoucher_view')")
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
 						h3
@@ -80,7 +80,7 @@ block content
 						| Issue Check Voucher
 
 			.column
-				.ui.animated.fade.button.red.fluid#pettycash(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
+				.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
 						h3
