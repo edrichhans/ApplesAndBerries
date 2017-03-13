@@ -91,7 +91,7 @@ describe("AR", function(){
 					"name": "Edrich Chua",
 					"date": "March 1, 2017",
 					"amount": 500,
-					"particulars": ['food', '500']
+					"particulars": 'food'
 				})
 			.end(function(err, res){
 				res.should.have.status(200);
@@ -171,7 +171,7 @@ describe("Check Voucher", function(){
 					"name": "Edrich Chua",
 					"date": "March 1, 2017",
 					"amount": 500,
-					"particulars": ['food', '500']
+					"particulars": 'Utilities'
 				})
 			.end(function(err, res){
 				res.should.have.status(200);

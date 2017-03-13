@@ -1,12 +1,39 @@
 var express = require('express');
 var router = express.Router();
 var loginRoute = require('../models/login/login');
+var mailerRoute = require('../models/login/mailer');
 
 var sess;
 
+router.get('/reset/:token', function(req, res){
+	mailerRoute.resetView(req, res, function(user){
+		if(!user){
+			// console.log(user);
+			res.redirect('/forgot');
+		}
+		else{
+			res.render('reset', {
+				user: user
+			});
+		}
+	});
+});
+
+router.post('/reset/:token', function(req, res){
+	mailerRoute.reset(req, res, function(err){
+		if(err){
+			res.status(500);
+			res.redirect('/forgot');
+		}
+		else{
+			// res.redirect('/');
+		}
+	});
+});
+
 router.get('/*', function(req, res, next){
 	sess = req.session;
-	if(['/login', '/logout'].indexOf(req.url) !== -1
+	if(['/login', '/logout', '/forgot'].indexOf(req.url) !== -1
 		|| sess.username)
 		next();
 	else{
@@ -68,6 +95,22 @@ router.post('/deleteUser', function(req, res, next){
 router.get('/logout', function(req, res, next){
 	loginRoute.logout(req, res, function(){
 		res.redirect('/');
+	});
+});
+
+router.get('/forgot', function(req, res){
+	res.render('forgot');
+})
+
+router.post('/forgot', function(req, res, next){
+	mailerRoute.forgot(req, res, function(err){
+		if(err){
+			res.status(500);
+			res.redirect('/forgot');
+		}
+		else{
+			res.redirect('/');
+		}
 	});
 });
 

@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		title Login Page
+		title Forgot Password
 		link(rel='stylesheet', type='text/css', href='/semantic/dist/semantic.min.css')
 		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
 		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
@@ -24,36 +24,20 @@ html
 							br
 							| Payroll System
 				.five.wide.column
-					form.ui.large.form#login(name='login', method='post', action='/login')
+					form.ui.large.form#forgot(name='forgot', method='post', action='/forgot')
 						.ui.stacked.segment
 							.field
 								.ui.left.icon.input
 									i.user.icon
 									input#username(type="text", name="username", placeholder="Username")
-							.field
-								.ui.left.icon.input
-									i.lock.icon
-									input#password(type="password", name="password", placeholder="Password")
-							button.ui.fluid.large.red.four.wide.button#submit Login
+							button.ui.fluid.large.red.four.wide.button#submit Submit
 						.ui.error.message
-					.ui.message
-						a(href="/forgot") Forgot Password?
 		script(type='text/javascript').
 			$(document).ready(function(){
 				$('#username').focus();
 			});
 		script(type='text/javascript' src='javascripts/scripts.js')
 		script(type='text/javascript' src='javascripts/jquery.form.js')
-		script.
-			$('form#login')
-				.ajaxForm({
-					error : function (response) {
-						alert('Invalid Username or Password');
-					},
-					success : function(){
-						window.location.assign('/');
-					}
-				});
 	//- .ui.middle.aligned.center.grid
 	//- 	.column
 	//- 		h2.ui.teal.image.header
