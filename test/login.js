@@ -151,6 +151,20 @@ describe('mailer: models', function () {
         res.should.have.status(200);
         done();
 			});
-		})
-	})
+		});
+	});
+  describe('Incorrect forgot', function(){
+		it('should return error status (500)', function(done){
+			chai.request(server)
+			.post('/forgot')
+			.send({
+				username: 'hi1'
+			})
+			.end(function(err, res){
+				should.not.exist(err);
+        res.should.have.status(500);
+        done();
+			});
+		});
+	});
 });

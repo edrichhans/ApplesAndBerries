@@ -25,9 +25,6 @@ router.post('/reset/:token', function(req, res){
 			res.status(500);
 			res.redirect('/forgot');
 		}
-		else{
-			// res.redirect('/');
-		}
 	});
 });
 
@@ -104,12 +101,15 @@ router.get('/forgot', function(req, res){
 
 router.post('/forgot', function(req, res, next){
 	mailerRoute.forgot(req, res, function(err){
-		if(err){
-			res.status(500);
-			res.redirect('/forgot');
+		if(err == 500){
+			// return;
+			// res.redirect('/forgot');
+			// res.sendStatus(500);
 		}
 		else{
-			res.redirect('/');
+			// res.sendStatus(200);
+			// res.json({success: true});
+			res.redirect('/');			
 		}
 	});
 });

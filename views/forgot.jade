@@ -32,12 +32,21 @@ html
 									input#username(type="text", name="username", placeholder="Username")
 							button.ui.fluid.large.red.four.wide.button#submit Submit
 						.ui.error.message
+
+		script(type='text/javascript' src='javascripts/scripts.js')
+		script(type='text/javascript' src='javascripts/jquery.form.js')
 		script(type='text/javascript').
 			$(document).ready(function(){
 				$('#username').focus();
 			});
-		script(type='text/javascript' src='javascripts/scripts.js')
-		script(type='text/javascript' src='javascripts/jquery.form.js')
+			$('form#forgot').ajaxForm({
+				success: function(){
+					alert("An email has been sent to you. Please confirm the link at least 1 hour from now.");
+				},
+				error: function(){
+					alert("Invalid username!");
+				}
+			});
 	//- .ui.middle.aligned.center.grid
 	//- 	.column
 	//- 		h2.ui.teal.image.header

@@ -16,17 +16,6 @@ var dir = chaiFiles.dir;
 describe("Report", function(){
   var url = local;
   describe("Generate Excel File", function(){
-    before(function(done){
-      chai.request(server)
-      .post('/login')
-      .send({
-        username: 'edrichhans',
-        password: 'password'
-      })
-      .end(function(err, res){
-        done();
-      });
-    });
     it("creates a file in uploads folder", function(done){
       chai.request(server)
       .get('/report')

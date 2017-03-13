@@ -36,20 +36,23 @@ exports.forgot = function(req, res, callBack){
 		function(token, done) {
 			User.findOne({ username: req.body.username }, function(err, user) {
 				if (!user) {
-					req.flash('error', 'No account with that email address exists.');
-					return res.redirect('/forgot');
+					// req.flash('error', 'No account with that email address exists.');
+					return res.sendStatus(500);
 				}
 
-				user.resetPasswordToken = token;
-				user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+				else{
+					user.resetPasswordToken = token;
+					user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
 
-				User.update({username: req.body.username}, {$set: {resetPasswordToken: token}});
-				User.update({username: req.body.username}, {$set: {resetPasswordExpires: Date.now() + 3600000}});
+					User.update({username: req.body.username}, {$set: {resetPasswordToken: token}});
+					User.update({username: req.body.username}, {$set: {resetPasswordExpires: Date.now() + 3600000}});
 
-				// user.save(function(err) {
-				//	 done(err, token, user);
-				// }); 
-				done(err, token, user);
+					// user.save(function(err) {
+					//	 done(err, token, user);
+					// }); 
+					done(err, token, user);
+				}
+				return;
 			});
 		},
 		function(token, user, done) {
@@ -65,9 +68,9 @@ exports.forgot = function(req, res, callBack){
 		}
 	], function(err) {
 		if (err) return callBack(err);
-		res.redirect('/forgot');
+		// res.redirect('/forgot');
 	});
-	callBack();
+	return callBack();
 }
 
 exports.sendOne = function (templateName, locals, fn) {
@@ -151,12 +154,13 @@ exports.reset = function(req, res, callBack){
         name: user.username
       }
       exports.sendOne('password_reset', locals, function(err, done){
-        return res.redirect('/');
+        // return res.redirect('/');
+				return callBack();
       });
     }
   ], function(err) {
-		if (err) return callBack(err);
-		res.redirect('/forgot');
+		if (err) return callBack(500);
+		// res.redirect('/forgot');
 	});
   return callBack();
 }
