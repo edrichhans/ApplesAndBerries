@@ -1,152 +1,156 @@
 extends layout
 
 block content
-	ul.custom-menu
-		li(data-action="edit") Edit
-		li(data-action="delete") Delete
-	.ui.middle.center.aligned.grid.stackable.doubling
-		// Title
-		.row#menu-row
-			.ui.inverted.segment(style="width: 100%; height: 15%; padding: 30;	border-radius: 0px !important; background: #BDBEBF !important")
-				.ui.center.aligned
-					h1 Employees
-		//- .row
-		//- 	button.ui.button(onclick="location.replace('/employees/add')") ADD
-		//- 	button.ui.button(onclick="location.replace('/employees/editEmployee')") EDIT
-		//- 	button.ui.button(onclick="location.replace('/employees/delete')") DELETE
+	head
+		title EmployeePanel
+
+	body
+		ul.custom-menu
+			li(data-action="edit") Edit
+			li(data-action="delete") Delete
+		.ui.middle.center.aligned.grid.stackable.doubling
+			// Title
+			.row#menu-row
+				.ui.inverted.segment(style="width: 100%; height: 15%; padding: 30;	border-radius: 0px !important; background: #BDBEBF !important")
+					.ui.center.aligned
+						h1 Employees
+			//- .row
+			//- 	button.ui.button(onclick="location.replace('/employees/add')") ADD
+			//- 	button.ui.button(onclick="location.replace('/employees/editEmployee')") EDIT
+			//- 	button.ui.button(onclick="location.replace('/employees/delete')") DELETE
+			.row
+				.ui.container
+					table.ui.very.basic.table.sortable.selectable
+						thead
+							tr
+								th eID
+								th Name
+								th Start Date
+								th Birthday
+								th Position
+								th Status
+								th Dependents
+								th Salary
+						tbody
+							for employee in employees
+								tr.employee
+									td(data-eid=employee.eID)= employee.eID
+									td= employee.name
+									td= employee.startDate
+									td= employee.birthday
+									if employee.position == 0
+										td Teacher
+									else if employee.position == 1
+										td Admin
+									else if employee.position == 2
+										td Staff
+									if employee.status == 0
+										td Single
+									else if employee.status == 1
+										td Marries
+									td= employee.dependents
+									td= employee.salary
 		.row
-			.ui.container
-				table.ui.very.basic.table.sortable.selectable
-					thead
-						tr
-							th eID
-							th Name
-							th Start Date
-							th Birthday
-							th Position
-							th Status
-							th Dependents
-							th Salary
-					tbody
-						for employee in employees
-							tr.employee
-								td(data-eid=employee.eID)= employee.eID
-								td= employee.name
-								td= employee.startDate
-								td= employee.birthday
-								if employee.position == 0
-									td Teacher
-								else if employee.position == 1
-									td Admin
-								else if employee.position == 2
-									td Staff
-								if employee.status == 0
-									td Single
-								else if employee.status == 1
-									td Marries
-								td= employee.dependents
-								td= employee.salary
-	.row
-		div(style='padding: 2%')
-			button.ui.right.floated.button(onclick="location.replace('/employees/add')") ADD
-	.ui.small.modal
-		.header Confirm
-		.content
-			| Confirm Delete Employee
-		.actions
-			.ui.positive.submit.right.button OK
-		//- .four.column.wide.row
-		//- 	.column
-		//- 		button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/add')")
-		//- 			.visible.content
-		//- 				.ui.grid
-		//- 					.row
-		//- 					.row
-		//- 					.row
-		//- 						.ui.container
-		//- 							h1 Add Employee
-		//- 					.row
-		//- 					.row
-		//- 			.hidden.content
-		//- 				| Add a new employee
-		//- 	.column
-		//- 		.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/editEmployee')")
-		//- 			.visible.content
-		//- 				.ui.grid
-		//- 					.row
-		//- 					.row
-		//- 					.row
-		//- 						.ui.container
-		//- 							h1 Edit Employee
-		//- 					.row
-		//- 					.row
-		//- 			.hidden.content
-		//- 				| Edit an existing employee
-		//- // 2nd ROW Buttons
-		//- .four.column.wide.row
-		//- 	.column
-		//- 		.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/delete')")
-		//- 			.visible.content
-		//- 				.ui.grid
-		//- 					.row
-		//- 					.row
-		//- 					.row
-		//- 						.ui.container
-		//- 							h1 Delete Employee
-		//- 					.row
-		//- 					.row
-		//- 			.hidden.content
-		//- 				| Delete an existing employee
-	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
-	script(type='text/javascript').
-		var eID = -1;
-		// Trigger action when the contexmenu is about to be shown
-		$('tr').on("contextmenu", function (event) {
-			eID = parseInt($(this).children().first().attr('data-eid'));
-			// Avoid the real one
-			event.preventDefault();
-			// Show contextmenu
-			$(".custom-menu").finish().toggle(100).
-			// In the right position (the mouse)
-			css({
-				top: event.pageY - 13 + "px",
-				left: event.pageX + "px"
+			div(style='padding: 2%')
+				button.ui.right.floated.button#addemp(onclick="location.replace('/employees/add')") ADD
+		.ui.small.modal
+			.header Confirm
+			.content
+				| Confirm Delete Employee
+			.actions
+				.ui.positive.submit.right.button OK
+			//- .four.column.wide.row
+			//- 	.column
+			//- 		button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/add')")
+			//- 			.visible.content
+			//- 				.ui.grid
+			//- 					.row
+			//- 					.row
+			//- 					.row
+			//- 						.ui.container
+			//- 							h1 Add Employee
+			//- 					.row
+			//- 					.row
+			//- 			.hidden.content
+			//- 				| Add a new employee
+			//- 	.column
+			//- 		.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/editEmployee')")
+			//- 			.visible.content
+			//- 				.ui.grid
+			//- 					.row
+			//- 					.row
+			//- 					.row
+			//- 						.ui.container
+			//- 							h1 Edit Employee
+			//- 					.row
+			//- 					.row
+			//- 			.hidden.content
+			//- 				| Edit an existing employee
+			//- // 2nd ROW Buttons
+			//- .four.column.wide.row
+			//- 	.column
+			//- 		.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/delete')")
+			//- 			.visible.content
+			//- 				.ui.grid
+			//- 					.row
+			//- 					.row
+			//- 					.row
+			//- 						.ui.container
+			//- 							h1 Delete Employee
+			//- 					.row
+			//- 					.row
+			//- 			.hidden.content
+			//- 				| Delete an existing employee
+		script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+		script(type='text/javascript').
+			var eID = -1;
+			// Trigger action when the contexmenu is about to be shown
+			$('tr').on("contextmenu", function (event) {
+				eID = parseInt($(this).children().first().attr('data-eid'));
+				// Avoid the real one
+				event.preventDefault();
+				// Show contextmenu
+				$(".custom-menu").finish().toggle(100).
+				// In the right position (the mouse)
+				css({
+					top: event.pageY - 13 + "px",
+					left: event.pageX + "px"
+				});
 			});
-		});
 
 
-		// If the document is clicked somewhere
-		$(document).bind("mousedown", function (e) {
-			// If the clicked element is not the menu
-			if (!$(e.target).parents(".custom-menu").length > 0) {
-				// Hide it
+			// If the document is clicked somewhere
+			$(document).bind("mousedown", function (e) {
+				// If the clicked element is not the menu
+				if (!$(e.target).parents(".custom-menu").length > 0) {
+					// Hide it
+					$(".custom-menu").hide(100);
+				}
+			});
+
+
+			// If the menu element is clicked
+			$(".custom-menu li").click(function(){
+				// This is the triggered action name
+				switch($(this).attr("data-action")) {
+					// A case for each action. Your actions here
+					case "edit":
+						window.location = '/employees/editEmployee?eID=' + eID;
+						//- alert($(this).parent().attr('data-eid'));
+						break;
+					case "delete":
+						$('.small.modal').modal('show');
+						break;
+				}			
+					// Hide it AFTER the action was triggered
 				$(".custom-menu").hide(100);
-			}
-		});
-
-
-		// If the menu element is clicked
-		$(".custom-menu li").click(function(){
-			// This is the triggered action name
-			switch($(this).attr("data-action")) {
-				// A case for each action. Your actions here
-				case "edit":
-					window.location = '/employees/editEmployee?eID=' + eID;
-					//- alert($(this).parent().attr('data-eid'));
-					break;
-				case "delete":
-					$('.small.modal').modal('show');
-					break;
-			}			
-				// Hide it AFTER the action was triggered
-			$(".custom-menu").hide(100);
-		});
-
-		$('.submit').click(function(){
-			$.post('/employees/deleteEmployee', {
-				eID: eID
-			}, function(){
-				alert('delete success!');
-				window.location.reload();
 			});
-		})
+
+			$('.submit').click(function(){
+				$.post('/employees/deleteEmployee', {
+					eID: eID
+				}, function(){
+					alert('delete success!');
+					window.location.reload();
+				});
+			})

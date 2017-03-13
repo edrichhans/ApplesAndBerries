@@ -1,0 +1,40 @@
+extends layout
+
+block content
+	form.ui.form#thirteenth(name='thirteenth', method='post', action='/thirteenth')
+		h4.ui.dividing.header Issue 13th Month Pay
+		.field
+			label Choose Employee
+			select(name="employeeDropdown").ui.fluid.search.dropdown
+				option(value="") Select Employee
+				each employee, index in employees
+					option(value=employee.eID)= employee.name
+
+		.field
+			label Choose Company
+			select(name="companyDropdown").ui.fluid.search.dropdown
+				option(value="") Select Company
+				option(value="apples") Apples
+				option(value="berries") Berries
+
+		.two.fields
+			.field
+				label Start Date
+				.ui.calendar#rangestart
+					.ui.input.left.icon
+						i.calendar.icon
+						input(name="startDate", type="text", placeholder="start")
+			.field
+				label End Date
+				.ui.calendar#rangeend
+					.ui.input.left.icon
+						i.calendar.icon
+						input(name="endDate", type='text', placeholder="end")
+
+		.ui.primary.submit.button Submit
+		.ui.button#print-button Print
+		.ui.error.message
+
+	script(type='text/javascript' src='javascripts/scripts.js')
+	script.
+		console.log($('#rangestart').calendar('get date'));

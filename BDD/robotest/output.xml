@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170313 02:03:40.237" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\AF\Documents\CS Subjects\CS 192\Project\robotest\employee_add.robot" id="s1" name="Employee Add">
+<kw type="setup" name="Open Browser To Main Menu" library="employee_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170313 02:03:40.352" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170313 02:03:46.980" starttime="20170313 02:03:40.352"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170313 02:03:48.126" starttime="20170313 02:03:46.980"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170313 02:03:48.127" starttime="20170313 02:03:48.127"></status>
+</kw>
+<kw name="Input Username" library="employee_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170313 02:03:48.127" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170313 02:03:48.520" starttime="20170313 02:03:48.127"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:48.520" starttime="20170313 02:03:48.127"></status>
+</kw>
+<kw name="Input Password" library="employee_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170313 02:03:48.521" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170313 02:03:48.910" starttime="20170313 02:03:48.520"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:48.910" starttime="20170313 02:03:48.520"></status>
+</kw>
+<kw name="Submit Credentials" library="employee_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit</arg>
+</arguments>
+<msg timestamp="20170313 02:03:48.911" level="INFO">Clicking button 'submit'.</msg>
+<status status="PASS" endtime="20170313 02:03:49.417" starttime="20170313 02:03:48.910"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:49.417" starttime="20170313 02:03:48.910"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Apples and Berries Payroll System</arg>
+</arguments>
+<status status="PASS" endtime="20170313 02:03:53.294" starttime="20170313 02:03:49.417"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170313 02:03:53.401" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170313 02:03:53.401" starttime="20170313 02:03:53.294"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:53.401" starttime="20170313 02:03:40.351"></status>
+</kw>
+<test id="s1-t1" name="Check Add Employee Status">
+<kw name="Go To Employee Panel" library="employee_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>employee</arg>
+</arguments>
+<msg timestamp="20170313 02:03:53.403" level="INFO">Clicking button 'employee'.</msg>
+<status status="PASS" endtime="20170313 02:03:54.165" starttime="20170313 02:03:53.403"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>EmployeePanel</arg>
+</arguments>
+<status status="PASS" endtime="20170313 02:03:54.284" starttime="20170313 02:03:54.165"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${EMPLOY URL}</arg>
+</arguments>
+<msg timestamp="20170313 02:03:54.391" level="INFO">Current location is 'http://localhost:8000/employees'.</msg>
+<status status="PASS" endtime="20170313 02:03:54.391" starttime="20170313 02:03:54.284"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:54.391" starttime="20170313 02:03:53.402"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>addemp</arg>
+</arguments>
+<msg timestamp="20170313 02:03:54.392" level="INFO">Clicking button 'addemp'.</msg>
+<status status="PASS" endtime="20170313 02:03:55.174" starttime="20170313 02:03:54.392"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Add Employee</arg>
+</arguments>
+<status status="PASS" endtime="20170313 02:03:55.296" starttime="20170313 02:03:55.175"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${ADD EMPLOY URL}</arg>
+</arguments>
+<msg timestamp="20170313 02:03:55.402" level="INFO">Current location is 'http://localhost:8000/employees/add'.</msg>
+<status status="PASS" endtime="20170313 02:03:55.402" starttime="20170313 02:03:55.296"></status>
+</kw>
+<kw name="Input EmpName">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name</arg>
+<arg>Chacha${SPACE}BeatBoy</arg>
+</arguments>
+<msg timestamp="20170313 02:03:55.403" level="INFO">Typing text 'Chacha BeatBoy' into text field 'name'</msg>
+<status status="PASS" endtime="20170313 02:03:55.805" starttime="20170313 02:03:55.403"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:55.805" starttime="20170313 02:03:55.403"></status>
+</kw>
+<kw name="Select Status">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//body/div/div[2]/form/div[3]/div[2]/div</arg>
+</arguments>
+<msg timestamp="20170313 02:03:55.806" level="INFO">Clicking element 'xpath=//body/div/div[2]/form/div[3]/div[2]/div'.</msg>
+<status status="PASS" endtime="20170313 02:03:56.101" starttime="20170313 02:03:55.806"></status>
+</kw>
+<kw name="Select From List By Index" library="Selenium2Library">
+<doc>Selects `*indexes` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170313 02:03:56.101" level="INFO">Selecting index(es) '0' from list 'status'.</msg>
+<status status="PASS" endtime="20170313 02:03:56.776" starttime="20170313 02:03:56.101"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:56.776" starttime="20170313 02:03:55.806"></status>
+</kw>
+<kw name="Input StartDate">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>startdate</arg>
+<arg>12/30/2017</arg>
+</arguments>
+<msg timestamp="20170313 02:03:56.777" level="INFO">Typing text '12/30/2017' into text field 'startdate'</msg>
+<status status="PASS" endtime="20170313 02:03:57.219" starttime="20170313 02:03:56.777"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:57.219" starttime="20170313 02:03:56.776"></status>
+</kw>
+<kw name="Input Birthday">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>birthday</arg>
+<arg>12/30/1997</arg>
+</arguments>
+<msg timestamp="20170313 02:03:57.221" level="INFO">Typing text '12/30/1997' into text field 'birthday'</msg>
+<status status="PASS" endtime="20170313 02:03:57.680" starttime="20170313 02:03:57.221"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:57.680" starttime="20170313 02:03:57.220"></status>
+</kw>
+<kw name="Select Position">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//body/div/div[2]/form/div[3]/div/div</arg>
+</arguments>
+<msg timestamp="20170313 02:03:57.681" level="INFO">Clicking element 'xpath=//body/div/div[2]/form/div[3]/div/div'.</msg>
+<status status="PASS" endtime="20170313 02:03:57.976" starttime="20170313 02:03:57.681"></status>
+</kw>
+<kw name="Select From List By Index" library="Selenium2Library">
+<doc>Selects `*indexes` from list identified by `locator`</doc>
+<arguments>
+<arg>position</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170313 02:03:57.976" level="INFO">Selecting index(es) '0' from list 'position'.</msg>
+<status status="PASS" endtime="20170313 02:03:58.654" starttime="20170313 02:03:57.976"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:58.654" starttime="20170313 02:03:57.681"></status>
+</kw>
+<kw name="Input Dependents">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>dependents</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170313 02:03:58.656" level="INFO">Typing text '0' into text field 'dependents'</msg>
+<status status="PASS" endtime="20170313 02:03:59.044" starttime="20170313 02:03:58.656"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:59.044" starttime="20170313 02:03:58.656"></status>
+</kw>
+<kw name="Input Salary">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>salary</arg>
+<arg>18000</arg>
+</arguments>
+<msg timestamp="20170313 02:03:59.045" level="INFO">Typing text '18000' into text field 'salary'</msg>
+<status status="PASS" endtime="20170313 02:03:59.438" starttime="20170313 02:03:59.045"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:03:59.438" starttime="20170313 02:03:59.045"></status>
+</kw>
+<kw name="Submit Form" library="Selenium2Library">
+<doc>Submits a form identified by `locator`.</doc>
+<msg timestamp="20170313 02:03:59.439" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" endtime="20170313 02:03:59.986" starttime="20170313 02:03:59.439"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Apples and Berries Payroll System</arg>
+</arguments>
+<status status="PASS" endtime="20170313 02:04:00.110" starttime="20170313 02:03:59.987"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170313 02:04:00.217" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170313 02:04:00.217" starttime="20170313 02:04:00.110"></status>
+</kw>
+<status status="PASS" endtime="20170313 02:04:00.218" critical="yes" starttime="20170313 02:03:53.401"></status>
+</test>
+<doc>A test suite with a single test for adding an employee.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" endtime="20170313 02:04:00.221" starttime="20170313 02:03:40.240"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Employee Add" pass="1">Employee Add</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,25 @@
+js-bson: Failed to load c++ bson extension, using pure JS version
+Fri, 03 Mar 2017 07:23:28 GMT express-session deprecated undefined resave option; provide resave option at app.js:40:9
+Fri, 03 Mar 2017 07:23:28 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:40:9
+Fri, 03 Mar 2017 07:29:28 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at routes\login.js:37:8
+js-bson: Failed to load c++ bson extension, using pure JS version
+Fri, 03 Mar 2017 07:55:28 GMT express-session deprecated undefined resave option; provide resave option at app.js:40:9
+Fri, 03 Mar 2017 07:55:28 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:40:9
+Fri, 03 Mar 2017 13:28:09 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at routes\login.js:37:8
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:356:11)
+    at ServerResponse.header (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\express\lib\response.js:719:10)
+    at ServerResponse.send (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\express\lib\response.js:164:12)
+    at done (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\express\lib\response.js:956:10)
+    at View.exports.__express [as engine] (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\jade\lib\index.js:417:11)
+    at View.render (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\express\lib\view.js:126:8)
+    at tryRender (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\express\lib\application.js:639:10)
+    at EventEmitter.render (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\express\lib\response.js:960:7)
+    at C:\Users\AF\Documents\CS Subjects\CS 192\Project\app.js:147:6
+js-bson: Failed to load c++ bson extension, using pure JS version
+Fri, 03 Mar 2017 14:17:51 GMT express-session deprecated undefined resave option; provide resave option at app.js:40:9
+Fri, 03 Mar 2017 14:17:51 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:40:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Thu, 09 Mar 2017 09:20:18 GMT express-session deprecated undefined resave option; provide resave option at app.js:40:9
+Thu, 09 Mar 2017 09:20:18 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:40:9

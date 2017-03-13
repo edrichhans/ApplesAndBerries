@@ -1,0 +1,98 @@
+//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
+//- script(src="semantic/dist/semantic.min.js")
+extends layout
+
+block content
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		// Title
+		.row#menu-row
+			.ui.center.aligned
+				h1 Control Panel 
+		.row
+		// 1st ROW Buttons
+		.four.column.wide.row
+			.column
+				button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/BIR')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 B I R
+							.row
+							.row
+					.hidden.content
+						| Update tax rates
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/SSS')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 S S S
+							.row
+							.row
+					.hidden.content
+						| Update SSS fees
+			.column
+				.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/PH')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 PhilHealth
+							.row					
+							.row
+					.ui.hidden.content
+						.ui.center.aligned.fluid
+							| Update PhilHealth
+		// 2nd ROW Buttons
+		.four.column.wide.row
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/addUser')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 Add User
+							.row
+							.row
+					.hidden.content
+						| Create a new user
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/deleteUser')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 Delete User
+							.row
+							.row
+					.hidden.content
+						| Delete an existing user
+			.column
+				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/backup')")
+					.visible.content
+						.ui.grid
+							.row
+							.row
+							.row
+								.ui.container
+									h1 Back up
+							.row
+							.row
+					.hidden.content
+						| Back up files
+		.row
+		.row
+
+	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")

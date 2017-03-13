@@ -1,0 +1,81 @@
+extends layout
+
+block content
+	.ui.middle.center.aligned.grid.stackable.doubling
+		// Title
+		.row#menu-row
+			.ui.inverted.segment(style="width: 100%; height: 15%; padding: 30;	border-radius: 0px !important; background: #BDBEBF !important")
+				.ui.center.aligned
+					h1 Edit Employee
+
+	form.ui.form.center2.box#editEmployee(name='addemployee', method='post', action='/employees/editEmployee')
+		input#eID.hide(name="eID" readonly)
+		.two.fields
+			.field
+				label Name
+				.ui.input
+					input#inputName(name="name", type='text', placeholder='Name' readonly)
+			.field
+				label Start Date of Employment
+				.ui.input.left.icon
+					i.calendar.icon
+					input#inputStartDate(name="start", type="text", placeholder="Date" readonly)
+
+		.field
+			label Birthday
+			.ui.input.left.icon
+				i.calendar.icon
+				input#inputBirthday(name="birthday", type="text", placeholder="Date" readonly)
+
+		.fields
+			.field
+				label Position
+				select(name='position').ui.fluid.search.dropdown#selectPosition
+					option(value="") Select Option...
+					option(value=0) Teacher
+					option(value=1) Admin
+					option(value=2) Staff
+			.field
+				label Civil Status
+				select(name='status').ui.fluid.search.dropdown#selectStatus
+					option(value="") Select Option...
+					option(value=0) Single
+					option(value=1) Married
+			.field
+				label Dependents
+					.ui.input
+						input#inputDependents(name="dependents", type="number", placeholder="How many?" min="0")
+			.field
+				label Base Salary
+					.ui.input
+						input#inputBaseSalary(name="salary", type="number", placeholder="Salary" min="0")
+		.ui.primary.button#confirm Submit
+		.ui.error.message
+
+		.ui.small.modal
+			.header Confirm
+			.content
+				| Confirm Edit Employee
+			.actions
+				.ui.positive.submit.right.button OK
+
+	script(type='text/javascript').
+		var employees =!{JSON.stringify(employees)};
+		function getParameterByName(name, url) {
+			if (!url) {
+				url = window.location.href;
+			}
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+					results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+		var eID = getParameterByName('eID');
+		console.log(eID);
+	script(type='text/javascript' src='/javascripts/scripts.js')
+	script.
+		$('#confirm').click(function(){
+			$('.small.modal').modal('show');
+		});
