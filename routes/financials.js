@@ -56,11 +56,12 @@ router.get('/payslip', function(req, res, next){
 });
 
 router.post('/payslip', function(req, res){
-	paySlipRoute.insert(req, res, function(){
+	paySlipRoute.insert(req, res, function(jsondata){
 		wlogger.log('info', 'Payslip Issued', {
 			issuedBy: req.session.username,
 			issuedTo: req.body.employeeDropdown
 		});
+		// console.log(res.body);
 		res.status(200);
 		res.redirect('/');
 	});
@@ -157,29 +158,42 @@ router.get('/updateComp', function(req, res){
 });
 
 router.post('/updateSSSComp', function(req, res){
-	updateCompRoute.updateSSS(req, res, function(){
-		wlogger.log('info', 'SSS Updated!', {
-			issuedBy: req.session.username,
-		});		
-		res.redirect('/');
+	updateCompRoute.updateSSS(req, res, function(err){
+		if(err){
+			res.status(500).end();
+		}
+		else{
+			wlogger.log('info', 'SSS Updated!', {
+				issuedBy: req.session.username,
+			});		
+			res.redirect('/');
+		}
 	});
 });
 
 router.post('/updatePHComp', function(req, res){
-	updateCompRoute.updatePH(req, res, function(){
-		wlogger.log('info', 'PhilHealth Updated!', {
-			issuedBy: req.session.username,
-		});		
-		res.redirect('/');
+	updateCompRoute.updatePH(req, res, function(err){
+		if(err){
+			res.status(500).end();
+		}
+		else{
+			wlogger.log('info', 'PhilHealth Updated!', {
+				issuedBy: req.session.username,
+			});		
+			res.redirect('/');
+		}
 	});
 });
 
 router.post('/updateBIRComp', function(req, res){
-	updateCompRoute.updateBIR(req, res, function(){
-		wlogger.log('info', 'BIR Updated!', {
-			issuedBy: req.session.username,
-		});		
-		res.redirect('/');
+	updateCompRoute.updateBIR(req, res, function(err){
+		if(err) res.status(500).end();
+		else{
+			wlogger.log('info', 'BIR Updated!', {
+				issuedBy: req.session.username
+			});		
+			res.redirect('/');
+		}
 	});
 });
 
