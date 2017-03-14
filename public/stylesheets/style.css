@@ -1,6 +1,8 @@
 body{
 	/*padding: 50px;*/
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: #9E6363 !important;
+	height: 105vh !important;
 }
 
 a{
@@ -45,7 +47,7 @@ a{
 	padding: 10px;
 	border-radius: 25px;
 }
-
+	
 .center2 {
 	margin-left: 25%;
 	width: 50%;
@@ -106,3 +108,96 @@ a{
 table {
 	margin: 0 1rem;
 }
+
+.ui.two.wide.column {
+	background-color: #333;
+}
+
+/*ui.vertical.fluid.inverted.labeled.icon.menu(style="height: 100%; background: #3D3E3F !important")*/
+/*.ui.vertical.fluid.inverted.labeled.icon.menu{
+height: 100%; background: #333 !important
+}*/
+
+.ui.fluid.large.red.four.wide{
+background-color: #932F2F;
+}
+
+#section-title{
+	margin: 50px 10px 10px 10px;
+}
+
+#fixed-top-menu{
+	margin: 0; 
+	border-radius: 0px;
+	background: #9E6363: !important;
+	background-color: #723838: !important;
+}
+
+#main-grid{
+background: #9E6363: !important;
+	
+	
+}
+
+button{
+	background-color: #932F2F !important;
+}
+
+
+#left-menu > .a.item{
+
+	background-color: #632222 !important;
+
+}
+
+[id^="section"] {
+	margin: 80 10 10 10 !important;
+}
+
+.ui.vertical.menu {
+	background: #966A6A !important;
+}
+
+.ui.icon.menu>.item{
+	background-color: #9F3A38 !important;
+}
+
+
+#flm-employee-module-button {
+	color:#9F3A38 !important;
+
+}
+
+#employee-module-button{
+	background-color: #9F3A38 !important;
+}
+
+.ui.red.button, .ui.red.buttons .button{
+	background-color: #9F3A38 !important;
+
+}
+/*
+.ui.animated.fade.red.button.fluid{
+	background-color: #932F2F !important;
+}*/
+
+
+/*COLORS
+#282828
+#545454
+#B19191
+#9E6363
+#723838
+#932F2F color ng texts sa input field na dark
+#632222
+#FFFFFF
+#F0F0F0
+#9F3A38 color ng icons na dark 
+#FFF6F6
+#966A6A
+#943d3d
+#CF8B8B Color ng icons at texts
+FFEAEA INPUT FIELDS COLOR DEFAULT
+
+
+*/
