@@ -8,7 +8,7 @@ block content
 	.ui.middle.aligned.center.aligned.grid
 		// Table Title
 		.row#menu-row
-			.ui.center.aligned
+			#section-title.ui.center.aligned(style='margin: 80 10 10 10;')
 				h1 Acknowledgment Receipt
 		// buttons
 		.row
@@ -18,10 +18,10 @@ block content
 		.ui.fitted.divider
 		// Table Proper
 		.column.row
-			table.ui.table.fluid.selectable.sortable
+			table#AR-view-table.ui.table.fluid.selectable.sortable
 				thead
 					tr
-						th.collapsing AN#
+						th.collapsing #AN
 						th.two.wide Issued By
 						th.three.wide Name
 						th.two.wide Date
