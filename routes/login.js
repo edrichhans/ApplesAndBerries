@@ -7,7 +7,7 @@ var sess;
 
 router.get('/reset/:token', function(req, res){
 	mailerRoute.resetView(req, res, function(user){
-		if(!user){
+		if(user){
 			// console.log(user);
 			res.redirect('/forgot');
 		}
