@@ -272,6 +272,7 @@ router.get('/download', function(req, res, next){
 	var p = path.resolve(".") + '/uploads/' + file
 
 	res.download(p);
+	return;
 });
 
 module.exports = router;
