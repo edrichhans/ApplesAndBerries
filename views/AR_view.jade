@@ -8,39 +8,39 @@ block content
 	.ui.middle.aligned.center.aligned.grid
 		// Table Title
 		.row#menu-row
-			#section-title.ui.center.aligned(style='margin: 80 10 10 10;')
+			.ui.center.aligned(style='margin: 80 10 10 10;')
 				h1 Acknowledgment Receipt
 		// buttons
 		.row
 			button.ui.button(onclick="location.replace('/AR')") ADD
 			.ui.button EDIT
 			.ui.button DELETE
-		.ui.fitted.divider
 		// Table Proper
-		.column.row
-			table#AR-view-table.ui.table.fluid.selectable.sortable
-				thead
-					tr
-						th.collapsing #AN
-						th.two.wide Issued By
-						th.three.wide Name
-						th.two.wide Date
-						th Particulars
-						th.two.wide Amount
-				tbody
-					for item in transactions
-						tr
-							td= item.adviceNumber
-							td= item.issuedBy
-							td= item.name
-							td= item.date
-							td= item.particulars
-							td= item.amount
-		// PRINT BUTTON
-		.ten.column.row
-			.right.floated.fluid.column
-				.ui.fluid.button#print-button Print
 		.row
+			.ui.container(style="overflow-y:scroll; height: 55vh")
+				table#AR-view-table.ui.table.fluid.selectable.sortable
+					thead
+						tr
+							th.collapsing #AN
+							th.two.wide Issued By
+							th.three.wide Name
+							th.two.wide Date
+							th Particulars
+							th.two.wide Amount
+					tbody
+						for item in transactions
+							tr
+								td= item.adviceNumber
+								td= item.issuedBy
+								td= item.name
+								td= item.date
+								td= item.particulars
+								td= item.amount
+
+
+		// PRINT BUTTON
+		.fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
+			button.ui.button.right.floated.column#print-AR-button Print
 
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
 	script(type='text/javascript' src='javascripts/scripts.js')

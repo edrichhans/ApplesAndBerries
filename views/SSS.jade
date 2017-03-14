@@ -2,33 +2,34 @@ extends layout
 
 block content
 	title SSS View
-	br
-	br
-	br
-	form.ui.form#SSS(name='updateSSSComp', method='post', action='/updateSSSComp')
-		h4.ui.dividing.header Update SSS Table
-		.field
-			table.ui.celled.table#SSSTable
-				thead
-					tr
-						th From
-						th To
-						th Credit
-						th Total ER
-						th Total EE
-						th EC
-						th Total
-				tbody
-		.field
-			.ui.button.submit#SSSSubmit Submit
+	.ui.container(style="margin: 10vh 0 0 0; padding: 0 8vh 0 0")
+		br
+		br
+		br
+		form.ui.form#SSS(name='updateSSSComp', method='post', action='/updateSSSComp')
+			h3.ui.dividing.header Update SSS Table
+			.field(style="overflow-y:scroll; height: 55vh")
+				table.ui.celled.table#SSSTable
+					thead
+						tr
+							th From
+							th To
+							th Credit
+							th Total ER
+							th Total EE
+							th EC
+							th Total
+					tbody
+			.field
+				.ui.button.submit#SSSSubmit Submit
 
-	.ui.small.modal
-		.header Confirm
-		.content
-			| Confirm Update?
-		.actions
-			.ui.positive.right.button#confirmSSS OK
+		.ui.small.modal
+			.header Confirm
+			.content
+				| Confirm Update?
+			.actions
+				.ui.positive.right.button#confirmSSS OK
 
-	script(type='text/javascript', src='/javascripts/updateSSS.js')
-	script(type='text/javascript').
-		var sss =!{JSON.stringify(SSS)};
+		script(type='text/javascript', src='/javascripts/updateSSS.js')
+		script(type='text/javascript').
+			var sss =!{JSON.stringify(SSS)};
