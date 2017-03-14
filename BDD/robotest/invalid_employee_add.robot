@@ -15,12 +15,12 @@ Test Template     Wrong Input In Fields Should Fail
 
 *** Test Cases ***               
 Empty Name                 ${EMPTY}	  12/30/2017	12/30/1997   0   0   100   100000
-Empty Startdate            Chacha${SPACE}Beatboy	${EMPTY}   12/30/1997   0   0   100   100000
-Empty Birthday 			   Chacha${SPACE}Beatboy	12/30/2017	 ${EMPTY}   0   0   100   100000
-Empty Dependents 		   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   0   ${EMPTY}   100000
+Empty Startdate            Chacha${SPACE}Beatboy	${EMPTY}   12/30/1997   0   1   100   100000
+Empty Birthday 			   Chacha${SPACE}Beatboy	12/30/2017	 ${EMPTY}   1   0   100   100000
+Empty Dependents 		   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   1   1   ${EMPTY}   100000
 Empty Salary 			   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   0   100   ${EMPTY}
-Char Dependents 		   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   0   gray   100000
-Char Salary 			   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   0   100   gray
+Char Dependents 		   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   1   gray   100000
+Char Salary 			   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   1   0   100   gray
 
 *** comment ***
 
@@ -56,13 +56,13 @@ Input Birthday
 
 Select Position
 	[Arguments]    ${position}
-	Click Element	xpath=//body/div/div[2]/form/div[3]/div/div		
-	Select From List By Index	    position     ${position}
+	Click Element	xpath=//body/div/div/div[3]/div/form/div[3]/div/div
+	Click Element   xpath=//body/div/div/div[3]/div/form/div[3]/div/div/div/div[1]
 
 Select Status
 	[Arguments]    ${status}
-	Click Element	xpath=//body/div/div[2]/form/div[3]/div[2]/div
-	Select From List By Index	    status       ${status}
+	Click Element	xpath=//body/div/div/div[3]/div/form/div[3]/div[2]/div
+	Click Element   xpath=//body/div/div/div[3]/div/form/div[3]/div[2]/div/div/div[1]
 	
 Input Dependents
 	[Arguments]    ${dependents}
@@ -73,9 +73,9 @@ Input Salary
 	Input Text	  salary 		${salary}
 
 Go To Employee Panel
-    Click Button               xpath=//body/div/div[2]/div[2]/div[2]/div/button
+    Click Button               employee-module-button
     Wait Until Page Contains   EmployeePanel
     Location Should Be         ${EMPLOY URL}
-    Click Button    addemp
+    Click Button                xpath=//body/div/div/div[3]/div/div[2]/button
     Wait Until Page Contains    Add Employee
     Location Should Be          ${ADD EMPLOY URL}
