@@ -14,30 +14,33 @@ Test Template     Wrong Input In Fields Should Fail
 
 
 *** Test Cases ***               
-Empty Name                 
-Empty Startdate           
-Empty Birthday
-Empty Position
-Empty Status
-Empty Dependents
-Empty Salary
+Empty Name                 ${EMPTY}	  12/30/2017	12/30/1997   0   0   100   100000
+Empty Startdate            Chacha${SPACE}Beatboy	${EMPTY}   12/30/1997   0   0   100   100000
+Empty Birthday 			   Chacha${SPACE}Beatboy	12/30/2017	 ${EMPTY}   0   0   100   100000
+Empty Dependents 		   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   0   ${EMPTY}   100000
+Empty Salary 			   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   0   100   ${EMPTY}
+Char Dependents 		   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   0   gray   100000
+Char Salary 			   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   0   100   gray
+
+*** comment ***
+
+Empty Position 			   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   ${EMPTY}   0   100   100000
+Empty Status 			   Chacha${SPACE}Beatboy	12/30/2017	 12/30/1997   0   ${EMPTY}   100   100000
 
 *** Keywords ***
 Wrong Input In Fields Should Fail
     [Arguments]    ${name}    ${startdate}    ${birthday}    ${position}	${status}	${dependents}	${salary}
-	Go To Employee Panel
-    Click Button	addemp
-    Wait Until Page Contains    Add Employee
-    Location Should Be 			${ADD EMPLOY URL}
+    Go To Employee Panel
     Input EmpName				${name}
     Select Status 				${status}
     Input StartDate 			${startdate}
     Input Birthday  			${birthday}
     Select Position 			${position}
-    Input Dependents 			${position}
+    Input Dependents 			${dependents}
     Input Salary 				${salary}
     Submit Form
-    Location Should Be    ${EMPLOY URL}
+    Location Should Be    ${ADD EMPLOY URL}
+    Go Back Home
 
 Input EmpName
 	[Arguments]    ${name}
@@ -63,8 +66,10 @@ Select Status
 	
 Input Dependents
 	[Arguments]    ${dependents}
-	Input Text    dependents 	 ${deoendents}
+	Input Text    dependents 	 ${dependents}
 
 Input Salary
-	[Arguments]    ${salart}
+	[Arguments]    ${salary}
 	Input Text	  salary 		${salary}
+
+Add an 

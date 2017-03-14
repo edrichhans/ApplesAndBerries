@@ -1,6 +1,7 @@
 extends layout
 
 block content
+	title EmployeePanel
 	ul.custom-menu
 		li(data-action="edit") Edit
 		li(data-action="delete") Delete
@@ -48,7 +49,7 @@ block content
 								td= employee.salary
 	.row
 		div(style='padding: 2%')
-			button.ui.right.floated.button(onclick="location.replace('/employees/add')") ADD
+			button.ui.right.floated.button#addemp(onclick="location.replace('/employees/add')") ADD
 	.ui.small.modal
 		.header Confirm
 		.content

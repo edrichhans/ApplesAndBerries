@@ -1,0 +1,174 @@
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\lib\bson\index.js:3:24)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\mongodb\lib\mongodb\index.js:2:22)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\app.js:8:13)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\test\financials.js:4:14)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at C:\Users\AF\AppData\Roaming\npm\node_modules\mocha\lib\mocha.js:216:27
+    at Array.forEach (native)
+    at Mocha.loadFiles (C:\Users\AF\AppData\Roaming\npm\node_modules\mocha\lib\mocha.js:213:14)
+    at Mocha.run (C:\Users\AF\AppData\Roaming\npm\node_modules\mocha\lib\mocha.js:453:10)
+    at Object.<anonymous> (C:\Users\AF\AppData\Roaming\npm\node_modules\mocha\bin\_mocha:401:18)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.runMain (module.js:604:10)
+    at run (bootstrap_node.js:394:7)
+    at startup (bootstrap_node.js:149:9)
+    at bootstrap_node.js:509:3 code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+1..33
+[0mGET /payslip [36m302 [0m10.198 ms - 28[0m
+[0mGET /login [32m200 [0m473.950 ms - 1962[0m
+ok 1 Payslip Display page returns status 200
+[32minfo[39m: Payslip Issued issuedBy=undefined, issuedTo=6
+[0mPOST /payslip [36m302 [0m22.695 ms - 23[0m
+employee
+Edward Chua
+[0mGET / [36m302 [0m1.652 ms - 28[0m
+[0mGET /login [32m200 [0m34.398 ms - 1962[0m
+ok 2 Payslip Insert returns status 200
+[32minfo[39m: Thirteenth Month Pay Issued issuedBy=undefined, issuedTo=6
+[0mPOST /thirteenth [36m302 [0m3.817 ms - 23[0m
+[0mGET / [36m302 [0m0.884 ms - 28[0m
+[0mGET /login [32m200 [0m34.904 ms - 1962[0m
+ok 3 Thirteenth Insert returns status 200
+[0mGET /AR_view [36m302 [0m0.606 ms - 28[0m
+[0mGET /login [32m200 [0m28.501 ms - 1962[0m
+ok 4 AR Display page returns status 200
+[0mGET /AR [36m302 [0m0.726 ms - 28[0m
+[0mGET /login [32m200 [0m16.553 ms - 1962[0m
+ok 5 AR Display form returns status 200
+[32minfo[39m: Acknowledgement Receipt Issued issuedBy=undefined, issuedTo=Edrich Chua
+[0mPOST /AR [36m302 [0m1.380 ms - 30[0m
+[0mGET /AR_view [36m302 [0m0.947 ms - 28[0m
+[0mGET /login [32m200 [0m16.403 ms - 1962[0m
+ok 6 AR Insert returns status 200
+[0mGET /pettycash_view [36m302 [0m0.896 ms - 28[0m
+[0mGET /login [32m200 [0m16.269 ms - 1962[0m
+ok 7 Petty Cash Display page returns status 200
+[0mGET /pettycash [36m302 [0m0.505 ms - 28[0m
+[0mGET /login [32m200 [0m21.650 ms - 1962[0m
+ok 8 Petty Cash Display form returns status 200
+[32minfo[39m: Petty Cash Issued issuedBy=undefined, issuedTo=Edrich Chua
+[0mPOST /pettycash [36m302 [0m1.632 ms - 32[0m
+[0mGET /pettycash [36m302 [0m0.485 ms - 28[0m
+[0mGET /login [32m200 [0m13.220 ms - 1962[0m
+ok 9 Petty Cash Insert returns status 200
+[0mGET /checkvoucher_view [36m302 [0m0.804 ms - 28[0m
+[0mGET /login [32m200 [0m18.561 ms - 1962[0m
+ok 10 Check Voucher Display page returns status 200
+[0mGET /checkvoucher [36m302 [0m0.571 ms - 28[0m
+[0mGET /login [32m200 [0m21.661 ms - 1962[0m
+ok 11 Check Voucher Display form returns status 200
+[32minfo[39m: Check Voucher Issued issuedBy=undefined, issuedTo=Edrich Chua
+[0mPOST /checkvoucher [36m302 [0m1.806 ms - 23[0m
+[0mGET / [36m302 [0m0.529 ms - 28[0m
+[0mGET /login [32m200 [0m14.737 ms - 1962[0m
+ok 12 Check Voucher Insert returns status 200
+[0mPOST /updateBIRComp [31m500 [0m1.179 ms - -[0m
+ok 13 BIR Incorrect Insert (character in hash) returns status 500
+[0mPOST /updateBIRComp [31m500 [0m0.511 ms - -[0m
+ok 14 BIR Incorrect Insert (character in range) returns status 500
+[0mPOST /updateBIRComp [31m500 [0m0.455 ms - -[0m
+ok 15 BIR Incorrect Insert (null in hash) returns status 500
+[0mPOST /updateBIRComp [31m500 [0m0.459 ms - -[0m
+ok 16 BIR Incorrect Insert (null in range) returns status 500
+[0mGET /BIR [36m302 [0m1.144 ms - 23[0m
+[0mGET / [36m302 [0m0.526 ms - 28[0m
+[0mGET /login [32m200 [0m12.139 ms - 1962[0m
+ok 17 BIR display page returns status 200
+[32minfo[39m: BIR Updated! issuedBy=undefined
+[0mPOST /updateBIRComp [36m302 [0m5.873 ms - 23[0m
+[0mGET / [36m302 [0m0.595 ms - 28[0m
+[0mGET /login [32m200 [0m14.824 ms - 1962[0m
+ok 18 BIR Insert Correct Values returns status 200
+[0mPOST /updateSSSComp [31m500 [0m0.779 ms - -[0m
+ok 19 SSS Incorrect input (char in credit) returns status 500
+[0mPOST /updateSSSComp [31m500 [0m0.541 ms - -[0m
+ok 20 SSS Incorrect input (char in from) returns status 500
+[0mPOST /updateSSSComp [31m500 [0m4.385 ms - -[0m
+ok 21 SSS Incorrect input (char in to) returns status 500
+[0mPOST /updateSSSComp [31m500 [0m0.747 ms - -[0m
+ok 22 SSS Incorrect input (char in totalER) returns status 500
+[0mPOST /updateSSSComp [31m500 [0m0.967 ms - -[0m
+ok 23 SSS Incorrect input (blank totalEE) returns status 500
+[0mPOST /updateSSSComp [31m500 [0m0.457 ms - -[0m
+ok 24 SSS Incorrect input (no EC field) returns status 500
+[0mGET /SSS [36m302 [0m0.661 ms - 23[0m
+[0mGET / [36m302 [0m0.994 ms - 28[0m
+[0mGET /login [32m200 [0m12.360 ms - 1962[0m
+ok 25 SSS display page returns status 200
+[32minfo[39m: SSS Updated! issuedBy=undefined
+[0mPOST /updateSSSComp [36m302 [0m7.296 ms - 23[0m
+[0mGET / [36m302 [0m0.542 ms - 28[0m
+[0mGET /login [32m200 [0m13.783 ms - 1962[0m
+ok 26 SSS Insert returns status 200
+EYTPA SDFKJLANS
+a
+[0mPOST /updatePHComp [31m500 [0m0.904 ms - -[0m
+ok 27 PhilHealth Incorrect Insert (char in base) returns status 500
+EYTPA SDFKJLANS
+8000
+[0mPOST /updatePHComp [31m500 [0m0.683 ms - -[0m
+ok 28 PhilHealth Incorrect Insert (char in premium) returns status 500
+EYTPA SDFKJLANS
+8000
+[0mPOST /updatePHComp [31m500 [0m0.492 ms - -[0m
+ok 29 PhilHealth Incorrect Insert (char in share) returns status 500
+[0mPOST /updatePHComp [31m500 [0m0.439 ms - -[0m
+ok 30 PhilHealth Incorrect Insert (char in from) returns status 500
+[0mPOST /updatePHComp [31m500 [0m0.471 ms - -[0m
+ok 31 PhilHealth Incorrect Insert (char in to) returns status 500
+[0mGET /PH [36m302 [0m0.691 ms - 28[0m
+[0mGET /login [32m200 [0m13.486 ms - 1962[0m
+ok 32 PhilHealth display page returns status 200
+[32minfo[39m: PhilHealth Updated! issuedBy=undefined
+[0mPOST /updatePHComp [36m302 [0m3.458 ms - 23[0m
+[0mGET / [36m302 [0m0.606 ms - 28[0m
+[0mGET /login [32m200 [0m17.875 ms - 1962[0m
+ok 33 PhilHealth Insert returns status 200
+# tests 33
+# pass 33
+# fail 0

@@ -9,7 +9,7 @@ Library           Selenium2Library
 *** Variables ***
 ${SERVER}         localhost:8000
 ${BROWSER}        Chrome
-${DELAY}          0.1
+${DELAY}          0.3
 ${username}       edrichhans
 ${password}       password
 ${LOGIN URL}      http://${SERVER}/login
@@ -27,6 +27,7 @@ Open Browser To Main Menu
     Submit Credentials
     Wait Until Page Contains   Apples and Berries Payroll System
     Location Should Be    ${WELCOME URL}
+    
 
 Input Username
     Input Text    username    ${username}
@@ -37,7 +38,15 @@ Input Password
 Submit Credentials
     Click Button    submit
 
+Go Back Home
+	Click Element   xpath=//body/div/div[2]/div/a[2]
+	Wait Until Page Contains   Apples and Berries Payroll System
+    Location Should Be    ${WELCOME URL}
+
 Go To Employee Panel
-	Click Button               employee
+	Click Button               xpath=//body/div/div[2]/div[2]/div[2]/div/button
 	Wait Until Page Contains   EmployeePanel
 	Location Should Be         ${EMPLOY URL}
+	Click Button	addemp
+    Wait Until Page Contains    Add Employee
+    Location Should Be 			${ADD EMPLOY URL}

@@ -10,9 +10,6 @@ Resource          employee_resource.robot
 *** Test Cases ***
 Check Add Employee Status
 	Go To Employee Panel
-    Click Button	addemp
-    Wait Until Page Contains    Add Employee
-    Location Should Be 			${ADD EMPLOY URL}
     Input EmpName
     Select Status
     Input StartDate
@@ -23,6 +20,7 @@ Check Add Employee Status
     Submit Form
     Wait Until Page Contains   Apples and Berries Payroll System
     Location Should Be    ${WELCOME URL}
+    
     
 *** Keywords ***
 Input EmpName
@@ -40,7 +38,7 @@ Select Position
 
 Select Status
 	Click Element	xpath=//body/div/div[2]/form/div[3]/div[2]/div
-	Select From List By Index	    status       0
+	Select From List By Index	status   0
 	
 Input Dependents
 	Input Text    dependents 	 0
