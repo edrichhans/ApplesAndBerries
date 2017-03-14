@@ -1,3 +1,10 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.ui.button:hover {
+  background-color: @hoverBackgroundColor;
+  background-image: @hoverBackgroundImage;
+  box-shadow: @hoverBoxShadow;
+  color: @hoverColor;
+}

@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		title Login Page
+		title= title
 		link(rel='stylesheet', type='text/css', href='/semantic/dist/semantic.min.css')
 		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
 		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
@@ -14,30 +14,27 @@ html
 	body
 		.ui.page.container
 			.ui.center.aligned.grid
-				.row
-				.row
-				.row
-				.row
-					.ui.basic.segment.center.aligned
-						h1
-							| Apples & Berries
-							br
-							| Payroll System
-				.five.wide.column
+				.row(style="margin: 50 0 0 0; padding: 10 10 10 10 !important")
+				.five.wide.column(style="margin: 15vh 0 0 0;!important")
 					form.ui.large.form#login(name='login', method='post', action='/login')
-						.ui.stacked.segment
+						.ui.stacked.segment(style="background-color: #FFF6F6 !important")
+							.ui.basic.segment.center.aligned
+								h1(style="color:#932F2F !important")
+									| Apples & Berries
+									br
+									| Payroll System
 							.field
 								.ui.left.icon.input
-									i.user.icon
-									input#username(type="text", name="username", placeholder="Username")
+									i.user.icon()
+									input#username(style="background-color: #FFF6F6 color: #932F2F; !important" type="text", name="username", placeholder="Username")
 							.field
 								.ui.left.icon.input
 									i.lock.icon
-									input#password(type="password", name="password", placeholder="Password")
-							button.ui.fluid.large.red.four.wide.button#submit Login
+									input#password(style="background-color: #FFF6F6 color: #932F2F; !important" type="password", name="password", placeholder="Password")
+							button#login-button.ui.fluid.large.red.four.wide.button Login
 						.ui.error.message
 					.ui.message
-						a(href="/forgot") Forgot Password?
+						a(href="/forgot") Forgot Password
 		script(type='text/javascript').
 			$(document).ready(function(){
 				$('#username').focus();
@@ -51,22 +48,6 @@ html
 						alert('Invalid Username or Password');
 					},
 					success : function(){
-						window.location.assign('/');
+						window.location.replace('/');
 					}
 				});
-	//- .ui.middle.aligned.center.grid
-	//- 	.column
-	//- 		h2.ui.teal.image.header
-	//- 			.content Login to your account
-	//- 		form.ui.large.form#login(name='login', method='post', action='/login')
-	//- 			.ui.stacked.segment
-	//- 				.field
-	//- 					.ui.input
-	//- 						input#username(name="username", type="text", placeholder="Username")
-	//- 				.field
-	//- 					.ui.input
-	//- 						input#password(name="password", type="text", placeholder="Password")
-								
-	//- 			button.ui.fluid.large.teal.submit.button#submit Login
-	//- 			.ui.error.message
-	//- div(style="margin: 1%;")

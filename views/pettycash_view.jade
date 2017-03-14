@@ -10,7 +10,7 @@ block content
 	.ui.middle.aligned.center.aligned.grid
 		// Table Title
 		.row#menu-row
-			.ui.center.aligned
+			#section-title.ui.center.aligned(style='margin: 80 10 10 10;')
 				h1 Petty Cash
 		// buttons
 		.row
@@ -21,7 +21,7 @@ block content
 		.ui.fitted.divider
 		// Table Proper
 		.column.row
-			table.ui.table.selectable.sortable
+			table#petty-cash-view-table.ui.table.selectable.sortable
 				thead
 					tr
 						th.collapsing AN#

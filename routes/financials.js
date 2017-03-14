@@ -8,6 +8,7 @@ var viewRoute = require('../models/financials/view');
 var updateCompRoute = require('../models/financials/updateComp');
 var reportRoute = require('../models/financials/report');
 var winston = require('winston');
+var path = require('path');
 
 var wlogger = new winston.Logger({
 	transports: [
@@ -258,15 +259,21 @@ router.get('/SSS', function(req, res){
 });
 
 router.get('/report', function(req, res){
-	reportRoute.report(req, res, function(err){
-		if(err){
-			res.status(500).end();
-		}
-		else{
-			res.redirect('/');
-		}
+	reportRoute.report(req, res).then(r => {
+		res.redirect('/download');
 	})
-})
+	.catch(err => {
+		res.json({error: err})
+	});
+});
+
+router.get('/download', function(req, res, next){
+	var file = 'report.xlsx';
+	var p = path.resolve(".") + '/uploads/' + file
+
+	res.download(p);
+	return;
+});
 
 module.exports = router;
 

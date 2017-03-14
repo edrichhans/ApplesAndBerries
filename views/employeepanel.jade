@@ -1,25 +1,26 @@
 extends layout
 
 block content
-	title EmployeePanel
-	ul.custom-menu
-		li(data-action="edit") Edit
-		li(data-action="delete") Delete
+	//- ul.custom-menu
+	//- 	li(data-action="edit") Edit
+	//- 	li(data-action="delete") Delete
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
-		.row#menu-row
-			.ui.inverted.segment(style="width: 100%; height: 15%; padding: 30;	border-radius: 0px !important; background: #BDBEBF !important")
-				.ui.center.aligned
+		.fifteen.wide.column#menu-row(style="padding:5; margin:5; !important")
+			.ui.segment.center.floated.column(style="width: 100%; margin: 75 5 5 5; border-radius: 0px !important; ")
+				.ui.container.left.floated
 					h1 Employees
-		//- .row
-		//- 	button.ui.button(onclick="location.replace('/employees/add')") ADD
-		//- 	button.ui.button(onclick="location.replace('/employees/editEmployee')") EDIT
-		//- 	button.ui.button(onclick="location.replace('/employees/delete')") DELETE
+		.fifteen.wide.column(style = "padding: 5 5 0 5 !important")
+			button.ui.button.right.floated.column(onclick="location.replace('/employees/add')") ADD
+		//- 		//- button.ui.button(onclick="location.replace('/employees/editEmployee')") EDIT
+				//- button.ui.button(onclick="location.replace('/employees/delete')") DELETE
+
+		//Table Proper
 		.row
-			.ui.container
-				table.ui.very.basic.table.sortable.selectable
+			.ui.container(style="overflow-y:scroll; height: 380px;")
+				table#employee-view-table.ui.very.basic.table.sortable.selectable
 					thead
-						tr
+						tr(style="background-color: #")
 							th eID
 							th Name
 							th Start Date
@@ -47,57 +48,16 @@ block content
 									td Marries
 								td= employee.dependents
 								td= employee.salary
-	.row
-		div(style='padding: 2%')
-			button.ui.right.floated.button#addemp(onclick="location.replace('/employees/add')") ADD
+	//- .row
+	//- 	div(style='padding: 2%')
+	//- 		button.ui.right.floated.button(onclick="location.replace('/employees/add')") ADD
 	.ui.small.modal
 		.header Confirm
 		.content
 			| Confirm Delete Employee
 		.actions
 			.ui.positive.submit.right.button OK
-		//- .four.column.wide.row
-		//- 	.column
-		//- 		button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/add')")
-		//- 			.visible.content
-		//- 				.ui.grid
-		//- 					.row
-		//- 					.row
-		//- 					.row
-		//- 						.ui.container
-		//- 							h1 Add Employee
-		//- 					.row
-		//- 					.row
-		//- 			.hidden.content
-		//- 				| Add a new employee
-		//- 	.column
-		//- 		.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/editEmployee')")
-		//- 			.visible.content
-		//- 				.ui.grid
-		//- 					.row
-		//- 					.row
-		//- 					.row
-		//- 						.ui.container
-		//- 							h1 Edit Employee
-		//- 					.row
-		//- 					.row
-		//- 			.hidden.content
-		//- 				| Edit an existing employee
-		//- // 2nd ROW Buttons
-		//- .four.column.wide.row
-		//- 	.column
-		//- 		.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees/delete')")
-		//- 			.visible.content
-		//- 				.ui.grid
-		//- 					.row
-		//- 					.row
-		//- 					.row
-		//- 						.ui.container
-		//- 							h1 Delete Employee
-		//- 					.row
-		//- 					.row
-		//- 			.hidden.content
-		//- 				| Delete an existing employee
+		
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
 	script(type='text/javascript').
 		var eID = -1;

@@ -7,13 +7,13 @@ block content
 	.ui.middle.aligned.center.aligned.grid.stackable.doubling
 		// Title
 		.row#menu-row
-			.ui.center.aligned
+			#section-title.ui.center.aligned(style='margin: 80 10 10 10 !important;')
 				h1 Control Panel 
 		.row
 		// 1st ROW Buttons
 		.four.column.wide.row
 			.column
-				button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/BIR')")
+				button#BIR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/BIR')")
 					.visible.content
 						.ui.grid
 							.row
@@ -26,7 +26,7 @@ block content
 					.hidden.content
 						| Update tax rates
 			.column
-				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/SSS')")
+				#SSS-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/SSS')")
 					.visible.content
 						.ui.grid
 							.row
@@ -39,7 +39,7 @@ block content
 					.hidden.content
 						| Update SSS fees
 			.column
-				.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/PH')")
+				#PhilHealth-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/PH')")
 					.visible.content
 						.ui.grid
 							.row
@@ -55,7 +55,7 @@ block content
 		// 2nd ROW Buttons
 		.four.column.wide.row
 			.column
-				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/addUser')")
+				#add-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/addUser')")
 					.visible.content
 						.ui.grid
 							.row
@@ -68,7 +68,7 @@ block content
 					.hidden.content
 						| Create a new user
 			.column
-				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/deleteUser')")
+				#delete-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/deleteUser')")
 					.visible.content
 						.ui.grid
 							.row
@@ -81,7 +81,7 @@ block content
 					.hidden.content
 						| Delete an existing user
 			.column
-				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/backup')")
+				#back-up-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/backup')")
 					.visible.content
 						.ui.grid
 							.row
