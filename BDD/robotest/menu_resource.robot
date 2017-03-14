@@ -14,8 +14,22 @@ ${username}       edrichhans
 ${password}       password
 ${LOGIN URL}      http://${SERVER}/login
 ${WELCOME URL}    http://${SERVER}/
-${PAYSLIP URL}	  http://localhost:8000/payslip_view
-${ADD PAYSLIP URL}	http://localhost:8000/payslip
+${EMPLOY URL}     http://localhost:8000/employees
+${ADD EMPLOY URL}   http://localhost:8000/employees/add
+${PAYSLIP URL}    http://localhost:8000/payslip_view
+${ADD PAYSLIP URL}  http://localhost:8000/payslip
+${AR URL}         http://localhost:8000/AR_view
+${ADD AR URL}     http://localhost:8000/AR
+${CV URL}         http://localhost:8000/checkvoucher_view
+${ADD CV URL}     http://localhost:8000/checkvoucher
+${PC URL}         http://localhost:8000/pettycash_view
+${ADD PC URL}     http://localhost:8000/pettycash
+${CONTROL PANEL URL}        http://localhost:8000/controlpanel
+${SSS URL}        http://localhost:8000/SSS
+${BIR URL}        http://localhost:8000/BIR
+${PHILHEALTH URL}           http://localhost:8000/PH
+${ADD USER URL}             http://localhost:8000/addUser
+${DEL USER URL}             http://localhost:8000/deleteUser
 
 *** Keywords ***
 Open Browser To Main Menu
