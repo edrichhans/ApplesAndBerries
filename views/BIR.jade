@@ -2,36 +2,37 @@ extends layout
 
 block content
 	title BIR View
-	br
-	br
-	br
-	form.ui.form#BIR(name='updateBIRComp', method='post', action='/updateBIRComp')
-		h4.ui.dividing.header Update BIR Tax Table
-		.field
-			table.ui.celled.table#BIRTable
-				thead
-					tr
-						th Dependents
-						th 1
-						th 2
-						th 3
-						th 4
-						th 5
-						th 6
-						th 7
-						th 8
-				tbody
-		.field
-			.ui.button.submit#BIRSubmit Submit
+	.ui.container(style="margin: 10vh 0 0 0; padding: 0 8vh 0 0")
+		br
+		br
+		br
+		form.ui.form#BIR(name='updateBIRComp', method='post', action='/updateBIRComp')
+			h3.ui.dividing.header Update BIR Tax Table
+			.field(style="overflow-y:scroll; height: 55vh")
+				//- .ui.container(style="overflow-y:scroll; height: 55vh")
+				table.ui.celled.mini.table#BIRTable
+					thead
+						tr
+							th Dependents
+							th 1
+							th 2
+							th 3
+							th 4
+							th 5
+							th 6
+							th 7
+							th 8
+					tbody
+			.field
+				.ui.button.submit#BIRSubmit Submit
+		.ui.small.modal
+			.header Confirm
+			.content
+				| Confirm Update?
+			.actions
+				.ui.positive.right.button#confirmBIR OK
 
-	.ui.small.modal
-		.header Confirm
-		.content
-			| Confirm Update?
-		.actions
-			.ui.positive.right.button#confirmBIR OK
-
-	script(type='text/javascript', src='/javascripts/updateBIR.js')
-	script(type='text/javascript').
-		var bir =!{JSON.stringify(BIR)};
-		var metadata =!{JSON.stringify(metadata[0])};
+		script(type='text/javascript', src='/javascripts/updateBIR.js')
+		script(type='text/javascript').
+			var bir =!{JSON.stringify(BIR)};
+			var metadata =!{JSON.stringify(metadata[0])};

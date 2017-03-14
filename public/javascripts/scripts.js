@@ -596,3 +596,26 @@ $('.ui.form#addUser')
 			]
 		}
 	});
+
+	$('.ui.form#reset')
+		.form({
+			password:{
+				identifier: 'password',
+				rules:[
+					{
+						type: 'empty',
+						prompt: 'Please enter password'
+					}
+				]
+			},
+			confirm:{
+				identifier: 'confirm',
+				rules:[
+					{
+						type: 'empty',
+						type: 'match[password]',
+						prompt: 'Passwords don\'t match'
+					}
+				]
+			}
+		});

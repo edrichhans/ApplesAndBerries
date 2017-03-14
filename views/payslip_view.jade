@@ -16,7 +16,7 @@ block content
 		// Table Proper
 		.row
 			.ui.container(style="overflow: scroll; height: 55vh")
-				table#payslip-view-table.ui.basic.table.fluid.collapsing.selectable.line.sortable.top.aligned
+				table#payslip-view-table.ui.table.fluid.collapsing.selectable.line.sortable.top.aligned
 					thead
 						tr
 							th AN
@@ -46,10 +46,10 @@ block content
 								td.eID(value=item.eID)= item.eID
 								td= item.startDate
 								td.endDate= item.endDate
-								//- td
-								//- td= item.deductibles
-								//- // td= item.allowance_name
-								//- td= item.allowance
+								td= item.deductibles_name
+								td= item.deductibles
+								td= item.allowance_name
+								td= item.allowance
 								td= item.PHreduc
 								td= item.SSSreduc
 								td= item.HDMFreduc
