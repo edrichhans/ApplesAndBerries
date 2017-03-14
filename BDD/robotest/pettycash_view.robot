@@ -9,10 +9,10 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To Petty Cash Panel
-    Click Element              xpath=//body/div/div[2]/div[2]/div[3]/div[3]/div
+    Click Element              petty-cash-module-button
     Wait Until Page Contains   PettyCash View
     Location Should Be         ${PC URL}
-    Click Button               xpath=//body/div/div[2]/div[2]/div[2]/button
+    Click Button               xpath=//body/div/div/div[3]/div/div[2]/button
     Wait Until Page Contains   Add PettyCash
     Location Should Be         ${ADD PC URL}
     Go Back Home

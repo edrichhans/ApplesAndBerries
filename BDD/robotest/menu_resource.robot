@@ -50,9 +50,9 @@ Input Password
     Input Text    password    ${password}
 
 Submit Credentials
-    Click Button    submit
+    Click Button    login-button
 
 Go Back Home
-	Click Element   xpath=//body/div/div[2]/div/a[2]
+	Click Element   xpath=//body/div/div/div/a[2]
 	Wait Until Page Contains   Apples and Berries Payroll System
     Location Should Be    ${WELCOME URL}

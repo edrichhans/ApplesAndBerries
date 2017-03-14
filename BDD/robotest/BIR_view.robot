@@ -9,10 +9,10 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To Petty Cash Panel
-    Click Element              xpath=//body/div/div[2]/div[2]/div[2]/div[3]/div
+    Click Element              control-panel-module-button
     Wait Until Page Contains   Control Panel
     Location Should Be         ${CONTROL PANEL URL}
-    Click Button              xpath=//body/div/div[2]/div[2]/div[3]/div/button
+    Click Button               BIR-module-button
     Wait Until Page Contains   BIR View
     Location Should Be         ${BIR URL}
     Go Back Home

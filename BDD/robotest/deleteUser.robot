@@ -9,10 +9,10 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To Petty Cash Panel
-    Click Element              xpath=//body/div/div[2]/div[2]/div[2]/div[3]/div
+    Click Element              control-panel-module-button
     Wait Until Page Contains   Control Panel
     Location Should Be         ${CONTROL PANEL URL}
-    Click Element              xpath=//body/div/div[2]/div[2]/div[4]/div[2]/div
+    Click Element              delete-user-button
     Wait Until Page Contains   Delete User
     Location Should Be         ${DEL USER URL}
     Go Back Home

@@ -39,4 +39,4 @@ Input Password
     Input Text    password    ${password}
 
 Submit Credentials
-    Click Button    submit
+    Click Button    login-button

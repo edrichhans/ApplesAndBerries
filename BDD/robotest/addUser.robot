@@ -9,10 +9,10 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To Petty Cash Panel
-    Click Element              xpath=//body/div/div[2]/div[2]/div[2]/div[3]/div
+    Click Element              control-panel-module-button
     Wait Until Page Contains   Control Panel
     Location Should Be         ${CONTROL PANEL URL}
-    Click Element              xpath=//body/div/div[2]/div[2]/div[4]/div/div
+    Click Element              add-user-button
     Wait Until Page Contains   Add User
     Location Should Be         ${ADD USER URL}
     Go Back Home

@@ -9,10 +9,10 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To Payslip Panel
-    Click Element              xpath=//body/div/div[2]/div[2]/div[2]/div[2]/div
+    Click Element              payslip-module-button
     Wait Until Page Contains   Payslip View
     Location Should Be         ${PAYSLIP URL}
-    Click Button               xpath=//body/div/div[2]/div[2]/div[2]/button
+    Click Button               xpath=//body/div/div/div[3]/div/div[2]/button
     Wait Until Page Contains   Add Payslip
     Location Should Be         ${ADD PAYSLIP URL}
     Go Back Home

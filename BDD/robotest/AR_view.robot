@@ -9,10 +9,10 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To AR Panel
-    Click Element              xpath=//body/div/div[2]/div[2]/div[3]/div/div
+    Click Element              AR-module-button
     Wait Until Page Contains   AR View
     Location Should Be         ${AR URL}
-    Click Button               xpath=//body/div/div[2]/div[2]/div[2]/button
+    Click Button               xpath=//body/div/div/div[3]/div/div[2]/button
     Wait Until Page Contains   Add AR
     Location Should Be         ${ADD AR URL}
     Go Back Home

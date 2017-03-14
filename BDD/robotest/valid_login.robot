@@ -21,6 +21,6 @@ Login With Valid Credentials Should Pass
     Submit Credentials
     Wait Until Page Contains   Apples and Berries Payroll System
     Location Should Be    ${WELCOME URL}
-    Click Element		  dropdown
-    Click Element		  logoutbtn
+    Click Element		  xpath=//body/div/div/div/div[2]/div
+    Click Element		  xpath=//body/div/div/div/div[2]/div/div/a
    

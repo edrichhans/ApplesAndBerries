@@ -9,10 +9,10 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To CV Panel
-    Click Element              xpath=//body/div/div[2]/div[2]/div[3]/div[2]/div
+    Click Element              check-voucher-module-button
     Wait Until Page Contains   CV View
     Location Should Be         ${CV URL}
-    Click Button               xpath=//body/div/div[2]/div[2]/div[2]/button
+    Click Button               xpath=//body/div/div/div[3]/div/div[2]/button
     Wait Until Page Contains   Add CV
     Location Should Be         ${ADD CV URL}
     Go Back Home
