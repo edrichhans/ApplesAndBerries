@@ -16,43 +16,43 @@ block content
 			button.ui.button(onclick="location.replace('/pettycash')") ADD
 			.ui.button EDIT
 			.ui.button DELETE
-				// </div>
-		.ui.fitted.divider
+		//- .ui.fitted.divider
 		// Table Proper
-		.column.row
-			table#petty-cash-view-table.ui.table.selectable.sortable
-				thead
-					tr
-						th.collapsing AN#
-						th.two.wide Issued By
-						th.three.wide Name
-						th.two.wide Date
-						th Items
-						th.two.wide Price
-				tbody
-					for item in transactions
-						each i, index in item.items
-							if index == 0
-								tr
-									td= item.adviceNumber
-									td= item.issuedBy
-									td= item.name
-									td= item.date
-									td= i[0]
-									td= i[1]
-							else
-								tr
-									td
-									td
-									td
-									td
-									td= i[0]
-									td= i[1]
-		// PRINT BUTTON
-		.ten.column.row
-			.right.floated.fluid.column
-				.ui.fluid.button#print-button Print
 		.row
+			.ui.container(style="overflow-y:scroll; height: 55vh !important")
+				table#petty-cash-view-table.ui.table.selectable.sortable
+					thead
+						tr
+							th.collapsing AN#
+							th.two.wide Issued By
+							th.three.wide Name
+							th.two.wide Date
+							th Items
+							th.two.wide Price
+					tbody
+						for item in transactions
+							each i, index in item.items
+								if index == 0
+									tr
+										td= item.adviceNumber
+										td= item.issuedBy
+										td= item.name
+										td= item.date
+										td= i[0]
+										td= i[1]
+								else
+									tr
+										td
+										td
+										td
+										td
+										td= i[0]
+										td= i[1]
+				
+		// PRINT BUTTON
+		.fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
+			button.ui.button.right.floated.column#print-petty-cash-button Print
+
 
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
 	script(type='text/javascript' src='javascripts/scripts.js')
