@@ -1,66 +1,67 @@
 extends layout
 
 block content
-	title Add Employee
-	.two.fields.center2
-		.field
-			i.add.user.icon.massive.red
-		.field
-			h2.ui.dividing.header Add employee
-	form.ui.form.box.center2#addemployee(name='addemployee', method='post', action='/employees/addemployee')
-		.field
-			label Name
-			.ui.input
-				input#name(name="name", type='text', placeholder='Name')
-		.two.fields
+	.ui.container(style="margin: 15vh 0 0 0; padding: 0 8vh 0 0")
+		title Add Employee
+		.two.fields.center2
 			.field
-				label Start Date of Employment
-				.ui.calendar#startDate
-					.ui.input.left.icon
-						i.calendar.icon
-						input#startdate(name="start", type="text", placeholder="Date")
-
+				i.add.user.icon.massive.red
 			.field
-				label Birthday
-				.ui.calendar#checkDate
-					.ui.input.left.icon
-						i.calendar.icon
-						input#birthday(name="birthday", type="text", placeholder="Date")
-
-		.fields
+				h2.ui.dividing.header Add employee
+		form.ui.form.box.center2#addemployee(name='addemployee', method='post', action='/employees/addemployee')
 			.field
-				label Position
-				select#position(name='position').ui.fluid.search.dropdown
-					option(value="") Select Option...
-					option(value=0) Teacher
-					option(value=1) Admin
-					option(value=2) Staff
-			.field
-				label Civil Status
-				select#status(name='status').ui.fluid.search.dropdown
-					option(value="") Select Option...
-					option(value=0) Single
-					option(value=1) Married
-		.field
-			label Dependents
+				label Name
 				.ui.input
-					input#dependents(name="dependents", type="number", placeholder="How many?" min="0")
-		.field
-			label Base Salary
-				.ui.input
-					input#salary(name="salary", type="number", placeholder="Salary" min="0")
-		.ui.error.message
-		.ui.primary.button#confirm Submit
+					input#name(name="name", type='text', placeholder='Name')
+			.two.fields
+				.field
+					label Start Date of Employment
+					.ui.calendar#startDate
+						.ui.input.left.icon
+							i.calendar.icon
+							input#startdate(name="start", type="text", placeholder="Date")
 
-		.ui.small.modal
-			.header Confirm
-			.content
-				| Confirm Add Employee
-			.actions
-				.ui.positive.submit.right.button OK
+				.field
+					label Birthday
+					.ui.calendar#checkDate
+						.ui.input.left.icon
+							i.calendar.icon
+							input#birthday(name="birthday", type="text", placeholder="Date")
 
-	script(type='text/javascript' src='/javascripts/scripts.js')
-	script.
-		$('#confirm').click(function(){
-			$('.small.modal').modal('show');
-		});
+			.fields
+				.field
+					label Position
+					select#position(name='position').ui.fluid.search.dropdown
+						option(value="") Select Option...
+						option(value=0) Teacher
+						option(value=1) Admin
+						option(value=2) Staff
+				.field
+					label Civil Status
+					select#status(name='status').ui.fluid.search.dropdown
+						option(value="") Select Option...
+						option(value=0) Single
+						option(value=1) Married
+			.field
+				label Dependents
+					.ui.input
+						input#dependents(name="dependents", type="number", placeholder="How many?" min="0")
+			.field
+				label Base Salary
+					.ui.input
+						input#salary(name="salary", type="number", placeholder="Salary" min="0")
+			.ui.error.message
+			.ui.primary.button#confirm Submit
+
+			.ui.small.modal
+				.header Confirm
+				.content
+					| Confirm Add Employee
+				.actions
+					.ui.positive.submit.right.button OK
+
+		script(type='text/javascript' src='/javascripts/scripts.js')
+		script.
+			$('#confirm').click(function(){
+				$('.small.modal').modal('show');
+			});
