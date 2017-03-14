@@ -37,7 +37,7 @@ exports.forgot = function(req, res, callBack){
 			User.findOne({ username: req.body.username }, function(err, user) {
 				if (!user) {
 					// req.flash('error', 'No account with that email address exists.');
-					return res.sendStatus(500);
+					return callBack(500);
 				}
 
 				else{
@@ -123,10 +123,10 @@ exports.resetView = function(req, res, callBack){
   User.findOne({resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.now()}}, function(err, user){
     if(!user){
       req.flash('error', 'Password reset token is invalid or has expired.');
-      return callBack(0);
+      return callBack(500);
     }
     else{
-      return callBack(user);
+      return callBack();
     }
   })
 }
@@ -139,7 +139,7 @@ exports.reset = function(req, res, callBack){
       User.findOne({resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.now()}}, function(err, user){
         if(!user){
           req.flash('error', 'Password reset token is invalid or has expired.');
-          return callBack(0);
+          return callBack(500);
         }
         else{
           User.update({resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.now()}}, {$set: {password: req.body.password, resetPasswordToken: undefined, resetPasswordExpires: undefined}});
@@ -154,12 +154,12 @@ exports.reset = function(req, res, callBack){
         name: user.username
       }
       exports.sendOne('password_reset', locals, function(err, done){
-        // return res.redirect('/');
+        // return callBack();
 				return callBack();
       });
     }
   ], function(err) {
-		if (err) return callBack(500);
+		if (err) return callBack(err);
 		// res.redirect('/forgot');
 	});
   return callBack();

@@ -101,18 +101,12 @@ router.get('/forgot', function(req, res){
 
 router.post('/forgot', function(req, res, next){
 	mailerRoute.forgot(req, res, function(err){
-		if(err == 500){
-			// return;
-			// res.redirect('/forgot');
-			// res.sendStatus(500);
-		}
-		else{
-			// res.sendStatus(200);
-			// res.json({success: true});
-			res.redirect('/');			
+		if(err == null){
+			res.redirect('/');
 		}
 	});
 });
 
+// res.json({error: err})
 
 module.exports = router;

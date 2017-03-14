@@ -1,0 +1,192 @@
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:14.443Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T01:46:14.456Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:14.466Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T01:46:14.467Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:14.477Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T01:46:14.479Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:14.490Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T01:46:14.493Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:14.503Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T01:46:14.504Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:14.557Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T01:46:14.564Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:29.448Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T01:46:29.449Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:29.463Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T01:46:29.464Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:29.476Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T01:46:29.477Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:29.486Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T01:46:29.487Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:29.492Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T01:46:29.493Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T01:46:29.546Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T01:46:29.548Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:12.944Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:01:12.945Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:12.953Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:01:12.954Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:12.962Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:01:12.963Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:12.970Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:01:12.971Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:12.977Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:01:12.978Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:13.033Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:01:13.034Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:51.499Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:01:51.501Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:51.509Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:01:51.510Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:51.518Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:01:51.519Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:51.532Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:01:51.533Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:51.538Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:01:51.539Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:01:51.608Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:01:51.610Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:02:37.340Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:02:37.341Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:02:37.352Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:02:37.353Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:02:37.360Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:02:37.361Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:02:37.367Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:02:37.368Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:02:37.373Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:02:37.375Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:02:37.423Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:02:37.424Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:04:35.764Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:04:35.765Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:04:35.772Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:04:35.773Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:04:35.781Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:04:35.783Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:04:35.789Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:04:35.790Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:04:35.795Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:04:35.796Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:04:35.842Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:04:35.844Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:24.027Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:06:24.028Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:24.041Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:06:24.042Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:24.055Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:06:24.056Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:24.063Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:06:24.065Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:24.073Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:06:24.075Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:24.126Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:06:24.128Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:52.528Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:06:52.529Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:52.537Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:06:52.539Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:52.547Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:06:52.549Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:52.555Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:06:52.556Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:52.561Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:06:52.563Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:06:52.609Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:06:52.611Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:07:58.628Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:07:58.629Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:07:58.640Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:07:58.641Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:07:58.648Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:07:58.650Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:07:58.662Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:07:58.664Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:07:58.671Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:07:58.673Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:07:58.721Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:07:58.726Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:05.678Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:09:05.679Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:05.687Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:09:05.690Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:05.698Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:09:05.699Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:05.707Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:09:05.708Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:05.714Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:09:05.716Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:05.763Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:09:05.765Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:27.060Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:09:27.061Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:27.069Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:09:27.070Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:27.077Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:09:27.079Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:27.085Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:09:27.086Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:27.091Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:09:27.092Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:09:27.138Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:09:27.140Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:11:45.799Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:11:45.800Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:11:45.817Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:11:45.819Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:11:45.826Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:11:45.828Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:11:45.833Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:11:45.835Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:11:45.840Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:11:45.841Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:11:45.889Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:11:45.890Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:12:51.163Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:12:51.164Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:12:51.172Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:12:51.173Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:12:51.180Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:12:51.181Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:12:51.189Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:12:51.190Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:12:51.195Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:12:51.196Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:12:51.244Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:12:51.246Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:14:08.167Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:14:08.168Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:14:08.177Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:14:08.179Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:14:08.187Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:14:08.189Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:14:08.198Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:14:08.199Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:14:08.204Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:14:08.205Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:14:08.253Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:14:08.255Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:20:03.309Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:20:03.310Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:20:03.322Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:20:03.324Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:20:03.333Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:20:03.337Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:20:03.347Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:20:03.351Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:20:03.357Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:20:03.360Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:20:03.411Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:20:03.415Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:21:45.678Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:21:45.679Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:21:45.691Z"}
+{"level":"error","message":"Username is invalid. Response 500","timestamp":"2017-03-14T02:21:45.692Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:21:45.699Z"}
+{"level":"error","message":"Password is invalid. Response 500","timestamp":"2017-03-14T02:21:45.700Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:21:45.706Z"}
+{"level":"error","message":"Username and password are invalid. Response 500","timestamp":"2017-03-14T02:21:45.707Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:21:45.712Z"}
+{"level":"info","message":"Admin login successful. Response 200","timestamp":"2017-03-14T02:21:45.713Z"}
+{"level":"info","message":"Logging in","timestamp":"2017-03-14T02:21:45.762Z"}
+{"level":"info","message":"User login successful. Response 200","timestamp":"2017-03-14T02:21:45.763Z"}
