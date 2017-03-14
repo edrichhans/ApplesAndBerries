@@ -9,7 +9,7 @@ Documentation     A test suite containing tests related to invalid employee add.
 ...               different levels.
 Suite Setup       Open Browser To Main Menu
 Suite Teardown	  Close Browser
-Resource          employee_resource.robot
+Resource          menu_resource.robot
 Test Template     Wrong Input In Fields Should Fail
 
 
@@ -72,4 +72,10 @@ Input Salary
 	[Arguments]    ${salary}
 	Input Text	  salary 		${salary}
 
-Add an 
+Go To Employee Panel
+    Click Button               xpath=//body/div/div[2]/div[2]/div[2]/div/button
+    Wait Until Page Contains   EmployeePanel
+    Location Should Be         ${EMPLOY URL}
+    Click Button    addemp
+    Wait Until Page Contains    Add Employee
+    Location Should Be          ${ADD EMPLOY URL}

@@ -5,7 +5,7 @@ Documentation     A test suite with a single test for adding an employee.
 ...               the imported resource file.
 Suite Setup       Open Browser To Main Menu
 Suite Teardown	  Close Browser
-Resource          employee_resource.robot
+Resource          menu_resource.robot
 
 *** Test Cases ***
 Check Add Employee Status
@@ -33,11 +33,11 @@ Input Birthday
     Input Text    birthday    12/30/1997
 
 Select Position
-	Click Element	xpath=//body/div/div[2]/form/div[3]/div/div		
+	Click Element	xpath=//body/div/div/div[3]/form/div[3]/div/div
 	Select From List By Index	    position     0
 
 Select Status
-	Click Element	xpath=//body/div/div[2]/form/div[3]/div[2]/div
+	Click Element	xpath=//body/div/div/div[3]/form/div[3]/div[2]/div
 	Select From List By Index	status   0
 	
 Input Dependents
@@ -46,4 +46,10 @@ Input Dependents
 Input Salary
 	Input Text	  salary 		18000
 	
-
+Go To Employee Panel
+    Click Button               employee-module-button
+    Wait Until Page Contains   EmployeePanel
+    Location Should Be         ${EMPLOY URL}
+    Click Button                xpath=//body/div/div/div[3]/div/div[2]/button
+    Wait Until Page Contains    Add Employee
+    Location Should Be          ${ADD EMPLOY URL}

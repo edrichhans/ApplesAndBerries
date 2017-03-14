@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170314 13:49:08.544" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\AF\Documents\CS Subjects\CS 192\Project\BDD\robotest" id="s1" name="Robotest">
+<suite source="C:\Users\AF\Documents\CS Subjects\CS 192\Project\BDD\robotest\addUser.robot" id="s1-s1" name="addUser">
+<kw type="setup" name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170314 13:49:08.672" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170314 13:49:18.855" starttime="20170314 13:49:08.672"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170314 13:49:20.014" starttime="20170314 13:49:18.855"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170314 13:49:20.014" starttime="20170314 13:49:20.014"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170314 13:49:20.015" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170314 13:49:21.171" starttime="20170314 13:49:20.015"></status>
+</kw>
+<status status="PASS" endtime="20170314 13:49:21.171" starttime="20170314 13:49:20.014"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170314 13:49:21.175" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170314 13:49:22.465" starttime="20170314 13:49:21.173"></status>
+</kw>
+<status status="PASS" endtime="20170314 13:49:22.466" starttime="20170314 13:49:21.172"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit</arg>
+</arguments>
+<msg timestamp="20170314 13:49:22.469" level="INFO">Clicking button 'submit'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170314 13:49:24.149" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170314 13:49:24.149" starttime="20170314 13:49:23.491"></status>
+</kw>
+<msg timestamp="20170314 13:49:24.151" level="FAIL">ValueError: Element locator 'submit' did not match any elements.</msg>
+<status status="FAIL" endtime="20170314 13:49:24.151" starttime="20170314 13:49:22.468"></status>
+</kw>
+<status status="FAIL" endtime="20170314 13:49:24.151" starttime="20170314 13:49:22.467"></status>
+</kw>
+<status status="FAIL" endtime="20170314 13:49:24.152" starttime="20170314 13:49:08.671"></status>
+</kw>
+<test id="s1-s1-t1" name="Go To Petty Cash Panel">
+<status status="FAIL" endtime="20170314 13:49:24.153" critical="yes" starttime="20170314 13:49:24.152">Parent suite setup failed:
+ValueError: Element locator 'submit' did not match any elements.</status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170314 13:49:27.513" starttime="20170314 13:49:24.156"></status>
+</kw>
+<doc>A test suite with a single test for going to Add User page in Control Panel.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" endtime="20170314 13:49:27.513" starttime="20170314 13:49:08.569">Suite setup failed:
+ValueError: Element locator 'submit' did not match any elements.</status>
+</suite>
+<suite source="C:\Users\AF\Documents\CS Subjects\CS 192\Project\BDD\robotest\AR_view.robot" id="s1-s2" name="AR view">
+<kw type="setup" name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170314 13:49:27.548" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170314 13:49:38.482" starttime="20170314 13:49:27.547"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170314 13:49:40.042" starttime="20170314 13:49:38.483"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170314 13:49:40.044" starttime="20170314 13:49:40.043"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170314 13:49:40.047" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170314 13:49:41.272" starttime="20170314 13:49:40.046"></status>
+</kw>
+<status status="PASS" endtime="20170314 13:49:41.273" starttime="20170314 13:49:40.045"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170314 13:49:41.277" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170314 13:49:42.410" starttime="20170314 13:49:41.276"></status>
+</kw>
+<status status="PASS" endtime="20170314 13:49:42.410" starttime="20170314 13:49:41.274"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>submit</arg>
+</arguments>
+<msg timestamp="20170314 13:49:42.413" level="INFO">Clicking button 'submit'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170314 13:49:43.999" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170314 13:49:43.999" starttime="20170314 13:49:43.484"></status>
+</kw>
+<msg timestamp="20170314 13:49:44.000" level="FAIL">ValueError: Element locator 'submit' did not match any elements.</msg>
+<status status="FAIL" endtime="20170314 13:49:44.000" starttime="20170314 13:49:42.412"></status>
+</kw>
+<status status="FAIL" endtime="20170314 13:49:44.001" starttime="20170314 13:49:42.411"></status>
+</kw>
+<status status="FAIL" endtime="20170314 13:49:44.001" starttime="20170314 13:49:27.546"></status>
+</kw>
+<test id="s1-s2-t1" name="Go To AR Panel">
+<status status="FAIL" endtime="20170314 13:49:44.003" critical="yes" starttime="20170314 13:49:44.002">Parent suite setup failed:
+ValueError: Element locator 'submit' did not match any elements.</status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<errors>
+<msg timestamp="20170314 13:49:48.391" level="ERROR">Execution stopped by user.</msg>
+</errors>
+</robot>
