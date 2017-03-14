@@ -158,8 +158,8 @@ describe('mailer: models', function () {
 			done();
 		});
 	});
-	describe('forgot', function(){
-		it('should render the password reset templates correctly', function(done){
+	describe('correct input', function(){
+		it('should return status 200', function(done){
 			chai.request(server)
 			.post('/forgot')
 			.send({

@@ -10,18 +10,25 @@ exports.insert = function(req, res, callBack){
 	var dependents = parseInt(req.body.dependents);
 	var salary = parseFloat(req.body.salary);
 
-	adviceNumbers.findOne({"name": "eID"}, function(err, doc){
-		Employees.insert({
-			"eID": doc.number,
-			"name": name,
-			"startDate": start,
-			"birthday": birthday,
-			"position": position,
-			"status": status,
-			"dependents": dependents,
-			"salary": salary
+	if(name == null || start == null || birthday == null || position == null || status == null || dependents == null || salary == null){
+		console.log(name);
+		return res.status(500).json({error: 500})
+	}
+
+	else{
+		adviceNumbers.findOne({"name": "eID"}, function(err, doc){
+			Employees.insert({
+				"eID": doc.number,
+				"name": name,
+				"startDate": start,
+				"birthday": birthday,
+				"position": position,
+				"status": status,
+				"dependents": dependents,
+				"salary": salary
+			});
+			adviceNumbers.update({"name": "eID"}, {$inc:{number: 1}});
 		});
-		adviceNumbers.update({"name": "eID"}, {$inc:{number: 1}});
-	});
-	callBack();
+		callBack();
+	}
 }

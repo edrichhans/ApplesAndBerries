@@ -7,6 +7,7 @@ var templatesDir = path.resolve(__dirname, '..', 'views/mailer');
 var emailTemplates = require('email-templates');
 var async = require('async');
 var crypto = require('crypto');
+var Promise = require('promise');
 
 
 var EmailAddressRequiredError = new Error('email address required');
@@ -37,7 +38,7 @@ exports.forgot = function(req, res, callBack){
 			User.findOne({ username: req.body.username }, function(err, user) {
 				if (!user) {
 					// req.flash('error', 'No account with that email address exists.');
-					return callBack(500);
+					return res.status(500).json({error: 500});
 				}
 
 				else{
@@ -52,7 +53,6 @@ exports.forgot = function(req, res, callBack){
 					// }); 
 					done(err, token, user);
 				}
-				return;
 			});
 		},
 		function(token, user, done) {
@@ -68,9 +68,8 @@ exports.forgot = function(req, res, callBack){
 		}
 	], function(err) {
 		if (err) return callBack(err);
-		// res.redirect('/forgot');
+		res.redirect('/');
 	});
-	return callBack();
 }
 
 exports.sendOne = function (templateName, locals, fn) {
@@ -153,14 +152,13 @@ exports.reset = function(req, res, callBack){
         subject: "Your password has been changed.",
         name: user.username
       }
-      exports.sendOne('password_reset', locals, function(err, done){
-        // return callBack();
-				return callBack();
+      exports.sendOne('password_reset', locals, function(err, status, html, text){
+				done(err, 'done');
       });
     }
   ], function(err) {
 		if (err) return callBack(err);
-		// res.redirect('/forgot');
+		res.redirect('/');
 	});
   return callBack();
 }

@@ -28,7 +28,7 @@ router.post('/addemployee', function(req, res){
 	console.log("pasok");
 	addEmployeeRoute.insert(req, res, function(){
 		winston.log('info', 'Employee added');
-		res.redirect('/');
+		res.redirect('/employees');
 	});
 });
 
