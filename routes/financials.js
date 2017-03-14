@@ -6,6 +6,7 @@ var pettyCashRoute = require('../models/financials/pettyCash');
 var ARRoute = require('../models/financials/AR');
 var viewRoute = require('../models/financials/view');
 var updateCompRoute = require('../models/financials/updateComp');
+var reportRoute = require('../models/financials/report');
 var winston = require('winston');
 
 var wlogger = new winston.Logger({
@@ -255,6 +256,17 @@ router.get('/SSS', function(req, res){
 		});
 	});
 });
+
+router.get('/report', function(req, res){
+	reportRoute.report(req, res, function(err){
+		if(err){
+			res.status(500).end();
+		}
+		else{
+			res.redirect('/');
+		}
+	})
+})
 
 module.exports = router;
 
