@@ -1,0 +1,18 @@
+2017-03-14 23:28:14 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AF\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file "C:\Users\AF\Documents\CS Subjects\CS 192\Project\app.js" --log "ApplesBerriesApp wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2017-03-14 23:28:14 - Started 12256
+2017-03-14 23:55:27 - Stopping applesberriesapp.exe
+2017-03-14 23:55:27 - ProcessKill 12256
+2017-03-14 23:55:28 - Found child process: 1672 Name: conhost.exe
+2017-03-14 23:55:28 - Found child process: 112 Name: node.exe
+2017-03-14 23:55:28 - Stopping process 1672
+2017-03-14 23:55:28 - Send SIGINT 1672
+2017-03-14 23:55:28 - SIGINT to 1672 failed - Killing as fallback
+2017-03-14 23:55:28 - Stopping process 112
+2017-03-14 23:55:28 - Send SIGINT 112
+2017-03-14 23:55:28 - SIGINT to 112 failed - Killing as fallback
+2017-03-14 23:55:28 - Stopping process 12256
+2017-03-14 23:55:28 - Send SIGINT 12256
+2017-03-14 23:55:28 - SIGINT to 12256 failed - Killing as fallback
+2017-03-14 23:55:28 - Finished applesberriesapp.exe
+2017-03-18 11:10:22 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\AF\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file "C:\Users\AF\Documents\CS Subjects\CS 192\Project\app.js" --log "ApplesBerriesApp wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2017-03-18 11:10:22 - Started 3944
