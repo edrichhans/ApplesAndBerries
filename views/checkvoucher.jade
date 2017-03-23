@@ -2,75 +2,76 @@ extends layout
 
 block content
 	title Add CV
-	.two.fields.center2
-		.field
-			i.money.icon.massive.red
-		.field
-			h2.ui.dividing.header Check Voucher
-	form.ui.box.center2.form#checkvoucher(name='checkvoucher', method='post', action='/checkvoucher')
+	.block-content-container.ui.container
+		.two.fields.center2
+			.field
+				i.money.icon.massive.red
+			.field
+				h2.ui.dividing.header Check Voucher
+		form.ui.box.center2.form#checkvoucher(name='checkvoucher', method='post', action='/checkvoucher')
 
-		.field
-			label Name
-			.ui.input#name-input
-				input(name="name", type='text', placeholder='Name')
+			.field
+				label Name
+				.ui.input#name-input
+					input(name="name", type='text', placeholder='Name')
 
-		.field
-			label Date
-			.ui.calendar#checkDate
-				.ui.input.left.icon#date-input
-					i.calendar.icon
-					input(name="date", type="text", placeholder="Date")
+			.field
+				label Date
+				.ui.calendar#checkDate
+					.ui.input.left.icon#date-input
+						i.calendar.icon
+						input(name="date", type="text", placeholder="Date")
 
-		.field
-			label Amount
-			.ui.input#amount-input
-				input(name="amount", type="number", placeholder="Amount...")
+			.field
+				label Amount
+				.ui.input#amount-input
+					input(name="amount", type="number", placeholder="Amount...")
 
-		.field
-			label Particulars
-			select(name="particulars").ui.fluid.search.selection.dropdown#particularsDropdown
-				option(value="") Choose Particulars
-				for particular in metadata.items
-					option(value=particular)= particular
+			.field
+				label Particulars
+				select(name="particulars").ui.fluid.search.selection.dropdown#particularsDropdown
+					option(value="") Choose Particulars
+					for particular in metadata.items
+						option(value=particular)= particular
 
-		.ui.modal
-			i.close.icon
-			.header Check Voucher Preview
-			.content(style="padding-top: 0;")
-				img.ui.centered.medium.image(src='images/header.png', style='padding-bottom: 1.5rem;')
-				.ui.grid
-					.one.wide.column.right-align
-						| AN:
-					.two.wide.column
-						#AN.div-underline.center-align
-							span
-					.two.wide.column.right-align
-						| Name: 
-					.four.wide.column
-						#name.div-underline.center-align
-							span
-					.three.wide.column.right-align
-						| Date Issued:
-					.four.wide.column
-						#dateToday.div-underline.center-align
-							span
+			.ui.modal
+				i.close.icon
+				.header Check Voucher Preview
+				.content(style="padding-top: 0;")
+					img.ui.centered.medium.image(src='images/header.png', style='padding-bottom: 1.5rem;')
+					.ui.grid
+						.one.wide.column.right-align
+							| AN:
+						.two.wide.column
+							#AN.div-underline.center-align
+								span
+						.two.wide.column.right-align
+							| Name: 
+						.four.wide.column
+							#name.div-underline.center-align
+								span
+						.three.wide.column.right-align
+							| Date Issued:
+						.four.wide.column
+							#dateToday.div-underline.center-align
+								span
 
-					.two.wide.column.right-align
-						| Particulars:
-					.five.wide.column
-						#particulars.div-underline
-							span.indent
-					.three.wide.column.right-align
-						| Amount:
-					.six.wide.column
-						#amount.div-underline
-							span.indent
-			.actions
-				.ui.disabled.primary.button.submit Submit
-				.ui.button.print Print
+						.two.wide.column.right-align
+							| Particulars:
+						.five.wide.column
+							#particulars.div-underline
+								span.indent
+						.three.wide.column.right-align
+							| Amount:
+						.six.wide.column
+							#amount.div-underline
+								span.indent
+				.actions
+					.ui.disabled.primary.button.submit Submit
+					.ui.button.print Print
 
-		.ui.primary.button#checkVoucher-preview Preview
-		.ui.error.message
+			.ui.primary.button#checkVoucher-preview Preview
+			.ui.error.message
 
 	script(type="text/javascript").
 		var an =!{JSON.stringify(an)};
