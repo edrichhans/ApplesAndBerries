@@ -7,18 +7,19 @@ block content
 	//- 	li(data-action="delete") Delete
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
-		.fifteen.wide.column#menu-row(style="padding:5; margin:5; !important")
-			.ui.container.center.floated.column(style="width: 100%; margin: 85 5 5 5; border-radius: 0px !important; ")
-				.ui.container.left.floated
-					h1 Employees
-		.fifteen.wide.column(style = "padding: 5 5 0 5 !important")
-			button.ui.button.right.floated.column(onclick="location.replace('/employees/add')") ADD
+		.four.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
+			.section-title.ui.center.aligned.segment
+				h1 Employees 
+
+		// buttons
+		.row.button-row
+			.ui.right.floated.button(onclick="location.replace('/employees/add')") ADD
 		//- 		//- button.ui.button(onclick="location.replace('/employees/editEmployee')") EDIT
 				//- button.ui.button(onclick="location.replace('/employees/delete')") DELETE
 
 		//Table Proper
-		.row
-			.ui.container(style="overflow-y:scroll; height: 60vh;")
+		.ui.raised.segment.row
+			.ui.container(style="overflow-y:scroll; height: 50vh;")
 				table#employee-view-table.ui.table.sortable.selectable
 					thead
 						tr(style="background-color: #")
@@ -49,17 +50,28 @@ block content
 									td Marries
 								td= employee.dependents
 								td= employee.salary
+		
+		//PRINT BUTTON
+		.fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
+			button.ui.button.right.floated.column#print-employee-button Print
 	//- .row
 	//- 	div(style='padding: 2%')
 	//- 		button.ui.right.floated.button(onclick="location.replace('/employees/add')") ADD
+		
+
 	.ui.small.modal
 		.header Confirm
 		.content
 			| Confirm Delete Employee
 		.actions
 			.ui.positive.submit.right.button OK
-		
-	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+
+
+
+
+
+
+	script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(type='text/javascript').
 		var eID = -1;
 		// Trigger action when the contexmenu is about to be shown

@@ -2,22 +2,12 @@ extends layout
 
 block content
 	title Control Panel
-	// Title
-
-	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+	.block-grid.ui.middle.aligned.center.aligned.grid.stackable.doubling
 		// Title
-		//- .row#menu-row
-		//- 	#section-title.ui.center.aligned(style='margin: 80 10 10 10 !important;')
-		//- 		h1 Main Menu
-		//- .ui.four.column.centered.grid
-		//- 	.row#menu-row
-		//- 		.section-title.ui.center.aligned.raised.container.segment
-		//- 			h1 Control Panel 
-
-		.four.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
-			.section-title.ui.center.aligned.segment
-				h1 Control Panel
-
+		.row#menu-row
+			.section-title.ui.center.aligned
+				h1 Control Panel 
+		.row
 		// 1st ROW Buttons
 		.four.column.wide.row
 			.column
@@ -26,22 +16,22 @@ block content
 						.ui.container.main-menu-button
 							h1 B I R
 					.hidden.content
-						h4 Update tax rates
+						| Update tax rates
 			.column
 				#SSS-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/SSS')")
 					.visible.content
 						.main-menu-button.ui.container
 							h1 S S S
 					.hidden.content
-						h4 Update SSS fees
-			.floated.column
+						| Update SSS fees
+			.column
 				#PhilHealth-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/PH')")
 					.visible.content
 						.ui.container.main-menu-button
 							h1 PhilHealth
 					.ui.hidden.content
 						.ui.center.aligned.fluid
-							h4 Update PhilHealth
+							| Update PhilHealth
 		// 2nd ROW Buttons
 		.four.column.wide.row
 			.column
@@ -50,21 +40,21 @@ block content
 						.ui.container.main-menu-button
 							h1 Add User
 					.hidden.content
-						h4 Create a new user
+						| Create a new user
 			.column
 				#delete-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/deleteUser')")
 					.visible.content
 						.ui.container.main-menu-button
 							h1 Delete User
 					.hidden.content
-						h4 Delete an existing user
+						| Delete an existing user
 			.column
 				#back-up-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/backup')")
 					.visible.content
 						.ui.container.main-menu-button
 							h1 Back Up
 					.hidden.content
-						h4 Back up files
+						| Back up files
 
 
-		script(type='text/javascript', src='/javascripts/sorttable.js')
+	script(type='text/javascript', src='/javascripts/sorttable.js')

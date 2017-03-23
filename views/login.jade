@@ -3,21 +3,16 @@ html
 	head
 		title Login Page
 		link(rel='stylesheet', type='text/css', href='/semantic/dist/semantic.min.css')
-		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
-		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
-		script(type='text/javascript', src='/javascripts/printThis.js')
-		script(type='text/javascript', src='/bower_components/semantic-ui-calendar/dist/calendar.min.js')
 		link(rel='stylesheet', type='text/css', href='/bower_components/semantic-ui-calendar/dist/calendar.min.css')
 		link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
-
-		//- https://github.com/mdehoog/Semantic-UI-Calendar
 	body
 		.ui.page.container
 			.ui.center.aligned.grid
 				.row(style="margin: 50 0 0 0; padding: 10 10 10 10 !important")
 				.five.wide.column(style="margin: 15vh 0 0 0;!important")
 					form.ui.large.form#login(name='login', method='post', action='/login')
-						.ui.stacked.segment(style="background-color: #FFF6F6 !important")
+						.ui.stacked.segment
+							//- (style="background-color: #FFF6F6 !important")
 							.ui.basic.segment.center.aligned
 								h1(style="color:#932F2F !important")
 									| Apples & Berries
@@ -35,6 +30,7 @@ html
 						.ui.error.message
 					.ui.message
 						a(href="/forgot") Forgot Password
+				//- footer
 				//- .row
 				//- 	h5 sdfghjk
 			//- .ui.text.container.center.aligned(style="margin: 10 0 0 0")
@@ -43,6 +39,10 @@ html
 				$('#username').focus();
 			});
 		script(type='text/javascript' src='javascripts/scripts.js')
+		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
+		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
+		script(type='text/javascript', src='/javascripts/printThis.js')
+		script(type='text/javascript', src='/bower_components/semantic-ui-calendar/dist/calendar.min.js')
 		script(type='text/javascript' src='javascripts/jquery.form.js')
 		script.
 			$('form#login')

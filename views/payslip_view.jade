@@ -2,70 +2,79 @@ extends layout
 
 block content
 	title Payslip View
-	// <script src="http://semantic-ui.com/javascript/library/tablesort.js"></script>
-	.ui.middle.aligned.center.aligned.grid(style = "background-color: #9E6363 !important")
-		// Table Title
-		.row#view-row
-			#section-title.ui.center.aligned(style='margin: 80 10 10 10;')
-				h1 Pay Slip
+	.ui.middle.center.aligned.grid.stackable.doubling
+		// Title
+		.four.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
+			.section-title.ui.center.aligned.segment(style="margin-bottom:0;")
+				h1 Payslip 
+
+	
+		//- .ui.middle.aligned.center.aligned.grid(style = "background-color: #9E6363 !important")
+		//- // Table Title
+		//- .row#view-row
+			//- #section-title.ui.center.aligned(style='margin: 80 10 10 10;')
+				//- h1 Pay Slip 
+
 		// buttons
-		.row(style = "padding: 5 5 5 5 !important")
+		.row.button-row
 			button#add-payslip-button.ui.button(onclick="location.replace('/payslip')") ADD
 			#edit-payslip-button.ui.button EDIT
 			#delete-payslip-button.ui.button DELETE
+		//- .row
+		//- 	.ui.container(style="overflow: scroll; height: 55vh")
+		//- 		table#payslip-view-table.ui.table.fluid.collapsing.selectable.line.sortable.top.aligned
 		// Table Proper
-		.row
-			.ui.container(style="overflow: scroll; height: 55vh")
-				table#payslip-view-table.ui.table.fluid.collapsing.selectable.line.sortable.top.aligned
+		.ui.raised.segment.row
+			.ui.container(style="overflow-y:scroll; height: 50vh;")
+				table#payslip-view-table.ui.table.sortable.selectable
 					thead
 						tr
 							th AN
 							th Issued By
-							th eID
+							//- th eID
 							th Name
 							th Base Salary
 							th Start Date
 							th End Date
-							th Deductibles
-							th Amount
-							th Allowance
-							th Amount
-							th PhilHealth
-							th SSS
-							th HDMF
-							th ER PhilHealth
-							th ER SSS
-							th ER HDMF
-							th BIR Tax
+							//- th Deductibles
+							//- th Amount
+							//- th Allowance
+							//- th Amount
+							//- th PhilHealth
+							//- th SSS
+							//- th HDMF
+							//- th ER PhilHealth
+							//- th ER SSS
+							//- th ER HDMF
+							//- th BIR Tax
 							th Net
 					tbody
 						each item, index in transactions
 							tr
 								td= item.adviceNumber
 								td= item.issuedBy
-								td.eID(value=item.eID)= item.eID
+								//- td.eID(value=item.eID)= item.eID
 								td= item.startDate
 								td.endDate= item.endDate
-								td= item.deductibles_name
-								td= item.deductibles
-								td= item.allowance_name
-								td= item.allowance
-								td= item.PHreduc
-								td= item.SSSreduc
-								td= item.HDMFreduc
-								td= item.EmployerPH
-								td= item.EmployerSSS
-								td= item.EmployerHDMF
-								td= item.BIR
+								//- td= item.deductibles_name
+								//- td= item.deductibles
+								//- td= item.allowance_name
+								//- td= item.allowance
+								//- td= item.PHreduc
+								//- td= item.SSSreduc
+								//- td= item.HDMFreduc
+								//- td= item.EmployerPH
+								//- td= item.EmployerSSS
+								//- td= item.EmployerHDMF
+								//- td= item.BIR
 								td= item.total
 
-		// PRINT BUTTON
-		.row.column.fourteen.wide.middle.floated
-			.two.wide.right.floated.column
-				.ui.fluid.button#print-payslip-button Print
+		//PRINT BUTTON
+		.fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
+			button.ui.button.right.floated.column#print-payslip-button Print
 
 
-	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+		script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(type='text/javascript' src='javascripts/scripts.js')
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};

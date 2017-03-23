@@ -2,7 +2,7 @@ extends layout
 
 block content
 	title Add AR
-	.ui.container(style="margin: 15vh 0 0 0; padding: 0 8vh 0 0")
+	.block-content-container.ui.container
 		.two.fields.center2
 			.field
 				i.barcode.icon.massive.red
@@ -72,7 +72,6 @@ block content
 
 			.ui.primary.button#AR-preview Preview
 			.ui.error.message
-
 
 		script(type='text/javascript').
 			var an =!{JSON.stringify(an)};
