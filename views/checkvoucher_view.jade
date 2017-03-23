@@ -2,18 +2,6 @@ extends layout
 
 block content
 	title CV View
-	// <script src="http://semantic-ui.com/javascript/library/tablesort.js"></script>
-	//- .ui.middle.aligned.center.aligned.grid
-	//- 	// Table Title
-	//- 	.row#menu-row
-	//- 		#section-title.ui.center.aligned(style='margin: 80 10 10 10;')
-	//- 			h1 Check Voucher
-	//- 	// buttons
-	//- 	.row(style="padding: 0 1em 1em 1em !important;")
-	//- 		button.ui.button(onclick="location.replace('/checkvoucher')") ADD
-	//- 		.ui.button EDIT
-	//- 		.ui.button DELETE
-		//- .ui.fitted.divider
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
 		.seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
@@ -26,7 +14,7 @@ block content
 			.ui.button DELETE
 		// Table Proper
 		.row
-			.ui.container(style="overflow-y:scroll; height: 55vh;")
+			.ui.container.view-table
 				table#check-voucher-view-table.ui.table.fluid.selectable.sortable
 					thead
 						tr

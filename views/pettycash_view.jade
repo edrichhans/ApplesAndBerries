@@ -1,27 +1,23 @@
-//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
-//- script(src="semantic/dist/semantic.min.js")
-//- script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
-//- <script src="http://semantic-ui.com/javascript/library/tablesort.js"></script>
-
 extends layout
 
 block content
-	title PettyCash View
-	.ui.middle.aligned.center.aligned.grid
-		// Table Title
-		.row#menu-row
-			#section-title.ui.center.aligned(style='margin: 80 10 10 10;')
+	title Petty Cash View
+	.ui.middle.center.aligned.grid.stackable.doubling
+		// Title
+		.seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
+			.section-title.ui.center.aligned.segment(style="margin-bottom:0;")
 				h1 Petty Cash
+
 		// buttons
-		.row
-			button.ui.button(onclick="location.replace('/pettycash')") ADD
+		.row.button-row
+			button#add-petty-cash-button.ui.button(onclick="location.replace('/pettycash')") ADD
 			.ui.button EDIT
 			.ui.button DELETE
-		//- .ui.fitted.divider
+
 		// Table Proper
-		.row
-			.ui.container(style="overflow-y:scroll; height: 55vh !important")
-				table#petty-cash-view-table.ui.table.selectable.sortable
+		.ui.raised.segment.row
+			.ui.container.view-table
+				table#petty-cash-view-table.ui.table.fluid.selectable.sortable
 					thead
 						tr
 							th.collapsing AN#

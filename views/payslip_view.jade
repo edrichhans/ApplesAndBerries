@@ -4,28 +4,19 @@ block content
 	title Payslip View
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
-		.four.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
+		.seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
 			.section-title.ui.center.aligned.segment(style="margin-bottom:0;")
-				h1 Payslip 
-
-	
-		//- .ui.middle.aligned.center.aligned.grid(style = "background-color: #9E6363 !important")
-		//- // Table Title
-		//- .row#view-row
-			//- #section-title.ui.center.aligned(style='margin: 80 10 10 10;')
-				//- h1 Pay Slip 
+				h1 Payslip  
 
 		// buttons
 		.row.button-row
 			button#add-payslip-button.ui.button(onclick="location.replace('/payslip')") ADD
 			#edit-payslip-button.ui.button EDIT
 			#delete-payslip-button.ui.button DELETE
-		//- .row
-		//- 	.ui.container(style="overflow: scroll; height: 55vh")
-		//- 		table#payslip-view-table.ui.table.fluid.collapsing.selectable.line.sortable.top.aligned
+
 		// Table Proper
 		.ui.raised.segment.row
-			.ui.container(style="overflow-y:scroll; height: 50vh;")
+			.ui.container.view-table
 				table#payslip-view-table.ui.table.sortable.selectable
 					thead
 						tr
@@ -74,7 +65,7 @@ block content
 			button.ui.button.right.floated.column#print-payslip-button Print
 
 
-		script(type='text/javascript', src='/javascripts/sorttable.js')
+	script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(type='text/javascript' src='javascripts/scripts.js')
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};

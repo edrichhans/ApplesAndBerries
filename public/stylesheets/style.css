@@ -314,3 +314,15 @@ FFEAEA INPUT FIELDS COLOR DEFAULT
 .row.button-row{
 	padding: 0 !important;
 }
+
+
+
+.field.update-table{
+	overflow-y:scroll;
+	height: 60vh !important;
+}
+
+.view-table{
+	overflow-y:scroll;
+	height: 50vh;
+}
