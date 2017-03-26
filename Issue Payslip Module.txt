@@ -1,0 +1,34 @@
+Issue Payslip Module
+
+For BVA and ECP
+
+Range values for:
+	dependents,salary, {
+		bawal negative, dapat integer
+	}
+
+	advice #{
+		bawal duplicate
+		check if nag iincrement
+		bawal negative, dapat integer
+	}
+
+	date range{
+		dapat proper format
+		end date should be greater than start date>
+		sakop na ng front end
+	}
+	
+
+For GUI
+	Aim for forced fail test cases/ negative test cases
+
+	Dapat may laman ang...
+		required input fields{
+			Employee, Date, Company
+
+			dapat tama, tho dropdown na to, so tama na talaga(except date?)
+		}
+
+	...bago mapindot yung preview button
+	

@@ -1,0 +1,293 @@
+{"level":"info","message":"Function called at models/financials/paySlip.js","timestamp":"2017-03-22T17:50:08.221Z"}
+{"level":"info","message":"Function called at models/financials/paySlip.js","timestamp":"2017-03-23T08:13:19.996Z"}
+{"level":"info","message":"Function called at models/financials/paySlip.js","timestamp":"2017-03-23T08:14:11.266Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T08:14:25.867Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T08:14:25.868Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T08:14:25.868Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T08:14:25.868Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T08:14:25.868Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T08:14:25.869Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T08:14:25.869Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T08:14:25.880Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T08:40:25.409Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T08:40:25.411Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T08:40:25.411Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T08:40:25.412Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T08:40:25.412Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T08:40:25.412Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T08:40:25.412Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T08:40:25.439Z"}
+{"level":"info","message":"Function called at models/financials/paySlip.js","timestamp":"2017-03-23T08:45:47.645Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T08:46:27.198Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T08:46:27.198Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T08:46:27.198Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T08:46:27.198Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T08:46:27.198Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T08:46:27.198Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T08:46:27.198Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T08:46:27.210Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T08:48:14.688Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T08:48:14.689Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T08:48:14.690Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T08:48:14.690Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T08:48:14.690Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T08:48:14.690Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T08:48:14.690Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T08:48:14.699Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T08:49:50.696Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T08:49:50.696Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T08:49:50.696Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T08:49:50.696Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T08:49:50.696Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T08:49:50.696Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T08:49:50.696Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T08:49:50.704Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T08:55:43.935Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T08:55:43.935Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T08:55:43.935Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T08:55:43.935Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T08:55:43.935Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T08:55:43.935Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T08:55:43.936Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T08:55:43.944Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T08:57:32.799Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T08:57:32.800Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T08:57:32.800Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T08:57:32.800Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T08:57:32.800Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T08:57:32.800Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T08:57:32.800Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T08:57:32.809Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T09:04:11.737Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T09:04:11.738Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T09:04:11.738Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T09:04:11.738Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T09:04:11.738Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T09:04:11.738Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T09:04:11.738Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T09:04:11.747Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T09:06:21.057Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T09:06:21.059Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T09:06:21.060Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T09:06:21.060Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T09:06:21.060Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T09:06:21.060Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T09:06:21.060Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T09:06:21.066Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T09:07:08.214Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T09:07:08.214Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T09:07:08.214Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T09:07:08.214Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T09:07:08.214Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T09:07:08.214Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T09:07:08.214Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T09:07:08.226Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T09:07:40.019Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T09:07:40.019Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T09:07:40.019Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T09:07:40.019Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T09:07:40.019Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T09:07:40.019Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T09:07:40.019Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T09:07:40.023Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T09:08:42.098Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T09:08:42.098Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T09:08:42.098Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T09:08:42.098Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T09:08:42.098Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T09:08:42.098Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T09:08:42.098Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T09:08:42.106Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T09:10:24.626Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T09:10:24.626Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T09:10:24.626Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T09:10:24.626Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T09:10:24.626Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T09:10:24.626Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T09:10:24.626Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T09:10:24.633Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-23T09:13:48.417Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-23T09:13:48.418Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-23T09:13:48.418Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-23T09:13:48.418Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-23T09:13:48.418Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-23T09:13:48.418Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-23T09:13:48.418Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-23T09:13:48.427Z"}
+{"level":"info","message":"Function called at models/financials/paySlip.js","timestamp":"2017-03-26T15:11:31.798Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:13:57.746Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:13:57.748Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:13:57.749Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:13:57.749Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:13:57.749Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:13:57.749Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:13:57.749Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:13:57.829Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:16:32.929Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:16:32.930Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:16:32.930Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:16:32.930Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:16:32.930Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:16:32.930Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:16:32.930Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:16:32.943Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:26:42.329Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:26:42.330Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:26:42.330Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:26:42.330Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:26:42.330Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:26:42.330Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:26:42.330Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:26:42.338Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:30:57.201Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:30:57.202Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:30:57.202Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:30:57.202Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:30:57.202Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:30:57.202Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:30:57.202Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:30:57.211Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:31:50.514Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:31:50.514Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:31:50.514Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:31:50.514Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:31:50.514Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:31:50.514Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:31:50.514Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:31:50.519Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:50:34.416Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:50:34.416Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:50:34.416Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:50:34.416Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:50:34.416Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:50:34.417Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:50:34.417Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:50:34.431Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:51:15.618Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:51:15.618Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:51:15.618Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:51:15.618Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:51:15.618Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:51:15.618Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:51:15.618Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:51:15.623Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:52:08.589Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:52:08.589Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:52:08.589Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:52:08.589Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:52:08.589Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:52:08.589Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:52:08.590Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:52:08.593Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:52:52.042Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:52:52.043Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:52:52.043Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:52:52.043Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:52:52.043Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:52:52.043Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:52:52.043Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:52:52.050Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:53:25.445Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:53:25.445Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:53:25.445Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:53:25.445Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:53:25.446Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:53:25.446Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:53:25.446Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:53:25.451Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:55:04.488Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:55:04.489Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:55:04.489Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:55:04.489Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:55:04.489Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:55:04.489Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:55:04.489Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:55:04.502Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:55:58.355Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:55:58.356Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:55:58.356Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:55:58.356Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:55:58.356Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:55:58.356Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:55:58.356Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:55:58.361Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:57:22.466Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:57:22.466Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:57:22.466Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:57:22.466Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:57:22.466Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:57:22.466Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:57:22.466Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:57:22.473Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:58:02.058Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:58:02.058Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:58:02.058Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:58:02.058Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:58:02.058Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:58:02.058Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:58:02.058Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:58:02.100Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:58:13.100Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:58:13.101Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:58:13.101Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:58:13.101Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:58:13.101Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:58:13.101Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:58:13.101Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:58:13.110Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T15:58:27.191Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T15:58:27.192Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T15:58:27.192Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T15:58:27.193Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T15:58:27.193Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T15:58:27.193Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T15:58:27.193Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T15:58:27.292Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T16:13:07.168Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T16:13:07.168Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T16:13:07.168Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T16:13:07.168Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T16:13:07.168Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T16:13:07.168Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T16:13:07.168Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T16:13:07.182Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T16:15:47.190Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T16:15:47.190Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T16:15:47.190Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T16:15:47.190Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T16:15:47.190Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T16:15:47.190Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T16:15:47.191Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T16:15:47.203Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T16:17:05.938Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T16:17:05.938Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T16:17:05.938Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T16:17:05.938Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T16:17:05.938Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T16:17:05.938Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T16:17:05.938Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T16:17:05.956Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T16:23:03.111Z"}
+{"level":"info","message":"Getting paySlip document from database...","timestamp":"2017-03-26T16:23:03.111Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T16:23:03.111Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T16:23:03.123Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T16:23:03.123Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T16:23:03.123Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T16:23:03.123Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T16:23:03.123Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T16:29:14.249Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T16:29:14.249Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T16:29:14.249Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T16:29:14.249Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T16:29:14.249Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T16:29:14.249Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T16:29:14.249Z"}
+{"level":"debug","message":"All documents from database received.","timestamp":"2017-03-26T16:29:14.258Z"}
+{"level":"info","message":"Preparing database...","timestamp":"2017-03-26T16:29:53.347Z"}
+{"level":"info","message":"Getting paySlip document from database...","timestamp":"2017-03-26T16:29:53.348Z"}
+{"level":"info","message":"Getting Philhealth document from database...","timestamp":"2017-03-26T16:29:53.349Z"}
+{"level":"info","message":"Getting Employees document from database...","timestamp":"2017-03-26T16:29:53.349Z"}
+{"level":"info","message":"Getting SSS document from database...","timestamp":"2017-03-26T16:29:53.350Z"}
+{"level":"info","message":"Getting BIR document from database...","timestamp":"2017-03-26T16:29:53.350Z"}
+{"level":"info","message":"Getting advicenumbers document from database...","timestamp":"2017-03-26T16:29:53.350Z"}
+{"level":"info","message":"Getting metadata document from database...","timestamp":"2017-03-26T16:29:53.350Z"}

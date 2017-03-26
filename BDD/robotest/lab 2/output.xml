@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170327 00:16:47.483" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\AF\Documents\CS Subjects\CS 192\Project\BDD\robotest\lab 2\datesonly.robot" id="s1" name="Datesonly">
+<kw type="setup" name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170327 00:16:47.600" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170327 00:16:54.245" starttime="20170327 00:16:47.600"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170327 00:16:55.393" starttime="20170327 00:16:54.245"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170327 00:16:55.394" starttime="20170327 00:16:55.393"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170327 00:16:55.394" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170327 00:16:56.387" starttime="20170327 00:16:55.394"></status>
+</kw>
+<status status="PASS" endtime="20170327 00:16:56.387" starttime="20170327 00:16:55.394"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170327 00:16:56.388" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170327 00:16:57.377" starttime="20170327 00:16:56.387"></status>
+</kw>
+<status status="PASS" endtime="20170327 00:16:57.377" starttime="20170327 00:16:56.387"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170327 00:16:57.378" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170327 00:16:58.683" starttime="20170327 00:16:57.378"></status>
+</kw>
+<status status="PASS" endtime="20170327 00:16:58.683" starttime="20170327 00:16:57.377"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Apples and Berries Payroll System</arg>
+</arguments>
+<status status="PASS" endtime="20170327 00:17:02.594" starttime="20170327 00:16:58.683"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170327 00:17:02.899" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170327 00:17:02.899" starttime="20170327 00:17:02.594"></status>
+</kw>
+<status status="PASS" endtime="20170327 00:17:02.899" starttime="20170327 00:16:47.600"></status>
+</kw>
+<test id="s1-t1" name="Go To Payslip Panel">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>payslip-module-button</arg>
+</arguments>
+<msg timestamp="20170327 00:17:02.901" level="INFO">Clicking element 'payslip-module-button'.</msg>
+<status status="PASS" endtime="20170327 00:17:04.015" starttime="20170327 00:17:02.900"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Payslip View</arg>
+</arguments>
+<status status="PASS" endtime="20170327 00:17:04.340" starttime="20170327 00:17:04.016"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PAYSLIP URL}</arg>
+</arguments>
+<msg timestamp="20170327 00:17:04.647" level="INFO">Current location is 'http://localhost:8000/payslip_view'.</msg>
+<status status="PASS" endtime="20170327 00:17:04.647" starttime="20170327 00:17:04.341"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//body/div/div/div[3]/div/div[2]/button</arg>
+</arguments>
+<msg timestamp="20170327 00:17:04.648" level="INFO">Clicking button 'xpath=//body/div/div/div[3]/div/div[2]/button'.</msg>
+<status status="PASS" endtime="20170327 00:17:06.734" starttime="20170327 00:17:04.648"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Add Payslip</arg>
+</arguments>
+<status status="PASS" endtime="20170327 00:17:07.064" starttime="20170327 00:17:06.734"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${ADD PAYSLIP URL}</arg>
+</arguments>
+<msg timestamp="20170327 00:17:07.372" level="INFO">Current location is 'http://localhost:8000/payslip'.</msg>
+<status status="PASS" endtime="20170327 00:17:07.372" starttime="20170327 00:17:07.065"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>startDate</arg>
+<arg>January 1, 100</arg>
+</arguments>
+<msg timestamp="20170327 00:17:07.373" level="INFO">Typing text 'January 1, 100' into text field 'startDate'</msg>
+<status status="PASS" endtime="20170327 00:17:08.382" starttime="20170327 00:17:07.373"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>endDate</arg>
+<arg>September 13, 275760</arg>
+</arguments>
+<msg timestamp="20170327 00:17:08.383" level="INFO">Typing text 'September 13, 275760' into text field 'endDate'</msg>
+<status status="PASS" endtime="20170327 00:17:09.391" starttime="20170327 00:17:08.383"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>payslip-preview</arg>
+</arguments>
+<msg timestamp="20170327 00:17:09.392" level="INFO">Clicking element 'payslip-preview'.</msg>
+<status status="PASS" endtime="20170327 00:17:10.073" starttime="20170327 00:17:09.392"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//body/div[2]/div/i</arg>
+</arguments>
+<msg timestamp="20170327 00:17:10.075" level="INFO">Clicking element 'xpath=//body/div[2]/div/i'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170327 00:17:10.881" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170327 00:17:10.882" starttime="20170327 00:17:10.397"></status>
+</kw>
+<msg timestamp="20170327 00:17:10.883" level="FAIL">ValueError: Element locator 'xpath=//body/div[2]/div/i' did not match any elements.</msg>
+<status status="FAIL" endtime="20170327 00:17:10.883" starttime="20170327 00:17:10.075"></status>
+</kw>
+<status status="FAIL" endtime="20170327 00:17:10.884" critical="yes" starttime="20170327 00:17:02.899">ValueError: Element locator 'xpath=//body/div[2]/div/i' did not match any elements.</status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170327 00:17:14.231" starttime="20170327 00:17:10.888"></status>
+</kw>
+<doc>A test suite with a single test for checking if entering only one's startdate and enddate with choosing an employee first will allow a preview.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" endtime="20170327 00:17:14.231" starttime="20170327 00:16:47.486"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Datesonly" pass="0">Datesonly</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
