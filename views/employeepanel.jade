@@ -23,6 +23,10 @@ block content
 				table#employee-view-table.ui.table.sortable.selectable
 					thead
 						tr(style="background-color: #")
+							th
+								.ui.master.checkbox
+									input(type="checkbox", name="emmployee-master-checkbox")
+									label
 							th eID
 							th Name
 							th Start Date
@@ -34,6 +38,10 @@ block content
 					tbody
 						for employee in employees
 							tr.employee
+								td
+									.ui.master.checkbox
+										input(type="checkbox", name="emmployee-master-checkbox")
+										label
 								td(data-eid=employee.eID)= employee.eID
 								td= employee.name
 								td= employee.startDate
