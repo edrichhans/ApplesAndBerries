@@ -20,6 +20,10 @@ block content
 				table#payslip-view-table.ui.table.sortable.selectable
 					thead
 						tr
+							th
+								.ui.master.checkbox
+									input(type="checkbox", name="emmployee-master-checkbox")
+									label
 							th AN
 							th Issued By
 							//- th eID
@@ -42,6 +46,10 @@ block content
 					tbody
 						each item, index in transactions
 							tr
+								td
+									.ui.master.checkbox
+										input(type="checkbox", name="emmployee-master-checkbox")
+										label
 								td= item.adviceNumber
 								td= item.issuedBy
 								//- td.eID(value=item.eID)= item.eID
