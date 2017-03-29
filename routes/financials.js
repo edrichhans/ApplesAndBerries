@@ -9,6 +9,7 @@ var updateCompRoute = require('../models/financials/updateComp');
 var reportRoute = require('../models/financials/report');
 var winston = require('winston');
 var path = require('path');
+var Promise = require('promise');
 
 var wlogger = new winston.Logger({
 	transports: [
@@ -58,12 +59,18 @@ router.get('/payslip', function(req, res, next){
 });
 
 router.post('/payslip', function(req, res){
-	paySlipRoute.insert(req, res, function(jsondata){
+	var db = req.db;
+	adviceNumbers = db.get('adviceNumbers');
+	metadata = db.get('metadata');
+	Employees = db.get('Employees');
+	BIR = db.get('BIR');
+	PhilHealth = db.get('PhilHealth');
+	SSS = db.get('SSS');
+	paySlipRoute.insert(req, res).then((jsondata) => {
 		wlogger.log('info', 'Payslip Issued', {
 			issuedBy: req.session.username,
 			issuedTo: req.body.employeeDropdown
 		});
-		// console.log(res.body);
 		res.status(200);
 		res.redirect('/');
 	});

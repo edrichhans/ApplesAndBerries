@@ -30,7 +30,8 @@ describe("Payslip", function(){
 			financialwinston.info("Page displayed successfully");
 		});
 	});
-	describe("Insert", function(){
+	
+	/*describe("Insert", function(){
 		it("returns status 200", function(done){
 			financialwinston.info("Inserting to payslip");
 			chai.request(server)
@@ -51,10 +52,10 @@ describe("Payslip", function(){
 			});
 			financialwinston.info("Success insert to payslip. Response 200");
 		});
-	});
+	});*/
 });
 
-describe("Thirteenth", function(){
+/*describe("Thirteenth", function(){
 	var url = local;
 	describe("Insert", function(){
 		it("returns status 200", function(done){
@@ -5720,4 +5721,4 @@ describe("PhilHealth", function(){
 			})
 		});
 	});
-});
+});*/

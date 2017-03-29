@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-14T07:03:30.577Z"}
 {"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T07:03:30.653Z"}
 {"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T07:03:30.790Z"}
@@ -1244,3 +1245,8 @@
 {"issuedBy":"edrichhans","issuedTo":"6","level":"info","message":"Payslip Issued","timestamp":"2017-03-26T17:30:21.345Z"}
 {"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-03-26T17:33:00.036Z"}
 {"issuedBy":"edrichhans","issuedTo":"6","level":"info","message":"Payslip Issued","timestamp":"2017-03-26T17:34:29.756Z"}
+=======
+{"level":"info","message":"Employee added","timestamp":"2017-03-29T13:00:03.322Z"}
+{"issuedBy":"edrichhans","issuedTo":"6","level":"info","message":"Payslip Issued","timestamp":"2017-03-29T13:19:34.660Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-03-29T13:27:58.301Z"}
+>>>>>>> 23345d2e6fca3ac9d03f668ff059d335bbda9b82

@@ -1,28 +1,27 @@
-//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
-//- script(src="semantic/dist/semantic.min.js")
 extends layout
 
 block content
 	title CV View
-	// <script src="http://semantic-ui.com/javascript/library/tablesort.js"></script>
-	.ui.middle.aligned.center.aligned.grid
-		// Table Title
-		.row#menu-row
-			#section-title.ui.center.aligned(style='margin: 80 10 10 10;')
+	.ui.middle.center.aligned.grid.stackable.doubling
+		// Title
+		.seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
+			.section-title.ui.center.aligned.segment(style="margin-bottom:0;")
 				h1 Check Voucher
 		// buttons
-		.row(style="padding: 0 1em 1em 1em !important;")
-			button.ui.button(onclick="location.replace('/checkvoucher')") ADD
+		.row.button-row
+			button#add-CV-button.ui.button(onclick="location.replace('/checkvoucher')") ADD
 			.ui.button EDIT
 			.ui.button DELETE
-		//- .ui.fitted.divider
-
 		// Table Proper
 		.row
-			.ui.container(style="overflow-y:scroll; height: 55vh;")
+			.ui.container.view-table
 				table#check-voucher-view-table.ui.table.fluid.selectable.sortable
 					thead
 						tr
+							th
+								.ui.master.checkbox
+									input(type="checkbox", name="cv-master-checkbox")
+									label
 							th.collapsing AN#
 							th.two.wide Issued By
 							th.three.wide Name
@@ -32,6 +31,10 @@ block content
 					tbody
 						for item in transactions
 							tr
+								td
+									.ui.checkbox
+										input(type="checkbox", name="cv-checkbox")
+										label
 								td= item.adviceNumber
 								td= item.issuedBy
 								td= item.name
@@ -45,12 +48,5 @@ block content
 			button.ui.button.right.floated.column#print-check-voucher-button Print
 
 
-	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+	script(type='text/javascript' src='javascripts/sorttable.js')
 	script(type='text/javascript' src='javascripts/scripts.js')
-	script(type='text/javascript').
-		$('#print-button').click(function(){
-			$('table').printThis({
-				header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 20%;' src='images/header.png'></img></div>"
-			});
-		});
-	

@@ -1,13 +1,18 @@
 body{
-	/*padding: 50px;*/
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-	background-color: #9E6363 !important;
-	height: 105vh !important;
+	/*background-color: #787554 !important;*/
+	background/*-color: #FFEAEA;*/
+	background-color:#FFF;
+	height: 100vh !important;
 }
 
 a{
 	color: #372B62;
 }
+
+/*h1{
+	color: #453 !important;
+}*/
 
 @media print{
 	.content{
@@ -49,11 +54,9 @@ a{
 }
 	
 .center2 {
-	margin-left: 25%;
+	margin-left: 25vw;
 	width: 50%;
-	/*height: 100%;*/
 	padding: 20px;
-	/*padding-top: 5rem;*/
 }
 
 .center1 {
@@ -109,9 +112,9 @@ table {
 	margin: 0 1rem;
 }
 
-.ui.two.wide.column {
+/*.ui.two.wide.column {
 	background-color: #333;
-}
+}*/
 
 /*ui.vertical.fluid.inverted.labeled.icon.menu(style="height: 100%; background: #3D3E3F !important")*/
 /*.ui.vertical.fluid.inverted.labeled.icon.menu{
@@ -123,25 +126,21 @@ background-color: #932F2F;
 }
 
 #section-title{
-	margin: 50px 10px 10px 10px;
+	margin: 50 10 0 10;
 }
 
-#fixed-top-menu{
-	margin: 0; 
-	border-radius: 0px;
-	background: #9E6363: !important;
-	background-color: #723838: !important;
-}
+
 
 #main-grid{
 background: #9E6363: !important;
-	
+height:100vh; padding: 10 !important;
 	
 }
 
-button{
+/*button{
 	background-color: #932F2F !important;
-}
+	1B1C1D*/
+
 
 
 #left-menu > .a.item{
@@ -150,36 +149,132 @@ button{
 
 }
 
+/*
 [id^="section"] {
 	margin: 80 10 10 10 !important;
-}
-
+}*/
 .ui.vertical.menu {
 	background: #966A6A !important;
 }
 
-.ui.icon.menu>.item{
+
+
+
+
+/*#employee-module-button{
 	background-color: #9F3A38 !important;
 }
+*/
 
 
-#flm-employee-module-button {
-	color:#9F3A38 !important;
+
+/*==============================================layout.jade*/
+
+#main-column .ui.row{
+background-color:#9E6363: !important;
+padding: 0 !important;
+ height: 102vh: !important;
 
 }
 
-#employee-module-button{
-	background-color: #9F3A38 !important;
+#fixed-top-menu{
+	background-color:#9F3A38;
+	right: 40;
+	left: 0;
 }
 
-.ui.red.button, .ui.red.buttons .button{
-	background-color: #9F3A38 !important;
+/*top navbar*/
+/*.ui.menu .item{
+	color: #FFF;
+}*/
 
+#fixed-top-menu .item{
+	color: #FFF;
+}
+
+/*.ui.menu>.item:first-child{
+	margin-left: 20;
+} 
+*/
+#fixed-top-menu>.item:first-child{
+margin-left: 50;
+}
+
+/*.ui.icon.menu>.item{
+	background-color: #123123 !important;
+}*/
+
+/*#two-wide-col-bg{
+	background-color: #FFF
+}*/
+
+/*#flm-employee-module-button{
+margin: 50;
+padding: 0;
+padding: 113 13 16 13; 
+background-color: #966A6A; }
+*/
+/*[id^="flm"] {
+	background-color: #966A6A;
+}*/
+
+#ABlogo {
+padding: 10 0 10 0 !important;}
+
+#user-title{
+	padding: 0;
+	margin-right: 5;
+	margin-bottom: 0;
 }
 /*
-.ui.animated.fade.red.button.fluid{
-	background-color: #932F2F !important;
+.ui.column.fourteen.wide{
+	height: 110vh !important padding: 0 14 0 0; !important margin: 14 14 14 0 !important;
 }*/
+
+
+/*==============================================index.jade Main Menu Buttons Page*/
+
+/*.ui.red.button, .ui.red.buttons .button{
+	background-color: #9F3A38 !important;
+
+}*/
+
+/*style = "background-color: #9F3A38 !important;"
+*/
+.ui.red.button, .ui.red.buttons .button{
+background-color: #9F3A38;
+color: #FFF;
+}
+/*hovering effect over buttons*/
+.ui.red.button:hover, .ui.red.buttons .button:hover {
+    background-color: #9F3A30;
+    /*text color*/
+    color: #FFF;
+    text-shadow: none;
+}
+
+
+.section-title{
+	margin: 4vh 10 0 10 !important;
+}
+/*
+#emp-img img{
+	src=("icons/main_menu/employee_white.png")
+}*/
+
+.block-content-container.ui.container{
+	margin: 0 0 0 0; 
+	padding: 8vh 0 0 0;
+	margin: 0 !important;
+}
+
+
+/*payslip_view.jade*/
+
+.block-grid{
+
+	background-color: #255555 !important;
+}
 
 
 /*COLORS
@@ -201,3 +296,33 @@ FFEAEA INPUT FIELDS COLOR DEFAULT
 
 
 */
+
+
+/*==============================================control pane.jade =======================================*/
+
+.ui.container.main-menu-button{
+	margin: 10vh;
+}
+
+
+/*#menu-row{
+	padding:5;
+	margin:20 !important;	
+}
+*/
+
+.row.button-row{
+	padding: 0 !important;
+}
+
+
+
+.field.update-table{
+	overflow-y:scroll;
+	height: 60vh !important;
+}
+
+.view-table{
+	overflow-y:scroll;
+	height: 50vh;
+}

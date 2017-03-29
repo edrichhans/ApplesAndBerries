@@ -1,0 +1,435 @@
+
+> applesandberries@0.0.0 test /home/asus/Documents/Projects/ApplesAndBerries
+> mocha --reporter spec
+
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (/home/asus/Documents/Projects/ApplesAndBerries/node_modules/bson/ext/index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (/home/asus/Documents/Projects/ApplesAndBerries/node_modules/bson/lib/bson/index.js:3:24)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (/home/asus/Documents/Projects/ApplesAndBerries/node_modules/mongodb/lib/mongodb/index.js:2:22)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (/home/asus/Documents/Projects/ApplesAndBerries/app.js:8:13)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (/home/asus/Documents/Projects/ApplesAndBerries/test/employees.js:5:14)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at /home/asus/Documents/Projects/ApplesAndBerries/node_modules/mocha/lib/mocha.js:222:27
+    at Array.forEach (native)
+    at Mocha.loadFiles (/home/asus/Documents/Projects/ApplesAndBerries/node_modules/mocha/lib/mocha.js:219:14)
+    at Mocha.run (/home/asus/Documents/Projects/ApplesAndBerries/node_modules/mocha/lib/mocha.js:487:10)
+    at Object.<anonymous> (/home/asus/Documents/Projects/ApplesAndBerries/node_modules/mocha/bin/_mocha:459:18)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.runMain (module.js:604:10)
+    at run (bootstrap_node.js:394:7)
+    at startup (bootstrap_node.js:149:9)
+    at bootstrap_node.js:509:3 code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+
+
+  Add Employee
+    Fail due to null input
+pasok
+null
+[0mPOST /employees/addemployee [31m500 [0m44.603 ms - 13[0m
+      ✓ returns status 500 (98ms)
+    Insert
+pasok
+[0mPOST /employees/addemployee [36m302 [0m17.461 ms - 32[0m
+[0mGET /employees [36m302 [0m5.507 ms - 28[0m
+[0mGET /login [32m200 [0m641.287 ms - 2263[0m
+      ✓ returns status 200 (704ms)
+
+  Payslip
+    Display page
+[0mGET /payslip [36m302 [0m1.376 ms - 28[0m
+[0mGET /login [32m200 [0m183.328 ms - 2263[0m
+      ✓ returns status 200 (213ms)
+    Insert
+[32minfo[39m: Payslip Issued issuedBy=undefined, issuedTo=6
+[0mPOST /payslip [36m302 [0m8.588 ms - 23[0m
+employee
+Edward Chua
+[0mGET / [36m302 [0m2.993 ms - 28[0m
+[0mGET /login [32m200 [0m148.143 ms - 2263[0m
+      ✓ returns status 200 (193ms)
+
+  Thirteenth
+    Insert
+[32minfo[39m: Thirteenth Month Pay Issued issuedBy=undefined, issuedTo=6
+[0mPOST /thirteenth [36m302 [0m4.210 ms - 23[0m
+[0mGET / [36m302 [0m1.905 ms - 28[0m
+[0mGET /login [32m200 [0m114.960 ms - 2263[0m
+      ✓ returns status 200 (141ms)
+
+  AR
+    Display page
+[0mGET /AR_view [36m302 [0m1.136 ms - 28[0m
+[0mGET /login [32m200 [0m116.878 ms - 2263[0m
+      ✓ returns status 200 (129ms)
+    Display form
+[0mGET /AR [36m302 [0m1.564 ms - 28[0m
+[0mGET /login [32m200 [0m112.463 ms - 2263[0m
+      ✓ returns status 200 (132ms)
+    Insert
+[32minfo[39m: Acknowledgement Receipt Issued issuedBy=undefined, issuedTo=Edrich Chua
+[0mPOST /AR [36m302 [0m3.704 ms - 30[0m
+[0mGET /AR_view [36m302 [0m1.454 ms - 28[0m
+[0mGET /login [32m200 [0m103.948 ms - 2263[0m
+      ✓ returns status 200 (126ms)
+
+  Petty Cash
+    Display page
+[0mGET /pettycash_view [36m302 [0m1.253 ms - 28[0m
+[0mGET /login [32m200 [0m120.021 ms - 2263[0m
+      ✓ returns status 200 (133ms)
+    Display form
+[0mGET /pettycash [36m302 [0m1.084 ms - 28[0m
+[0mGET /login [32m200 [0m90.695 ms - 2263[0m
+      ✓ returns status 200 (102ms)
+    Insert
+[32minfo[39m: Petty Cash Issued issuedBy=undefined, issuedTo=Edrich Chua
+[0mPOST /pettycash [36m302 [0m4.066 ms - 32[0m
+[0mGET /pettycash [36m302 [0m1.356 ms - 28[0m
+[0mGET /login [32m200 [0m85.816 ms - 2263[0m
+      ✓ returns status 200 (108ms)
+
+  Check Voucher
+    Display page
+[0mGET /checkvoucher_view [36m302 [0m2.180 ms - 28[0m
+[0mGET /login [32m200 [0m43.808 ms - 2263[0m
+      ✓ returns status 200 (57ms)
+    Display form
+[0mGET /checkvoucher [36m302 [0m1.005 ms - 28[0m
+[0mGET /login [32m200 [0m37.283 ms - 2263[0m
+      ✓ returns status 200 (47ms)
+    Insert
+[32minfo[39m: Check Voucher Issued issuedBy=undefined, issuedTo=Edrich Chua
+[0mPOST /checkvoucher [36m302 [0m4.868 ms - 23[0m
+[0mGET / [36m302 [0m1.118 ms - 28[0m
+[0mGET /login [32m200 [0m41.074 ms - 2263[0m
+      ✓ returns status 200 (60ms)
+
+  BIR
+    Incorrect Insert (character in hash)
+[0mPOST /updateBIRComp [31m500 [0m1.612 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (character in range)
+[0mPOST /updateBIRComp [31m500 [0m0.886 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (null in hash)
+[0mPOST /updateBIRComp [31m500 [0m1.085 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (null in range)
+[0mPOST /updateBIRComp [31m500 [0m0.841 ms - -[0m
+      ✓ returns status 500
+    display page
+[0mGET /BIR [36m302 [0m2.392 ms - 23[0m
+[0mGET / [36m302 [0m3.365 ms - 28[0m
+[0mGET /login [32m200 [0m39.335 ms - 2263[0m
+      ✓ returns status 200 (54ms)
+    Insert Correct Values
+[32minfo[39m: BIR Updated! issuedBy=undefined
+[0mPOST /updateBIRComp [36m302 [0m78.481 ms - 23[0m
+[0mGET / [36m302 [0m0.844 ms - 28[0m
+[0mGET /login [32m200 [0m42.531 ms - 2263[0m
+      ✓ returns status 200 (132ms)
+
+  SSS
+    Incorrect input (char in credit)
+[0mPOST /updateSSSComp [31m500 [0m4.300 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (char in from)
+[0mPOST /updateSSSComp [31m500 [0m1.147 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (char in to)
+[0mPOST /updateSSSComp [31m500 [0m1.922 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (char in totalER)
+[0mPOST /updateSSSComp [31m500 [0m1.698 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (blank totalEE)
+[0mPOST /updateSSSComp [31m500 [0m1.095 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (no EC field)
+[0mPOST /updateSSSComp [31m500 [0m1.031 ms - -[0m
+      ✓ returns status 500
+    display page
+[0mGET /SSS [36m302 [0m2.836 ms - 23[0m
+[0mGET / [36m302 [0m1.233 ms - 28[0m
+[0mGET /login [32m200 [0m42.101 ms - 2263[0m
+      ✓ returns status 200 (63ms)
+    Insert
+[32minfo[39m: SSS Updated! issuedBy=undefined
+[0mPOST /updateSSSComp [36m302 [0m36.766 ms - 23[0m
+[0mGET / [36m302 [0m1.116 ms - 28[0m
+[0mGET /login [32m200 [0m52.580 ms - 2263[0m
+      ✓ returns status 200 (104ms)
+
+  PhilHealth
+    Incorrect Insert (char in base)
+EYTPA SDFKJLANS
+a
+[0mPOST /updatePHComp [31m500 [0m1.858 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (char in premium)
+EYTPA SDFKJLANS
+8000
+[0mPOST /updatePHComp [31m500 [0m1.628 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (char in share)
+EYTPA SDFKJLANS
+8000
+[0mPOST /updatePHComp [31m500 [0m1.173 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (char in from)
+[0mPOST /updatePHComp [31m500 [0m0.943 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (char in to)
+[0mPOST /updatePHComp [31m500 [0m1.000 ms - -[0m
+      ✓ returns status 500
+    display page
+[0mGET /PH [36m302 [0m2.367 ms - 28[0m
+[0mGET /login [32m200 [0m40.305 ms - 2263[0m
+      ✓ returns status 200 (49ms)
+    Insert
+[32minfo[39m: PhilHealth Updated! issuedBy=undefined
+[0mPOST /updatePHComp [36m302 [0m19.212 ms - 23[0m
+[0mGET / [36m302 [0m0.896 ms - 28[0m
+[0mGET /login [32m200 [0m40.465 ms - 2263[0m
+      ✓ returns status 200 (85ms)
+
+  Thirteenth
+    Insert
+[32minfo[39m: Thirteenth Month Pay Issued issuedBy=undefined, issuedTo=6
+[0mPOST /thirteenth [36m302 [0m6.702 ms - 23[0m
+[0mGET / [36m302 [0m1.850 ms - 28[0m
+[0mGET /login [32m200 [0m51.026 ms - 2263[0m
+      ✓ returns status 200 (85ms)
+
+  AR
+    Display page
+[0mGET /AR_view [36m302 [0m1.009 ms - 28[0m
+[0mGET /login [32m200 [0m41.395 ms - 2263[0m
+      ✓ returns status 200 (49ms)
+    Display form
+[0mGET /AR [36m302 [0m0.877 ms - 28[0m
+[0mGET /login [32m200 [0m43.948 ms - 2263[0m
+      ✓ returns status 200 (51ms)
+    Insert
+[32minfo[39m: Acknowledgement Receipt Issued issuedBy=undefined, issuedTo=Edrich Chua
+[0mPOST /AR [36m302 [0m1.934 ms - 30[0m
+[0mGET /AR_view [36m302 [0m2.694 ms - 28[0m
+[0mGET /login [32m200 [0m41.665 ms - 2263[0m
+      ✓ returns status 200 (72ms)
+
+  Petty Cash
+    Display page
+[0mGET /pettycash_view [36m302 [0m1.139 ms - 28[0m
+[0mGET /login [32m200 [0m39.301 ms - 2263[0m
+      ✓ returns status 200 (47ms)
+    Display form
+[0mGET /pettycash [36m302 [0m0.932 ms - 28[0m
+[0mGET /login [32m200 [0m47.202 ms - 2263[0m
+      ✓ returns status 200 (68ms)
+    Insert
+[32minfo[39m: Petty Cash Issued issuedBy=undefined, issuedTo=Edrich Chua
+[0mPOST /pettycash [36m302 [0m3.534 ms - 32[0m
+[0mGET /pettycash [36m302 [0m0.893 ms - 28[0m
+[0mGET /login [32m200 [0m49.189 ms - 2263[0m
+      ✓ returns status 200 (79ms)
+
+  Check Voucher
+    Display page
+[0mGET /checkvoucher_view [36m302 [0m0.933 ms - 28[0m
+[0mGET /login [32m200 [0m52.734 ms - 2263[0m
+      ✓ returns status 200 (62ms)
+    Display form
+[0mGET /checkvoucher [36m302 [0m1.450 ms - 28[0m
+[0mGET /login [32m200 [0m39.354 ms - 2263[0m
+      ✓ returns status 200 (46ms)
+    Insert
+[32minfo[39m: Check Voucher Issued issuedBy=undefined, issuedTo=Edrich Chua
+[0mPOST /checkvoucher [36m302 [0m3.879 ms - 23[0m
+[0mGET / [36m302 [0m0.900 ms - 28[0m
+[0mGET /login [32m200 [0m41.482 ms - 2263[0m
+      ✓ returns status 200 (63ms)
+
+  BIR
+    Incorrect Insert (character in hash)
+[0mPOST /updateBIRComp [31m500 [0m0.834 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (character in range)
+[0mPOST /updateBIRComp [31m500 [0m0.807 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (null in hash)
+[0mPOST /updateBIRComp [31m500 [0m0.786 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (null in range)
+[0mPOST /updateBIRComp [31m500 [0m0.760 ms - -[0m
+      ✓ returns status 500
+    display page
+[0mGET /BIR [36m302 [0m0.805 ms - 23[0m
+[0mGET / [36m302 [0m0.694 ms - 28[0m
+[0mGET /login [32m200 [0m45.866 ms - 2263[0m
+      ✓ returns status 200 (55ms)
+    Insert Correct Values
+[32minfo[39m: BIR Updated! issuedBy=undefined
+[0mPOST /updateBIRComp [36m302 [0m6.924 ms - 23[0m
+[0mGET / [36m302 [0m0.889 ms - 28[0m
+[0mGET /login [32m200 [0m56.616 ms - 2263[0m
+      ✓ returns status 200 (75ms)
+
+  SSS
+    Incorrect input (char in credit)
+[0mPOST /updateSSSComp [31m500 [0m1.517 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (char in from)
+[0mPOST /updateSSSComp [31m500 [0m0.906 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (char in to)
+[0mPOST /updateSSSComp [31m500 [0m0.852 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (char in totalER)
+[0mPOST /updateSSSComp [31m500 [0m0.839 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (blank totalEE)
+[0mPOST /updateSSSComp [31m500 [0m1.007 ms - -[0m
+      ✓ returns status 500
+    Incorrect input (no EC field)
+[0mPOST /updateSSSComp [31m500 [0m0.944 ms - -[0m
+      ✓ returns status 500
+    display page
+[0mGET /SSS [36m302 [0m0.748 ms - 23[0m
+[0mGET / [36m302 [0m0.669 ms - 28[0m
+[0mGET /login [32m200 [0m35.947 ms - 2263[0m
+      ✓ returns status 200 (46ms)
+    Insert
+[32minfo[39m: SSS Updated! issuedBy=undefined
+[0mPOST /updateSSSComp [36m302 [0m6.815 ms - 23[0m
+[0mGET / [36m302 [0m0.714 ms - 28[0m
+[0mGET /login [32m200 [0m37.562 ms - 2263[0m
+      ✓ returns status 200 (54ms)
+
+  PhilHealth
+    Incorrect Insert (char in base)
+EYTPA SDFKJLANS
+a
+[0mPOST /updatePHComp [31m500 [0m3.013 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (char in premium)
+EYTPA SDFKJLANS
+8000
+[0mPOST /updatePHComp [31m500 [0m1.174 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (char in share)
+EYTPA SDFKJLANS
+8000
+[0mPOST /updatePHComp [31m500 [0m0.944 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (char in from)
+[0mPOST /updatePHComp [31m500 [0m0.806 ms - -[0m
+      ✓ returns status 500
+    Incorrect Insert (char in to)
+[0mPOST /updatePHComp [31m500 [0m1.279 ms - -[0m
+      ✓ returns status 500
+    display page
+[0mGET /PH [36m302 [0m0.759 ms - 28[0m
+[0mGET /login [32m200 [0m51.883 ms - 2263[0m
+      ✓ returns status 200 (59ms)
+    Insert
+[32minfo[39m: PhilHealth Updated! issuedBy=undefined
+[0mPOST /updatePHComp [36m302 [0m9.320 ms - 23[0m
+[0mGET / [36m302 [0m7.474 ms - 28[0m
+[0mGET /login [32m200 [0m42.268 ms - 2263[0m
+      ✓ returns status 200 (90ms)
+
+  Login
+    Fail due to Invalid both
+[0mPOST /login [31m500 [0m3.799 ms - 21[0m
+      ✓ returns status 500
+    Fail due to Invalid username
+[0mPOST /login [31m500 [0m1.962 ms - 21[0m
+      ✓ returns status 500
+    Fail due to Invalid password
+[0mPOST /login [31m500 [0m2.994 ms - 21[0m
+      ✓ returns status 500
+    Fail due to blank
+[0mPOST /login [31m500 [0m1.967 ms - 21[0m
+      ✓ returns status 500
+    Pass Admin
+[0mPOST /login [36m302 [0m2.045 ms - 23[0m
+[0mGET / [36m302 [0m0.749 ms - 28[0m
+[0mGET /login [32m200 [0m37.813 ms - 2263[0m
+      ✓ returns status 200 (49ms)
+    Pass User
+[0mPOST /login [36m302 [0m1.868 ms - 23[0m
+[0mGET / [36m302 [0m0.722 ms - 28[0m
+[0mGET /login [32m200 [0m50.199 ms - 2263[0m
+{}
+      ✓ returns status 200 (63ms)
+
+  mailer: models
+    #sendOne()
+      ✓ should render the password reset templates correctly
+    correct input
+[0mPOST /forgot [36m302 [0m3540.116 ms - 23[0m
+[0mGET / [36m302 [0m0.991 ms - 28[0m
+[0mGET /login [32m200 [0m39.358 ms - 2263[0m
+      ✓ should return status 200 (3623ms)
+    Incorrect forgot
+[0mPOST /forgot [31m500 [0m2.258 ms - 13[0m
+      ✓ should return error status (500)
+
+  Report
+    Generate Excel File
+[0mGET /report [36m302 [0m1.074 ms - 28[0m
+[0mGET /login [32m200 [0m38.927 ms - 2263[0m
+      ✓ creates a file in uploads folder (48ms)
+
+  Password Reset
+    get page
+[0mGET /reset/asdf [36m302 [0m3.071 ms - 29[0m
+[0mGET /forgot [32m200 [0m52.136 ms - 1886[0m
+      ✓ should return 200 (63ms)
+
+
+  77 passing (8s)
+

@@ -619,3 +619,11 @@ $('.ui.form#addUser')
 				]
 			}
 		});
+
+//==================== chechvoucher_view.jade ===============================
+
+		$('#print-check-voucher-button').click(function(){
+			$('table').printThis({
+				header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 20%;' src='images/header.png'></img></div>"
+			});
+		});
