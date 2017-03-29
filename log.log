@@ -1180,3 +1180,79 @@
 {"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T06:44:23.346Z"}
 {"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T06:44:23.547Z"}
 {"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T06:44:23.752Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-03-14T07:03:23.219Z"}
+{"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-14T07:03:24.144Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T07:03:24.362Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T07:03:24.892Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-03-14T07:03:25.324Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-03-14T07:03:25.640Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T07:03:25.894Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T07:03:26.157Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T07:03:26.390Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T07:03:26.459Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T07:03:26.703Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-03-14T07:03:26.917Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-03-14T07:03:27.153Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T07:03:27.379Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T07:03:27.531Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T07:03:27.746Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-03-14T07:18:27.982Z"}
+{"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-14T07:18:28.844Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T07:18:29.030Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T07:18:29.454Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-03-14T07:18:29.823Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-03-14T07:18:30.065Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T07:18:30.236Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T07:18:30.427Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T07:18:30.604Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T07:18:30.661Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T07:18:30.854Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-03-14T07:18:31.034Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-03-14T07:18:31.188Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T07:18:31.332Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T07:18:31.460Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T07:18:31.615Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-03-14T07:35:17.002Z"}
+{"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-14T07:35:17.842Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T07:35:18.061Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T07:35:18.485Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-03-14T07:35:18.848Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-03-14T07:35:19.100Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T07:35:19.257Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T07:35:19.447Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T07:35:19.613Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T07:35:19.670Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T07:35:19.848Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-03-14T07:35:20.022Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-03-14T07:35:20.174Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T07:35:20.310Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T07:35:20.456Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T07:35:20.596Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-03-14T15:28:44.875Z"}
+{"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-14T15:28:47.087Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T15:28:47.272Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T15:28:47.657Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-03-14T15:28:48.013Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T15:28:50.480Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T15:28:50.482Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T15:28:51.041Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T15:28:51.169Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T15:28:51.342Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T15:28:51.518Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-03-14T15:30:52.155Z"}
+{"issuedTo":6,"level":"info","message":"Payslip Issued","timestamp":"2017-03-14T15:30:53.066Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T15:30:53.256Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T15:30:53.662Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-03-14T15:30:54.026Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-03-14T15:30:54.240Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T15:30:54.461Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T15:30:54.665Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T15:30:54.830Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-03-14T15:30:54.902Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-03-14T15:30:55.083Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-03-14T15:30:55.285Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-03-14T15:30:55.465Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-03-14T15:30:55.605Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-03-14T15:30:55.753Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-03-14T15:30:55.895Z"}
+{"issuedBy":"edrichhans","issuedTo":"6","level":"info","message":"Payslip Issued","timestamp":"2017-03-29T04:45:08.958Z"}
