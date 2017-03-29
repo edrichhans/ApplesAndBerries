@@ -9,7 +9,7 @@ Library           Selenium2Library
 *** Variables ***
 ${SERVER}         localhost:8000
 ${BROWSER}        Chrome
-${DELAY}          2
+${DELAY}          0.3
 ${username}       edrichhans
 ${password}       password
 ${LOGIN URL}      http://${SERVER}/login
