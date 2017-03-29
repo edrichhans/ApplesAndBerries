@@ -1,18 +1,18 @@
-//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
-//- script(src="semantic/dist/semantic.min.js")
-
 extends layout
 
 block content
+	title Main Menu
+	// Title
 	.ui.middle.aligned.center.aligned.grid.stackable.doubling
 		// Title
-		.row#menu-row
-			#section-title.ui.center.aligned(style='margin: 80 10 10 10 !important;')
-				h1 Main Menu
+		.four.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
+			.section-title.ui.center.aligned.segment
+				h1 Main Menu 
+
 		// 1st ROW Buttons
 		.four.column.wide.row
 			.column
-				button#employee-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees')" style = "background-color: #9F3A38 !important;")
+				button#employee-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees')")
 					.hidden.content
 						h3
 							| Add Employee
@@ -98,4 +98,4 @@ block content
 							h3
 								| Issue Petty Cash
 
-	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+	script(type='text/javascript', src='/javascripts/sorttable.js')

@@ -9,7 +9,13 @@ var winston = require('winston');
 
 var financialwinston = new(winston.Logger)({
 	transports: [
-		new (winston.transports.File)({ filename: 'financials_test.log' })
+		new (winston.transports.File)({ filename: 'financials_test_lab2.log' })
+	]
+});
+
+var lab2winston = new(winston.Logger)({
+	transports: [
+		new (winston.transports.File)({ filename: 'lab2winston_p1_log.log' })
 	]
 });
 
@@ -24,13 +30,17 @@ describe("Payslip", function(){
 			chai.request(server)
 				.get('/payslip')
 				.end(function(err, res){
+					if(err)
+					{
+						lab2winston.info("err: ${err}");
+						done();
+					}
 					res.should.have.status(200);
 					done();
 				});
 			financialwinston.info("Page displayed successfully");
 		});
 	});
-	
 	/*describe("Insert", function(){
 		it("returns status 200", function(done){
 			financialwinston.info("Inserting to payslip");
@@ -54,8 +64,8 @@ describe("Payslip", function(){
 		});
 	});*/
 });
-
-/*describe("Thirteenth", function(){
+/*
+describe("Thirteenth", function(){
 	var url = local;
 	describe("Insert", function(){
 		it("returns status 200", function(done){

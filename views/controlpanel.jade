@@ -1,99 +1,62 @@
-//- link(rel="stylesheet", type="text/css", href="semantic/dist/semantic.min.css")
-//- script(src="semantic/dist/semantic.min.js")
 extends layout
 
 block content
 	title Control Panel
+
 	.ui.middle.aligned.center.aligned.grid.stackable.doubling
 		// Title
-		.row#menu-row
-			#section-title.ui.center.aligned(style='margin: 80 10 10 10 !important;')
-				h1 Control Panel 
-		.row
+
+		.seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
+			.section-title.ui.center.aligned.segment
+				h1 Control Panel
+
 		// 1st ROW Buttons
 		.four.column.wide.row
 			.column
-				button#BIR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/BIR')")
+				#BIR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/BIR')")
 					.visible.content
-						.ui.grid
-							.row
-							.row
-							.row
-								.ui.container
-									h1 B I R
-							.row
-							.row
+						.ui.container.main-menu-button
+							h1 B I R
 					.hidden.content
-						| Update tax rates
+						h4 Update tax rates
 			.column
 				#SSS-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/SSS')")
 					.visible.content
-						.ui.grid
-							.row
-							.row
-							.row
-								.ui.container
-									h1 S S S
-							.row
-							.row
+						.main-menu-button.ui.container
+							h1 S S S
 					.hidden.content
-						| Update SSS fees
-			.column
+						h4 Update SSS fees
+			.floated.column
 				#PhilHealth-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/PH')")
 					.visible.content
-						.ui.grid
-							.row
-							.row
-							.row
-								.ui.container
-									h1 PhilHealth
-							.row					
-							.row
+						.ui.container.main-menu-button
+							h1 PhilHealth
 					.ui.hidden.content
 						.ui.center.aligned.fluid
-							| Update PhilHealth
+							h4 Update PhilHealth
 		// 2nd ROW Buttons
 		.four.column.wide.row
 			.column
 				#add-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/addUser')")
 					.visible.content
-						.ui.grid
-							.row
-							.row
-							.row
-								.ui.container
-									h1 Add User
-							.row
-							.row
+						.ui.container.main-menu-button
+							h1 Add User
 					.hidden.content
-						| Create a new user
+						h4 Create a new user
 			.column
 				#delete-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/deleteUser')")
 					.visible.content
-						.ui.grid
-							.row
-							.row
-							.row
-								.ui.container
-									h1 Delete User
-							.row
-							.row
+						.ui.container.main-menu-button
+							h1 Delete User
 					.hidden.content
-						| Delete an existing user
+						h4 Delete an existing user
 			.column
 				#back-up-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/backup')")
 					.visible.content
-						.ui.grid
-							.row
-							.row
-							.row
-								.ui.container
-									h1 Back up
-							.row
-							.row
+						.ui.container.main-menu-button
+							h1 Back Up
 					.hidden.content
-						| Back up files
-		.row
-		.row
+						h4 Back up files
 
-	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+
+		script(type='text/javascript', src='/javascripts/sorttable.js')
