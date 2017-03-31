@@ -18,8 +18,8 @@ Check Add Employee Status
     Input Dependents
     Input Salary
     Submit Form
-    Wait Until Page Contains   Employees
-    Location Should Be    ${EMPLOY URL}
+    Wait Until Page Contains   Apples and Berries Payroll System
+    Location Should Be    ${WELCOME URL}
     
     
 *** Keywords ***
@@ -33,12 +33,12 @@ Input Birthday
     Input Text    birthday    12/30/1997
 
 Select Position
-	Click Element	xpath=//body/div/div/div[3]/div/form/div[3]/div/div
-	Click Element   xpath=//body/div/div/div[3]/div/form/div[3]/div/div/div/div[2]
+	Click Element	xpath=//body/div/div/div[3]/form/div[3]/div/div
+	Select From List By Index	    position     0
 
 Select Status
-	Click Element	xpath=//body/div/div/div[3]/div/form/div[3]/div[2]/div
-	Click Element   xpath=//body/div/div/div[3]/div/form/div[3]/div[2]/div/div/div[2]
+	Click Element	xpath=//body/div/div/div[3]/form/div[3]/div[2]/div
+	Select From List By Index	status   0
 	
 Input Dependents
 	Input Text    dependents 	 0

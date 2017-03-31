@@ -41,6 +41,7 @@ Open Browser To Main Menu
     Submit Credentials
     Wait Until Page Contains   Apples and Berries Payroll System
     Location Should Be    ${WELCOME URL}
+    
 
 Input Username
     Input Text    username    ${username}
