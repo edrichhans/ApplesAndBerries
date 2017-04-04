@@ -2,9 +2,9 @@ extends layout
 
 block content
 	title EmployeePanel
-	//- ul.custom-menu
-	//- 	li(data-action="edit") Edit
-	//- 	li(data-action="delete") Delete
+	ul.custom-menu
+		li(data-action="edit") Edit
+		li(data-action="view") View
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
 		.seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
@@ -58,11 +58,11 @@ block content
 									td Marries
 								td= employee.dependents
 								td= employee.salary
-		
+
 		//PRINT BUTTON
 		.fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
 			button.ui.button.right.floated.column#print-employee-button Print
-	
+
 	.ui.small.modal
 		.header Confirm
 		.content
@@ -70,17 +70,12 @@ block content
 		.actions
 			.ui.positive.submit.right.button OK
 
-
-
-
-
-
 	script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(type='text/javascript').
 		var eID = -1;
 		// Trigger action when the contexmenu is about to be shown
 		$('tr').on("contextmenu", function (event) {
-			eID = parseInt($(this).children().first().attr('data-eid'));
+			eID = parseInt($(this).children('td').eq(1).attr('data-eid'));
 			// Avoid the real one
 			event.preventDefault();
 			// Show contextmenu
@@ -98,6 +93,7 @@ block content
 			// If the clicked element is not the menu
 			if (!$(e.target).parents(".custom-menu").length > 0) {
 				// Hide it
+				e.preventDefault();
 				$(".custom-menu").hide(100);
 			}
 		});
@@ -112,9 +108,9 @@ block content
 					window.location = '/employees/editEmployee?eID=' + eID;
 					//- alert($(this).parent().attr('data-eid'));
 					break;
-				case "delete":
-					$('.small.modal').modal('show');
-					break;
+				//- case "delete":
+				//- 	$('.small.modal').modal('show');
+				//- 	break;
 			}			
 				// Hide it AFTER the action was triggered
 			$(".custom-menu").hide(100);
@@ -127,4 +123,22 @@ block content
 				alert('delete success!');
 				window.location.reload();
 			});
-		})
+		});
+
+		$(document).ready(function(){
+			var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
+			console.log("em", employee);
+			employee = employee[0];
+
+			$('input#eID').val(employee.eID);
+			$('input#inputName').val(employee.name);
+			$('input#inputStartDate').val(employee.startDate);
+			$('input#inputBirthday').val(employee.birthday);
+			$('select#selectPosition').val((employee.position).toString()).change();
+			$('select#selectStatus').val((employee.status).toString()).change();
+			$('input#inputDependents').val(employee.dependents);
+			$('input#inputBaseSalary').val(employee.salary);
+
+			$('form#selectEmployee').addClass('hide');
+			$('form#editEmployee').removeClass('hide');
+		});

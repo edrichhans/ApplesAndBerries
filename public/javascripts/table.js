@@ -1,5 +1,5 @@
-console.log(employees);
-console.log(transactions);
+// console.log('employees', employees);
+// console.log(transactions);
 
 function toCommaString(arr){
 	var ret = ''
@@ -11,22 +11,23 @@ function toCommaString(arr){
 	}
 	return ret;
 }
-
-if(employees){
-	$('.eID').each(function(index, currentElement){
-		var item = $(this);
-		var employee = $.grep(employees, function(e){ return e.eID === parseInt(item.attr("value")); });
-		console.log(employee);
-		$(this).after("<td>" + employee[0].salary + "</td>");
-		$(this).after("<td>" + employee[0].name + "</td>");
-	});
-	$('.endDate').each(function(index, currentElement){
-		$(this).after('<td>' + toCommaString(transactions[index].allowance) + '</td>');
-		$(this).after('<td>' + toCommaString(transactions[index].allowance_name) + '</td>');
-		$(this).after('<td>' + toCommaString(transactions[index].deductibles) + '</td>');
-		$(this).after('<td>' + toCommaString(transactions[index].deductibles_name) + '</td>');
-	})
-}
+$(document).ready(function(){
+	if(employees){
+		$('.eID').each(function(index, currentElement){
+			var item = $(this);
+			var employee = $.grep(employees, function(e){ return e.eID === parseInt(item.attr("value")); });
+			// console.log('employee', employee);
+			$(this).after("<td>" + employee[0].salary + "</td>");
+			$(this).after("<td>" + employee[0].name + "</td>");
+		});
+		// $('.endDate').each(function(index, currentElement){
+		// 	$(this).after('<td>' + toCommaString(transactions[index].allowance) + '</td>');
+		// 	$(this).after('<td>' + toCommaString(transactions[index].allowance_name) + '</td>');
+		// 	$(this).after('<td>' + toCommaString(transactions[index].deductibles) + '</td>');
+		// 	$(this).after('<td>' + toCommaString(transactions[index].deductibles_name) + '</td>');
+		// })
+	}
+})
 
 $('#print-button').click(function(){
 	$('table').printThis({

@@ -57,3 +57,22 @@ exports.get = function(req, callBack){
 		callBack(null, an);
 	});
 }
+
+exports.remove = function(req, res, callBack){
+	var db = req.db;
+	var pettyCash = db.get('pettyCash');
+	var Employees = db.get('Employees');
+	var arr = [];
+	for(var i = 0; i < req.body.length; i++){
+		arr.push(req.body[i]);
+	}
+
+	console.log('arr', req.body.length);
+
+	pettyCash.remove({adviceNumber: {$in: arr}}, function(err, num){
+		if(err){
+			return callBack(err);
+		}
+		return callBack(0, num);
+	});
+}
