@@ -40,7 +40,7 @@ describe("Payslip", function(){
 			chai.request(server)
 				.post('/payslip')
 				.send({
-					"employeeDropdown": 6,
+					"employeeDropdown": 11,
 					"companyDropdown": "Apples",
 					"deductibles_name": ["deductibles_name", "a"],
 					"deductibles": [500, 100],
@@ -79,7 +79,7 @@ describe("Payslip", function(){
 		it('should return success status', function(done){
 			chai.request(server)
 			.post('/viewAllPaySlip')
-			.send({'0': 455})
+			.send({'0': 597})
 			.end(function(err, res){
 				// console.log("res.bodyyyy", res.body);
 				res.should.have.status(200);
@@ -91,7 +91,7 @@ describe("Payslip", function(){
 		it('should have data to return', function(done){
 			chai.request(server)
 			.post('/viewAllPaySlip')
-			.send({'0': 455})
+			.send({'0': 597})
 			.end(function(err, res){
 				res.body.should.have.property('data');
 				res.body.data.should.be.a('array');
@@ -101,7 +101,7 @@ describe("Payslip", function(){
 		it('should have equal eID for the data and employee data.', function(done){
 			chai.request(server)
 			.post('/viewAllPaySlip')
-			.send({'0': 455})
+			.send({'0': 597})
 			.end(function(err, res){
 				res.body.data[0].eID.should.equal(res.body.data[1].eID);
 				done();
@@ -248,8 +248,8 @@ describe("Petty Cash", function(){
 				.send({
 					"name": "Edrich Chua",
 					"date": "March 1, 2017",
-					"amount": 500,
-					"particulars": ['food', '500']
+					"amount": [500, 10],
+					"particulars": ['food', 'loool']
 				})
 			.end(function(err, res){
 				res.should.have.status(200);

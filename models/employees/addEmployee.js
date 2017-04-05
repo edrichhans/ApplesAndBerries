@@ -25,7 +25,8 @@ exports.insert = function(req, res, callBack){
 				"position": position,
 				"status": status,
 				"dependents": dependents,
-				"salary": salary
+				"salary": salary,
+				"employed": true
 			});
 			adviceNumbers.update({"name": "eID"}, {$inc:{number: 1}});
 		});

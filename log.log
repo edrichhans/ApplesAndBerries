@@ -830,3 +830,24 @@
 {"level":"info","message":"BIR Updated!","timestamp":"2017-04-04T11:13:31.090Z"}
 {"level":"info","message":"SSS Updated!","timestamp":"2017-04-04T11:13:31.283Z"}
 {"level":"info","message":"PhilHealth Updated!","timestamp":"2017-04-04T11:13:31.470Z"}
+{"level":"info","message":"Employee edited","timestamp":"2017-04-05T05:39:09.323Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-04-05T05:49:41.201Z"}
+{"level":"info","message":"Employee deleted","timestamp":"2017-04-05T05:57:34.289Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-04-05T05:59:58.538Z"}
+{"issuedBy":"edrichhans","issuedTo":"80","level":"info","message":"Payslip Issued","timestamp":"2017-04-05T06:06:55.034Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-04-05T06:17:30.674Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-05T06:17:31.329Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-05T06:17:31.346Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-04-05T06:17:31.589Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-04-05T06:17:31.604Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-04-05T06:17:31.905Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-04-05T06:17:32.093Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-04-05T06:17:32.245Z"}
+{"issuedTo":11,"level":"info","message":"Payslip Issued","timestamp":"2017-04-05T06:19:36.725Z"}
+{"issuedTo":6,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-04-05T06:19:43.145Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-05T06:19:43.598Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-05T06:19:43.613Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-04-05T06:19:43.860Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-04-05T06:19:44.015Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-04-05T06:19:44.206Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-04-05T06:19:44.364Z"}

@@ -55,7 +55,21 @@ describe('Add Employee', function(){
 				should.not.exist(err);
 				res.should.have.status(200);
 				done();
-			})
-		})
-	})
-})
+			});
+		});
+	});
+});
+
+describe('Edit Employee', function(){
+	it('should redirect correctly and get eID', function(done){
+		chai.request(server)
+		.get('/employees/editEmployee?eID=6')
+		.end({
+			res.should.have.status(200);
+			res.should.be.json;
+			res.body.should.have.property('eID');
+			res.body.eID.should.equal(6);
+			done();
+		});
+	});
+});

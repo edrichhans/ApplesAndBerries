@@ -16,7 +16,7 @@ exports.get = function(req, callBack){
 		if(err) return callBack(err);
 		SSS.find({},function(err1, sss){
 			if(err1) return callBack(err1);
-			Employees.find({}, function(err2, doc){
+			Employees.find({employed: true}, function(err2, doc){
 				if(err2) return callBack(err2);
 				BIR.find({}, function(err3, bir){
 					if(err3) return callBack(err3);

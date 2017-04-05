@@ -4,7 +4,7 @@ block content
 	title EmployeePanel
 	ul.custom-menu
 		li(data-action="edit") Edit
-		li(data-action="view") View
+		li(data-action="delete") Un-hire
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
 		.seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
@@ -14,8 +14,6 @@ block content
 		// buttons
 		.row.button-row
 			.ui.right.floated.button(onclick="location.replace('/employees/add')") ADD
-		//- 		//- button.ui.button(onclick="location.replace('/employees/editEmployee')") EDIT
-				//- button.ui.button(onclick="location.replace('/employees/delete')") DELETE
 
 		//Table Proper
 		.ui.raised.segment.row
@@ -68,7 +66,7 @@ block content
 		.content
 			| Confirm Delete Employee
 		.actions
-			.ui.positive.submit.right.button OK
+			.ui.positive.submit.right.button#delete OK
 
 	script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(type='text/javascript').
@@ -106,17 +104,16 @@ block content
 				// A case for each action. Your actions here
 				case "edit":
 					window.location = '/employees/editEmployee?eID=' + eID;
-					//- alert($(this).parent().attr('data-eid'));
 					break;
-				//- case "delete":
-				//- 	$('.small.modal').modal('show');
-				//- 	break;
+				case "delete":
+					$('.small.modal').modal('show');
+					break;
 			}			
-				// Hide it AFTER the action was triggered
 			$(".custom-menu").hide(100);
 		});
 
-		$('.submit').click(function(){
+		$('.submit#delete').click(function(){
+			//- console.log(eID);
 			$.post('/employees/deleteEmployee', {
 				eID: eID
 			}, function(){

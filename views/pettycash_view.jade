@@ -32,27 +32,25 @@ block content
 							th.two.wide Price
 					tbody
 						for item in transactions
-							each i, index in item.items
-								if index == 0
-									tr
-										td
-											.ui.checkbox
-												input(type="checkbox", name="petty-cash-checkbox", data-an=item.adviceNumber)
-												label
-										td= item.adviceNumber
-										td= item.issuedBy
-										td= item.name
-										td= item.date
-										td= i[0]
-										td= i[1]
-								else
-									tr
-										td
-										td
-										td
-										td
-										td= i[0]
-										td= i[1]
+							tr
+								td
+									.ui.checkbox
+										input(type="checkbox", name="petty-cash-checkbox", data-an=item.adviceNumber)
+										label
+								td= item.adviceNumber
+								td= item.issuedBy
+								td= item.name
+								td= item.date
+								td
+									each i, index in item.items
+										if index != 0
+											br
+										=i[0]
+								td
+									each i, index in item.items
+										if index != 0
+											br
+										=i[1]
 				
 		// PRINT BUTTON
 		.fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
