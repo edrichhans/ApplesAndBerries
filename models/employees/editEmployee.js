@@ -1,4 +1,4 @@
-exports.get = function(req, callBack) {
+exports.getDelete = function(req, callBack) {
 	var db = req.db;
 	var Employees = db.get("Employees");
 
@@ -13,7 +13,9 @@ exports.delete = function(req, res, callBack){
 	var eID = req.body.eID
 	var Employees = db.get("Employees");
 	console.log(eID);
-	Employees.remove({"eID": parseInt(eID)}, callBack());
+	Employees.update({"eID": parseInt(eID)}, {
+		$set: {employed: false}
+	}, callBack());
 }
 
 exports.getEdit = function(req, callBack){

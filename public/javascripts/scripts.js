@@ -228,27 +228,7 @@ $('.checkbox#thirteenth').checkbox({
 	}
 });
 
-//==================== Edit Employee ===============================
 
-// $('.button#chooseEditEmployee').click(function(event){
-$(document).ready(function(){
-	var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
-	employee = employee[0];
-
-	$('input#eID').val(employee.eID);
-	$('input#inputName').val(employee.name);
-	$('input#inputStartDate').val(employee.startDate);
-	$('input#inputBirthday').val(employee.birthday);
-	$('select#selectPosition').val((employee.position).toString()).change();
-	$('select#selectStatus').val((employee.status).toString()).change();
-	$('input#inputDependents').val(employee.dependents);
-	$('input#inputBaseSalary').val(employee.salary);
-
-	$('form#selectEmployee').addClass('hide');
-	$('form#editEmployee').removeClass('hide');
-});
-
-//==================================================================
 $('.ui.form#payslip')
 	.form({
 		employeeDropdown:{

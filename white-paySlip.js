@@ -447,7 +447,7 @@ describe("Payslip", function(){
 			Promise.all([doc]).then(value => {
 				// console.log(value);
 				assert.equal(value[0].eID, 6);
-				assert.equal(value[0].adviceNumber, 454);
+				// assert.equal(value[0].adviceNumber, 454);
 				assert.equalDate(value[0].dateIssued, new Date());
 				assert.equal(value[0].company, 'apples');
 				assert.deepEqual(value[0].deductibles_name, ['absences', 'lates']);

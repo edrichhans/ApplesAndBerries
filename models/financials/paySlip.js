@@ -16,7 +16,7 @@ exports.get = function(req, callBack){
 		if(err) return callBack(err);
 		SSS.find({},function(err1, sss){
 			if(err1) return callBack(err1);
-			Employees.find({}, function(err2, doc){
+			Employees.find({employed: true}, function(err2, doc){
 				if(err2) return callBack(err2);
 				BIR.find({}, function(err3, bir){
 					if(err3) return callBack(err3);
@@ -46,13 +46,18 @@ function getSum(arr){
 	return result;
 }
 
+exports.incrementPaySlipAn = function(adviceNumbers){
+	adviceNumbers.update({"name": "paySlip"}, {$inc:{"number": 1}});
+	return Promise.resolve(adviceNumbers);
+}
+
 exports.findPaySlipInAN = function(adviceNumbers){
 	return adviceNumbers.findOne({name: "paySlip"});
 }
 
 exports.addAN = function (doc){
 	return new Promise((resolve, reject) => {
-		var currentAdviceNumber = doc.number + 1;
+		var currentAdviceNumber = doc.number;
 		resolve(currentAdviceNumber);
 	}, doc);
 }
@@ -140,10 +145,11 @@ exports.insert = function(req, res){
 		allowance_name = [allowance_name];
 		// return {allowance: allowance, allowance_name: allowance_name};
 	}
-	
+
 //=========================== start of change =============================
 
-	var a = this.findPaySlipInAN(adviceNumbers)
+	var a = this.incrementPaySlipAn(adviceNumbers)
+		.then(this.findPaySlipInAN)
 		.then(this.addAN);
 	
 	var b = this.findBIRInMeta(metadata)
@@ -233,73 +239,6 @@ exports.insert = function(req, res){
 	});
 }
 
-	// var jsondata;	
-
-	// Employees.findOne({"eID": eID}, function(err, employee){
-	// 	if(err){
-	// 		res.status(500).send("Employee find error");
-	// 	}
-	// 	console.log("employee");
-	// 	console.log(employee.name);
-	// 	PhilHealth.findOne({"range.to": {$gte: employee.salary}, "range.from": {$lte: employee.salary}}, function(err, PHdoc){
-	// 		SSS.findOne({"range.to": {$gte: employee.salary}, "range.from": {$lte: employee.salary}}, function(err, SSSdoc){
-	// 			var dep = employee.dependents;
-	// 			if(employee.dependents >= 4){
-	// 				dep = 4;
-	// 			}
-	// 			BIR.findOne({"dep": dep}, function(err, BIRdoc){
-	// 				var range = BIRdoc.ranges;
-	// 				var i = 0;
-	// 				for(i = 0; i < range.length; i++){
-	// 					if(employee.salary < range[i]){
-	// 						break;
-	// 					}
-	// 				}
-	// 				i -= 1;
-	// 				var tax = ((employee.salary - range[i]) * hash[i][1]) + hash[i][0];
-	// 				tax = Math.round(tax*100)/100
-
-	// 				var EE = parseFloat(SSSdoc.totalEE);
-	// 				var ER = parseFloat(SSSdoc.totalER);
-	// 				var HDMF = getHDMF(employee.salary);
-	// 				HDMF = Math.round(HDMF*100)/100;
-
-	// 				jsondata = {
-	// 					"eID": eID,
-	// 					"adviceNumber": currentAdviceNumber,
-	// 					"issuedBy": issuedBy,
-	// 					"dateIssued": new Date(),
-	// 					"company": company,
-	// 					"deductibles_name": deductibles_name,
-	// 					"deductibles": deductibles,
-	// 					"allowance_name": allowance_name,
-	// 					"allowance": allowance,
-	// 					"startDate": startDate,
-	// 					"endDate": endDate,
-	// 					"PHreduc": PHdoc.share,
-	// 					"SSSreduc": EE,
-	// 					"HDMFreduc": HDMF,
-	// 					"EmployerPH": PHdoc.share,
-	// 					"EmployerSSS": ER,
-	// 					"EmployerHDMF": employee.salary*0.02,
-	// 					"BIR": tax,
-	// 					"total": employee.salary - getSum(deductibles) + getSum(allowance) - PHdoc.share - EE - HDMF - tax
-	// 				}
-
-	// 				paySlip.insert(jsondata, function(err, doc){
-	// 					if(err){
-	// 						res.status(500).send("Insert error");
-	// 					}
-	// 				});
-	// 				// console.log(PHdoc);
-	// 				// console.log(SSSdoc);
-	// 			});
-	// 		});
-	// 	});
-	// });
-	// callBack(jsondata);
-// }
-
 exports.thirteenth = function(req, res, callBack){
 	var db = req.db;
 	var Employees = db.get('Employees');
@@ -317,7 +256,7 @@ exports.thirteenth = function(req, res, callBack){
 
 	adviceNumbers.findOne({"name": "paySlip"}, function (err, doc) {
 		adviceNumbers.update({"name": "paySlip"}, {$inc:{"number": 1}});
-		currentAdviceNumber = doc.number;
+		currentAdviceNumber = doc.number + 1;
 	});
 
 	Employees.findOne({"eID": eID}, function(err, employee){
@@ -370,4 +309,46 @@ exports.view = function(req, res, callBack){
 			callBack(null, docs, people);
 		});
 	});
+}
+
+exports.remove = function(req, res, callBack){
+	var db = req.db;
+	var paySlip = db.get('paySlip');
+	var Employees = db.get('Employees');
+	var arr = [];
+	for(var i = 0; i < req.body.length; i++){
+		arr.push(req.body[i]);
+	}
+
+	console.log('arr', req.body.length);
+
+	paySlip.remove({adviceNumber: {$in: arr}}, function(err, num){
+		if(err){
+			return callBack(err);
+		}
+		return callBack(0, num);
+	});
+}
+
+exports.viewAll = function(req, res, callBack){
+	var db = req.db;
+	var paySlip = db.get('paySlip');
+	var Employees = db.get('Employees');
+
+	var data = paySlip.findOne({adviceNumber: req.body[0]})
+	.then((data) => {
+		return data;
+	});
+
+	var employeeData = paySlip.findOne({adviceNumber: req.body[0]})
+	.then((data) => {
+		return Employees.findOne({eID: data.eID}).then(doc => {
+			return doc;
+		});
+	});
+
+	Promise.all([data, employeeData]).then(values => {
+		callBack(0, values);
+	})
+
 }

@@ -33,7 +33,7 @@ router.post('/addemployee', function(req, res){
 });
 
 router.get('/delete', function(req, res, next){
-	editEmployeeRoute.get(req, function(err, doc){
+	editEmployeeRoute.getDelete(req, function(err, doc){
 		res.render('deleteEmployee', {
 			"employees": doc
 		});
@@ -66,7 +66,7 @@ router.post('/editEmployee', function(req, res){
 router.get('/', function(req, res){
 	var db = req.db;
 	var Employees = db.get("Employees");
-	Employees.find({}, function(err, doc){
+	Employees.find({employed: true}, function(err, doc){
 		res.render('employeepanel', {
 			"employees": doc
 		});

@@ -86,6 +86,30 @@ router.post('/thirteenth', function(req, res){
 	});
 });
 
+router.post('/deletePaySlip', function(req, res){
+	// console.log('REQ.BODY', req.body[0]);
+	paySlipRoute.remove(req, res, function(err, doc){
+		console.log("errdoc", err, doc);
+		if(err){
+			res.json({"error": err, "status": 500});
+		}
+		res.redirect('/payslip_view');
+	});
+});
+
+router.post('/viewAllPaySlip', function(req, res){
+	// console.log('REQ.BODY', req.body[0]);
+	paySlipRoute.viewAll(req, res, function(err, doc){
+		console.log("VIEWALL", err, doc);
+		if(err){
+			res.json({"error": err, "status": 500});
+		}
+		res.json({"status": 200, "data": doc});
+		// res.redirect('/payslip_view');
+	});
+});
+
+
 router.get('/checkvoucher', function(req, res, next){
 	checkVoucherRoute.get(req, function(err, doc, an){
 		res.render('checkvoucher', {
@@ -102,6 +126,16 @@ router.post('/checkvoucher', function(req, res){
 			issuedTo: req.body.name
 		});
 		res.redirect('/');
+	});
+});
+
+router.post('/deleteCheckvoucher', function(req, res){
+	checkVoucherRoute.remove(req, res, function(err, doc){
+		console.log("errdoc", err, doc);
+		if(err){
+			res.json({"error": err, "status": 500});
+		}
+		res.json({success: true, data: doc});
 	});
 });
 
@@ -123,6 +157,16 @@ router.post('/pettycash', function(req, res){
 	});
 });
 
+router.post('/deletePettycash', function(req, res){
+	pettyCashRoute.remove(req, res, function(err, doc){
+		console.log("errdoc", err, doc);
+		if(err){
+			res.json({"error": err, "status": 500});
+		}
+		res.json({success: true, data: doc});
+	});
+})
+
 router.get('/AR', function(req, res, next){
 	ARRoute.get(req, function(err, an){
 		res.render('AR', {
@@ -140,6 +184,16 @@ router.post('/AR', function(req, res){
 		res.redirect('/AR_view');
 	});
 });
+
+router.post('/deleteAR', function(req, res){
+	ARRoute.remove(req, res, function(err, doc){
+		console.log("errdoc", err, doc);
+		if(err){
+			res.json({"error": err, "status": 500});
+		}
+		res.json({success: true, data: doc});
+	});
+})
 
 router.get('/view', function(req, res, next){
 	res.render('view');
@@ -232,6 +286,7 @@ router.get('/pettycash_view', function(req, res){
 
 router.get('/payslip_view', function(req, res){
 	paySlipRoute.view(req, res, function(err, docs, people){
+		console.log(docs);
 		res.render('payslip_view', {
 			transactions: docs,
 			employees: people

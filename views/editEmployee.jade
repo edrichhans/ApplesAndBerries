@@ -74,7 +74,16 @@ block content
 			return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
 		var eID = getParameterByName('eID');
-		console.log(eID);
+		$('#eID').val(eID);
+		var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID); });
+		console.log(employee);
+
+		employee = employee[0];
+
+		$('#inputName').val(employee.name);
+		$('#inputStartDate').val(employee.startDate);
+		$('#inputBirthday').val(employee.birthday);
+
 	script(type='text/javascript' src='/javascripts/scripts.js')
 	script.
 		$('#confirm').click(function(){
