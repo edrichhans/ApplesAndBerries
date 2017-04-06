@@ -330,4 +330,7 @@ FFEAEA INPUT FIELDS COLOR DEFAULT
 .view-table{
 	overflow-y:scroll;
 	height: 50vh;
+	margin-top: 2%;
+	margin-bottom:2%;
 }
+
