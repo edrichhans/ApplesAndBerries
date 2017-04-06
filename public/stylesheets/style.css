@@ -232,6 +232,11 @@ padding: 10 0 10 0 !important;}
 
 /*style = "background-color: #9F3A38 !important;"
 */
+#menu-row {
+	margin-top:7vh;
+	margin-bottom:0;
+}
+
 .ui.red.button, .ui.red.buttons .button{
 background-color: #9F3A38;
 color: #FFF;
@@ -245,9 +250,9 @@ color: #FFF;
 }
 
 
-.section-title{
+/*.section-title{
 	margin: 4vh 10 0 10 !important;
-}
+}*/
 /*
 #emp-img img{
 	src=("icons/main_menu/employee_white.png")
