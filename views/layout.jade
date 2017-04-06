@@ -11,46 +11,45 @@ html
 
 		//- https://github.com/mdehoog/Semantic-UI-Calendar3D3E3F
 	body
-		#main-grid.ui.two.column.grid(style="height:100vh;")
-			.row(style="background-color:#FFEAEA; padding:0; margin-left:0;")
-				#fixed-top-menu.ui.top.inverted.borderless.mini.menu.fixed.fluid(style="background-color: #9F3A38; margin-left:0; padding-left:0;")
-					a#flm-toggle-button.header.item.sidebar-button(style="margin-left: 20; margin-right: 0")
+		#main-grid.ui.two.column.grid
+			.row
+				#fixed-top-menu.ui.top.inverted.borderless.mini.menu.fixed.fluid
+					a#flm-toggle-button.header.item.sidebar-button
 						i.sidebar.icon
-					.header.item(href="/" style = 'padding: 10 0 10 0 !important;')
+					.header.item(href="/")
 						img.logo(src='/images/Logo.png')
 					a#main-menu-button.header.item(href="/")
 						h5 A&B 
 					.ui.right.floated.item
 						.ui.simple.dropdown.item(class="tabindex=")
 							| Username  
-							i.user.icon(style = 'margin 0 0 0 10 !important')
+							i.user.icon
 							i.dropdown.icon
 							.ui.menu
 								a.item(href="/logout")
 									i.settings.icon
 										| Sign Out
-			.ui.two.wide.column(style="background-color:#FFF; padding:0; height:100vh;")
-				//- (style="height:100vh; padding:0; margin:0;")
-				#fixed-left-menu.ui.sticky.vertical.labeled.icon.menu(style="height: 105vh")
-					a#flm-employee-module-button.item(href='/employees' style=" margin: 0; padding: 113 13 16 13; !important background-color: #966A6A; !important ")
+			#left-menu-container.ui.two.wide.column
+				#fixed-left-menu.ui.sticky.vertical.labeled.icon.menu
+					a#flm-employee-module-button.item(href='/employees')
 						i.users.icon
 						| Employees
-					a#flm-payslip-module-button.item(href = '/payslip_view' style="background-color: #966A6A; !important")
+					a#flm-payslip-module-button.item(href = '/payslip_view')
 						i.money.icon
 						| Payslip Module
-					a#flm-AR-module-button.item(href='/AR_view' style="background-color: #966A6A; !important")
+					a#flm-AR-module-button.item(href='/AR_view')
 						i.file.text.icon
 						| AR
-					a#flm-check-voucher-module-button.item(href='/checkvoucher_view' style="background-color: #966A6A")
+					a#flm-check-voucher-module-button.item(href='/checkvoucher_view')
 						i.payment.icon
 						| Check Voucher
-					a#flm-petty-cash-button.item(href='/pettycash_view' style="background-color:#966A6A")
+					a#flm-petty-cash-button.item(href='/pettycash_view')
 						i.money.icon
 						| Petty Cash
-					a#flm-control-panel-module-button.item(href = '/controlpanel' style="background-color:#966A6A")
+					a#flm-control-panel-module-button.item(href = '/controlpanel')
 						i.money.icon
 						| Control Panel
-					a#flm-generate-report-module-button.item(href = '/report' style="background-color:#966A6A")
+					a#flm-generate-report-module-button.item(href = '/report')
 						i.bar.chart.icon
 						| Download
 						br
@@ -83,36 +82,31 @@ html
 					//- .item(style="background-color: #FFEAEA ")
 					//- 	| #FFEAEA
 					
-			//.ui.fourteen.wide.column
-			.ui.fourteen.wide.column(style="height:100vh; padding-left:0; ")
-				//- (style="background-color: #456321; padding: 0; margin:0; !important")
+			.ui.fourteen.wide.column
 				block content
-			//- .ui.sixteen.wide.column(style="padding-left: 0; padding-bottom: 0")
-			//- 		.column.two.wide
-			//- 		.column.fourteen.wide
-			//- 			block content
-			//(style="height: 110vh !important padding: 0 14 0 0; !important margin: 14 14 14 0 !important")
-		script.
-			$('.ui.sidebar').sidebar('attach events', '.item.sidebar-button');
-			$('.ui.sidebar').sidebar({
-				dimPage: false,
-				closable: true
-			});
+		//- script.
+		//- 	$('.ui.sidebar').sidebar('attach events', '.item.sidebar-button');
+		//- 	$('.ui.sidebar').sidebar({
+		//- 		dimPage: false,
+		//- 		closable: true
+		//- 	});
 
-		script.
-			$('.sidebar .dropdown').dropdown({
-				onHide: function(){
-					$('.sidebar').css('z-index', 1);
-				},
-				onShow: function(){
-					$('.sidebar').css('z-index', 103);
-				},
-				on: 'hover',
-				dimPage: false
-			});
-			$('#employee-dropdown').click(function(){
-				window.location.href = '/employees';
-			});
-			$('#controlpanel-dropdown').click(function(){
-				window.location.href = '/controlpanel';
-			});
+		//- script.
+		//- 	$('.sidebar .dropdown').dropdown({
+		//- 		onHide: function(){
+		//- 			$('.sidebar').css('z-index', 1);
+		//- 		},
+		//- 		onShow: function(){
+		//- 			$('.sidebar').css('z-index', 103);
+		//- 		},
+		//- 		on: 'hover',
+		//- 		dimPage: false
+		//- 	});
+		//- 	$('#employee-dropdown').click(function(){
+		//- 		window.location.href = '/employees';
+		//- 	});
+		//- 	$('#controlpanel-dropdown').click(function(){
+		//- 		window.location.href = '/controlpanel';
+		//- 	});
+
+		script(type='text/javascript', src='/javascripts/layout.js')
