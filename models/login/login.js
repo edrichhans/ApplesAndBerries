@@ -1,3 +1,26 @@
+var crypto = require('crypto');
+
+var genRandomString = function(length){
+	return crypto.randomBytes(Math.ceil(length/2))
+		.toString('hex') /** convert to hexadecimal format */
+		.slice(0,length);	 /** return required number of characters */
+};
+
+var sha512 = function(password, salt){
+	var hash = crypto.createHmac('sha512', salt); /** Hashing algorithm sha512 */
+	hash.update(password);
+	var value = hash.digest('hex');
+	return {
+			salt:salt,
+			passwordHash:value
+	};
+};
+
+function isPasswordCorrect(hash, salt, user_password){
+	// console.log('LOG', hash, salt, user_password);
+	return sha512(user_password, salt).passwordHash == hash;
+}
+
 exports.login = function(req, res, callBack) {
 	var db = req.db;
 	var users = db.get('Users');
@@ -9,11 +32,12 @@ exports.login = function(req, res, callBack) {
 			callBack(0);
 		}
 		else{
-			if(req.body.password == user.password){
+			if(isPasswordCorrect(user.password_hash, user.password_salt, req.body.password)){
+			// if(req.body.password == user.password){
 				sess.username = user.username;
 				sess.rights = user.rights;
 				callBack(1);
-			}
+			}	
 			else{
 				callBack(0);
 			}
@@ -39,18 +63,31 @@ exports.addUser = function(req, res, callBack){
 	var password = req.body.password;
 	var repass = req.body.repass;
 
+	var salt = genRandomString(16);
+	var passwordData = sha512(password, salt);
+
 	users.findOne({"username": username}, function(err, doc){
+		var a;
 		if(doc){
 			return callBack(0);
 		}
 		if(username && password && repass && password == repass){
-			users.insert({
+			a = users.insert({
 				"username": username,
-				"password": password,
+				"password_salt": passwordData.salt,
+				"password_hash": passwordData.passwordHash,
 				"rights": "user"
+			}).then(doc2 => {
+				// console.log('DOC', doc);
+				return doc2;
 			});
 		}
-		callBack(1);
+		else{
+			return callBack(0);
+		}
+		Promise.all([a]).then(values => {
+			return callBack(values[0]);
+		});
 	});
 }
 
@@ -69,5 +106,7 @@ exports.deleteUser = function(req, res, callBack){
 	var users = db.get('Users');
 	var username = req.body.username;
 
-	users.remove({"username": username}, callBack(1));
+	users.remove({"username": username}).then(doc =>{
+		return callBack(doc);
+	});
 }

@@ -1,4 +1,5 @@
 var express = require('express');
+var crypto = require('crypto');
 var router = express.Router();
 var loginRoute = require('../models/login/login');
 var mailerRoute = require('../models/login/mailer');
@@ -70,8 +71,14 @@ router.get('/addUser', function(req, res){
 
 router.post('/addUser', function(req, res, next){
 	loginRoute.addUser(req, res, function(status){
-		if(!status) res.redirect('/addUser');
-		else res.redirect('/');
+		if(!status){
+			res.status(400);
+			res.redirect('/addUser');
+		}
+		else{
+			// res.json({data: status});
+			res.redirect('/');
+		}
 	});
 });
 
@@ -84,7 +91,8 @@ router.get('/deleteUser', function(req, res){
 });
 
 router.post('/deleteUser', function(req, res, next){
-	loginRoute.deleteUser(req, res, function(status){
+	loginRoute.deleteUser(req, res, function(doc){
+		// res.json({status: 200, data: doc});
 		res.redirect('/');
 	});
 });
