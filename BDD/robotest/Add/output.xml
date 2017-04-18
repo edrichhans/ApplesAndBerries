@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170408 01:25:40.453" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\AF\Documents\CS Subjects\CS 192\Project\BDD\robotest\Add\pettyadd.robot" id="s1" name="Pettyadd">
+<kw type="setup" name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170408 01:25:40.574" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170408 01:25:49.819" starttime="20170408 01:25:40.573"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170408 01:25:50.996" starttime="20170408 01:25:49.820"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170408 01:25:50.997" starttime="20170408 01:25:50.997"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170408 01:25:50.998" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170408 01:25:52.085" starttime="20170408 01:25:50.997"></status>
+</kw>
+<status status="PASS" endtime="20170408 01:25:52.085" starttime="20170408 01:25:50.997"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170408 01:25:52.086" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170408 01:25:53.106" starttime="20170408 01:25:52.086"></status>
+</kw>
+<status status="PASS" endtime="20170408 01:25:53.107" starttime="20170408 01:25:52.085"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170408 01:25:53.112" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170408 01:25:54.518" starttime="20170408 01:25:53.108"></status>
+</kw>
+<status status="PASS" endtime="20170408 01:25:54.519" starttime="20170408 01:25:53.107"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Apples and Berries Payroll System</arg>
+</arguments>
+<status status="PASS" endtime="20170408 01:25:55.118" starttime="20170408 01:25:54.519"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170408 01:25:55.435" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170408 01:25:55.436" starttime="20170408 01:25:55.119"></status>
+</kw>
+<status status="PASS" endtime="20170408 01:25:55.437" starttime="20170408 01:25:40.573"></status>
+</kw>
+<test id="s1-t1" name="Check Add PC Status">
+<kw name="Go To PC Panel">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>petty-cash-module-button</arg>
+</arguments>
+<msg timestamp="20170408 01:25:55.444" level="INFO">Clicking element 'petty-cash-module-button'.</msg>
+<status status="PASS" endtime="20170408 01:26:00.188" starttime="20170408 01:25:55.443"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170408 01:26:00.532" starttime="20170408 01:26:00.188"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170408 01:26:00.841" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170408 01:26:00.842" starttime="20170408 01:26:00.532"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>add-petty-cash-button</arg>
+</arguments>
+<msg timestamp="20170408 01:26:00.843" level="INFO">Clicking button 'add-petty-cash-button'.</msg>
+<status status="PASS" endtime="20170408 01:26:02.547" starttime="20170408 01:26:00.843"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170408 01:26:02.861" starttime="20170408 01:26:02.547"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${ADD PC URL}</arg>
+</arguments>
+<msg timestamp="20170408 01:26:03.181" level="INFO">Current location is 'http://localhost:8000/pettycash'.</msg>
+<status status="PASS" endtime="20170408 01:26:03.181" starttime="20170408 01:26:02.862"></status>
+</kw>
+<status status="PASS" endtime="20170408 01:26:03.181" starttime="20170408 01:25:55.441"></status>
+</kw>
+<kw name="Input Name">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name</arg>
+<arg>Chacha Beatboy</arg>
+</arguments>
+<msg timestamp="20170408 01:26:03.183" level="INFO">Typing text 'Chacha Beatboy' into text field 'name'</msg>
+<status status="PASS" endtime="20170408 01:26:04.316" starttime="20170408 01:26:03.183"></status>
+</kw>
+<status status="PASS" endtime="20170408 01:26:04.318" starttime="20170408 01:26:03.182"></status>
+</kw>
+<kw name="Input Date">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>date</arg>
+<arg>12/30/2017</arg>
+</arguments>
+<msg timestamp="20170408 01:26:04.323" level="INFO">Typing text '12/30/2017' into text field 'date'</msg>
+<status status="PASS" endtime="20170408 01:26:05.529" starttime="20170408 01:26:04.322"></status>
+</kw>
+<status status="PASS" endtime="20170408 01:26:05.530" starttime="20170408 01:26:04.320"></status>
+</kw>
+<kw name="Input Particulars">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>particulars</arg>
+<arg>asfadf</arg>
+</arguments>
+<msg timestamp="20170408 01:26:05.535" level="INFO">Typing text 'asfadf' into text field 'particulars'</msg>
+<status status="PASS" endtime="20170408 01:26:06.657" starttime="20170408 01:26:05.534"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>amount</arg>
+<arg>10000</arg>
+</arguments>
+<msg timestamp="20170408 01:26:06.657" level="INFO">Typing text '10000' into text field 'amount'</msg>
+<status status="PASS" endtime="20170408 01:26:07.734" starttime="20170408 01:26:06.657"></status>
+</kw>
+<status status="PASS" endtime="20170408 01:26:07.734" starttime="20170408 01:26:05.533"></status>
+</kw>
+<kw name="Check Preview">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>pettyCash-preview</arg>
+</arguments>
+<msg timestamp="20170408 01:26:07.735" level="INFO">Clicking element 'pettyCash-preview'.</msg>
+<status status="PASS" endtime="20170408 01:26:08.464" starttime="20170408 01:26:07.735"></status>
+</kw>
+<kw name="Submit Form" library="Selenium2Library">
+<doc>Submits a form identified by `locator`.</doc>
+<msg timestamp="20170408 01:26:08.464" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" endtime="20170408 01:26:09.854" starttime="20170408 01:26:08.464"></status>
+</kw>
+<status status="PASS" endtime="20170408 01:26:09.855" starttime="20170408 01:26:07.734"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Apples and Berries Payroll System</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170408 01:26:15.826" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170408 01:26:15.826" starttime="20170408 01:26:15.373"></status>
+</kw>
+<msg timestamp="20170408 01:26:15.832" level="FAIL">Text 'Apples and Berries Payroll System' did not appear in 5 seconds</msg>
+<status status="FAIL" endtime="20170408 01:26:15.833" starttime="20170408 01:26:09.857"></status>
+</kw>
+<status status="FAIL" endtime="20170408 01:26:15.835" critical="yes" starttime="20170408 01:25:55.437">Text 'Apples and Berries Payroll System' did not appear in 5 seconds</status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170408 01:26:19.220" starttime="20170408 01:26:15.851"></status>
+</kw>
+<doc>A test suite with a single test for adding a Petty Cash.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" endtime="20170408 01:26:19.220" starttime="20170408 01:25:40.456"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Pettyadd" pass="0">Pettyadd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

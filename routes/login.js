@@ -107,6 +107,10 @@ router.post('/forgot', function(req, res, next){
 	});
 });
 
+router.get('/logs', function(req, res){
+	res.render('activityLog');
+})
+
 // res.json({error: err})
 
 module.exports = router;

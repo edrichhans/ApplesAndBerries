@@ -90,6 +90,38 @@ app.get('/backup', function(req, res, next){
 	res.redirect('/');
 });
 
+app.get('/localbackup', function(req, res, next){
+	var args = ['--db', 'ApplesAndBerries', '-o', 'backup']
+		, mongodump = spawn('mongodump', args);
+	mongodump.stdout.on('data', (data) => {
+		console.log('stdout: ' + data);
+	});
+	mongodump.stderr.on('data', (data) => {
+		console.log('stderr: ' + data);
+	});
+	mongodump.on('exit', (code) => {
+		console.log('mongodump exited with code ' + code);
+	});
+	winston.log('info', "Backup");
+	res.redirect('/');
+});
+
+app.get('/cloudbackup', function(req, res, next){
+	var args = ['--db', 'ApplesAndBerries', '-o', 'backup']
+		, mongodump = spawn('mongodump', args);
+	mongodump.stdout.on('data', (data) => {
+		console.log('stdout: ' + data);
+	});
+	mongodump.stderr.on('data', (data) => {
+		console.log('stderr: ' + data);
+	});
+	mongodump.on('exit', (code) => {
+		console.log('mongodump exited with code ' + code);
+	});
+	winston.log('info', "Backup");
+	res.redirect('/');
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
