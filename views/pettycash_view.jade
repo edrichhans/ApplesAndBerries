@@ -4,56 +4,58 @@ block content
 	title Petty Cash View
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
-		.seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
-			.section-title.ui.center.aligned.segment(style="margin-bottom:0;")
+		.seven.wide.column.row#menu-row
+			.ui.center.aligned.container
 				h1 Petty Cash
 
+
 		// buttons
-		.row.button-row
+		.ui.container.right.aligned
 			button#add-petty-cash-button.ui.button(onclick="location.replace('/pettycash')") ADD
-			.ui.button EDIT
-			.ui.button#delete-pettyCash-button DELETE
+			button#edit-petty-cash-button.ui.button EDIT
+			button#delete-pettyCash-button.ui.button DELETE
 
 		// Table Proper
-		.ui.raised.segment.row
-			.ui.container.view-table
-				table#petty-cash-view-table.ui.table.fluid.selectable.sortable
-					thead
-						tr
-							th
-								.ui.master.checkbox
-									input(type="checkbox", name="petty-cash-master-checkbox")
-									label
-							th.collapsing AN#
-							th.two.wide Issued By
-							th.three.wide Name
-							th.two.wide Date
-							th Items
-							th.two.wide Price
-					tbody
-						for item in transactions
+		.ui.container
+			.ui.segment.row
+				.view-table
+					table#petty-cash-view-table.ui.table.fluid.selectable.sortable
+						thead
 							tr
-								td
-									.ui.checkbox
-										input(type="checkbox", name="petty-cash-checkbox", data-an=item.adviceNumber)
+								th
+									.ui.master.checkbox
+										input(type="checkbox", name="petty-cash-master-checkbox")
 										label
-								td= item.adviceNumber
-								td= item.issuedBy
-								td= item.name
-								td= item.date
-								td
-									each i, index in item.items
-										if index != 0
-											br
-										=i[0]
-								td
-									each i, index in item.items
-										if index != 0
-											br
-										=i[1]
-				
+								th.collapsing AN#
+								th.two.wide Issued By
+								th.three.wide Name
+								th.two.wide Date
+								th Items
+								th.two.wide Price
+						tbody
+							for item in transactions
+								tr
+									td
+										.ui.checkbox
+											input(type="checkbox", name="petty-cash-checkbox", data-an=item.adviceNumber)
+											label
+									td= item.adviceNumber
+									td= item.issuedBy
+									td= item.name
+									td= item.date
+									td
+										each i, index in item.items
+											if index != 0
+												br
+											=i[0]
+									td
+										each i, index in item.items
+											if index != 0
+												br
+											=i[1]
+
 		// PRINT BUTTON
-		.fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
+		.ui.container
 			button.ui.button.right.floated.column#print-petty-cash-button Print
 
 

@@ -1,10 +1,10 @@
 extends layout
 
 block content
-	title BIR Update
+	title BIR View
 	.block-content-container.ui.container
 		form.ui.form#BIR(name='updateBIRComp', method='post', action='/updateBIRComp')
-			h2.ui.dividing.header.center.aligned BIR Tax Table
+			h3.ui.dividing.header BIR Tax Table
 			.update-table
 				table.ui.celled.mini.table#BIRTable
 					thead
@@ -33,4 +33,3 @@ block content
 		script(type='text/javascript').
 			var bir =!{JSON.stringify(BIR)};
 			var metadata =!{JSON.stringify(metadata[0])};
-

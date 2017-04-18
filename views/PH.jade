@@ -3,13 +3,10 @@ extends layout
 block content
 	title PH View
 	.block-content-container.ui.container
-		br
-		br
-		br
 		form.ui.form#PhilHealth(name='updatePHComp', method='post', action='/updatePHComp')
-			h3.ui.dividing.header Update PhilHealth Table
-			.field.update-table
-				table.ui.celled.table#PHTable
+			h2.ui.dividing.header.center.aligned PhilHealth Table
+			.update-table
+				table.ui.celled.mini.table#PHTable
 					thead
 						tr
 							th Bracket
@@ -19,8 +16,10 @@ block content
 							th Premium
 							th Share
 					tbody
-			.field
-				.ui.button.submit#PHSubmit Submit
+			.ui.container
+				button.ui.button.right.floated.submit#PHSubmit Submit
+				button.ui.button.right.floated.submit#PHUpdate Update
+				
 
 		.ui.small.modal
 			.header Confirm

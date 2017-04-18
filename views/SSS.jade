@@ -3,13 +3,10 @@ extends layout
 block content
 	title SSS View
 	.block-content-container.ui.container
-		br
-		br
-		br
 		form.ui.form#SSS(name='updateSSSComp', method='post', action='/updateSSSComp')
-			h3.ui.dividing.header Update SSS Table
-			.field.update-table
-				table.ui.celled.table#SSSTable
+			h2.ui.dividing.header.center.aligned SSS Table
+			.update-table
+				table.ui.celled.mini.table#SSSTable
 					thead
 						tr
 							th From
@@ -20,9 +17,9 @@ block content
 							th EC
 							th Total
 					tbody
-			.field
-				.ui.button.submit#SSSSubmit Submit
-
+			.ui.container
+				button.ui.button.right.floated.submit#SSSSubmit Submit
+				button.ui.button.right.floated.submit#SSSUpdate Update
 		.ui.small.modal
 			.header Confirm
 			.content
