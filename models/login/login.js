@@ -69,12 +69,7 @@ exports.addUser = function(req, res, callBack){
 	var email = req.body.email;
 	var repass = req.body.repass;
 
-<<<<<<< HEAD
-	var salt = genRandomString(16);
-	var passwordData = sha512(password, salt);
-=======
 	var hash = bcrypt.hashSync(password, 10);
->>>>>>> master
 
 	users.findOne({"username": username}, function(err, doc){
 		var a;
@@ -84,13 +79,8 @@ exports.addUser = function(req, res, callBack){
 		if(username && password && repass && password == repass){
 			a = users.insert({
 				"username": username,
-<<<<<<< HEAD
-				"password_salt": passwordData.salt,
-				"password_hash": passwordData.passwordHash,
-=======
 				"password": hash,
 				"email": email,
->>>>>>> master
 				"rights": "user"
 			}).then(doc2 => {
 				// console.log('DOC', doc);
