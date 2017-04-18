@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var crypto = require('crypto');
 
 var genRandomString = function(length){
@@ -20,11 +21,15 @@ function isPasswordCorrect(hash, salt, user_password){
 	// console.log('LOG', hash, salt, user_password);
 	return sha512(user_password, salt).passwordHash == hash;
 }
+=======
+var bcrypt = require('bcrypt');
+>>>>>>> master
 
 exports.login = function(req, res, callBack) {
 	var db = req.db;
 	var users = db.get('Users');
 	var username = req.body.username;
+	var password = req.body.password;
 	sess = req.session;
 
 	users.findOne({"username": username}, function(err,	user){
@@ -32,8 +37,8 @@ exports.login = function(req, res, callBack) {
 			callBack(0);
 		}
 		else{
-			if(isPasswordCorrect(user.password_hash, user.password_salt, req.body.password)){
-			// if(req.body.password == user.password){
+			if(bcrypt.compareSync(password, user.password)){
+			// if(password == user.password){
 				sess.username = user.username;
 				sess.rights = user.rights;
 				callBack(1);
@@ -61,10 +66,15 @@ exports.addUser = function(req, res, callBack){
 	var users = db.get('Users');
 	var username = req.body.username;
 	var password = req.body.password;
+	var email = req.body.email;
 	var repass = req.body.repass;
 
+<<<<<<< HEAD
 	var salt = genRandomString(16);
 	var passwordData = sha512(password, salt);
+=======
+	var hash = bcrypt.hashSync(password, 10);
+>>>>>>> master
 
 	users.findOne({"username": username}, function(err, doc){
 		var a;
@@ -74,8 +84,13 @@ exports.addUser = function(req, res, callBack){
 		if(username && password && repass && password == repass){
 			a = users.insert({
 				"username": username,
+<<<<<<< HEAD
 				"password_salt": passwordData.salt,
 				"password_hash": passwordData.passwordHash,
+=======
+				"password": hash,
+				"email": email,
+>>>>>>> master
 				"rights": "user"
 			}).then(doc2 => {
 				// console.log('DOC', doc);

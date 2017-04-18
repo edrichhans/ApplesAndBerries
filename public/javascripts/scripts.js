@@ -556,6 +556,16 @@ $('.ui.form#addUser')
 				}
 			]
 		},
+		email:{
+			identifier: 'email',
+			rules:[
+				{
+					type: 'empty',
+					type: 'email',
+					prompt: 'e-mail format invalid'
+				}
+			]
+		},
 		password:{
 			identifier: 'password',
 			rules:[
