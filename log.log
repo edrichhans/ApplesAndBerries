@@ -851,58 +851,10 @@
 {"level":"info","message":"BIR Updated!","timestamp":"2017-04-05T06:19:44.015Z"}
 {"level":"info","message":"SSS Updated!","timestamp":"2017-04-05T06:19:44.206Z"}
 {"level":"info","message":"PhilHealth Updated!","timestamp":"2017-04-05T06:19:44.364Z"}
-{"level":"info","message":"Employee added","timestamp":"2017-04-05T13:14:58.406Z"}
-{"level":"info","message":"Employee added","timestamp":"2017-04-05T13:17:00.859Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-05T13:18:42.123Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-05T13:18:50.713Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-07T17:03:25.312Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-07T17:06:04.417Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Check Voucher Issued","timestamp":"2017-04-07T17:06:42.590Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-07T17:07:38.358Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-07T17:08:36.703Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-07T17:11:03.793Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Check Voucher Issued","timestamp":"2017-04-07T17:11:38.841Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-07T17:12:19.802Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-07T17:12:59.149Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-07T17:13:36.732Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-07T17:14:14.130Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-07T17:14:49.009Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-07T17:16:12.918Z"}
-{"level":"info","message":"Employee added","timestamp":"2017-04-07T17:23:49.561Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Petty Cash Issued","timestamp":"2017-04-07T17:26:09.226Z"}
-{"issuedBy":"edrichhans","issuedTo":"zxla","level":"info","message":"Petty Cash Issued","timestamp":"2017-04-07T17:27:12.114Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-09T02:13:31.762Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Check Voucher Issued","timestamp":"2017-04-09T02:14:00.589Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-09T02:14:42.883Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-09T02:15:21.968Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-09T02:15:57.184Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-09T02:16:33.988Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-09T02:17:10.102Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-09T02:18:13.228Z"}
-{"issuedBy":"edrichhans","issuedTo":"Chacha Beatboy","level":"info","message":"Petty Cash Issued","timestamp":"2017-04-09T02:18:50.900Z"}
-{"issuedBy":"edrichhans","issuedTo":"sdafd","level":"info","message":"Petty Cash Issued","timestamp":"2017-04-09T02:20:42.319Z"}
-{"issuedBy":"edrichhans","issuedTo":"11","level":"info","message":"Payslip Issued","timestamp":"2017-04-09T02:22:24.933Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T07:40:01.604Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T07:41:27.311Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T07:51:15.438Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T15:26:46.890Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T15:31:44.873Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T16:16:02.728Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T16:16:36.391Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T16:17:05.232Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T16:19:11.388Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T16:19:54.639Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T16:20:27.904Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T16:32:52.404Z"}
-{"level":"info","message":"Employee edited","timestamp":"2017-04-10T16:35:02.468Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-17T15:18:21.935Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-17T15:28:18.735Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-17T15:34:52.306Z"}
-{"level":"info","message":"Employee added","timestamp":"2017-04-17T15:36:39.461Z"}
-{"level":"info","message":"Employee added","timestamp":"2017-04-17T15:37:03.087Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-17T15:37:28.638Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-17T15:40:10.823Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-17T15:40:45.186Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-17T15:40:50.128Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-17T15:40:55.974Z"}
-{"level":"info","message":"Employee deleted","timestamp":"2017-04-17T15:41:00.910Z"}
+{"level":"info","message":"Employee deleted","timestamp":"2017-04-06T09:08:46.744Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-04-06T16:18:44.738Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-04-06T16:19:17.180Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-04-06T16:19:36.293Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-04-06T16:19:57.911Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-04-06T16:20:17.891Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-04-06T16:20:38.377Z"}
