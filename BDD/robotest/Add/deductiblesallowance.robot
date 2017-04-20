@@ -15,10 +15,10 @@ Negative Value
     Click Button               add-payslip-button
     Wait Until Page Contains   Add Payslip
     Location Should Be         ${ADD PAYSLIP URL}
-    Click Element              xpath=//body/div/div[3]/div/form/div/div
-    Click Element              xpath=//body/div/div[3]/div/form/div/div/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div/div[2]/div
     Input Text                 startDate        January 1, 100
     Input Text                 endDate          September 13, 275760
     Input Text                 deductibles_name         sampleDE
@@ -38,10 +38,10 @@ Negative Value
     Click Button               add-payslip-button
     Wait Until Page Contains   Add Payslip
     Location Should Be         ${ADD PAYSLIP URL}
-    Click Element              xpath=//body/div/div[3]/div/form/div/div
-    Click Element              xpath=//body/div/div[3]/div/form/div/div/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div/div[2]/div
     Input Text                 startDate        January 1, 100
     Input Text                 endDate          September 13, 275760
     Input Text                 deductibles_name         sampleDE
@@ -61,10 +61,10 @@ Normal Value
     Click Button               add-payslip-button
     Wait Until Page Contains   Add Payslip
     Location Should Be         ${ADD PAYSLIP URL}
-    Click Element              xpath=//body/div/div[3]/div/form/div/div
-    Click Element              xpath=//body/div/div[3]/div/form/div/div/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div/div[2]/div
     Input Text                 startDate        January 1, 100
     Input Text                 endDate          September 13, 275760
     Input Text                 deductibles_name         sampleDE
@@ -84,10 +84,10 @@ Large Value
     Click Button               add-payslip-button
     Wait Until Page Contains   Add Payslip
     Location Should Be         ${ADD PAYSLIP URL}
-    Click Element              xpath=//body/div/div[3]/div/form/div/div
-    Click Element              xpath=//body/div/div[3]/div/form/div/div/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div/div[2]/div
     Input Text                 startDate        January 1, 100
     Input Text                 endDate          September 13, 275760
     Input Text                 deductibles_name         sampleDE
@@ -107,10 +107,10 @@ Weird Value
     Click Button               add-payslip-button
     Wait Until Page Contains   Add Payslip
     Location Should Be         ${ADD PAYSLIP URL}
-    Click Element              xpath=//body/div/div[3]/div/form/div/div
-    Click Element              xpath=//body/div/div[3]/div/form/div/div/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div
-    Click Element              xpath=//body/div/div[3]/div/form/div[2]/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div/div/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div
+    Click Element              xpath=//body/div/div/div[3]/div/form/div[2]/div/div[2]/div
     Input Text                 startDate        January 1, 100
     Input Text                 endDate          September 13, 275760
     Input Text                 deductibles_name         sampleDE

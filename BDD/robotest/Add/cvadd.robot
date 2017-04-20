@@ -26,8 +26,8 @@ Input Date
     Input Text    date         12/30/2017
 
 Input Particulars
-    Click Element       xpath=//body/div/div[3]/div/form/div[4]/div
-    Click Element       xpath=//body/div/div[3]/div/form/div[4]/div/div[2]/div
+    Click Element       xpath=//form[@id="checkvoucher"]/div[4]/div
+    Click Element       xpath=//form[@id="checkvoucher"]/div[4]/div/div[2]/div
     Input Text    amount         10000
 
 Check Preview

@@ -23,8 +23,8 @@ Check Add Payslip Status
     
 *** Keywords ***
 Select Employee
-    Click Element   xpath=//body/div/div[3]/div/form/div/div
-    Click Element   xpath=//body/div/div[3]/div/form/div/div/div[2]/div
+    Click Element   xpath=//body/div/div/div[3]/div/form/div/div
+    Click Element   xpath=//body/div/div/div[3]/div/form/div/div/div[2]/div
 
 Input StartDate
     Input Text    startDate    12/30/2017
@@ -37,8 +37,8 @@ Input Deductibles
     Input Text    deductibles         10000
 
 Select Company
-	Click Element   xpath=//body/div/div[3]/div/form/div[2]/div
-    Click Element   xpath=//body/div/div[3]/div/form/div[2]/div/div[2]/div
+	Click Element   xpath=//body/div/div/div[3]/div/form/div[2]/div
+    Click Element   xpath=//body/div/div/div[3]/div/form/div[2]/div/div[2]/div
 	
 Input Allowance
 	Input Text    allowance_name 	 asfasg

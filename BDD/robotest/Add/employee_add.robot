@@ -3,27 +3,27 @@ Documentation     A test suite with a single test for adding an employee.
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
-Suite Setup       Check Add Employee Status
+Suite Setup       Open Browser To Main Menu
 Suite Teardown	  Close Browser
+Test Template      Check Add Employee Status
 Resource          menu_resource.robot
 
-*** Test Cases ***               
-Empty Name                 ${EMPTY}   12/30/2017    12/30/1997   0   0   100   100000
-Empty Startdate            Chacha Beatboy    ${EMPTY}   12/30/1997   0   0   100   100000
-Empty Birthday             Chacha Beatboy    12/30/2017   ${EMPTY}   0   0   100   100000
-Empty Dependents           Chacha Beatboy    12/30/2017   12/30/1997   0   0   ${EMPTY}   100000
-Empty Position             Chacha Beatboy    12/30/2017   12/30/1997   ${EMPTY}   0   100   100000
-Empty Status               Chacha Beatboy    12/30/2017   12/30/1997   0   ${EMPTY}   100   100000
-Empty Salary               Chacha Beatboy    12/30/2017   12/30/1997   0   0   100   ${EMPTY}
-Char Dependents            Chacha Beatboy    12/30/2017   12/30/1997   0   0   gray   100000
-Char Salary                Chacha Beatboy    12/30/2017   12/30/1997   0   0   100   gray
-Correct Admin              Chacha Beatboy    12/30/2017   12/30/1997   0   0   5   40000
+*** Test Cases ***         NAME              STARTDATE     BIRTHDAY    POSITION    STATUS    DEPENDENTS   SALARY      
+Empty Name                 ${EMPTY}          12/30/2017    12/30/1997   0   0   100   100000
+Empty Startdate            Chacha Beatboy    ${EMPTY}      12/30/1997   0   0   100   100000
+Empty Birthday             Chacha Beatboy    12/30/2017    ${EMPTY}     0   0   100   100000
+Empty Dependents           Chacha Beatboy    12/30/2017    12/30/1997   0   0   ${EMPTY}   100000
+Empty Position             Chacha Beatboy    12/30/2017    12/30/1997   ${EMPTY}   0   100   100000
+Empty Status               Chacha Beatboy    12/30/2017    12/30/1997   0   ${EMPTY}   100   100000
+Empty Salary               Chacha Beatboy    12/30/2017    12/30/1997   0   0   100   ${EMPTY}
+Char Dependents            Chacha Beatboy    12/30/2017    12/30/1997   0   0   gray   100000
+Char Salary                Chacha Beatboy    12/30/2017    12/30/1997   0   0   100   gray
+Correct Admin              Chacha Beatboy    12/30/2017    12/30/1997   0   0   5   40000
    
     
 *** Keywords ***
 Check Add Employee Status
     [Arguments]    ${name}    ${startdate}    ${birthday}    ${position}    ${status}   ${dependents}   ${salary}
-    Open Browser To Main Menu
     Go To Employee Panel
     Input EmpName       ${name}
     Select Status       ${status}
