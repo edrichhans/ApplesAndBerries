@@ -1,8 +1,9 @@
 body{
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 	/*background-color: #787554 !important;*/
-	background/*-color: #FFEAEA;*/
-	background-color:#FFF;
+	/*background*//*-color: #FFEAEA;*/
+	background-color:#F2F2F2; /*Google Drive gray*/
+
 	height: 100vh !important;
 }
 
@@ -139,18 +140,49 @@ height:100vh; padding: 10 !important;
 
 
 
-#fixed-left-menu{
-	background-color: #854;
-}
-
-
 
 /*==============================================layout.jade*/
 
+.ui.container{
+	margin: 5 24 5 24;
+}
+
+#fixed-left-menu{
+	height: 100vh;
+	background-color: #F2F2F2;
+}
+
+#left-menu-container{
+	padding:0 14 0 0;
+}
+
+/*color ng icon sa vertical menu*/
+.ui.icon.menu .item {
+	/*red na kakulay ng main buttons*/
+	/*color: #9F3A38;*/
+	/*gray na kakulay ng icons sa log in*/
+	/*color: #B3B3B3;*/
+	/*gray color sa gdrive*/
+	color: #6B6B6B;
+
+}
+
+/*.ui.link.menu .item:hover, .ui.menu .dropdown.item:hover, .ui.menu .link.item:hover,*/
+.ui.menu a.item:hover{
+	color: #9F3A38;
+}
+
+/*.ui.link.menu .item:active, .ui.menu .link.item:active,
+.ui.menu a.item:active{
+	background: #784521;
+	color: #542653;
+}*/
+
+
 #main-column .ui.row{
-background-color:#9E6363: !important;
-padding: 0 !important;
-height: 102vh: !important;
+	background-color:#9E6363: !important;
+	padding: 0 !important;
+	height: 102vh: !important;
 
 }
 
@@ -158,6 +190,9 @@ height: 102vh: !important;
 	background-color:#9F3A38;
 	right: 40;
 	left: 0;
+	/*.ui.raised.segment, .ui.raised.segments {*/
+/*	box-shadow: 0 4px 8px 0 rgba(34,36,38,.12), 0 4px 14px 0 rgba(34,36,38,.15);*/
+	box-shadow: 0 2px 4px 0 rgba(34,36,38,.3), 0 2px 10px 0 rgba(34,36,38,.6);
 }
 
 /*top navbar*/
@@ -182,9 +217,7 @@ margin-left: 50;
 	margin-right: 0;
 }
 
-#fixed-left-menu{
-height: 105vh;
-}
+
 
 /*.ui.icon.menu>.item{
 	background-color: #123123 !important;
@@ -219,7 +252,7 @@ padding: 10 0 10 0 !important;}
 
 #flm-employee-module-button{
 	margin: 0;
-	padding: 113 13 16 13;
+	padding: 8vh 0 16 0;
 	background-color: #966A6A;
 }
 
@@ -292,11 +325,11 @@ FFEAEA INPUT FIELDS COLOR DEFAULT
 
 
 */
-#left-menu-container.ui.column{
+/*#left-menu-container.ui.column{
 	background-color:#333;
 	padding:0;
 	height:100vh;
-}
+}*/
 
 .ui.fourteen.wide.column{
 	height:100vh;
@@ -322,9 +355,10 @@ FFEAEA INPUT FIELDS COLOR DEFAULT
 
 
 
-.field.update-table{
+.update-table{
 	overflow-y:scroll;
-	height: 60vh !important;
+	height: 72vh !important;
+	/*margin: 0;*/
 }
 
 .view-table{
