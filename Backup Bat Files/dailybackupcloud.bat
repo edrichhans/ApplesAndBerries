@@ -1,4 +1,4 @@
 REM Set frequency of auto backup
 REM Make sure the task exists in scheduler first since it just edits the parameters
 
-schtasks /change /tn "autobackup" /sc hourly /tr \cloudbackup.bat
+schtasks /change /tn "autobackup" /sc daily /tr \cloudbackup.bat
