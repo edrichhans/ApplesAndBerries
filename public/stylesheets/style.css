@@ -143,6 +143,19 @@ height:100vh; padding: 10 !important;
 
 /*==============================================layout.jade*/
 
+/*.ui.basic.button:focus, .ui.basic.button:hover, .ui.basic.buttons .button:focus, .ui.basic.buttons .button:hover {
+	background: #966A6A !important;
+
+}
+*/
+/*#payslip-module-button-user{
+	margin-top: 2vh; 
+}*/
+
+#flm-payslip-module-button-user{
+	margin-top:6vh;
+}
+
 .ui.container{
 	margin: 5 24 5 24;
 }
