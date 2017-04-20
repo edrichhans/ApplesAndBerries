@@ -8,59 +8,66 @@ block content
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
 		.seven.wide.column.row#menu-row
-			.ui.center.aligned.segment
+			.ui.center.aligned.container
 				h1 Employees 
 
 		// buttons
 		.row.button-row
-			.ui.right.floated.button(onclick="location.replace('/employees/add')") ADD
+			button#add-AR-button.ui.basic.icon.button(onclick="location.replace('/employees/add')") Add Employee   
+				i.add.user.icon
 
 		//Table Proper
-		.ui.container.view-table
-			table#employee-view-table.ui.table.sortable.selectable
-				thead
-					tr(style="background-color: #")
-						th
-							.ui.master.checkbox
-								input(type="checkbox", name="employee-master-checkbox")
-								label
-						th eID
-						th Name
-						th Start Date
-						th Birthday
-						th Position
-						th Status
-						th Dependents
-						th Salary
-				tbody
-					for employee in employees
-						tr.employee
-							td
-								.ui.checkbox
-									input(type="checkbox", name="employee-checkbox")
-									label
-							td(data-eid=employee.eID)= employee.eID
-							td= employee.name
-							td= employee.startDate
-							td= employee.birthday
-							if employee.position == 0
-								td Teacher
-							else if employee.position == 1
-								td Admin
-							else if employee.position == 2
-								td Staff
-							if employee.status == 0
-								td Single
-							else if employee.status == 1
-								td Marries
-							td= employee.dependents
-							td= employee.salary
+		.ui.container
+			.ui.segment.row
+				.view-table
+					table#employee-view-table.ui.table.sortable.selectable
+								thead
+									tr(style="background-color: #")
+										th
+											.ui.master.checkbox
+												input(type="checkbox", name="employee-master-checkbox")
+												label
+										th eID
+										th Name
+										th Start Date
+										th Birthday
+										th Position
+										th Status
+										th Dependents
+										th Salary
+								tbody
+									for employee in employees
+										tr.employee
+											td
+												.ui.checkbox
+													input(type="checkbox", name="employee-checkbox")
+													label
+											td(data-eid=employee.eID)= employee.eID
+											td= employee.name
+											td= employee.startDate
+											td= employee.birthday
+											if employee.position == 0
+												td Teacher
+											else if employee.position == 1
+												td Admin
+											else if employee.position == 2
+												td Staff
+											if employee.status == 0
+												td Single
+											else if employee.status == 1
+												td Marries
+											td= employee.dependents
+											td= employee.salary
+		
 
-		//- .ui.raised.segment.row
 
 		//PRINT BUTTON
-		.fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
-			button.ui.button.right.floated.column#print-employee-button Print
+		.ui.container
+			button.ui.button.right.floated.column.center.aligned#print-employee-button Print  
+				i.print.icon
+		//- //PRINT BUTTON
+		//- .fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
+		//- 	button.ui.button.right.floated.column#print-employee-button Print
 
 	.ui.small.modal
 		.header Confirm
