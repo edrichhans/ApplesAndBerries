@@ -173,51 +173,51 @@ describe('addUser', function(){
 	});
 });
 
-// describe('mailer: models', function () {
-//	 this.timeout(15000);
-// 	describe('#sendOne()', function (done) {
-// 		it('should render the password reset templates correctly', function (done) {
-// 			var locals = {
-// 				email: 'edrichhans@gmail.com',
-// 				subject: 'Password reset',
-// 				name: 'Forgetful User',
-// 				resetUrl: 'http://localhost:8000/password_rest/000000000001|afdaevdae353'
-// 			};
-// 			mailer.sendOne('password_reset', locals, function (err, responseStatus, html, text) {
-// 				should.not.exist(err);
-// 				responseStatus.should.include("OK");
-// 				text.should.include("Please follow this link to reset your password " + locals.resetUrl);
-// 				html.should.include("Please follow this link to reset your password <a href=\"" + locals.resetUrl + "\">" + locals.resetUrl + "</a>");
-// 				done();
-// 			});
-// 			done();
-// 		});
-// 	});
-// 	describe('correct input', function(){
-// 		it('should return status 200', function(done){
-// 			chai.request(server)
-// 			.post('/forgot')
-// 			.send({
-// 				username: 'edrichhans'
-// 			})
-// 			.end(function(err, res){
-// 				should.not.exist(err);
-//				 res.should.have.status(200);
-//				 done();
-// 			});
-// 		});
-// 	});
-//	 describe('Incorrect forgot', function(){
-// 		it('should return error status (500)', function(done){
-// 			chai.request(server)
-// 			.post('/forgot')
-// 			.send({
-// 				username: 'hi1'
-// 			})
-// 			.end(function(err, res){
-//				 res.should.have.status(500);
-//				 done();
-// 			});
-// 		});
-// 	});
-// });
+describe('mailer: models', function () {
+	 this.timeout(15000);
+	describe('#sendOne()', function (done) {
+		it('should render the password reset templates correctly', function (done) {
+			var locals = {
+				email: 'edrichhans@gmail.com',
+				subject: 'Password reset',
+				name: 'Forgetful User',
+				resetUrl: 'http://localhost:8000/password_rest/000000000001|afdaevdae353'
+			};
+			mailer.sendOne('password_reset', locals, function (err, responseStatus, html, text) {
+				should.not.exist(err);
+				responseStatus.should.include("OK");
+				text.should.include("Please follow this link to reset your password " + locals.resetUrl);
+				html.should.include("Please follow this link to reset your password <a href=\"" + locals.resetUrl + "\">" + locals.resetUrl + "</a>");
+				done();
+			});
+			done();
+		});
+	});
+	describe('correct input', function(){
+		it('should return status 200', function(done){
+			chai.request(server)
+			.post('/forgot')
+			.send({
+				username: 'edrichhans'
+			})
+			.end(function(err, res){
+				should.not.exist(err);
+				 res.should.have.status(200);
+				 done();
+			});
+		});
+	});
+	 describe('Incorrect forgot', function(){
+		it('should return error status (500)', function(done){
+			chai.request(server)
+			.post('/forgot')
+			.send({
+				username: 'hi1'
+			})
+			.end(function(err, res){
+				 res.should.have.status(500);
+				 done();
+			});
+		});
+	});
+});

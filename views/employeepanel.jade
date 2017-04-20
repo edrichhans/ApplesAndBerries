@@ -3,8 +3,10 @@ extends layout
 block content
 	title EmployeePanel
 	ul.custom-menu
-		li(data-action="edit") Edit
-		li(data-action="delete") Un-hire
+		li(data-action="edit") Edit   
+			i.edit.icon
+		li(data-action="delete") Un-hire   
+			i.remove.user.icon
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
 		.seven.wide.column.row#menu-row
