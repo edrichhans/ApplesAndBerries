@@ -118,7 +118,7 @@ describe("Thirteenth", function(){
 			chai.request(server)
 				.post('/thirteenth')
 				.send({
-					"employeeDropdown": 6,
+					"employeeDropdown": 11,
 					"companyDropdown": "Apples"
 				})
 			.end(function(err, res){

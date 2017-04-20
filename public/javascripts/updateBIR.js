@@ -30,20 +30,20 @@ $(document).ready(function(){
 	bir.sort(compareDep);
 	$('#BIRTable').append('<tr><td>Exemption</td>');
 	for(var k = 0; k < (metadata.hash).length; k++){
-		$('#BIRTable tr').last().append('<td><input class="exempt" type="number" value="' + parseFloat((metadata.hash)[k][0]) + '"></td>');
+		$('#BIRTable tr').last().append('<td><input class="exempt" type="number" value="' + parseFloat((metadata.hash)[k][0]) + '" disabled></td>');
 	}
 	$('#BIRTable').append('</tr>');
 
 	$('#BIRTable').append('<tr><td>Status</td>');
 	for(var k = 0; k < (metadata.hash).length; k++){
-		$('#BIRTable tr').last().append('<td><input class="status" type="number" value="' + parseFloat((metadata.hash)[k][1]) + '"></td>');
+		$('#BIRTable tr').last().append('<td><input class="status" type="number" value="' + parseFloat((metadata.hash)[k][1]) + '" disabled></td>');
 	}
 	$('#BIRTable').append('</tr>');
 
 	for(var i = 0; i < bir.length; i++){
 		$('#BIRTable').append('<tr><td><input class="dep" type="text" value="' + parseFloat(bir[i].dep) + '"disabled></td>');
 		for(var j = 0; j < (bir[i].ranges).length; j++){
-			$('#BIRTable tr').last().append('<td><input class="from" type="number" value="' + parseFloat((bir[i].ranges)[j]) + '"></td>');
+			$('#BIRTable tr').last().append('<td><input class="from" type="number" value="' + parseFloat((bir[i].ranges)[j]) + '" disabled></td>');
 		}
 		$('#BIRTable').append('</tr>');
 	}
@@ -73,6 +73,13 @@ var sendAjax = function(values, link){
 $('#BIRSubmit.submit').click(function(){
 	$('.small.modal').modal('show');
 })
+
+$('#BIRUpdate').click(function(event){
+	event.preventDefault();
+	$("input").prop('disabled', false);
+})
+
+
 
 $('#confirmBIR').click(function(){
 	var values = [];

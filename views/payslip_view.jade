@@ -7,73 +7,74 @@ block content
 		li(data-action="view") View
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
-		.seven.wide.column.row#menu-row
-			.ui.center.aligned.segment
-				h1 Payslip  
+		.fourteen.wide.column.row#menu-row
+			.ui.container
+				h1.ui.dividing.header.center.aligned Payslip
 
 		// buttons
-		.row.button-row
+		.ui.container.right.aligned
 			button#add-payslip-button.ui.button(onclick="location.replace('/payslip')") ADD
-			#edit-payslip-button.ui.button EDIT
-			#delete-payslip-button.ui.button DELETE
+			button#edit-payslip-button.ui.button EDIT
+			button#delete-payslip-button.ui.button DELETE
 
 		// Table Proper
-		.ui.raised.segment.row
-			.ui.container.view-table
-				table#payslip-view-table.ui.table.sortable.selectable
-					thead
-						tr
-							th
-								.ui.master.checkbox
-									input(type="checkbox", name="employee-master-checkbox")
-									label
-							th AN
-							th Issued By
-							th eID
-							th Name
-							th Base Salary
-							th Start Date
-							th End Date
-							//- th Deductibles
-							//- th Amount
-							//- th Allowance
-							//- th Amount
-							//- th PhilHealth
-							//- th SSS
-							//- th HDMF
-							//- th ER PhilHealth
-							//- th ER SSS
-							//- th ER HDMF
-							//- th BIR Tax
-							th Net
-					tbody
-						each item, index in transactions
-							tr.entry(data-an= item.adviceNumber)
-								td
-									.ui.checkbox
-										input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
+		.ui.container
+			.ui.segment.row
+				.view-table
+					table#payslip-view-table.ui.table.sortable.selectable
+						thead
+							tr
+								th
+									.ui.master.checkbox
+										input(type="checkbox", name="employee-master-checkbox")
 										label
-								td= item.adviceNumber
-								td= item.issuedBy
-								td.eID(value=item.eID)= item.eID
-								td= item.startDate
-								td.endDate= item.endDate
-								//- td= item.deductibles_name
-								//- td= item.deductibles
-								//- td= item.allowance_name
-								//- td= item.allowance
-								//- td= item.PHreduc
-								//- td= item.SSSreduc
-								//- td= item.HDMFreduc
-								//- td= item.EmployerPH
-								//- td= item.EmployerSSS
-								//- td= item.EmployerHDMF
-								//- td= item.BIR
-								td= item.total
+								th AN
+								th Issued By
+								th eID
+								th Name
+								th Base Salary
+								th Start Date
+								th End Date
+								//- th Deductibles
+								//- th Amount
+								//- th Allowance
+								//- th Amount
+								//- th PhilHealth
+								//- th SSS
+								//- th HDMF
+								//- th ER PhilHealth
+								//- th ER SSS
+								//- th ER HDMF
+								//- th BIR Tax
+								th Net
+						tbody
+							each item, index in transactions
+								tr.entry(data-an= item.adviceNumber)
+									td
+										.ui.checkbox
+											input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
+											label
+									td= item.adviceNumber
+									td= item.issuedBy
+									td.eID(value=item.eID)= item.eID
+									td= item.startDate
+									td.endDate= item.endDate
+									//- td= item.deductibles_name
+									//- td= item.deductibles
+									//- td= item.allowance_name
+									//- td= item.allowance
+									//- td= item.PHreduc
+									//- td= item.SSSreduc
+									//- td= item.HDMFreduc
+									//- td= item.EmployerPH
+									//- td= item.EmployerSSS
+									//- td= item.EmployerHDMF
+									//- td= item.BIR
+									td= item.total
 
 		//PRINT BUTTON
-		//- .fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
-		button.ui.button.right.floated.column#print-payslip-button Print
+		.ui.container
+			button.ui.button.right.floated.column#print-payslip-button Print
 		
 		.ui.basic.modal.view
 			//- .ui.icon.header
@@ -184,5 +185,9 @@ block content
 					i.checkmark.icon
 					| Done
 
+	script(type='text/javascript').
+		var employees =!{JSON.stringify(employees)};
+		var transactions =!{JSON.stringify(transactions)};
 	script(type='text/javascript', src='/javascripts/sorttable.js')
+	script(src='javascripts/table.js')
 	script(type='text/javascript', src='/javascripts/payslip_view.js')

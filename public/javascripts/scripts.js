@@ -91,6 +91,41 @@ $('#AR-preview').click(function(){
 		.modal('show');
 });
 
+$('.print').click(function(){
+	$('.ui.modal .content').printThis();
+	$('.submit').toggleClass('disabled');
+});
+
+$('#employeeDropdown').change(function(){
+	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
+	$('#name span').text(employee[0].name);
+});
+
+$('.checkbox#thirteenth').checkbox({
+	onChecked: function(){
+		$('.checkbox#thirteenth input').val(1);
+		$('form').attr('action', '/thirteenth');
+		$('form').attr('name', '/thirteenth');
+		$('.allowance').find('input').prop('disabled', true);
+		$('.deductibles').find('input').prop('disabled', true);
+		$('#add-deductibles').addClass('disabled');
+		$('#delete-deductibles').addClass('disabled');
+		$('#add-allowance').addClass('disabled');
+		$('#delete-allowance').addClass('disabled');
+	},
+	onUnchecked: function(){
+		$('.checkbox#thirteenth input').val(0);
+		$('form').attr('action', '/payslip');
+		$('form').attr('name', '/payslip');
+		$('.allowance').find('input').prop('disabled', false);
+		$('.deductibles').find('input').prop('disabled', false);
+		$('#add-deductibles').removeClass('disabled');
+		$('#delete-deductibles').removeClass('disabled');
+		$('#add-allowance').removeClass('disabled');
+		$('#delete-allowance').removeClass('disabled');
+	}
+});
+
 $('#payslip-preview').click(function(){
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
 
@@ -192,42 +227,6 @@ $('#payslip-preview').click(function(){
 		.modal('setting', 'transition', 'horizontal flip')
 		.modal('show');
 });
-
-$('.print').click(function(){
-	$('.ui.modal .content').printThis();
-	$('.submit').toggleClass('disabled');
-});
-
-$('#employeeDropdown').change(function(){
-	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
-	$('#name span').text(employee[0].name);
-});
-
-$('.checkbox#thirteenth').checkbox({
-	onChecked: function(){
-		$('.checkbox#thirteenth input').val(1);
-		$('form').attr('action', '/thirteenth');
-		$('form').attr('name', '/thirteenth');
-		$('.allowance').find('input').prop('disabled', true);
-		$('.deductibles').find('input').prop('disabled', true);
-		$('#add-deductibles').addClass('disabled');
-		$('#delete-deductibles').addClass('disabled');
-		$('#add-allowance').addClass('disabled');
-		$('#delete-allowance').addClass('disabled');
-	},
-	onUnchecked: function(){
-		$('.checkbox#thirteenth input').val(0);
-		$('form').attr('action', '/payslip');
-		$('form').attr('name', '/payslip');
-		$('.allowance').find('input').prop('disabled', false);
-		$('.deductibles').find('input').prop('disabled', false);
-		$('#add-deductibles').removeClass('disabled');
-		$('#delete-deductibles').removeClass('disabled');
-		$('#add-allowance').removeClass('disabled');
-		$('#delete-allowance').removeClass('disabled');
-	}
-});
-
 
 $('.ui.form#payslip')
 	.form({
@@ -608,12 +607,4 @@ $('.ui.form#addUser')
 					}
 				]
 			}
-		});
-
-//==================== chechvoucher_view.jade ===============================
-
-		$('#print-check-voucher-button').click(function(){
-			$('table').printThis({
-				header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 20%;' src='images/header.png'></img></div>"
-			});
 		});

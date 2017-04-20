@@ -34,16 +34,16 @@ html
 				//- .row
 				//- 	h5 sdfghjk
 			//- .ui.text.container.center.aligned(style="margin: 10 0 0 0")
-		script(type='text/javascript').
-			$(document).ready(function(){
-				$('#username').focus();
-			});
-		script(type='text/javascript' src='javascripts/scripts.js')
 		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
+		script(type='text/javascript' src='javascripts/scripts.js')
 		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
 		script(type='text/javascript', src='/javascripts/printThis.js')
 		script(type='text/javascript', src='/bower_components/semantic-ui-calendar/dist/calendar.min.js')
 		script(type='text/javascript' src='javascripts/jquery.form.js')
+		script(type='text/javascript').
+			$(document).ready(function(){
+				$('#username').focus();
+			});
 		script.
 			$('form#login')
 				.ajaxForm({

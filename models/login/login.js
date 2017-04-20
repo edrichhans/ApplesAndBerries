@@ -17,7 +17,7 @@ exports.login = function(req, res, callBack) {
 				sess.username = user.username;
 				sess.rights = user.rights;
 				callBack(1);
-			}
+			}	
 			else{
 				callBack(0);
 			}
@@ -47,18 +47,27 @@ exports.addUser = function(req, res, callBack){
 	var hash = bcrypt.hashSync(password, 10);
 
 	users.findOne({"username": username}, function(err, doc){
+		var a;
 		if(doc){
 			return callBack(0);
 		}
 		if(username && password && repass && password == repass){
-			users.insert({
+			a = users.insert({
 				"username": username,
 				"password": hash,
 				"email": email,
 				"rights": "user"
+			}).then(doc2 => {
+				// console.log('DOC', doc);
+				return doc2;
 			});
 		}
-		callBack(1);
+		else{
+			return callBack(0);
+		}
+		Promise.all([a]).then(values => {
+			return callBack(values[0]);
+		});
 	});
 }
 
@@ -77,5 +86,7 @@ exports.deleteUser = function(req, res, callBack){
 	var users = db.get('Users');
 	var username = req.body.username;
 
-	users.remove({"username": username}, callBack(1));
+	users.remove({"username": username}).then(doc =>{
+		return callBack(doc);
+	});
 }

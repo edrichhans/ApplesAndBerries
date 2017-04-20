@@ -9,9 +9,9 @@ var local = "http://localhost:8000";
 var winston = require('winston');
 
 var loginwinston = new(winston.Logger)({
-  transports: [
-    new (winston.transports.File)({ filename: 'login_test.log' })
-  ]
+	transports: [
+		new (winston.transports.File)({ filename: 'login_test.log' })
+	]
 });
 
 chai.use(chaiHttp);
@@ -37,153 +37,187 @@ function parseJSON(res, fn){
 
 describe("Login", function(){
 	var url = local;
-  describe("Fail due to Invalid both", function(){
-    it("returns status 500", function(done){
-      loginwinston.info("Logging in");
-      chai.request(server)
-      .post('/login')
-      .send({
-        username: 'asdfas',
-        password: 'asdfasd'
-      })
-      .end(function(err, res){
-        res.should.have.status(500);
-        done();
-      });
-      loginwinston.error("Username and password are invalid. Response 500");
-    });
-  });
-  describe("Fail due to Invalid username", function(){
-    it("returns status 500", function(done){
-      loginwinston.info("Logging in");
-      chai.request(server)
-      .post('/login')
-      .send({
-        username: 'asdfas',
-        password: 'password'
-      })
-      .end(function(err, res){
-        res.should.have.status(500);
-        done();
-      });
-      loginwinston.error("Username is invalid. Response 500");
-    });
-  });
-  describe("Fail due to Invalid password", function(){
-    it("returns status 500", function(done){
-      loginwinston.info("Logging in");
-      chai.request(server)
-      .post('/login')
-      .send({
-        username: 'edrichhans',
-        password: 'asdfasd'
-      })
-      .end(function(err, res){
-        res.should.have.status(500);
-        done();
-      });
-      loginwinston.error("Password is invalid. Response 500");
-    });
-  });
-  describe("Fail due to blank", function(){
-    it("returns status 500", function(done){
-      loginwinston.info("Logging in");
-      chai.request(server)
-      .post('/login')
-      .send({
-        username: '',
-        password: ''
-      })
-      .end(function(err, res){
-        res.should.have.status(500);
-        done();
-      });
-      loginwinston.error("Username and password are invalid. Response 500");
-    });
-  });
-  describe("Pass Admin", function(){
-    it("returns status 200", function(done){
-      loginwinston.info("Logging in");
-      chai.request(server)
-      .post('/login')
-      .send({
-        username: 'edrichhans',
-        password: 'password'
-      })
-      .end(function(err, res){
-        res.should.have.status(200);
-        done();
-      });
-      loginwinston.info("Admin login successful. Response 200");
-    });
-  });
-  describe("Pass User", function(){
-    it("returns status 200", function(done){
-      loginwinston.info("Logging in");
-      chai.request(server)
-      .post('/login')
-      .send({
-        username: 'bob',
-        password: 'password'
-      })
-      .buffer()
-      .parse()
-      .end(function(err, res){
-        res.should.have.status(200);
-        // res.body.should.have.property('rights');
-        console.log(res.body);
-        done();
-      });
-      loginwinston.info("User login successful. Response 200");
-    });
-  });
-});
-
-describe('mailer: models', function () {
-  this.timeout(15000);
-	describe('#sendOne()', function (done) {
-		it('should render the password reset templates correctly', function (done) {
-			var locals = {
-				email: 'edrichhans@gmail.com',
-				subject: 'Password reset',
-				name: 'Forgetful User',
-				resetUrl: 'http://localhost:8000/password_rest/000000000001|afdaevdae353'
-			};
-			mailer.sendOne('password_reset', locals, function (err, responseStatus, html, text) {
-				should.not.exist(err);
-				responseStatus.should.include("OK");
-				text.should.include("Please follow this link to reset your password " + locals.resetUrl);
-				html.should.include("Please follow this link to reset your password <a href=\"" + locals.resetUrl + "\">" + locals.resetUrl + "</a>");
+	describe("Fail due to Invalid both", function(){
+		it("returns status 500", function(done){
+			loginwinston.info("Logging in");
+			chai.request(server)
+			.post('/login')
+			.send({
+				username: 'asdfas',
+				password: 'asdfasd'
+			})
+			.end(function(err, res){
+				res.should.have.status(500);
 				done();
 			});
-			done();
+			loginwinston.error("Username and password are invalid. Response 500");
 		});
 	});
-	describe('correct input', function(){
-		it('should return status 200', function(done){
+	describe("Fail due to Invalid username", function(){
+		it("returns status 500", function(done){
+			loginwinston.info("Logging in");
 			chai.request(server)
-			.post('/forgot')
+			.post('/login')
 			.send({
-				username: 'edrichhans'
+				username: 'asdfas',
+				password: 'password'
 			})
 			.end(function(err, res){
-				should.not.exist(err);
-        res.should.have.status(200);
-        done();
+				res.should.have.status(500);
+				done();
+			});
+			loginwinston.error("Username is invalid. Response 500");
+		});
+	});
+	describe("Fail due to Invalid password", function(){
+		it("returns status 500", function(done){
+			loginwinston.info("Logging in");
+			chai.request(server)
+			.post('/login')
+			.send({
+				username: 'edrichhans',
+				password: 'asdfasd'
+			})
+			.end(function(err, res){
+				res.should.have.status(500);
+				done();
+			});
+			loginwinston.error("Password is invalid. Response 500");
+		});
+	});
+	describe("Fail due to blank", function(){
+		it("returns status 500", function(done){
+			loginwinston.info("Logging in");
+			chai.request(server)
+			.post('/login')
+			.send({
+				username: '',
+				password: ''
+			})
+			.end(function(err, res){
+				res.should.have.status(500);
+				done();
+			});
+			loginwinston.error("Username and password are invalid. Response 500");
+		});
+	});
+	describe("Pass Admin", function(){
+		it("returns status 200", function(done){
+			loginwinston.info("Logging in");
+			chai.request(server)
+			.post('/login')
+			.send({
+				username: 'edrichhans',
+				password: 'password'
+			})
+			.end(function(err, res){
+				res.should.have.status(200);
+				done();
+			});
+			loginwinston.info("Admin login successful. Response 200");
+		});
+	});
+	describe("Pass User", function(){
+		it("returns status 200", function(done){
+			loginwinston.info("Logging in");
+			chai.request(server)
+			.post('/login')
+			.send({
+				username: 'bob',
+				password: 'password'
+			})
+			.buffer()
+			.parse()
+			.end(function(err, res){
+				res.should.have.status(200);
+				// res.body.should.have.property('rights');
+				console.log(res.body);
+				done();
+			});
+			loginwinston.info("User login successful. Response 200");
+		});
+	});
+});
+
+describe('addUser', function(){
+	describe('Valid Input', function(){
+		it('Creates a new user with hash and salt field', function(done){
+			chai.request(server)
+			.post('/addUser')
+			.send({
+				username: 'testhash',
+				password: 'hashthis',
+				repass: 'hashthis'
+			})
+			.end(function(err, res){
+				res.should.have.status(200);
+				// res.should.be.json;
+				// res.body.should.have.property('data');
+				// res.body.data.should.have.property('password_salt');
+				// res.body.data.should.have.property('password_hash');
+				done();
 			});
 		});
-	});
-  describe('Incorrect forgot', function(){
-		it('should return error status (500)', function(done){
+		it('deletes this user', function(done){
 			chai.request(server)
-			.post('/forgot')
+			.post('/deleteUser')
 			.send({
-				username: 'hi1'
+				username: 'testhash'
 			})
 			.end(function(err, res){
-        res.should.have.status(500);
-        done();
+				res.should.have.status(200);
+				// res.body.should.have.property('data');
+				done();
 			});
 		});
 	});
 });
+
+// describe('mailer: models', function () {
+//	 this.timeout(15000);
+// 	describe('#sendOne()', function (done) {
+// 		it('should render the password reset templates correctly', function (done) {
+// 			var locals = {
+// 				email: 'edrichhans@gmail.com',
+// 				subject: 'Password reset',
+// 				name: 'Forgetful User',
+// 				resetUrl: 'http://localhost:8000/password_rest/000000000001|afdaevdae353'
+// 			};
+// 			mailer.sendOne('password_reset', locals, function (err, responseStatus, html, text) {
+// 				should.not.exist(err);
+// 				responseStatus.should.include("OK");
+// 				text.should.include("Please follow this link to reset your password " + locals.resetUrl);
+// 				html.should.include("Please follow this link to reset your password <a href=\"" + locals.resetUrl + "\">" + locals.resetUrl + "</a>");
+// 				done();
+// 			});
+// 			done();
+// 		});
+// 	});
+// 	describe('correct input', function(){
+// 		it('should return status 200', function(done){
+// 			chai.request(server)
+// 			.post('/forgot')
+// 			.send({
+// 				username: 'edrichhans'
+// 			})
+// 			.end(function(err, res){
+// 				should.not.exist(err);
+//				 res.should.have.status(200);
+//				 done();
+// 			});
+// 		});
+// 	});
+//	 describe('Incorrect forgot', function(){
+// 		it('should return error status (500)', function(done){
+// 			chai.request(server)
+// 			.post('/forgot')
+// 			.send({
+// 				username: 'hi1'
+// 			})
+// 			.end(function(err, res){
+//				 res.should.have.status(500);
+//				 done();
+// 			});
+// 		});
+// 	});
+// });
