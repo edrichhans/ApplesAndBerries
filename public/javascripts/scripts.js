@@ -126,6 +126,107 @@ $('.checkbox#thirteenth').checkbox({
 	}
 });
 
+$('#payslip-preview').click(function(){
+	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
+
+	if($('.checkbox#thirteenth input').val() == '0'){
+		var deductibles_sum = 0;
+		var allowance_sum = 0;
+
+		$('.deductibles-amount input').each(function(){
+			deductibles_sum += parseFloat($(this).val());
+		});
+		$('.allowance-amount input').each(function(){
+			allowance_sum += parseFloat($(this).val());
+		});
+
+		function getHDMF(salary){
+			if(salary <= 1500) return salary*0.01;
+			else return salary*0.02;
+		}
+
+		for(var i = 0; i < philHealth.length; i++){
+			if(philHealth[i].range.to == null) philHealth[i].range.to = Infinity;
+		}
+		for(var i = 0; i < sss.length; i++){
+			if(sss[i].range.to == null) sss[i].range.to = Infinity;
+		}
+
+		var dep = employee[0].dependents;
+		if(dep >= 4){
+			dep = 4;
+		}
+
+		var phVal = $.grep(philHealth, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
+		var sssVal = $.grep(sss, function(p){ return (p.range.from <= employee[0].salary) && (p.range.to+1 > employee[0].salary);});
+		var hdmfVal = getHDMF(employee[0].salary);
+		var birVal = $.grep(bir, function(p){ return (p.dep == dep)});
+
+		var hash = metadata.hash;
+
+		var bracket = 0;
+		for(bracket = 0; bracket < (birVal[0].ranges).length; bracket++){
+			if(employee[0].salary < (birVal[0].ranges)[bracket]){
+				break;
+			}
+		}
+		bracket -= 1;
+
+		var tax = ((employee[0].salary - (birVal[0].ranges)[bracket]) * hash[bracket][1]) + hash[bracket][0];
+		tax = Math.round(tax*100)/100
+
+		console.log(tax);
+
+		var total = employee[0].salary - deductibles_sum + allowance_sum - phVal[0].share - parseFloat(sssVal[0].totalEE) - hdmfVal - tax;
+
+
+		$('#philHealth span').text(phVal[0].share);
+		$('#SSS span').text(sssVal[0].totalEE);
+		$('#HDMF span').text(hdmfVal);
+		$('#BIR span').text(tax);
+
+		$('.deductibles').each(function(){
+			$('table#deductibles-table tbody').append('<tr><td>'+ $(this).find(".deductibles-name input").val() +'</td><td>'+ $(this).find(".deductibles-amount input").val() +'</td></tr>')
+		})
+
+		$('.allowance').each(function(){
+			$('table#allowance-table tbody').append('<tr><td>'+ $(this).find(".allowance-name input").val() +'</td><td>'+ $(this).find(".allowance-amount input").val() +'</td></tr>')
+		})
+		$('#total span').text(total);
+	}
+	else{
+		$('#total span').text(employee[0].salary);
+	}
+	$('#gross span').text(employee[0].salary);
+	var m_names = new Array("Jan", "Feb", "Mar", 
+	"Apr", "May", "Jun", "Jul", "Aug", "Sep", 
+	"Oct", "Nov", "Dec");
+
+	var d = new Date();
+	var curr_date = d.getDate();
+	var curr_month = d.getMonth();
+	var curr_year = d.getFullYear();
+	$('#dateToday span').text(curr_date + " " + m_names[curr_month] 
+	+ ", " + curr_year);
+	$('#dateStart span').text($('#rangestart .ui.input input').val());
+	$('#dateEnd span').text($('#rangeend .ui.input input').val());
+	$('#company span').text($('#companyDropdown').val().toUpperCase());
+	$('#AN span').text(an.number);
+	// console.log(an);
+
+	$('.ui.modal')
+		.modal({
+			onHide: function(){
+				$('.ui.modal').find('tbody tr').remove();
+				$('#philHealth span').text('N/A');
+				$('#SSS span').text('N/A');
+				$('#HDMF span').text('N/A');
+				$('#AN span').text('N/A');
+			}
+		})
+		.modal('setting', 'transition', 'horizontal flip')
+		.modal('show');
+});
 
 $('.ui.form#payslip')
 	.form({
