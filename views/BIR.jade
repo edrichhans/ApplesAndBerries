@@ -28,9 +28,9 @@ block content
 				| Confirm Update?
 			.actions
 				.ui.positive.right.button#confirmBIR OK
+				.ui.red.right.cancel.button Cancel
 
 		script(type='text/javascript', src='/javascripts/updateBIR.js')
 		script(type='text/javascript').
 			var bir =!{JSON.stringify(BIR)};
 			var metadata =!{JSON.stringify(metadata[0])};
-

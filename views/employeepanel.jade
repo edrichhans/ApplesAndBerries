@@ -3,9 +3,9 @@ extends layout
 block content
 	title EmployeePanel
 	ul.custom-menu
-		li(data-action="edit") Edit   
+		li(data-action="edit") Edit
 			i.edit.icon
-		li(data-action="delete") Un-hire   
+		li(data-action="delete") Un-hire
 			i.remove.user.icon
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
@@ -15,7 +15,7 @@ block content
 
 		// buttons
 		.row.button-row
-			button#add-employee-button.ui.basic.icon.button(onclick="location.replace('/employees/add')") Add Employee   
+			button#add-employee-button.ui.basic.icon.button(onclick="location.replace('/employees/add')") Add Employee
 				i.add.user.icon
 		//Table Proper
 		.ui.container
@@ -59,12 +59,12 @@ block content
 												td Marries
 											td= employee.dependents
 											td= employee.salary
-		
+
 
 
 		//PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-employee-button Print  
+			button.ui.button.right.floated.column.center.aligned#print-employee-button Print
 				i.print.icon
 		//- //PRINT BUTTON
 		//- .fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
@@ -76,6 +76,7 @@ block content
 			| Confirm Delete Employee
 		.actions
 			.ui.positive.submit.right.button#delete OK
+			.ui.red.right.cancel.button Cancel
 
 	script(type='text/javascript', src='/javascripts/sorttable.js')
 	//- script(type='text/javascript', src='/javascripts/employeepanel.js')
@@ -119,7 +120,7 @@ block content
 				case "delete":
 					$('.small.modal').modal('show');
 					break;
-			}			
+			}
 			$(".custom-menu").hide(100);
 		});
 

@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	title Manage Users
+
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		// Title
+
+		.seven.wide.column.row#menu-row(style="margin-top:17vh; margin-bottom:50;")
+			.section-title.ui.center.aligned.segment
+				h1 Manage Users
+
+		.four.column.wide.row
+			.column
+				#add-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/addUser')")
+					.visible.content
+						.ui.container.main-menu-button
+							h1 Add User
+					.hidden.content
+						h4 Create a new user
+			.column
+				#delete-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/deleteUser')")
+					.visible.content
+						.ui.container.main-menu-button
+							h1 Delete User
+					.hidden.content
+						h4 Delete an existing user
+
+
+		script(type='text/javascript', src='/javascripts/sorttable.js')
