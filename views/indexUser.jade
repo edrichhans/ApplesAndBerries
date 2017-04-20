@@ -1,14 +1,18 @@
-extends layout
+extends layout_user
 
 block content
-	.block-grid.ui.middle.aligned.center.aligned.grid.stackable.doubling
-		title Main Menu_User 
-		.ui.center.aligned
-			h1 Main Menu
+	title Main Menu
+	// Title
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		// Title
+		.four.wide.column.row#menu-row
+			.ui.center.aligned.segment
+				h1 Main Menu 
+
 		// 1st ROW Buttons
 		.four.column.wide.row
 			.column
-				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/payslip_view')")
+				#payslip-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/payslip_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/payslip.png")
 						h3
@@ -17,9 +21,9 @@ block content
 							| Module
 
 					.hidden.content
-						| Issue Payslip
+						h3
 			.column
-				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
+				#AR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
 
@@ -29,11 +33,13 @@ block content
 							| Receipt
 
 					.hidden.content
-						| Issue Acknowledgment Receipt
+						h3
+							| Issue Acknowledgment Receipt
+							| Issue Payslip
 		// 2nd ROW Buttons
 		.four.column.wide.row
 			.column
-				.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
+				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
 						h3
@@ -42,10 +48,11 @@ block content
 							| Voucher
 
 					.hidden.content
-						| Issue Check Voucher
+						h3
+							| Issue Check Voucher
 
 			.column
-				.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
+				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
 						h3
@@ -54,5 +61,7 @@ block content
 							| Cash
 					.ui.hidden.content
 						.ui.text.container.fluid
-							h5
+							h3
 								| Issue Petty Cash
+
+	script(type='text/javascript', src='/javascripts/sorttable.js')
