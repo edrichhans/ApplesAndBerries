@@ -11,9 +11,12 @@ block content
 
 		// buttons
 		.ui.container.right.aligned
-			button#add-petty-cash-button.ui.button(onclick="location.replace('/pettycash')") ADD
-			button#edit-petty-cash-button.ui.button EDIT
-			button#delete-pettyCash-button.ui.button DELETE
+			button#add-petty-cash-button.ui.basic.circular.icon.button(onclick="location.replace('/pettycash')")
+				i.plus.icon
+			button#edit-petty-cash-button.ui.basic.circular.icon.button
+				i.edit.icon
+			button#delete-petty-cash-button.ui.basic.circular.icon.button
+				i.trash.outline.icon
 
 		// Table Proper
 		.ui.container
@@ -56,8 +59,8 @@ block content
 
 		// PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column#print-petty-cash-button Print
-
+			button.ui.button.right.floated.column.center.aligned#print-petty-cash-button Print  
+				i.print.icon
 
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
 	//- script(type='text/javascript' src='javascripts/scripts.js')

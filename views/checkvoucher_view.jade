@@ -9,9 +9,12 @@ block content
 				h1 Check Voucher
 		// buttons
 		.ui.container.right.aligned
-			button#add-CV-button.ui.button(onclick="location.replace('/checkvoucher')") ADD
-			button#edit-CV-button.ui.button EDIT
-			button.ui.button#delete-checkVoucher-button DELETE
+			button#add-CV-button.ui.basic.circular.icon.button(onclick="location.replace('/checkvoucher')")
+				i.plus.icon
+			button#edit-CV-button.ui.basic.circular.icon.button
+				i.edit.icon
+			button#delete-CV-button.ui.basic.circular.icon.button
+				i.trash.outline.icon
 		// Table Proper
 		.ui.container
 			.ui.segment.row
@@ -46,7 +49,8 @@ block content
 
 		// PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column#print-check-voucher-button Print
+			button.ui.button.right.floated.column.center.aligned#print-check-voucher-button Print  
+				i.print.icon
 
 
 	script(type='text/javascript' src='javascripts/sorttable.js')

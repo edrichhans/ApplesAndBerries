@@ -13,9 +13,14 @@ block content
 
 		// buttons
 		.ui.container.right.aligned
-			button#add-AR-button.ui.button(onclick="location.replace('/AR')") ADD
-			button.ui.button EDIT
-			button.ui.button#delete-AR-button DELETE
+			button#add-AR-button.ui.basic.circular.icon.button(onclick="location.replace('/AR')")
+				i.plus.icon
+			button#edit-AR-button.ui.basic.circular.icon.button
+				i.edit.icon
+			button#delete-AR-button.ui.basic.circular.icon.button
+				i.trash.outline.icon
+
+
 
 		// Table Proper
 		.ui.container
@@ -50,7 +55,9 @@ block content
 
 		//PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column#print-payslip-button Print
+			button.ui.button.right.floated.column.center.aligned#print-AR-button Print  
+				i.print.icon
+
 
 	script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(type='text/javascript' src='/javascripts/scripts.js')
