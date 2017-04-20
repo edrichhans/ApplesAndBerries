@@ -859,3 +859,4 @@
 {"level":"info","message":"Employee added","timestamp":"2017-04-06T16:20:17.891Z"}
 {"level":"info","message":"Employee added","timestamp":"2017-04-06T16:20:38.377Z"}
 >>>>>>> master
+{"issuedBy":"edrichhans","issuedTo":"12","level":"info","message":"Payslip Issued","timestamp":"2017-04-20T00:59:09.141Z"}

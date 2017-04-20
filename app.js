@@ -70,6 +70,16 @@ app.get('/', function(req, res, next) {
 	}
 });
 
+app.post('/*', function(req, res, next) {
+	sess = req.session;
+	if(sess.username){
+		next();
+	}
+	else{
+		res.redirect('/login');
+	}
+});
+
 app.get('/controlpanel', function(req, res, next){
 	res.render('controlpanel', {title: 'Apples and Berries Payroll System'});
 });

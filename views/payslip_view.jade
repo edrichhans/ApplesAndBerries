@@ -184,5 +184,9 @@ block content
 					i.checkmark.icon
 					| Done
 
+	script(type='text/javascript').
+		var employees =!{JSON.stringify(employees)};
+		var transactions =!{JSON.stringify(transactions)};
 	script(type='text/javascript', src='/javascripts/sorttable.js')
+	script(src='javascripts/table.js')
 	script(type='text/javascript', src='/javascripts/payslip_view.js')
