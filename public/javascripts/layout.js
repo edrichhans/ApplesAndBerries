@@ -22,3 +22,9 @@
 			$('#controlpanel-dropdown').click(function(){
 				window.location.href = '/controlpanel';
 			});
+		script.
+			$(document).ready(function () {
+				if(window.location.href.indexOf("employee") > -1) {
+					$('#flm-employee-module-button').css({'background-color': '#d19992'});
+				}
+			});
