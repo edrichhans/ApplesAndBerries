@@ -1,0 +1,102 @@
+doctype html
+html(lang='en')
+    head
+        title Backup Settings
+        style.
+            .dropdown {
+            float: left;
+            position: relative;
+            display: inline-block;
+            padding-right: 50px;
+            }
+            .dropbtn {
+            height: 50px;
+            }
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            }
+            .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            }
+            .dropdown-content1 {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            }
+            .dropdown-content1 a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            }
+            .show {display:block;}
+            .wew {display: inline;}
+    body
+        h1 Set Backup Frequency
+        #container
+            .dropdown
+                button.dropbtn(onclick='myFunction()') Local Backup Frequency
+                #LfreqDropdown.dropdown-content
+                    a(href='#LocalHourly') Hourly
+                    a(href='#LocalDaily') Daily
+                    a(href='#LocalWeekly') Weekly
+                    a(href='#LocalMonthly') Monthly
+        #container
+            .dropdown
+                button.dropbtn(onclick='myFunction1()') Cloud Backup Frequency
+                #CfreqDropdown.dropdown-content1
+                    a(href='#CloudHourly') Hourly
+                    a(href='#CloudDaily') Daily
+                    a(href='#CloudWeekly') Weekly
+                    a(href='#CloudMonthly') Monthly
+        #container.col
+            input(type='button', onclick="location.assign('/backup/backupNow');", value='Cancel')
+
+        script.
+            /* When the user clicks on the button,
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+            document.getElementById("LfreqDropdown").classList.toggle("show");
+            }
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            }
+            }
+            }
+            }
+            function myFunction1() {
+            document.getElementById("CfreqDropdown").classList.toggle("show");
+            }
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content1");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            }
+            }
+            }
+            }

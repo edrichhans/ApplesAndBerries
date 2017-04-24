@@ -17,6 +17,7 @@ var db = monk(process.env.MONGOLAB_URI || 'localhost:27017/ApplesAndBerries');
 var financials = require('./routes/financials');
 var employees = require('./routes/employees');
 var login = require('./routes/login');
+var backup = require('./routes/backup');
 
 var app = express();
 var MongoClient = mongo.MongoClient;
@@ -58,6 +59,7 @@ app.get(['/controlpanel', '/BIR', '/SSS', 'PH'], function(req, res, next){
 app.use('/', login);
 app.use('/', financials);
 app.use('/employees', employees);
+app.use('/backup', backup);
 
 
 app.get('/', function(req, res, next) {
@@ -84,7 +86,7 @@ app.get('/controlpanel', function(req, res, next){
 	res.render('controlpanel', {title: 'Apples and Berries Payroll System'});
 });
 
-app.get('/backup', function(req, res, next){
+/*app.get('/backup', function(req, res, next){
 	var args = ['--db', 'ApplesAndBerries', '-o', 'backup']
 		, mongodump = spawn('mongodump', args);
 	mongodump.stdout.on('data', (data) => {
@@ -98,39 +100,7 @@ app.get('/backup', function(req, res, next){
 	});
 	winston.log('info', "Backup");
 	res.redirect('/');
-});
-
-app.get('/localbackup', function(req, res, next){
-	var args = ['--db', 'ApplesAndBerries', '-o', 'backup']
-		, mongodump = spawn('mongodump', args);
-	mongodump.stdout.on('data', (data) => {
-		console.log('stdout: ' + data);
-	});
-	mongodump.stderr.on('data', (data) => {
-		console.log('stderr: ' + data);
-	});
-	mongodump.on('exit', (code) => {
-		console.log('mongodump exited with code ' + code);
-	});
-	winston.log('info', "Backup");
-	res.redirect('/');
-});
-
-app.get('/cloudbackup', function(req, res, next){
-	var args = ['--db', 'ApplesAndBerries', '-o', 'backup']
-		, mongodump = spawn('mongodump', args);
-	mongodump.stdout.on('data', (data) => {
-		console.log('stdout: ' + data);
-	});
-	mongodump.stderr.on('data', (data) => {
-		console.log('stderr: ' + data);
-	});
-	mongodump.on('exit', (code) => {
-		console.log('mongodump exited with code ' + code);
-	});
-	winston.log('info', "Backup");
-	res.redirect('/');
-});
+});*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
