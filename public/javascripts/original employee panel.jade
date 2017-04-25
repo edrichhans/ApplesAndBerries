@@ -1,15 +1,10 @@
 extends layout
 
-
-link(rel='stylesheet', type='text/css', href='/stylesheets/dataTables.semanticui.min.css')
-
 block content
 	title EmployeePanel
 	ul.custom-menu
-		li(data-action="edit") Edit   
-			i.edit.icon
-		li(data-action="delete") Un-hire   
-			i.remove.user.icon
+		li(data-action="edit") Edit
+		li(data-action="delete") Un-hire
 	.ui.middle.center.aligned.grid.stackable.doubling
 		// Title
 		.fourteen.wide.column.row#menu-row
@@ -36,7 +31,7 @@ block content
 		.ui.container
 			.ui.segment.row
 				.view-table
-					table#employee-view-table.ui.table.selectable
+					table#employee-view-table.ui.table.sortable.selectable
 								thead
 									tr(style="background-color: #")
 										th
@@ -92,9 +87,7 @@ block content
 		.actions
 			.ui.positive.submit.right.button#delete OK
 
-	//- script(type='text/javascript', src='/javascripts/sorttable.js')
-	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-	
+	script(type='text/javascript', src='/javascripts/sorttable.js')
 	//- script(type='text/javascript', src='/javascripts/employeepanel.js')
 
 	script(type='text/javascript').
@@ -151,10 +144,6 @@ block content
 		});
 
 		$(document).ready(function(){
-			$('#employee-view-table').DataTable();
-		});
-
-		$(document).ready(function(){
 			var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
 			console.log("em", employee);
 			employee = employee[0];
@@ -170,5 +159,4 @@ block content
 
 			$('form#selectEmployee').addClass('hide');
 			$('form#editEmployee').removeClass('hide');
-		
 		});

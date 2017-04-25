@@ -909,4 +909,25 @@
 {"level":"info","message":"BIR Updated!","timestamp":"2017-04-20T03:20:18.996Z"}
 {"level":"info","message":"SSS Updated!","timestamp":"2017-04-20T03:20:19.241Z"}
 {"level":"info","message":"PhilHealth Updated!","timestamp":"2017-04-20T03:20:19.387Z"}
+<<<<<<< HEAD
 {"level":"info","message":"Employee deleted","timestamp":"2017-04-20T18:23:22.622Z"}
+=======
+{"level":"info","message":"Employee added","timestamp":"2017-04-20T07:11:16.822Z"}
+{"issuedTo":11,"level":"info","message":"Payslip Issued","timestamp":"2017-04-20T07:11:17.873Z"}
+{"issuedTo":11,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-04-20T07:11:18.228Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-20T07:11:18.722Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-04-20T07:11:18.930Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-04-20T07:11:19.110Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-04-20T07:11:19.302Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-04-20T07:11:19.520Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-04-20T07:11:19.665Z"}
+{"level":"info","message":"Employee added","timestamp":"2017-04-20T07:22:28.118Z"}
+{"issuedTo":11,"level":"info","message":"Payslip Issued","timestamp":"2017-04-20T07:22:29.111Z"}
+{"issuedTo":11,"level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-04-20T07:22:29.442Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Acknowledgement Receipt Issued","timestamp":"2017-04-20T07:22:29.912Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Petty Cash Issued","timestamp":"2017-04-20T07:22:30.142Z"}
+{"issuedTo":"Edrich Chua","level":"info","message":"Check Voucher Issued","timestamp":"2017-04-20T07:22:30.317Z"}
+{"level":"info","message":"BIR Updated!","timestamp":"2017-04-20T07:22:30.492Z"}
+{"level":"info","message":"SSS Updated!","timestamp":"2017-04-20T07:22:30.697Z"}
+{"level":"info","message":"PhilHealth Updated!","timestamp":"2017-04-20T07:22:30.855Z"}
+>>>>>>> 277179cdc3c52c8b4dd1068617ef9ac6b04c9451
