@@ -38,3 +38,7 @@ $('#delete-pettyCash-button').click(function(){
 		console.log('process success');
 	});
 });
+
+$(document).ready(function(){
+	$('#petty-cash-view-table').DataTable();
+});
