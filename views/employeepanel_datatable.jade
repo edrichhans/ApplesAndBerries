@@ -150,9 +150,7 @@ block content
 
 		$(document).ready(function(){
 			$('#employee-view-table').DataTable();
-		});
 
-		$(document).ready(function(){
 			var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
 			console.log("em", employee);
 			employee = employee[0];
@@ -168,5 +166,4 @@ block content
 
 			$('form#selectEmployee').addClass('hide');
 			$('form#editEmployee').removeClass('hide');
-		
 		});

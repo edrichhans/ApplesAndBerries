@@ -9,6 +9,10 @@ block content
 				h1.ui.dividing.header.center.aligned Check Voucher
 		// buttons
 		.ui.container.right.aligned
+			.search-bar.ui.action.input
+				input(type='text', placeholder='Search...')
+				button.ui.basic.circular.icon.button
+					i.search.icon
 			button#add-CV-button.ui.basic.circular.icon.button(onclick="location.replace('/checkvoucher')")
 				i.plus.icon
 			button#edit-CV-button.ui.basic.circular.icon.button

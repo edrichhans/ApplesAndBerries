@@ -143,6 +143,9 @@ height:100vh; padding: 10 !important;
 
 /*==============================================layout.jade*/
 
+.search-bar.ui.action.input{
+	margin-right:2vh;
+}
 /*.ui.basic.button:focus, .ui.basic.button:hover, .ui.basic.buttons .button:focus, .ui.basic.buttons .button:hover {
 	background: #966A6A !important;
 
