@@ -141,3 +141,8 @@ $('#print-payslip-button').click(function(){
 			header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 25%;' src='images/header.png'></img></div>"
 		});
 	});
+
+$(document).ready(function(){
+	$('#payslip-view-table').DataTable();
+});
+	

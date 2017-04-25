@@ -34,3 +34,7 @@ $('#delete-AR-button').click(function(){
 		window.location.reload();
 	})
 });
+
+$(document).ready(function(){
+	$('#AR-view-table').DataTable();
+});

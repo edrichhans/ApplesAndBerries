@@ -26,59 +26,60 @@ block content
 
 		// Table Proper
 		.ui.container
-			.ui.segment.row
-				.view-table
-					table#payslip-view-table.ui.table.sortable.selectable
-						thead
-							tr
-								th
-									.ui.master.checkbox
-										input(type="checkbox", name="employee-master-checkbox")
-										label
-								th AN
-								th Issued By
-								th eID
-								th Name
-								th Base Salary
-								th Start Date
-								th End Date
-								//- th Deductibles
-								//- th Amount
-								//- th Allowance
-								//- th Amount
-								//- th PhilHealth
-								//- th SSS
-								//- th HDMF
-								//- th ER PhilHealth
-								//- th ER SSS
-								//- th ER HDMF
-								//- th BIR Tax
-								th Net
-						tbody
-							each item, index in transactions
-								tr.entry(data-an= item.adviceNumber)
-									td
-										.ui.checkbox
-											input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
-											label
-									td= item.adviceNumber
-									td= item.issuedBy
-									td.eID(value=item.eID)= item.eID
-									td= item.startDate
-									td.endDate= item.endDate
-									//- td= item.deductibles_name
-									//- td= item.deductibles
-									//- td= item.allowance_name
-									//- td= item.allowance
-									//- td= item.PHreduc
-									//- td= item.SSSreduc
-									//- td= item.HDMFreduc
-									//- td= item.EmployerPH
-									//- td= item.EmployerSSS
-									//- td= item.EmployerHDMF
-									//- td= item.BIR
-									td= item.total
+			table#payslip-view-table.ui.celled.table.selectable
+				thead
+					tr
+						th.one.wide
+							.ui.master.checkbox
+								input(type="checkbox", name="employee-master-checkbox")
+								label
+						th AN
+						th Issued By
+						th eID
+						th Name
+						th Base Salary
+						th Start Date
+						th End Date
+						//- th Deductibles
+						//- th Amount
+						//- th Allowance
+						//- th Amount
+						//- th PhilHealth
+						//- th SSS
+						//- th HDMF
+						//- th ER PhilHealth
+						//- th ER SSS
+						//- th ER HDMF
+						//- th BIR Tax
+						th Net
+				tbody
+					each item, index in transactions
+						tr.entry(data-an= item.adviceNumber)
+							td
+								.ui.checkbox
+									input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
+									label
+							td= item.adviceNumber
+							td= item.issuedBy
+							td.eID(value=item.eID)= item.eID
+							td= item.startDate
+							td.endDate= item.endDate
+							//- td= item.deductibles_name
+							//- td= item.deductibles
+							//- td= item.allowance_name
+							//- td= item.allowance
+							//- td= item.PHreduc
+							//- td= item.SSSreduc
+							//- td= item.HDMFreduc
+							//- td= item.EmployerPH
+							//- td= item.EmployerSSS
+							//- td= item.EmployerHDMF
+							//- td= item.BIR
+							td= item.total
 
+			//- .ui.segment.row
+				.view-table
+					
 		//PRINT BUTTON
 		.ui.container
 			button.ui.button.right.floated.column.center.aligned#print-payslip-button Print  
@@ -196,6 +197,6 @@ block content
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};
 		var transactions =!{JSON.stringify(transactions)};
-	script(type='text/javascript', src='/javascripts/sorttable.js')
+	//- script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(src='javascripts/table.js')
 	script(type='text/javascript', src='/javascripts/payslip_view.js')
