@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A test suite with a single test for checking if the module allows submission of empty fields except for employee name.
+Documentation     A test suite with a single test for checking if the module allows submission of empty fields.
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file. 

@@ -3,33 +3,38 @@ Documentation     A test suite with a single test for adding a user of the appli
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
-Suite Setup       Open Browser To Main Menu
-Suite Teardown	  Close Browser
+Test Template     Check Add New User Status
 Resource          menu_resource.robot
 
-*** Test Cases ***
+*** Test Cases ***          username       password
+Empty Username                             password
+Empty Password              Adrian Sing
+Correct Input               Adrian Sing    password
+
+*** Keywords ***
 Check Add New User Status
+    [Arguments]      ${username}     ${password}
     Open Browser To Main Menu
-	Go To Control Panel
-    Input UserName
-    Input Password
-    Reinput Password
-    Input Dependents
-    Input Salary
+    Go To Control Panel
+    Input UserName   ${username}
+    Input Password   ${password}
+    Reinput Password     ${password}
     Submit Form
     Wait Until Page Contains   Main Menu
     Location Should Be    ${WELCOME URL}
-    
-    
-*** Keywords ***
+    [Teardown]      Close Browser
+
 Input UserName
-    Input Text    username         Adrian Sing
+    [Arguments]      ${username}
+    Input Text    username         ${username}
 
 Input Password
-    Input Text    password         password
+    [Arguments]      ${password}
+    Input Text    password         ${password}
 
 Reinput Password
-    Input Text    repass           password
+    [Arguments]      ${password}
+    Input Text    repass           ${password}
 	
 Go To Control Panel
     Click Element              control-panel-module-button
