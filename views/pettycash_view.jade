@@ -36,6 +36,7 @@ block content
 								th.two.wide Date
 								th Items
 								th.two.wide Price
+								th Qty
 						tbody
 							for item in transactions
 								tr
@@ -52,11 +53,16 @@ block content
 											if index != 0
 												br
 											=i[0]
-									td
+									td.price
 										each i, index in item.items
 											if index != 0
 												br
 											=i[1]
+									td.qty
+										each i, index in item.items
+											if index != 0
+												br
+											=i[2]
 
 		// PRINT BUTTON
 		.ui.container

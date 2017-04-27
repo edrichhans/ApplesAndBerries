@@ -17,6 +17,9 @@ var sendAjax = function(values, link, success_function){
 	});
 }
 
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 $('#print-petty-cash-button').click(function(){
 	$('table').printThis({
@@ -24,7 +27,7 @@ $('#print-petty-cash-button').click(function(){
 	});
 });
 
-$('#delete-pettyCash-button').click(function(){
+$('#delete-petty-cash-button').click(function(){
 	var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
 		return $(element).data('an');
 	});
