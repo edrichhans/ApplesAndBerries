@@ -1,0 +1,24 @@
+js-bson: Failed to load c++ bson extension, using pure JS version
+Tue, 14 Mar 2017 15:28:41 GMT express-session deprecated undefined resave option; provide resave option at app.js:41:9
+Tue, 14 Mar 2017 15:28:41 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:41:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sat, 18 Mar 2017 03:12:41 GMT express-session deprecated undefined resave option; provide resave option at app.js:41:9
+Sat, 18 Mar 2017 03:12:41 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:41:9
+Wed, 22 Mar 2017 04:45:16 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at routes\login.js:61:8
+Warning: missing space before text for line 50 of jade file "C:\Users\AF\Documents\CS Subjects\CS 192\Project\views\controlpanel.jade"
+Warning: missing space before text for line 50 of jade file "C:\Users\AF\Documents\CS Subjects\CS 192\Project\views\controlpanel.jade"
+Warning: missing space before text for line 50 of jade file "C:\Users\AF\Documents\CS Subjects\CS 192\Project\views\controlpanel.jade"
+Warning: missing space before text for line 50 of jade file "C:\Users\AF\Documents\CS Subjects\CS 192\Project\views\controlpanel.jade"
+Warning: missing space before text for line 50 of jade file "C:\Users\AF\Documents\CS Subjects\CS 192\Project\views\controlpanel.jade"
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sun, 09 Apr 2017 01:40:14 GMT express-session deprecated undefined resave option; provide resave option at app.js:41:9
+Sun, 09 Apr 2017 01:40:14 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:41:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Tue, 11 Apr 2017 05:31:10 GMT express-session deprecated undefined resave option; provide resave option at app.js:41:9
+Tue, 11 Apr 2017 05:31:10 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:41:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Tue, 11 Apr 2017 11:21:30 GMT express-session deprecated undefined resave option; provide resave option at app.js:41:9
+Tue, 11 Apr 2017 11:21:30 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:41:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Mon, 24 Apr 2017 14:30:04 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Mon, 24 Apr 2017 14:30:04 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9

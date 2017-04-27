@@ -1,0 +1,12 @@
+doctype html
+html(lang='en')
+  head
+    title Backup Menu
+  body
+    h1 BackUp Menu
+    #container.col
+      input(type='button', onclick="location.assign('/backup/backupNow');", value='Backup Now')
+    #container.col
+      input(type='button', onclick="location.assign('/backup/backupSettings');", value='Set Auto Backup Frequency')
+    #container.col
+      input(type='button', onclick="location.assign('/');", value='Cancel')
