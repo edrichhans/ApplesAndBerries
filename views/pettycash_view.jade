@@ -25,19 +25,20 @@ block content
 		.ui.segment.container
 			//- .ui.segment.row
 				.view-table
-			table#petty-cash-view-table.ui.celled.table.selectable
+			table#petty-cash-view-table.ui.table.fluid.selectable.sortable
 				thead
 					tr
-						th.one.wide
+						th
 							.ui.master.checkbox
 								input(type="checkbox", name="petty-cash-master-checkbox")
 								label
-						th.one.wide AN#
+						th.collapsing AN#
 						th.two.wide Issued By
 						th.three.wide Name
 						th.two.wide Date
 						th Items
 						th.two.wide Price
+						th Qty
 				tbody
 					for item in transactions
 						tr
@@ -54,12 +55,16 @@ block content
 									if index != 0
 										br
 									=i[0]
-							td
+							td.price
 								each i, index in item.items
 									if index != 0
 										br
 									=i[1]
-
+							td.qty
+								each i, index in item.items
+									if index != 0
+										br
+									=i[2]
 					
 		// PRINT BUTTON
 		.ui.container

@@ -96,7 +96,7 @@ $('tr.entry').click(function(){
 		console.log(data.data);
 		$('#AN span').text(data.data[0].adviceNumber);
 		$('#name span').text(data.data[1].name);
-		$('#dateToday span').text(data.data[0].dateIssued);
+		$('#dateToday span').text((data.data[0].dateIssued).substring(0,10));
 		$('#company span').text(data.data[0].company);
 		$('#dateStart span').text(data.data[0].startDate);
 		$('#dateEnd span').text(data.data[0].endDate);

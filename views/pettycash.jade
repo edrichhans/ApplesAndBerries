@@ -24,16 +24,21 @@ block content
 
 
 			.field#pettyCash-particulars
-				.two.fields.pettyCash-field
-					.field
+				.fields.pettyCash-field
+					.eight.wide.field
 						label Particulars
 						.ui.input.particulars-input
 							input(name='particulars', type='text', placeholder='Name')
 
-					.field
+					.five.wide.field
 						label Amount
 						.ui.input.amount-input
-							input(name="amount", type="number", placeholder="Amount...")
+							input(name="amount", type="number", placeholder="Php")
+
+					.three.wide.field
+						label Qty
+						.ui.input.qty-input
+							input(name="qty", type="number", placeholder="Pcs")
 
 			.field
 				.ui.button#add-field Add Field
@@ -68,10 +73,12 @@ block content
 								tr
 									th Particulars
 									th Amount
+									th Qty
+									th Total
 							tbody
 						br
 						.four.wide.right.floated.column
-							| Total: 
+							| Subtotal: 
 							#total.div-underline
 								span
 				.actions

@@ -11,6 +11,61 @@ function initialize(worksheet){
 	};
 }
 
+var check_date = function(arr, inputDate){
+	var obj = {};
+	for(var i = 0; i < arr.length; i++){
+		var dateIssued;
+		if(inputDate == 'date'){
+			dateIssued = new Date(arr[i][inputDate]);
+		}
+		else{
+			dateIssued = arr[i][inputDate];
+		}
+		var date = ("0" + (dateIssued.getMonth()+1)).slice(-2) + '-' + (dateIssued.getYear()+1900).toString();
+		console.log(date);
+		date = date.substring(0,7);
+		if(obj[date] === undefined) obj[date] = [arr[i]];
+		else{
+			// console.log(arr[i]);
+			obj[date].push(arr[i]);
+		}
+	}
+	return obj;
+}
+
+var merge_paySlip = function(paySlipWorksheet){
+	var i = 2;
+	var start;
+	while(1){
+		var cell_A = paySlipWorksheet.getCell('A' + i.toString()).value;
+		var cell_B = paySlipWorksheet.getCell('B' + i.toString()).value;
+		var cell_R = paySlipWorksheet.getCell('R' + i.toString()).value;
+		if(cell_R == 'Total:'){
+			console.log('total: ', i);
+			break;
+		}
+		else if(cell_A != null){ //if main entry in row
+			//operation here
+			console.log('main entry: ', i);
+			var last_cell = i-1;
+			paySlipWorksheet.mergeCells('A' + start.toString() + ':H' + last_cell.toString());
+			paySlipWorksheet.mergeCells('M' + start.toString() + ':T' + last_cell.toString());
+			paySlipWorksheet.getRow(start).commit();
+			start = i;
+		}
+		else if(cell_A == null && cell_B != null){ //if date nasa row
+			console.log('date: ', i);
+			var last_cell = i-2;
+			paySlipWorksheet.mergeCells('A' + start.toString() + ':H' + last_cell.toString());		
+			paySlipWorksheet.mergeCells('M' + start.toString() + ':T' + last_cell.toString());		
+			paySlipWorksheet.getRow(start).commit();
+			start = i+1;
+		}
+		i++;
+	}
+	// return;
+}
+
 exports.report = function(req, res){
 	var db = req.db;
 	var paySlip = db.get('paySlip');
@@ -51,11 +106,12 @@ exports.report = function(req, res){
 						paySlipWorksheet.columns = [
 							{header: 'AN', key: 'an', width: 5},
 							{header: 'Issued By', key: 'issued', width: 15},
+							{header: 'Date Issued', key: 'date_issued', width: 15},
 							{header: 'Employee ID', key: 'eID', width: 5},
-							{header: 'Name', key: 'name', width: 25},
+							{header: 'Name', key: 'name', width: 20},
 							{header: 'Base Salary', key: 'base', width: 10},
-							{header: 'Start Date', key: 'start', width: 10},
-							{header: 'End Date', key: 'end', width: 10},
+							{header: 'Start Date', key: 'start', width: 15},
+							{header: 'End Date', key: 'end', width: 15},
 							{header: 'Deductibles', key: 'deduct', width: 15},
 							{header: 'Amount', key: 'deduct_amt', width: 10},
 							{header: 'Allowances', key: 'allow', width: 15},
@@ -94,84 +150,174 @@ exports.report = function(req, res){
 							{header: 'Name', key: 'name', width: 25},
 							{header: 'Date', key: 'date', width: 20},
 							{header: 'Particulars', key: 'part', width: 15},
-							{header: 'Amount', key: 'amt', width: 10}
+							{header: 'Amount', key: 'amt', width: 10},
+							{header: 'Qty', key: 'qty', width: 10},
+							{header: 'Total', key: 'total', width: 15}
 						];
 						
-						for(var entry = 0; entry < paySlipData.length; entry++){			
-							// console.log(entry);
-							// console.log(paySlipData[entry]);
-							// var size = Math.max(paySlipData[entry].deductibles_name.length, paySlipData[entry].allowance_name.length);
-							// console.log(size);
+						// console.log("HI", paySlipData);
+						var paySlip_month = check_date(paySlipData, 'dateIssued');
+						// console.log("JELLOO", paySlip_month);
+						var total = 0;
+						for(month in paySlip_month){		
 							paySlipWorksheet.addRow({
-								an: paySlipData[entry].adviceNumber,
-								issued: paySlipData[entry].issuedBy,
-								eID: paySlipData[entry].eID,
-								name: employee[0].name,
-								base: employee[0].salary,
-								start: paySlipData[entry].startDate,
-								end: paySlipData[entry].endDate,
-								deduct: paySlipData[entry].deductibles_name,
-								deduct_amt: paySlipData[entry].deductibles,
-								allow: paySlipData[entry].allowance_name,
-								allow_amt: paySlipData[entry].allowance,
-								ph: paySlipData[entry].PHreduc,
-								hdmf: paySlipData[entry].HDMFreduc,
-								sss: paySlipData[entry].SSSreduc,
-								er_ph: paySlipData[entry].EmployerPH,
-								er_hdmf: paySlipData[entry].EmployerHDMF,
-								er_sss: paySlipData[entry].EmployerSSS,
-								bir: paySlipData[entry].BIR,
-								net: paySlipData[entry].total
-							}).commit();
-							// for(var i = 1; i < size; i++){
-							// 	paySlipWorksheet.addRow({
-							// 		deduct: paySlipData[entry].deductibles_name[i],
-							// 		deduct_amt: paySlipData[entry].deductibles[i],
-							// 		allow: paySlipData[entry].allowance_name[i],
-							// 		allow_amt: paySlipData[entry].allowance[i]
-							// 	}).commit();
-							// }
-						}
-						// console.log('ASDFASDF');
-
-						for(var entry = 0; entry < ARData.length; entry++){
-							ARWorksheet.addRow({
-								an: ARData[entry].adviceNumber,
-								issued: ARData[entry].issuedBy,
-								name: ARData[entry].name,
-								date: ARData[entry].date,
-								part: ARData[entry].particulars,
-								amt: ARData[entry].amount
-							}).commit();
-						}
-
-						for(var entry = 0; entry < checkVoucherData.length; entry++){
-							checkVoucherWorksheet.addRow({
-								an: checkVoucherData[entry].adviceNumber,
-								issued: checkVoucherData[entry].issuedBy,
-								name: checkVoucherData[entry].name,
-								date: checkVoucherData[entry].date,
-								part: checkVoucherData[entry].particulars,
-								amt: checkVoucherData[entry].amount
-							}).commit();
-						}
-
-						for(var entry = 0; entry < pettyCashData.length; entry++){
-							pettyCashWorksheet.addRow({
-								an: pettyCashData[entry].adviceNumber,
-								issued: pettyCashData[entry].issuedBy,
-								name: pettyCashData[entry].name,
-								date: pettyCashData[entry].date,
-								part: pettyCashData[entry].items[0][0],
-								amt: pettyCashData[entry].items[0][1]
-							}).commit();
-							for(var item = 1; item < pettyCashData[entry].items.length; item++){
-								pettyCashWorksheet.addRow({
-									part: pettyCashData[entry].items[item][0],
-									amt: pettyCashData[entry].items[item][1]
+								issued: month,
+							}).commit();	
+							var subtotal = 0;
+							for(var entry = 0; entry < paySlip_month[month].length; entry++){	
+								var paySlip_month_entry = paySlip_month[month][entry];
+								var entry_total = paySlip_month_entry.total;
+								paySlipWorksheet.addRow({
+									an: paySlip_month_entry.adviceNumber,
+									issued: paySlip_month_entry.issuedBy,
+									date_issued: paySlip_month_entry.dateIssued.toString(),
+									eID: paySlip_month_entry.eID,
+									name: employee[0].name,
+									base: employee[0].salary,
+									start: paySlip_month_entry.startDate,
+									end: paySlip_month_entry.endDate,
+									deduct: (paySlip_month_entry.deductibles_name)[0],
+									deduct_amt: (paySlip_month_entry.deductibles)[0],
+									allow: (paySlip_month_entry.allowance_name)[0],
+									allow_amt: (paySlip_month_entry.allowance)[0],
+									ph: paySlip_month_entry.PHreduc,
+									hdmf: paySlip_month_entry.HDMFreduc,
+									sss: paySlip_month_entry.SSSreduc,
+									er_ph: paySlip_month_entry.EmployerPH,
+									er_hdmf: paySlip_month_entry.EmployerHDMF,
+									er_sss: paySlip_month_entry.EmployerSSS,
+									bir: paySlip_month_entry.BIR,
+									net: entry_total
 								}).commit();
+								var i = 1;
+								while(i < paySlip_month_entry.deductibles_name.length || i < paySlip_month_entry.allowance_name.length){
+									paySlipWorksheet.addRow({
+										deduct: paySlip_month_entry.deductibles_name[i],
+										deduct_amt: paySlip_month_entry.deductibles[i],
+										allow: paySlip_month_entry.allowance_name[i],
+										allow_amt: paySlip_month_entry.allowance[i],
+									}).commit();
+									i++;
+								}
+								subtotal += parseFloat(entry_total);
 							}
+							total += subtotal;
+							paySlipWorksheet.addRow({
+								er_sss: "Subtotal:",
+								net: subtotal
+							}).commit();
 						}
+						paySlipWorksheet.addRow({
+							er_sss: "Total:",
+							net: total
+						}).commit();
+
+						var AR_month = check_date(ARData, 'date');
+						total = 0;
+						for(month in AR_month){
+							ARWorksheet.addRow({
+								issued: month,
+							}).commit();
+							var subtotal = 0;
+							for(var entry = 0; entry < AR_month[month].length; entry++){
+								var AR_month_entry = AR_month[month][entry];
+								var entry_total = AR_month_entry.amount;
+								ARWorksheet.addRow({
+									an: AR_month_entry.adviceNumber,
+									issued: AR_month_entry.issuedBy,
+									name: AR_month_entry.name,
+									date: AR_month_entry.date,
+									part: AR_month_entry.particulars,
+									amt: entry_total
+								}).commit();
+								subtotal += parseFloat(entry_total);
+							}
+							total += subtotal;
+							ARWorksheet.addRow({
+								part: "Subtotal:",
+								amt: subtotal
+							}).commit();
+						}
+						ARWorksheet.addRow({
+							part: "Total:",
+							amt: total
+						}).commit();
+
+						var checkVoucher_month = check_date(checkVoucherData, 'date');
+						total = 0;
+						for(month in checkVoucher_month){
+							checkVoucherWorksheet.addRow({
+								issued: month,
+							}).commit();
+							var subtotal = 0;
+							for(var entry = 0; entry < checkVoucher_month[month].length; entry++){
+								var checkVoucher_month_entry = checkVoucher_month[month][entry];
+								var entry_total = checkVoucher_month_entry.amount;
+								checkVoucherWorksheet.addRow({
+									an: checkVoucher_month_entry.adviceNumber,
+									issued: checkVoucher_month_entry.issuedBy,
+									name: checkVoucher_month_entry.name,
+									date: checkVoucher_month_entry.date,
+									part: checkVoucher_month_entry.particulars,
+									amt: checkVoucher_month_entry.amount
+								}).commit();
+								subtotal += parseFloat(entry_total);
+							}
+							total += subtotal;
+							checkVoucherWorksheet.addRow({
+								part: "Subtotal:",
+								amt: subtotal
+							}).commit();
+						}
+						checkVoucherWorksheet.addRow({
+							part: "Total:",
+							amt: subtotal
+						}).commit();
+
+						var pettyCash_month = check_date(pettyCashData, 'date');
+						console.log('pettyCash_month', pettyCash_month);
+
+						total = 0;
+						for(month in pettyCash_month){
+							pettyCashWorksheet.addRow({
+								issued: month,
+							}).commit();
+							var subtotal = 0;
+							for(var entry = 0; entry < pettyCash_month[month].length; entry++){
+								var pettyCash_month_entry = pettyCash_month[month][entry];
+								var entry_total = checkVoucher_month_entry.amount;
+								pettyCashWorksheet.addRow({
+									an: pettyCash_month_entry.adviceNumber,
+									issued: pettyCash_month_entry.issuedBy,
+									name: pettyCash_month_entry.name,
+									date: pettyCash_month_entry.date,
+									part: pettyCash_month_entry.items[0][0],
+									amt: pettyCash_month_entry.items[0][1],
+									qty: pettyCash_month_entry.items[0][2]
+								}).commit();
+								for(var item = 1; item < pettyCash_month_entry.items.length; item++){
+									pettyCashWorksheet.addRow({
+										part: pettyCash_month_entry.items[item][0],
+										amt: pettyCash_month_entry.items[item][1],
+										qty: pettyCash_month_entry.items[item][2]
+									}).commit();
+								}
+								subtotal += parseFloat(entry_total);
+							}
+							total += subtotal;
+							pettyCashWorksheet.addRow({
+								part: "Subtotal:",
+								amt: subtotal
+							}).commit();
+						}
+						pettyCashWorksheet.addRow({
+							part: "Total:",
+							amt: total
+						}).commit();
+
+						merge_paySlip(paySlipWorksheet);
+						paySlipWorksheet.commit();
+
 						workbook.xlsx.writeFile("uploads/report.xlsx");
 					});
 				});

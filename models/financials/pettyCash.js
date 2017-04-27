@@ -6,22 +6,26 @@ exports.insert = function(req, res, callBack){
 	var date = req.body.date;
 	var amount = req.body.amount;
 	var particulars = req.body.particulars;
+	var qty = req.body.qty;
 
 	var issuedBy = req.session.username;
 
 	var currentAdviceNumber;
 
+	console.log("qty", qty);
+	
 	var items = [];
 
 	//remodel data
 	if(particulars.constructor === Array){
 		for(i=0; i < particulars.length; i++){
-			items.push([particulars[i], parseFloat(amount[i])]);
+			items.push([particulars[i], parseFloat(amount[i]), parseFloat(qty[i])]);
 		}
 	}
 	else{
-		items.push([particulars, parseFloat(amount)]);
+		items.push([particulars, parseFloat(amount), parseFloat(qty)]);
 	}
+	console.log("items", items);
 
 	adviceNumbers.findOne({"name": "pettyCash"}, function (err, doc) {
 		currentAdviceNumber = doc.number;
