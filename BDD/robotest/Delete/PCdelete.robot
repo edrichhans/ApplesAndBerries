@@ -17,7 +17,7 @@ Check Delete PC Status
 *** Keywords ***
 Delete PC Entry
     Select Checkbox            xpath=//table[@id="petty-cash-view-table"]/tbody/tr/td/div/input
-    Click Element              delete-pettyCash-button
+    Click button               delete-pettyCash-button
     
 Go To PC Panel
     Click Element              petty-cash-module-button
