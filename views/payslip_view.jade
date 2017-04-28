@@ -77,9 +77,9 @@ block content
 
 		//PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-payslip-button Print  
+			button.ui.button.right.floated.column.center.aligned#print-payslip-button Print
 				i.print.icon
-		
+
 		.ui.basic.modal.view
 			//- .ui.icon.header
 			//- 	i.file.text.icon
@@ -95,7 +95,7 @@ block content
 						#AN.div-underline.center-align
 							span.center-align
 					.two.wide.column.right-align
-						| Name: 
+						| Name:
 					.four.wide.column
 						#name.div-underline.center-align
 							span.center-align
@@ -106,7 +106,7 @@ block content
 							span.center-align
 
 					.two.wide.column.right-align
-						| Company: 
+						| Company:
 					.fourteen.wide.column
 						#company.div-underline
 							span.indent
@@ -181,13 +181,28 @@ block content
 							tbody
 					br
 					.four.wide.right.floated.column
-						| Total: 
+						| Total:
 						#total.div-underline
 							span
 			.actions
 				.ui.green.ok.inverted.button
 					i.checkmark.icon
 					| Done
+
+	.ui.small.modal#confirm-delete-modal
+		.header Confirm
+		.content
+			| Confirm Deleting Data
+		.actions
+			.ui.positive.submit.right.button#delete OK
+			.ui.red.right.cancel.button Cancel
+
+	.ui.small.modal#alert-delete-modal
+		.header Success
+		.content
+			| Deleting Data Successful
+		.actions
+			.ui.positive.submit.right.button#delete-alert OK
 
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};

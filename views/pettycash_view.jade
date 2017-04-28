@@ -60,8 +60,23 @@ block content
 
 		// PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-petty-cash-button Print  
+			button.ui.button.right.floated.column.center.aligned#print-petty-cash-button Print
 				i.print.icon
+
+	.ui.small.modal#confirm-delete-modal
+		.header Confirm
+		.content
+			| Confirm Deleting Data
+		.actions
+			.ui.positive.submit.right.button#delete OK
+			.ui.red.right.cancel.button Cancel
+
+	.ui.small.modal#alert-delete-modal
+		.header Success
+		.content
+			| Deleting Data Successful
+		.actions
+			.ui.positive.submit.right.button#delete-alert OK
 
 	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
 	//- script(type='text/javascript' src='javascripts/scripts.js')

@@ -37,7 +37,7 @@ $(".custom-menu li").click(function(){
 		//- case "delete":
 		//- 	$('.small.modal').modal('show');
 		//- 	break;
-	}			
+	}
 		// Hide it AFTER the action was triggered
 	$(".custom-menu").hide(100);
 });
@@ -45,9 +45,6 @@ $(".custom-menu li").click(function(){
 $('.submit').click(function(){
 	$.post('/employees/deleteEmployee', {
 		eID: eID
-	}, function(){
-		alert('delete success!');
-		window.location.reload();
 	});
 });
 
@@ -76,13 +73,18 @@ $('.ui.checkbox input').click(function(event){
 })
 
 $('#delete-payslip-button').click(function(){
-	var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
-		return $(element).data('an');
-	});
-	//- console.log(checkboxes);
-	sendAjax(checkboxes, '/deletePaySlip', function(){
-		console.log('process success');
-		window.location.reload();
+	$('#confirm-delete-modal').modal('show');
+
+	$('.submit#delete').click(function(){
+		var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
+			return $(element).data('an');
+		});
+		sendAjax(checkboxes, '/deletePaySlip', function(){
+			$('#alert-delete-modal').modal('show');
+			$('.submit#delete-alert').click(function(){
+				window.location.reload();
+			});
+		});
 	});
 });
 
