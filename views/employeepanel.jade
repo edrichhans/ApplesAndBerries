@@ -70,16 +70,23 @@ block content
 		//- .fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
 		//- 	button.ui.button.right.floated.column#print-employee-button Print
 
-	.ui.small.modal
+	.ui.small.modal#confirm-delete-modal
 		.header Confirm
 		.content
-			| Confirm Delete Employee
+			| Confirm Unhiring Employee
 		.actions
 			.ui.positive.submit.right.button#delete OK
 			.ui.red.right.cancel.button Cancel
 
+	.ui.small.modal#alert-delete-modal
+		.header Success
+		.content
+			| Unhiring Employee Successful
+		.actions
+			.ui.positive.submit.right.button#delete-alert OK
+
 	script(type='text/javascript', src='/javascripts/sorttable.js')
-	//- script(type='text/javascript', src='/javascripts/employeepanel.js')
+	//- /*script(type='text/javascript', src='/javascripts/employeepanel.js')*/
 
 	script(type='text/javascript').
 		var eID = -1;
@@ -118,7 +125,7 @@ block content
 					window.location = '/employees/editEmployee?eID=' + eID;
 					break;
 				case "delete":
-					$('.small.modal').modal('show');
+					$('#confirm-delete-modal').modal('show');
 					break;
 			}
 			$(".custom-menu").hide(100);
@@ -129,8 +136,10 @@ block content
 			$.post('/employees/deleteEmployee', {
 				eID: eID
 			}, function(){
-				alert('delete success!');
-				window.location.reload();
+				$('#alert-delete-modal').modal('show');
+					$('.submit#delete-alert').click(function(){
+						window.location.reload();
+					});
 			});
 		});
 
@@ -151,6 +160,7 @@ block content
 			$('form#selectEmployee').addClass('hide');
 			$('form#editEmployee').removeClass('hide');
 		});
+
 
 	script(type='text/css').
 		#add-employee-button{

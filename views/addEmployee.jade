@@ -54,7 +54,7 @@ block content
 			.ui.error.message
 			.ui.primary.button#confirm Submit
 
-			.ui.small.modal
+			.ui.small.modal#confirm-add-modal
 				.header Confirm
 				.content
 					| Confirm Add Employee
@@ -62,8 +62,16 @@ block content
 					.ui.positive.submit.right.button OK
 					.ui.red.right.cancel.button Cancel
 
+			// Alert Message
+			.ui.small.modal#success
+				.header Add Successful
+				.content
+					| Add Employee Successful
+				.actions
+					.ui.positive.submit.right.button#add-alert OK
+
 		script(type='text/javascript' src='/javascripts/scripts.js')
 		script.
 			$('#confirm').click(function(){
-				$('.small.modal').modal('show');
+				$('#confirm-add-modal').modal('show');
 			});

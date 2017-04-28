@@ -35,9 +35,9 @@
 					window.location = '/employees/editEmployee?eID=' + eID;
 					break;
 				case "delete":
-					$('.small.modal').modal('show');
+					$('#confirm-delete-modal').modal('show');
 					break;
-			}			
+			}
 			$(".custom-menu").hide(100);
 		});
 
@@ -46,8 +46,10 @@
 			$.post('/employees/deleteEmployee', {
 				eID: eID
 			}, function(){
-				alert('delete success!');
-				window.location.reload();
+				$('#alert-delete-modal').modal('show');
+				$('.submit#delete-alert').click(function(){
+					window.location.reload();
+				});
 			});
 		});
 
