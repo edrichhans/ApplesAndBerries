@@ -1,0 +1,1 @@
+forever -l forever.log -e err.log -v app.js
