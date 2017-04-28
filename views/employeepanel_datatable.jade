@@ -1,0 +1,169 @@
+extends layout
+
+
+link(rel='stylesheet', type='text/css', href='/stylesheets/dataTables.semanticui.min.css')
+
+block content
+	title EmployeePanel
+	ul.custom-menu
+		li(data-action="edit") Edit
+		li(data-action="delete") Un-hire
+	.ui.middle.center.aligned.grid.stackable.doubling
+		// Title
+		.fourteen.wide.column.row#menu-row
+			.ui.center.aligned.container
+				h1.ui.dividing.header.center.aligned Employees
+
+		// buttons
+		.ui.container.right.aligned
+			.search-bar.ui.action.input
+				input(type='text', placeholder='Search...')
+				button.ui.basic.circular.icon.button
+					i.search.icon
+			button#add-employee-button.ui.basic.circular.icon.button(onclick="location.replace('/employees/add')")
+				i.add.user.icon
+			//- button#edit-AR-button.ui.basic.circular.icon.button
+			//- 	i.edit.icon
+			//- button#delete-AR-button.ui.basic.circular.icon.button
+			//- 	i.trash.outline.icon
+
+		//- .row.button-row
+		//- 	button#add-employee-button.ui.basic.icon.button(onclick="location.replace('/employees/add')") Add Employee   
+		//- 		i.add.user.icon
+		//Table Proper
+		.ui.container
+			.ui.segment.row
+				.view-table
+					table#employee-view-table.ui.table.selectable
+								thead
+									tr(style="background-color: #")
+										th
+											.ui.master.checkbox
+												input(type="checkbox", name="employee-master-checkbox")
+												label
+										th eID
+										th Name
+										th Start Date
+										th Birthday
+										th Position
+										th Status
+										th Dependents
+										th Salary
+								tbody
+									for employee in employees
+										tr.employee
+											td
+												.ui.checkbox
+													input(type="checkbox", name="employee-checkbox")
+													label
+											td(data-eid=employee.eID)= employee.eID
+											td= employee.name
+											td= employee.startDate
+											td= employee.birthday
+											if employee.position == 0
+												td Teacher
+											else if employee.position == 1
+												td Admin
+											else if employee.position == 2
+												td Staff
+											if employee.status == 0
+												td Single
+											else if employee.status == 1
+												td Marries
+											td= employee.dependents
+											td= employee.salary
+		
+
+
+		//PRINT BUTTON
+		.ui.container
+			button.ui.button.right.floated.column.center.aligned#print-employee-button Print  
+				i.print.icon
+		//- //PRINT BUTTON
+		//- .fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
+		//- 	button.ui.button.right.floated.column#print-employee-button Print
+
+	.ui.small.modal
+		.header Confirm
+		.content
+			| Confirm Delete Employee
+		.actions
+			.ui.positive.submit.right.button#delete OK
+
+	//- script(type='text/javascript', src='/javascripts/sorttable.js')
+	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+	
+	//- script(type='text/javascript', src='/javascripts/employeepanel.js')
+
+	script(type='text/javascript').
+		var eID = -1;
+		// Trigger action when the contexmenu is about to be shown
+		$('tr').on("contextmenu", function (event) {
+			eID = parseInt($(this).children('td').eq(1).attr('data-eid'));
+			// Avoid the real one
+			event.preventDefault();
+			// Show contextmenu
+			$(".custom-menu").finish().toggle(100).
+			// In the right position (the mouse)
+			css({
+				top: event.pageY - 13 + "px",
+				left: event.pageX + "px"
+			});
+		});
+
+
+		// If the document is clicked somewhere
+		$(document).bind("mousedown", function (e) {
+			// If the clicked element is not the menu
+			if (!$(e.target).parents(".custom-menu").length > 0) {
+				// Hide it
+				e.preventDefault();
+				$(".custom-menu").hide(100);
+			}
+		});
+
+
+		// If the menu element is clicked
+		$(".custom-menu li").click(function(){
+			// This is the triggered action name
+			switch($(this).attr("data-action")) {
+				// A case for each action. Your actions here
+				case "edit":
+					window.location = '/employees/editEmployee?eID=' + eID;
+					break;
+				case "delete":
+					$('.small.modal').modal('show');
+					break;
+			}			
+			$(".custom-menu").hide(100);
+		});
+
+		$('.submit#delete').click(function(){
+			//- console.log(eID);
+			$.post('/employees/deleteEmployee', {
+				eID: eID
+			}, function(){
+				alert('delete success!');
+				window.location.reload();
+			});
+		});
+
+		$(document).ready(function(){
+			$('#employee-view-table').DataTable();
+
+			var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
+			console.log("em", employee);
+			employee = employee[0];
+
+			$('input#eID').val(employee.eID);
+			$('input#inputName').val(employee.name);
+			$('input#inputStartDate').val(employee.startDate);
+			$('input#inputBirthday').val(employee.birthday);
+			$('select#selectPosition').val((employee.position).toString()).change();
+			$('select#selectStatus').val((employee.status).toString()).change();
+			$('input#inputDependents').val(employee.dependents);
+			$('input#inputBaseSalary').val(employee.salary);
+
+			$('form#selectEmployee').addClass('hide');
+			$('form#editEmployee').removeClass('hide');
+		});

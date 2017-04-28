@@ -13,6 +13,10 @@ block content
 
 		// buttons
 		.ui.container.right.aligned
+			.search-bar.ui.action.input
+				input(type='text', placeholder='Search...')
+				button.ui.basic.circular.icon.button
+					i.search.icon
 			button#add-payslip-button.ui.basic.circular.icon.button(onclick="location.replace('/payslip')")
 				i.plus.icon
 			button#edit-payslip-button.ui.basic.circular.icon.button
@@ -22,59 +26,65 @@ block content
 
 		// Table Proper
 		.ui.container
-			.ui.segment.row
-				.view-table
-					table#payslip-view-table.ui.table.sortable.selectable
-						thead
-							tr
-								th
-									.ui.master.checkbox
-										input(type="checkbox", name="employee-master-checkbox")
-										label
-								th AN
-								th Issued By
-								th eID
-								th Name
-								th Base Salary
-								th Start Date
-								th End Date
-								//- th Deductibles
-								//- th Amount
-								//- th Allowance
-								//- th Amount
-								//- th PhilHealth
-								//- th SSS
-								//- th HDMF
-								//- th ER PhilHealth
-								//- th ER SSS
-								//- th ER HDMF
-								//- th BIR Tax
-								th Net
-						tbody
-							each item, index in transactions
-								tr.entry(data-an= item.adviceNumber)
-									td
-										.ui.checkbox
-											input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
-											label
-									td= item.adviceNumber
-									td= item.issuedBy
-									td.eID(value=item.eID)= item.eID
-									td= item.startDate
-									td.endDate= item.endDate
-									//- td= item.deductibles_name
-									//- td= item.deductibles
-									//- td= item.allowance_name
-									//- td= item.allowance
-									//- td= item.PHreduc
-									//- td= item.SSSreduc
-									//- td= item.HDMFreduc
-									//- td= item.EmployerPH
-									//- td= item.EmployerSSS
-									//- td= item.EmployerHDMF
-									//- td= item.BIR
-									td= item.total
-
+			table#payslip-view-table.ui.table.sortable.selectable
+				thead
+					tr
+						th
+							.ui.master.checkbox
+								input(type="checkbox", name="employee-master-checkbox")
+								label
+						th AN
+						//- th Issued By
+						//- th eID
+						th Name
+						th Base Salary
+						th Start Date
+						th End Date
+						th Deductibles
+						//- th Amount
+						th Allowance
+						//- th Amount
+						th PhilHealth
+						th SSS
+						th HDMF
+						//- th ER PhilHealth
+						//- th ER SSS
+						//- th ER HDMF
+						th BIR Tax
+						th Net
+				tbody
+					each item, index in transactions
+						tr.entry(data-an= item.adviceNumber)
+							td
+								.ui.checkbox
+									input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
+									label
+							//- td= item.adviceNumber
+							//- td= item.issuedBy
+							td.eID(value=item.eID)= item.eID
+							td= item.startDate
+							td.endDate= item.endDate
+							//- td= item.deductibles_name
+							td
+								each i, index in item.deductibles
+									if index != 0
+										br
+									=i
+							//- td= item.allowance_name
+							td
+								each i, index in item.allowance
+									if index != 0
+										br
+									=i
+							td= item.PHreduc
+							td= item.SSSreduc
+							td= item.HDMFreduc
+							//- td= item.EmployerPH
+							//- td= item.EmployerSSS
+							//- td= item.EmployerHDMF
+							td= item.BIR
+							td= item.total
+					
 		//PRINT BUTTON
 		.ui.container
 			button.ui.button.right.floated.column.center.aligned#print-payslip-button Print  
@@ -85,84 +95,77 @@ block content
 			//- 	i.file.text.icon
 			//- 	| View Data
 			.ui.icon.header
-				h1
-					| View Data
+				h1 View Data
 			.content
 				.ui.grid
 					.one.wide.column.right-align
-						| AN:
+						b AN:
 					.two.wide.column
 						#AN.div-underline.center-align
 							span.center-align
 					.two.wide.column.right-align
-						| Name: 
+						b Name: 
 					.four.wide.column
 						#name.div-underline.center-align
 							span.center-align
 					.three.wide.column.right-align
-						| Date Issued:
+						b Date Issued:
 					.four.wide.column
 						#dateToday.div-underline.center-align
 							span.center-align
-
 					.two.wide.column.right-align
-						| Company: 
-					.fourteen.wide.column
+						b Company: 
+					.six.wide.column
 						#company.div-underline
 							span.indent
 					.two.wide.column.right-align
-						| Date Start:
+						b Gross:
+					.six.wide.column
+						#gross.div-underline
+							span.indent
+					.two.wide.column.right-align
+						b Date Start:
 					.five.wide.column
 						#dateStart.div-underline.center-align
 							span.center-align
 					.three.wide.column.right-align
-						| Date End:
+						b Date End:
 					.six.wide.column
 						#dateEnd.div-underline.center-align
 							span.center-align
 					.two.wide.column.right-align
-						| Gross:
-					.fourteen.wide.column
-						#gross.div-underline
-							span.indent
-					.two.wide.column.right-align
-						| PhilHealth:
+						b PhilHealth:
 					.two.wide.column
 						#philHealth.div-underline
 							span.indent-1
 					.one.wide.column.right-align
-						| SSS:
+						b SSS:
 					.three.wide.column
 						#SSS.div-underline.center-align
 							span
 					.two.wide.column.right-align
-						| HDMF:
+						b HDMF:
 					.two.wide.column
 						#HDMF.div-underline.center-align
 							span
 					.one.wide.column.right-align
-						| BIR:
+						b BIR:
 					.three.wide.column
 						#BIR.div-underline.center-align
 							span
-
-					.four.wide.column
-						h3
-							b
-								| FOR EMPLOYERS:
-					.two.wide.column.right-align
-						| PhilHealth:
-					.two.wide.column
+					.three.wide.column.right-align
+						b PhilHealth ER:
+					.three.wide.column
 						#philHealthER.div-underline
 							span.indent-1
-					.one.wide.column.right-align
-						| SSS:
+					.two.wide.column.right-align
+						b SSS ER:
 					.three.wide.column
 						#SSSER.div-underline.center-align
 							span
 					.two.wide.column.right-align
-						| HDMF:
-					.two.wide.column
+						b HDMF ER:
+					.three.wide.column
 						#HDMFER.div-underline.center-align
 							span
 					.eight.wide.column
@@ -181,17 +184,17 @@ block content
 							tbody
 					br
 					.four.wide.right.floated.column
-						| Total: 
+						b Total: 
 						#total.div-underline
 							span
 			.actions
 				.ui.green.ok.inverted.button
 					i.checkmark.icon
-					| Done
+					b Done
 
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};
 		var transactions =!{JSON.stringify(transactions)};
-	script(type='text/javascript', src='/javascripts/sorttable.js')
+	//- script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(src='javascripts/table.js')
 	script(type='text/javascript', src='/javascripts/payslip_view.js')

@@ -29,10 +29,17 @@ block content
 
 			.field
 				label Particulars
-				select(name="particulars").ui.fluid.search.selection.dropdown#particularsDropdown
-					option(value="") Choose Particulars
-					for particular in metadata.items
-						option(value=particular)= particular
+				.ui.search.selection.dropdown#particularsDropdown
+					input(type='hidden', name='particulars')
+					i.dropdown.icon
+					.default.text
+						| Choose Particulars
+					.menu
+						for particular in metadata.items
+							.item(data-value=particular)= particular
+						.ui.left.icon.input
+							i.add.icon
+							input#addParticulars(type='text', name='add', placeholder='Add New')
 
 			.ui.modal
 				i.close.icon

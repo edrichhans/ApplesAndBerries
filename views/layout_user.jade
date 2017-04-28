@@ -20,7 +20,8 @@ html
 					.header.item(href="/")
 						img.logo(src='/images/Logo.png')
 					a#main-menu-button.header.item(href="/")
-						h5 A&B 
+						i.home.icon
+						h5 A&B
 					.ui.right.floated.item
 						.ui.simple.dropdown.item(class="tabindex=")
 							| Username  
@@ -28,8 +29,8 @@ html
 							i.dropdown.icon
 							.ui.menu
 								a.item(href="/logout")
+									| Sign Out  
 									i.settings.icon
-										| Sign Out
 				#left-menu-container.ui.two.wide.column
 					#fixed-left-menu.ui.fluid.vertical.labeled.icon.menu
 						//- a#flm-employee-module-button.item(href='/employees')

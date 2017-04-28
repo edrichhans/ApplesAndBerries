@@ -4,22 +4,41 @@ html
 		link(rel='stylesheet', type='text/css', href='/semantic/dist/semantic.min.css')
 		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
 		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
+
+		script(type='text/javascript', src='/javascripts/jquery-1.12.4.js')
+		script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
+		script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+		
+		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
+		
+
 		script(type='text/javascript', src='/javascripts/printThis.js')
 		script(type='text/javascript', src='/bower_components/semantic-ui-calendar/dist/calendar.min.js')
+		
 		link(rel='stylesheet', type='text/css', href='/bower_components/semantic-ui-calendar/dist/calendar.min.css')
 		link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
-
+		link(rel='stylesheet', type='text/css', href='/stylesheets/dataTables.semanticui.min.css')
+		
 		//- https://github.com/mdehoog/Semantic-UI-Calendar3D3E3F
 	body
 		#main-grid.ui.two.column.grid
 			.row
 				#fixed-top-menu.ui.top.inverted.borderless.mini.menu.fixed.fluid
-					a#flm-toggle-button.header.item.sidebar-button
-						i.sidebar.icon
-					.header.item(href="/")
-						img.logo(src='/images/Logo.png')
-					a#main-menu-button.header.item(href="/")
-						h5 A&B 
+					//- a#flm-toggle-button.header.item.sidebar-button
+					//- 	i.sidebar.icon
+					.ui.left.floated.container
+						.header.item(href="/")
+							img.logo(src='/images/Logo.png')
+						//- a#main-menu-button.header.item(href="/")
+						//- 	i.home.icon
+						//- 		h5 A&B 
+						a.header.item(href="/")
+							#main-menu-button
+								i.large.home.icon.h6 A&B
+
+
+							//- button#main-menu-button.ui.basic.icon.button(onclick="location.replace('/')")
+							//- 	i.home.icon A&B
 					.ui.right.floated.item
 						.ui.simple.dropdown.item(class="tabindex=")
 							| Username  
@@ -27,8 +46,8 @@ html
 							i.dropdown.icon
 							.ui.menu
 								a.item(href="/logout")
+									| Sign Out  
 									i.settings.icon
-										| Sign Out
 				#left-menu-container.ui.two.wide.column
 					#fixed-left-menu.ui.fluid.vertical.labeled.icon.menu
 						a#flm-employee-module-button.item(href='/employees')

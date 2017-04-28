@@ -249,6 +249,7 @@ describe("Petty Cash", function(){
 					"name": "Edrich Chua",
 					"date": "March 1, 2017",
 					"amount": [500, 10],
+					"qty": [2, 4],
 					"particulars": ['food', 'loool']
 				})
 			.end(function(err, res){
