@@ -166,7 +166,8 @@ height:100vh; padding: 10 !important;
 
 #fixed-left-menu{
 	height: 100vh;
-	background-color: #F2F2F2;
+	/*background-color: #F2F2F2;*/
+	background-color: #FFF;
 }
 
 #left-menu-container{

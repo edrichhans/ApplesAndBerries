@@ -51,6 +51,8 @@ $('.submit#delete').click(function(){
 });
 
 $(document).ready(function(){
+	$('#employee-view-table').DataTable();
+
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
 	console.log("em", employee);
 	employee = employee[0];
@@ -68,8 +70,3 @@ $(document).ready(function(){
 	$('form#editEmployee').removeClass('hide');
 });
 
-
-$(document).ready(function(){
-	$('#employee-view-table').DataTable();
-});
-	

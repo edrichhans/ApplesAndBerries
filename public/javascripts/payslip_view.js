@@ -1,3 +1,8 @@
+$(document).ready(function(){
+	$('#payslip-view-table').DataTable();
+});
+
+
 var eID = -1;
 // Trigger action when the contexmenu is about to be shown
 $('tr').on("contextmenu", function (event) {
@@ -142,7 +147,5 @@ $('#print-payslip-button').click(function(){
 		});
 	});
 
-$(document).ready(function(){
-	$('#payslip-view-table').DataTable();
-});
+
 	
