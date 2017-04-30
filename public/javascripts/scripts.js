@@ -1,3 +1,7 @@
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 $('#rangestart').calendar({
   type: 'date',
   endCalendar: $('#rangeend')
@@ -15,7 +19,7 @@ $('#startDate').calendar({
 });
 
 $('#add-field').click(function(){
-	$('#pettyCash-particulars').append('<div class="two fields pettyCash-field addition"><div class="field"><label>Particulars</label><div class="ui input particulars-input"><input name="particulars" type="text" placeholder="Name"/></div></div><div class="field"><label>Amount</label><div class="ui input amount-input"><input name="amount" type="number" placeholder="Amount..."/></div></div></div>');
+	$('#pettyCash-particulars').append('<div class="fields pettyCash-field addition"><div class="eight wide field"><label>Particulars</label><div class="ui input particulars-input"><input name="particulars" type="text" placeholder="Name"/></div></div><div class="five wide field"><label>Amount</label><div class="ui input amount-input"><input name="amount" type="number" placeholder="Php"/></div></div><div class="three wide field"><label>Qty</label><div class="ui input qty-input"><input name="qty" type="number" placeholder="Pcs"/></div></div></div>');
 });
 $('#remove-field').click(function(){
 	$('.addition').slice(-1).remove();
@@ -45,17 +49,20 @@ $('.submit').click(function(){
 });
 
 $('#pettyCash-preview').click(function(){
-	var total = 0;
+	var subtotal = 0;
 	$('#name span').text($('#name-input input').val());
 	$('#dateToday span').text($('#date-input input').val());
 	$('.pettyCash-field').each(function(){
-		total += parseFloat($(this).find('.amount-input input').val())
-		$('table#particulars-table tbody').append("<tr><td>" + $(this).find('.particulars-input input').val() + "</td><td>" + $(this).find('.amount-input input').val() + "</td></tr>");
+		var amount = parseFloat($(this).find('.amount-input input').val());
+		var qty = parseFloat($(this).find('.qty-input input').val());
+		var total = amount*qty 
+		subtotal += total;
+		$('table#particulars-table tbody').append("<tr><td>" + $(this).find('.particulars-input input').val() + "</td><td>" + numberWithCommas(amount) + "</td><td>" + numberWithCommas(qty) + "</td><td>" + numberWithCommas(total) + "</td></tr>");
 	});
 	$('#AN span').text(an[0].number);
-	console.log(an[0].number);
+	// console.log(an[0].number);
 
-	$('#total span').text(total);
+	$('#total span').text(numberWithCommas(subtotal));
 
 	$('.ui.modal')
 		.modal({
@@ -84,7 +91,8 @@ $('#AR-preview').click(function(){
 	$('#dateToday span').text($('#date-input input').val());
 	$('#particulars span').text($('#particulars-input input').val());
 	$('#amount span').text($('#amount-input input').val());
-	$('#AN span').text(an.number);
+	console.log(an);
+	$('#AN span').text(an[0].number);
 
 	$('.ui.modal')
 		.modal('setting', 'transition', 'horizontal flip')
@@ -192,7 +200,7 @@ $('#payslip-preview').click(function(){
 		$('.allowance').each(function(){
 			$('table#allowance-table tbody').append('<tr><td>'+ $(this).find(".allowance-name input").val() +'</td><td>'+ $(this).find(".allowance-amount input").val() +'</td></tr>')
 		})
-		$('#total span').text(total);
+		$('#total span').text(total.toFixed(2));
 	}
 	else{
 		$('#total span').text(employee[0].salary);

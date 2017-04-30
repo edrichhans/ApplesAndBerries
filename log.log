@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {"level":"info","message":"Employee added","timestamp":"2017-03-29T13:00:03.322Z"}
 {"issuedBy":"edrichhans","issuedTo":"6","level":"info","message":"Payslip Issued","timestamp":"2017-03-29T13:19:34.660Z"}
 {"level":"info","message":"Employee added","timestamp":"2017-03-29T13:27:58.301Z"}
@@ -951,3 +952,5 @@
 {"issuedBy":"edrichhans","level":"info","message":"SSS Updated!","timestamp":"2017-04-28T09:23:12.557Z"}
 {"issuedBy":"edrichhans","level":"info","message":"PhilHealth Updated!","timestamp":"2017-04-28T09:23:53.006Z"}
 {"issuedBy":"edrichhans","level":"info","message":"SSS Updated!","timestamp":"2017-04-28T09:24:04.533Z"}
+=======
+>>>>>>> 3bcd0bcfaf028c64cdaaeb9244ef75a66add3587

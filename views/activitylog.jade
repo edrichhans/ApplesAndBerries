@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  title Activity Log
+  .ui.middle.center.aligned.grid.stackable.doubling
+    // Title
+    .seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:0;")
+      .section-title.ui.center.aligned.segment(style="margin-bottom:0;")
+        h1 Logs
+
+    // Table Proper
+    .ui.raised.segment.row
+      .ui.container.view-table
+        table#payslip-view-table
+          thead
+            tr
+              th Item No.
+              th Timestamp
+              th IssuedBy
+              th IssuedTo
+              th Level
+              th Message
+
+          tbody
+            each entry, index in logs
+              tr
+                td= index
+                td= entry.timestamp
+                td= entry.issuedBy
+                td= entry.issuedTo
+                td= entry.level
+                td= entry.message
+
+  script(type='text/javascript').
+    var logs =!{JSON.stringify(logs)};
+  script(src='javascripts/table.js')

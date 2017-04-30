@@ -322,7 +322,8 @@ router.get('/SSS', function(req, res){
 
 router.get('/report', function(req, res){
 	reportRoute.report(req, res).then(r => {
-		res.redirect('/download');
+		res.redirect('/');
+		// res.send(200);
 	})
 	.catch(err => {
 		res.json({error: err})
@@ -336,7 +337,6 @@ router.get('/download', function(req, res, next){
 	res.download(p);
 	return;
 });
-
 
 router.get('/indexFinancials', function(req, res, next){
 	res.render('indexFinancials');
@@ -355,40 +355,3 @@ router.get('/activity_log', function(req, res, next){
 });
 
 module.exports = router;
-
-//========================================================
-// router.get('/createPhilHealthTable', function(req, res, next){
-// 	var db = req.db;
-// 	var PHTable = db.get("PhilHealth");
-// 	for(i = 1; i < 29; i++){
-// 		PHTable.insert({
-// 			"bracket": i,
-// 			"range": {"from": 7000+1000*i, "to": 7999+1000*i},
-// 			"base": 7000+1000*i,
-// 			"premium": 175+25*i,
-// 			"share": (175+25*i)/2
-// 		});
-// 	}
-// 	res.redirect('/');
-// });
-// router.get('/createSSSTable', function(req, res, next){
-// 	var db = req.db;
-// 	var SSSTable = db.get("SSS");
-// 	function getEC(credit){
-// 		if(credit >= 15000){
-// 			return 30;
-// 		}
-// 		else return 10;
-// 	}
-// 	for(i = 1; i < 31; i++){
-// 		SSSTable.insert({
-// 			"range": {"from": 750+500*i, "to": 1249.99+500*i},
-// 			"credit": 1000+500*i,
-// 			"totalER": (Math.round((1000+500*i)*0.7366666666666666666666)/10 + getEC(1000+500*i)).toFixed(2),
-// 			"totalEE": (Math.round((1000+500*i)*0.3633333333333333333333)/10).toFixed(2),
-// 			"EC": getEC(1000+500*i),
-// 			"total": (1000+500*i)*0.11 + getEC(1000+500*i)
-// 		});
-// 	}
-// 	res.redirect('/');
-// });

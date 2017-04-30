@@ -2,6 +2,7 @@ body{
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 	/*background-color: #787554 !important;*/
 	/*background*//*-color: #FFEAEA;*/
+	/*background-image: url('/public/images/landing_bg.jpg');*/
 	background-color:#F2F2F2; /*Google Drive gray*/
 
 	height: 100vh !important;
@@ -141,6 +142,9 @@ height:100vh; padding: 10 !important;
 
 /*==============================================layout.jade*/
 
+.search-bar.ui.action.input{
+	margin-right:2vh;
+}
 /*.ui.basic.button:focus, .ui.basic.button:hover, .ui.basic.buttons .button:focus, .ui.basic.buttons .button:hover {
 	background: #966A6A !important;
 

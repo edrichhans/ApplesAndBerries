@@ -17,6 +17,9 @@ var sendAjax = function(values, link, success_function){
 	});
 }
 
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 $('#print-petty-cash-button').click(function(){
 	$('table').printThis({
@@ -43,4 +46,8 @@ $('#delete-petty-cash-button').click(function(){
 			console.log('process success');
 		});
 	});
+});
+
+$(document).ready(function(){
+	$('#petty-cash-view-table').DataTable();
 });

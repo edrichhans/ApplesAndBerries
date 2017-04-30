@@ -40,3 +40,7 @@ $('#delete-AR-button').click(function(){
 		});
 	});
 });
+
+$(document).ready(function(){
+	$('#AR-view-table').DataTable();
+});

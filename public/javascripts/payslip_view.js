@@ -98,7 +98,7 @@ $('tr.entry').click(function(){
 		console.log(data.data);
 		$('#AN span').text(data.data[0].adviceNumber);
 		$('#name span').text(data.data[1].name);
-		$('#dateToday span').text(data.data[0].dateIssued);
+		$('#dateToday span').text((data.data[0].dateIssued).substring(0,10));
 		$('#company span').text(data.data[0].company);
 		$('#dateStart span').text(data.data[0].startDate);
 		$('#dateEnd span').text(data.data[0].endDate);
@@ -139,7 +139,11 @@ $('.ui.modal.view')
 });
 
 $('#print-payslip-button').click(function(){
-		$('table#payslip-view-table').printThis({
-			header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 25%;' src='images/header.png'></img></div>"
-		});
+	$('table#payslip-view-table').printThis({
+		header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 25%;' src='images/header.png'></img></div>"
 	});
+});
+
+$(document).ready(function(){
+	$('#payslip-view-table').DataTable();
+});

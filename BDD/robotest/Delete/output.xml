@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170418 00:27:58.298" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\AF\Documents\CS Subjects\CS 192\Project\BDD\robotest\Delete\PCdelete.robot" id="s1" name="PCdelete">
+<test id="s1-t1" name="Check Delete PC Status">
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170418 00:27:58.425" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170418 00:28:08.265" starttime="20170418 00:27:58.425"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170418 00:28:09.414" starttime="20170418 00:28:08.265"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170418 00:28:09.414" starttime="20170418 00:28:09.414"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170418 00:28:09.415" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170418 00:28:10.473" starttime="20170418 00:28:09.415"></status>
+</kw>
+<status status="PASS" endtime="20170418 00:28:10.473" starttime="20170418 00:28:09.414"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170418 00:28:10.474" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170418 00:28:11.478" starttime="20170418 00:28:10.474"></status>
+</kw>
+<status status="PASS" endtime="20170418 00:28:11.478" starttime="20170418 00:28:10.474"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170418 00:28:11.479" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170418 00:28:12.794" starttime="20170418 00:28:11.478"></status>
+</kw>
+<status status="PASS" endtime="20170418 00:28:12.794" starttime="20170418 00:28:11.478"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Apples and Berries Payroll System</arg>
+</arguments>
+<status status="PASS" endtime="20170418 00:28:13.348" starttime="20170418 00:28:12.794"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170418 00:28:13.656" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170418 00:28:13.656" starttime="20170418 00:28:13.348"></status>
+</kw>
+<status status="PASS" endtime="20170418 00:28:13.656" starttime="20170418 00:27:58.424"></status>
+</kw>
+<kw name="Go To PC Panel">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>petty-cash-module-button</arg>
+</arguments>
+<msg timestamp="20170418 00:28:13.657" level="INFO">Clicking element 'petty-cash-module-button'.</msg>
+<status status="PASS" endtime="20170418 00:28:17.009" starttime="20170418 00:28:13.657"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170418 00:28:17.334" starttime="20170418 00:28:17.009"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170418 00:28:17.640" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170418 00:28:17.640" starttime="20170418 00:28:17.334"></status>
+</kw>
+<status status="PASS" endtime="20170418 00:28:17.640" starttime="20170418 00:28:13.657"></status>
+</kw>
+<kw name="Delete PC Entry">
+<kw name="Select Checkbox" library="Selenium2Library">
+<doc>Selects checkbox identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//table[@id="petty-cash-view-table"]/tbody/tr/td/div/input</arg>
+</arguments>
+<msg timestamp="20170418 00:28:17.641" level="INFO">Selecting checkbox 'xpath=//table[@id="petty-cash-view-table"]/tbody/tr/td/div/input'.</msg>
+<status status="PASS" endtime="20170418 00:28:19.853" starttime="20170418 00:28:17.641"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>delete-pettyCash-button</arg>
+</arguments>
+<msg timestamp="20170418 00:28:19.853" level="INFO">Clicking element 'delete-pettyCash-button'.</msg>
+<status status="PASS" endtime="20170418 00:28:23.997" starttime="20170418 00:28:19.853"></status>
+</kw>
+<status status="PASS" endtime="20170418 00:28:23.997" starttime="20170418 00:28:17.641"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170418 00:28:24.303" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170418 00:28:24.303" starttime="20170418 00:28:23.997"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170418 00:28:27.708" starttime="20170418 00:28:24.304"></status>
+</kw>
+<status status="PASS" endtime="20170418 00:28:27.709" critical="yes" starttime="20170418 00:27:58.423"></status>
+</test>
+<doc>A test suite with a single test for deleting a Petty Cash entry.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" endtime="20170418 00:28:27.726" starttime="20170418 00:27:58.301"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="PCdelete" pass="1">PCdelete</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20170418 00:27:58.293" level="ERROR">Error in file 'C:\Users\AF\Documents\CS Subjects\CS 192\Project\BDD\robotest\Delete\PCdelete.robot': Non-existing setting 'Suite'.</msg>
+</errors>
+</robot>

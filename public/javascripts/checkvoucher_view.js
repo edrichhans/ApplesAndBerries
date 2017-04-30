@@ -39,3 +39,9 @@ $('#print-check-voucher-button').click(function(){
 		header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 20%;' src='images/header.png'></img></div>"
 	});
 });
+
+
+$(document).ready(function(){
+	$('#check-voucher-view-table').DataTable();
+});
+
