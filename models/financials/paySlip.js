@@ -282,6 +282,8 @@ exports.thirteenth = function(req, res, callBack){
 	var adviceNumbers = db.get('adviceNumbers');
 	var m_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	var paySlip = db.get('paySlip');
+	var startDate = req.body.startDate;
+	var endDate = req.body.endDate;
 
 	var issuedBy = req.session.username;
 
@@ -304,9 +306,11 @@ exports.thirteenth = function(req, res, callBack){
 		var months = dateIssued.getMonth() - m_names.indexOf(date[0]);
 		var years = dateIssued.getFullYear() - parseInt(date[2]);
 
-		var diff = years + months;
+		var diff = Math.abs(years + months);
 
 		var total = employee.salary/12 * thirteenthMonth(diff);
+		console.log('DIFF', diff);
+		// console.log();
 
 		paySlip.insert({
 			"eID": eID,
@@ -316,6 +320,8 @@ exports.thirteenth = function(req, res, callBack){
 			"company": company,
 			"deductibles": 0,
 			"allowance": 0,
+			"startDate": startDate,
+			"endDate": endDate,
 			"PHreduc": 0,
 			"SSSreduc": 0,
 			"HDMFreduc": 0,
@@ -484,6 +490,8 @@ exports.editThirteenth = function(req, res, callBack){
 	var currentAdviceNumber = parseInt(req.body.an);
 	var m_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	var paySlip = db.get('paySlip');
+	var startDate = req.body.startDate;
+	var endDate = req.body.endDate;
 
 	var issuedBy = req.session.username;
 
@@ -511,6 +519,8 @@ exports.editThirteenth = function(req, res, callBack){
 			"company": company,
 			"deductibles": 0,
 			"allowance": 0,
+			"startDate": startDate,
+			"endDate": endDate,
 			"PHreduc": 0,
 			"SSSreduc": 0,
 			"HDMFreduc": 0,
