@@ -26,7 +26,7 @@ block content
 					tr
 						th.one.wide
 							.ui.master.checkbox
-								input(type="checkbox", name="cv-master-checkbox")
+								input#cv-master-checkbox(type="checkbox", name="cv-master-checkbox")
 								label
 						th.one.wide AN#
 						th.two.wide Issued By
@@ -39,7 +39,7 @@ block content
 						tr
 							td
 								.ui.checkbox
-									input(type="checkbox", name="cv-checkbox", data-an=item.adviceNumber)
+									input.cv-checkbox(type="checkbox", name="cv-checkbox", data-an=item.adviceNumber)
 									label
 							td= item.adviceNumber
 							td= item.issuedBy

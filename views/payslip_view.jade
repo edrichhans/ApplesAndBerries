@@ -31,7 +31,7 @@ block content
 					tr
 						th
 							.ui.master.checkbox
-								input(type="checkbox", name="employee-master-checkbox")
+								input#payslip-master-checkbox(type="checkbox", name="payslip-master-checkbox")
 								label
 						th AN
 						//- th Issued By
@@ -57,11 +57,11 @@ block content
 						tr.entry(data-an= item.adviceNumber)
 							td
 								.ui.checkbox
-									input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
+									input.payslip-checkbox(type="checkbox", name="payslip-checkbox")
 									label
-							//- td= item.adviceNumber
+							td.eID(value=item.eID)= item.adviceNumber
 							//- td= item.issuedBy
-							td.eID(value=item.eID)= item.eID
+							//- td.eID(value=item.eID)= item.eID
 							td= item.startDate
 							td.endDate= item.endDate
 							//- td= item.deductibles_name

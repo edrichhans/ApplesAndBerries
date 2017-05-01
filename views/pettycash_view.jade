@@ -30,7 +30,7 @@ block content
 					tr
 						th
 							.ui.master.checkbox
-								input(type="checkbox", name="petty-cash-master-checkbox")
+								input#pettycash-master-checkbox(type="checkbox", name="pettycash-master-checkbox")
 								label
 						th.collapsing AN#
 						th.two.wide Issued By
@@ -44,7 +44,7 @@ block content
 						tr
 							td
 								.ui.checkbox
-									input(type="checkbox", name="petty-cash-checkbox", data-an=item.adviceNumber)
+									input.pettycash-checkbox(type="checkbox", name="pettycash-checkbox", data-an=item.adviceNumber)
 									label
 							td= item.adviceNumber
 							td= item.issuedBy

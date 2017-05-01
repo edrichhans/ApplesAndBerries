@@ -1,7 +1,7 @@
-var eID = -1;
+var an = -1;
 // Trigger action when the contexmenu is about to be shown
 $('tr').on("contextmenu", function (event) {
-	eID = parseInt($(this).children('td').eq(1).attr('data-eid'));
+	an = parseInt($(this).attr('data-an'));
 	// Avoid the real one
 	event.preventDefault();
 	// Show contextmenu
@@ -31,7 +31,7 @@ $(".custom-menu li").click(function(){
 	switch($(this).attr("data-action")) {
 		// A case for each action. Your actions here
 		case "edit":
-			window.location = '/employees/editEmployee?eID=' + eID;
+			window.location = '/editPayslip?an=' + an;
 			//- alert($(this).parent().attr('data-eid'));
 			break;
 		//- case "delete":
@@ -40,15 +40,6 @@ $(".custom-menu li").click(function(){
 	}			
 		// Hide it AFTER the action was triggered
 	$(".custom-menu").hide(100);
-});
-
-$('.submit').click(function(){
-	$.post('/employees/deleteEmployee', {
-		eID: eID
-	}, function(){
-		alert('delete success!');
-		window.location.reload();
-	});
 });
 
 var sendAjax = function(values, link, success_function){
@@ -145,4 +136,8 @@ $('#print-payslip-button').click(function(){
 $(document).ready(function(){
 	$('#payslip-view-table').DataTable();
 });
-	
+
+$('#payslip-master-checkbox').change(function(){
+	if(this.checked) $('.payslip-checkbox').attr('checked', true);
+	else $('.payslip-checkbox').attr('checked', false);
+});
