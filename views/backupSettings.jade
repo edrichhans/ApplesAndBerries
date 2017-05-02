@@ -50,18 +50,20 @@ html(lang='en')
             .dropdown
                 button.dropbtn(onclick='myFunction()') Local Backup Frequency
                 #LfreqDropdown.dropdown-content
-                    a(href='#LocalHourly') Hourly
-                    a(href='#LocalDaily') Daily
-                    a(href='#LocalWeekly') Weekly
-                    a(href='#LocalMonthly') Monthly
+                    a(href='/backup/sethourlylocal') Hourly
+                    a(href='/backup/setdailylocal') Daily
+                    a(href='/backup/setweeklylocal') Weekly
+                    a(href='/backup/setmonthlylocal') Monthly
+                    a(href='/backup/deletelocalbackup') No Auto Local Backup
+
         #container
             .dropdown
                 button.dropbtn(onclick='myFunction1()') Cloud Backup Frequency
                 #CfreqDropdown.dropdown-content1
-                    a(href='#CloudHourly') Hourly
-                    a(href='#CloudDaily') Daily
-                    a(href='#CloudWeekly') Weekly
-                    a(href='#CloudMonthly') Monthly
+                    a(href='/backup/sethourlycloud') Hourly
+                    a(href='/backup/setdailycloud') Daily
+                    a(href='/backup/setweeklycloud') Weekly
+                    a(href='/backup/deletecloudbackup') No Auto Cloud Backup
         #container.col
             input(type='button', onclick="location.assign('/backup/backupNow');", value='Cancel')
 
