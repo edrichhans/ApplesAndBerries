@@ -74,6 +74,8 @@ exports.updateBIR = function(req, res, callBack){
 	var metadata = db.get('metadata');
 	var body = req.body;
 
+	console.log("BODY HERE", body);
+
 	for(var i=0;i<body[0][0].hash.length;i++){
 		if(isNaN(parseFloat(body[0][0].hash[i][0]))){
 			callBack(500);

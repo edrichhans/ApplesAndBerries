@@ -1,6 +1,6 @@
 var eID = -1;
 // Trigger action when the contexmenu is about to be shown
-$('tr').on("contextmenu", function (event) {
+$('tr.employee').on("contextmenu", function (event) {
 	eID = parseInt($(this).children('td').eq(1).attr('data-eid'));
 	// Avoid the real one
 	event.preventDefault();
@@ -70,3 +70,19 @@ $(document).ready(function(){
 	$('form#editEmployee').removeClass('hide');
 });
 
+<<<<<<< HEAD
+=======
+
+$(document).ready(function(){
+	$('#employee-view-table').DataTable();
+});
+
+$('#employee-master-checkbox').change(function(){
+	if(this.checked) $('.employee-checkbox').attr('checked', true);
+	else $('.employee-checkbox').attr('checked', false);
+});
+
+$('#print-employee-button').click(function(){
+	$('table#employee-view-table').printThis();
+});
+>>>>>>> 03b84850f8994e457f838d22c8af65ad027e2a57

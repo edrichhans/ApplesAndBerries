@@ -45,3 +45,8 @@ $('#delete-petty-cash-button').click(function(){
 $(document).ready(function(){
 	$('#petty-cash-view-table').DataTable();
 });
+
+$('#pettycash-master-checkbox').change(function(){
+	if(this.checked) $('.pettycash-checkbox').attr('checked', true);
+	else $('.pettycash-checkbox').attr('checked', false);
+});

@@ -32,7 +32,7 @@ block content
 					tr
 						th.one.wide
 							.ui.master.checkbox
-								input(type="checkbox", name="employee-master-checkbox")
+								input#ar-master-checkbox(type="checkbox", name="ar-master-checkbox")
 								label
 						th.one.wide AN
 						th.two.wide Issued By
@@ -45,7 +45,7 @@ block content
 						tr
 							td
 								.ui.checkbox
-									input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
+									input.ar-checkbox(type="checkbox", name="ar-checkbox", data-an=item.adviceNumber)
 									label
 							td= item.adviceNumber
 							td= item.issuedBy

@@ -113,7 +113,7 @@ $('.checkbox#thirteenth').checkbox({
 	onChecked: function(){
 		$('.checkbox#thirteenth input').val(1);
 		$('form').attr('action', '/thirteenth');
-		$('form').attr('name', '/thirteenth');
+		$('form').attr('name', 'thirteenth');
 		$('.allowance').find('input').prop('disabled', true);
 		$('.deductibles').find('input').prop('disabled', true);
 		$('#add-deductibles').addClass('disabled');
@@ -124,7 +124,32 @@ $('.checkbox#thirteenth').checkbox({
 	onUnchecked: function(){
 		$('.checkbox#thirteenth input').val(0);
 		$('form').attr('action', '/payslip');
-		$('form').attr('name', '/payslip');
+		$('form').attr('name', 'payslip');
+		$('.allowance').find('input').prop('disabled', false);
+		$('.deductibles').find('input').prop('disabled', false);
+		$('#add-deductibles').removeClass('disabled');
+		$('#delete-deductibles').removeClass('disabled');
+		$('#add-allowance').removeClass('disabled');
+		$('#delete-allowance').removeClass('disabled');
+	}
+});
+
+$('.checkbox#thirteenth-edit').checkbox({
+	onChecked: function(){
+		$('.checkbox#thirteenth input').val(1);
+		$('form').attr('action', '/editThirteenth');
+		$('form').attr('name', 'thirteenth-edit');
+		$('.allowance').find('input').prop('disabled', true);
+		$('.deductibles').find('input').prop('disabled', true);
+		$('#add-deductibles').addClass('disabled');
+		$('#delete-deductibles').addClass('disabled');
+		$('#add-allowance').addClass('disabled');
+		$('#delete-allowance').addClass('disabled');
+	},
+	onUnchecked: function(){
+		$('.checkbox#thirteenth input').val(0);
+		$('form').attr('action', '/editPayslip');
+		$('form').attr('name', 'editPayslip');
 		$('.allowance').find('input').prop('disabled', false);
 		$('.deductibles').find('input').prop('disabled', false);
 		$('#add-deductibles').removeClass('disabled');
@@ -137,7 +162,7 @@ $('.checkbox#thirteenth').checkbox({
 $('#payslip-preview').click(function(){
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt($('#employeeDropdown').val()); });
 
-	if($('.checkbox#thirteenth input').val() == '0'){
+	if($('.checkbox#thirteenth input').val() == '0' || $('.checkbox#thirteenth-edit input').val() == '0'){
 		var deductibles_sum = 0;
 		var allowance_sum = 0;
 
