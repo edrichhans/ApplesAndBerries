@@ -1,7 +1,7 @@
-var eID = -1;
+var an = -1;
 // Trigger action when the contexmenu is about to be shown
 $('tr').on("contextmenu", function (event) {
-	eID = parseInt($(this).children('td').eq(1).attr('data-eid'));
+	an = parseInt($(this).attr('data-an'));
 	// Avoid the real one
 	event.preventDefault();
 	// Show contextmenu
@@ -31,26 +31,26 @@ $(".custom-menu li").click(function(){
 	switch($(this).attr("data-action")) {
 		// A case for each action. Your actions here
 		case "edit":
-			window.location = '/employees/editEmployee?eID=' + eID;
+			window.location = '/editPayslip?an=' + an;
 			//- alert($(this).parent().attr('data-eid'));
 			break;
 		//- case "delete":
 		//- 	$('.small.modal').modal('show');
 		//- 	break;
-	}			
+	}
 		// Hide it AFTER the action was triggered
 	$(".custom-menu").hide(100);
 });
 
+<<<<<<< HEAD
 $('.submit').click(function(){
 	$.post('/employees/deleteEmployee', {
 		eID: eID
-	}, function(){
-		alert('delete success!');
-		window.location.reload();
 	});
 });
 
+=======
+>>>>>>> 03b84850f8994e457f838d22c8af65ad027e2a57
 var sendAjax = function(values, link, success_function){
 	return $.ajax({
 		url: link,
@@ -76,13 +76,18 @@ $('.ui.checkbox input').click(function(event){
 })
 
 $('#delete-payslip-button').click(function(){
-	var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
-		return $(element).data('an');
-	});
-	//- console.log(checkboxes);
-	sendAjax(checkboxes, '/deletePaySlip', function(){
-		console.log('process success');
-		window.location.reload();
+	$('#confirm-delete-modal').modal('show');
+
+	$('.submit#delete').click(function(){
+		var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
+			return $(element).data('an');
+		});
+		sendAjax(checkboxes, '/deletePaySlip', function(){
+			$('#alert-delete-modal').modal('show');
+			$('.submit#delete-alert').click(function(){
+				window.location.reload();
+			});
+		});
 	});
 });
 
@@ -137,12 +142,16 @@ $('.ui.modal.view')
 });
 
 $('#print-payslip-button').click(function(){
-		$('table#payslip-view-table').printThis({
-			header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 25%;' src='images/header.png'></img></div>"
-		});
+	$('table#payslip-view-table').printThis({
+		header: "<div style='width: 100%; margin: 0 auto;'><img style='width: 25%;' src='images/header.png'></img></div>"
 	});
+});
 
 $(document).ready(function(){
 	$('#payslip-view-table').DataTable();
 });
-	
+
+$('#payslip-master-checkbox').change(function(){
+	if(this.checked) $('.payslip-checkbox').attr('checked', true);
+	else $('.payslip-checkbox').attr('checked', false);
+});

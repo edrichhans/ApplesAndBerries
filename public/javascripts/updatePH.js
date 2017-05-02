@@ -21,9 +21,9 @@ $(document).ready(function(){
 
 	for(var i = 0; i < philHealth.length; i++){
 		if(philHealth[i].range.to != null)
-			$('#PHTable').append('<tr><td><input class="bracket" type="number" value="' + parseFloat(philHealth[i].bracket) + '"></td><td><input class="from" type="number" value="' + parseFloat(philHealth[i].range.from) + '"></td><td><input class="to" type="number" value="' + parseFloat(philHealth[i].range.to) + '"></td><td><input class="base" type="number" value="' + parseFloat(philHealth[i].base) + '"></td><td><input class="premium" type="number" value="' + parseFloat(philHealth[i].premium) + '"></td><td><input class="share" type="number" value="' + parseFloat(philHealth[i].share) + '"></td>');	
+			$('#PHTable').append('<tr><td><input class="bracket" type="number" value="' + parseFloat(philHealth[i].bracket) + '"></td><td><input class="from" type="number" value="' + parseFloat(philHealth[i].range.from) + '"></td><td><input class="to" type="number" value="' + parseFloat(philHealth[i].range.to) + '"></td><td><input class="base" type="number" value="' + parseFloat(philHealth[i].base) + '"></td><td><input class="premium" type="number" value="' + parseFloat(philHealth[i].premium) + '"></td><td><input class="share" type="number" value="' + parseFloat(philHealth[i].share) + '"></td>');
 		else{
-			$('#PHTable').append('<tr><td><input class="bracket" type="number" value="' + parseFloat(philHealth[i].bracket) + '"></td><td><input class="from" type="number" value="' + parseFloat(philHealth[i].range.from) + '"></td><td><input class="to " type="text" value="infinity" disbaled></td><td><input class="base" type="number" value="' + parseFloat(philHealth[i].base) + '"></td><td><input class="premium" type="number" value="' + parseFloat(philHealth[i].premium) + '"></td><td><input class="share" type="number" value="' + parseFloat(philHealth[i].share) + '"></td>');	
+			$('#PHTable').append('<tr><td><input class="bracket" type="number" value="' + parseFloat(philHealth[i].bracket) + '"></td><td><input class="from" type="number" value="' + parseFloat(philHealth[i].range.from) + '"></td><td><input class="to " type="text" value="infinity" disbaled></td><td><input class="base" type="number" value="' + parseFloat(philHealth[i].base) + '"></td><td><input class="premium" type="number" value="' + parseFloat(philHealth[i].premium) + '"></td><td><input class="share" type="number" value="' + parseFloat(philHealth[i].share) + '"></td>');
 		}
 	}
 
@@ -61,7 +61,7 @@ $('#confirmPH').click(function(){
 		var dict = {bracket: parseFloat($(doc).find('.bracket').val()), range: {from: parseFloat($(doc).find('.from').val()), to: parseFloat($(doc).find('.to').val())}, base: parseFloat($(doc).find('.base').val()), premium: parseFloat($(doc).find('.premium').val()), share: parseFloat($(doc).find('.share').val())}
 		values.push(dict);
 	});
+	// $('.small.modal').modal('show');
 	sendAjax(values, "/updatePHComp");
 	console.log(values);
-	$('.small.modal').modal('show');
 });

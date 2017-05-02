@@ -61,5 +61,5 @@ $('#confirmSSS').click(function(){
 	});
 	sendAjax(values, "/updateSSSComp");
 	console.log(values);
-	$('.small.modal').modal('show');
+	// $('.small.modal').modal('show');
 });

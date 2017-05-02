@@ -1,6 +1,6 @@
 var eID = -1;
 // Trigger action when the contexmenu is about to be shown
-$('tr').on("contextmenu", function (event) {
+$('tr.employee').on("contextmenu", function (event) {
 	eID = parseInt($(this).children('td').eq(1).attr('data-eid'));
 	// Avoid the real one
 	event.preventDefault();
@@ -34,9 +34,9 @@ $(".custom-menu li").click(function(){
 			window.location = '/employees/editEmployee?eID=' + eID;
 			break;
 		case "delete":
-			$('.small.modal').modal('show');
+			$('#confirm-delete-modal').modal('show');
 			break;
-	}			
+	}
 	$(".custom-menu").hide(100);
 });
 
@@ -45,8 +45,10 @@ $('.submit#delete').click(function(){
 	$.post('/employees/deleteEmployee', {
 		eID: eID
 	}, function(){
-		alert('delete success!');
-		window.location.reload();
+		$('#alert-delete-modal').modal('show');
+		$('.submit#delete-alert').click(function(){
+			window.location.reload();
+		});
 	});
 });
 
@@ -72,4 +74,12 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('#employee-view-table').DataTable();
 });
-	
+
+$('#employee-master-checkbox').change(function(){
+	if(this.checked) $('.employee-checkbox').attr('checked', true);
+	else $('.employee-checkbox').attr('checked', false);
+});
+
+$('#print-employee-button').click(function(){
+	$('table#employee-view-table').printThis();
+});

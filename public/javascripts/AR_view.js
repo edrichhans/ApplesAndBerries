@@ -25,16 +25,27 @@ $('#print-AR-button').click(function(){
 });
 
 $('#delete-AR-button').click(function(){
-	var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
-		return $(element).data('an');
+	$('#confirm-delete-modal').modal('show');
+
+	$('.submit#delete').click(function(){
+		var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
+			return $(element).data('an');
+		});
+		//- console.log(checkboxes);
+		sendAjax(checkboxes, '/deleteAR', function(){
+			$('#alert-delete-modal').modal('show');
+			$('.submit#delete-alert').click(function(){
+				window.location.reload();
+			});
+		});
 	});
-	//- console.log(checkboxes);
-	sendAjax(checkboxes, '/deleteAR', function(){
-		console.log('process success');
-		window.location.reload();
-	})
 });
 
 $(document).ready(function(){
 	$('#AR-view-table').DataTable();
+});
+
+$('#ar-master-checkbox').change(function(){
+	if(this.checked) $('.ar-checkbox').attr('checked', true);
+	else $('.ar-checkbox').attr('checked', false);
 });

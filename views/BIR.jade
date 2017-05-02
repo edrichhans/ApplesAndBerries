@@ -3,7 +3,7 @@ extends layout
 block content
 	title BIR Update
 	.block-content-container.ui.container
-		form.ui.form#BIR(name='BIR', method='post', action='/updateBIRComp')
+		form.ui.form#BIR(name='updateBIRComp', method='post', action='/updateBIRComp')
 			h2.ui.dividing.header.center.aligned BIR Tax Table
 			.update-table
 				table.ui.celled.mini.table#BIRTable
@@ -20,17 +20,17 @@ block content
 							th 8
 					tbody
 			.ui.container
-				button.ui.button.right.floated.submit#BIRSubmit Submit
-				button.ui.button.right.floated#BIRUpdate Update
+				.ui.button.right.floated.submit#BIRSubmit Submit
+				.ui.button.right.floated#BIRUpdate Update
 		.ui.small.modal
 			.header Confirm
 			.content
 				| Confirm Update?
 			.actions
 				.ui.positive.right.button#confirmBIR OK
+				.ui.red.right.cancel.button Cancel
 
 		script(type='text/javascript', src='/javascripts/updateBIR.js')
 		script(type='text/javascript').
 			var bir =!{JSON.stringify(BIR)};
 			var metadata =!{JSON.stringify(metadata[0])};
-

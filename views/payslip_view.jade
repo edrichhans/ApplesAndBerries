@@ -31,7 +31,7 @@ block content
 					tr
 						th
 							.ui.master.checkbox
-								input(type="checkbox", name="employee-master-checkbox")
+								input#payslip-master-checkbox(type="checkbox", name="payslip-master-checkbox")
 								label
 						th AN
 						//- th Issued By
@@ -57,11 +57,11 @@ block content
 						tr.entry(data-an= item.adviceNumber)
 							td
 								.ui.checkbox
-									input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
+									input.payslip-checkbox(type="checkbox", name="payslip-checkbox")
 									label
-							//- td= item.adviceNumber
+							td.eID(value=item.eID)= item.adviceNumber
 							//- td= item.issuedBy
-							td.eID(value=item.eID)= item.eID
+							//- td.eID(value=item.eID)= item.eID
 							td= item.startDate
 							td.endDate= item.endDate
 							//- td= item.deductibles_name
@@ -84,12 +84,12 @@ block content
 							//- td= item.EmployerHDMF
 							td= item.BIR
 							td= item.total
-					
+
 		//PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-payslip-button Print  
+			button.ui.button.right.floated.column.center.aligned#print-payslip-button Print
 				i.print.icon
-		
+
 		.ui.basic.modal.view
 			//- .ui.icon.header
 			//- 	i.file.text.icon
@@ -104,7 +104,7 @@ block content
 						#AN.div-underline.center-align
 							span.center-align
 					.two.wide.column.right-align
-						b Name: 
+						b Name:
 					.four.wide.column
 						#name.div-underline.center-align
 							span.center-align
@@ -114,7 +114,7 @@ block content
 						#dateToday.div-underline.center-align
 							span.center-align
 					.two.wide.column.right-align
-						b Company: 
+						b Company:
 					.six.wide.column
 						#company.div-underline
 							span.indent
@@ -184,13 +184,28 @@ block content
 							tbody
 					br
 					.four.wide.right.floated.column
-						b Total: 
+						b Total:
 						#total.div-underline
 							span
 			.actions
 				.ui.green.ok.inverted.button
 					i.checkmark.icon
 					b Done
+
+	.ui.small.modal#confirm-delete-modal
+		.header Confirm
+		.content
+			| Confirm Deleting Data
+		.actions
+			.ui.positive.submit.right.button#delete OK
+			.ui.red.right.cancel.button Cancel
+
+	.ui.small.modal#alert-delete-modal
+		.header Success
+		.content
+			| Deleting Data Successful
+		.actions
+			.ui.positive.submit.right.button#delete-alert OK
 
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};

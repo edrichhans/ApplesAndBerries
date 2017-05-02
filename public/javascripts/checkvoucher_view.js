@@ -17,15 +17,21 @@ var sendAjax = function(values, link, success_function){
 	});
 }
 
-$('#delete-checkVoucher-button').click(function(){
-	var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
-		return $(element).data('an');
+$('#delete-CV-button').click(function(){
+	$('#confirm-delete-modal').modal('show');
+
+	$('.submit#delete').click(function(){
+		var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
+			return $(element).data('an');
+		});
+		//- console.log(checkboxes);
+		sendAjax(checkboxes, '/deleteCheckvoucher', function(){
+			$('#alert-delete-modal').modal('show');
+			$('.submit#delete-alert').click(function(){
+				window.location.reload();
+			});
+		});
 	});
-	//- console.log(checkboxes);
-	sendAjax(checkboxes, '/deleteCheckvoucher', function(){
-		console.log('process success');
-		window.location.reload();
-	})
 });
 
 $('#print-check-voucher-button').click(function(){
@@ -39,3 +45,7 @@ $(document).ready(function(){
 	$('#check-voucher-view-table').DataTable();
 });
 
+$('#cv-master-checkbox').change(function(){
+	if(this.checked) $('.cv-checkbox').attr('checked', true);
+	else $('.cv-checkbox').attr('checked', false);
+});

@@ -30,7 +30,7 @@ block content
 					tr
 						th
 							.ui.master.checkbox
-								input(type="checkbox", name="petty-cash-master-checkbox")
+								input#pettycash-master-checkbox(type="checkbox", name="pettycash-master-checkbox")
 								label
 						th.collapsing AN#
 						th.two.wide Issued By
@@ -44,7 +44,7 @@ block content
 						tr
 							td
 								.ui.checkbox
-									input(type="checkbox", name="petty-cash-checkbox", data-an=item.adviceNumber)
+									input.pettycash-checkbox(type="checkbox", name="pettycash-checkbox", data-an=item.adviceNumber)
 									label
 							td= item.adviceNumber
 							td= item.issuedBy
@@ -65,21 +65,26 @@ block content
 									if index != 0
 										br
 									=i[2]
-					
+
 		// PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-petty-cash-button Print  
+			button.ui.button.right.floated.column.center.aligned#print-petty-cash-button Print
 				i.print.icon
 
-	//- script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
-	//- script(type='text/javascript' src='javascripts/scripts.js')
-	//- script(type='text/javascript' src='javascripts/pettycash_view.js')
+	.ui.small.modal#confirm-delete-modal
+		.header Confirm
+		.content
+			| Confirm Deleting Data
+		.actions
+			.ui.positive.submit.right.button#delete OK
+			.ui.red.right.cancel.button Cancel
 
+	.ui.small.modal#alert-delete-modal
+		.header Success
+		.content
+			| Deleting Data Successful
+		.actions
+			.ui.positive.submit.right.button#delete-alert OK
 
-
-	script(type='text/javascript' src='/javascripts/pettycash_view.js')
-	//- script(type='text/javascript', src='/javascripts/jquery-1.12.4.min.js')
-	//- script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
-	//- script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-
-	//- link(rel='stylesheet', type='text/css', href='/stylesheets/dataTables.semanticui.min.css')
+	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+	script(type='text/javascript' src='javascripts/pettycash_view.js')

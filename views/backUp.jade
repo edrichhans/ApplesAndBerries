@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	title Back Up Data
+
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		// Title
+
+		.seven.wide.column.row#menu-row(style="margin-top:7vh; margin-bottom:50;")
+			.section-title.ui.center.aligned.segment
+				h1 Back Up Data
+
+		.four.column.wide.row
+			.column
+				#back-up-local-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/addUser')") // edit later
+					.visible.content
+						.ui.container.main-menu-button
+							h1 Back Up Locally
+					.hidden.content
+						h4 Create a local back up
+			.column
+				#back-up-cloud-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/deleteUser')") // edit later
+					.visible.content
+						.ui.container.main-menu-button
+							h1 Back Up to Cloud
+					.hidden.content
+						h4 Create an online back up
+
+
+		script(type='text/javascript', src='/javascripts/sorttable.js')

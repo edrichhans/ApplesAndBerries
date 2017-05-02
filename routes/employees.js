@@ -42,7 +42,7 @@ router.get('/delete', function(req, res, next){
 
 router.post('/deleteEmployee', function(req, res){
 	editEmployeeRoute.delete(req, res, function(){
-		winston.log('info', 'Employee deleted');		
+		winston.log('info', 'Employee deleted');
 		res.redirect('/');
 	});
 });
@@ -59,7 +59,7 @@ router.post('/editEmployee', function(req, res){
 	editEmployeeRoute.postEdit(req, res, function(err, doc){
 		res.redirect('/');
 		winston.log('info', 'Employee edited');
-		
+
 	});
 });
 
@@ -71,6 +71,10 @@ router.get('/', function(req, res){
 			"employees": doc
 		});
 	});
+});
+
+router.get('/manageUsers', function(req, res, next){
+	res.render('manageUsers');
 });
 
 module.exports = router;

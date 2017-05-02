@@ -1,0 +1,49 @@
+extends layout
+
+block content
+	title Manage Financials
+	// Title
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		// Title
+		.four.wide.column.row#menu-row
+			.ui.center.aligned.segment
+				h1 Manage Financials
+
+		.four.column.wide.row
+			.column
+				#AR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
+
+						h3
+							| Acknowledgment
+							br
+							| Receipt
+					.hidden.content
+						h3
+							| Issue Acknowledgment Receipt
+			.column
+				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
+						h3
+							| Check
+							br
+							| Voucher
+					.hidden.content
+						h3
+							| Issue Check Voucher
+			.column
+				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
+						h3
+							| Petty
+							br
+							| Cash
+					.ui.hidden.content
+						.ui.text.container.fluid
+							h3
+								| Issue Petty Cash
+
+	script(type='text/javascript', src='/javascripts/sorttable.js')
