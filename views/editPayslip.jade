@@ -8,8 +8,9 @@ block content
 			.field
 				i.money.icon.huge.red
 			.field
-				h2.ui.dividing.header Issue Payslip
-		form.ui.form.center2.box#payslip(name='payslip', method='post', action='/payslip')
+				h2.ui.dividing.header Edit Payslip
+		form.ui.form.center2.box#payslip(name='editPayslip', method='post', action='/editPayslip')
+			input#an(type='hidden' name='an')
 			.field
 				label Choose Employee
 				select(name="employeeDropdown").ui.fluid.search.dropdown#employeeDropdown
@@ -30,15 +31,15 @@ block content
 					.ui.calendar#rangestart
 						.ui.input.left.icon
 							i.calendar.icon
-							input(name="startDate", type="text", placeholder="start")
+							input#startDate(name="startDate", type="text", placeholder="start")
 				.field
 					label End Date
 					.ui.calendar#rangeend
 						.ui.input.left.icon
 							i.calendar.icon
-							input(name="endDate", type='text', placeholder="end")
+							input#endDate(name="endDate", type='text', placeholder="end")
 			.field
-				.ui.slider.checkbox#thirteenth
+				.ui.slider.checkbox#thirteenth-edit
 					input(type="checkbox", name="thirteenth", value=0)
 					label 13th month pay?
 
@@ -170,7 +171,49 @@ block content
 		var sss =!{JSON.stringify(sss)};
 		var bir =!{JSON.stringify(bir)};
 		var metadata =!{JSON.stringify(metadata)};
-		var an =!{JSON.stringify(an)};
+	script(type='text/javascript').
+		var paySlip =!{JSON.stringify(paySlip)};
+		function getParameterByName(name, url) {
+			if (!url) {
+				url = window.location.href;
+			}
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+					results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+		var an = {};
+		an.number = getParameterByName('an');
+		$('input#an').val(an.number);
+		var p = $.grep(paySlip, function(e){ return e.adviceNumber === parseInt(an.number); });
+		p = p[0];
+
+		$('#employeeDropdown').val((p.eID).toString()).change();
+		$('#companyDropdown').val((p.company)).change();
+		$('#startDate').val(p.startDate);
+		$('#endDate').val(p.endDate);
+		if(p.startDate === undefined && p.endDate === undefined) $('#thirteenth input').prop('checked', true);
+
+		var i;
+		for(i = 0; i < (p.deductibles_name).length-1; i++){
+			$('.deductibles-name input').last().val((p.deductibles_name)[i]);
+			$('.deductibles-amount input').last().val((p.deductibles)[i]);
+			$('#deductibles-side').before('<div class="field deductibles addition"><div class="two fields"><div class="field"><label>Deductibles</label><div class="ui input deductibles-name"><input name="deductibles_name" type="text" placeholder="Item"></div></div><div class="field"><label>Amount</label><div class="ui input deductibles-amount"><input name="deductibles" type="number" placeholder="Amount..."></div></div></div></div>');
+		}
+		$('.deductibles-name input').last().val((p.deductibles_name)[i]);
+		$('.deductibles-amount input').last().val((p.deductibles)[i]);
+
+		for(i = 0; i < (p.allowance_name).length-1; i++){
+			$('.allowance-name input').last().val((p.allowance_name)[i]);
+			$('.allowance-amount input').last().val((p.allowance)[i]);
+			$('#allowance-side').before('<div class="field allowance addition"><div class="two fields"><div class="field"><label>Allowance</label><div class="ui input allowance-name"><input name="allowance_name" type="text" placeholder="Item"></div></div><div class="field"><label>Amount</label><div class="ui input allowance-amount"><input name="allowance" type="number" placeholder="Amount..."></div></div></div></div>');
+		}
+		$('.allowance-name input').last().val((p.allowance_name)[i]);
+		$('.allowance-amount input').last().val((p.allowance)[i]);
+
+		var employee = $.grep(employees, function(e){ return e.eID === p.eID; });
+		$('#name span').text(employee[0].name);
+
 	script(type='text/javascript' src='javascripts/scripts.js')
-	script.
-		console.log($('#rangestart').calendar('get date'));

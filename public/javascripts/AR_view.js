@@ -44,3 +44,8 @@ $('#delete-AR-button').click(function(){
 $(document).ready(function(){
 	$('#AR-view-table').DataTable();
 });
+
+$('#ar-master-checkbox').change(function(){
+	if(this.checked) $('.ar-checkbox').attr('checked', true);
+	else $('.ar-checkbox').attr('checked', false);
+});

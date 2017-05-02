@@ -45,3 +45,7 @@ $(document).ready(function(){
 	$('#check-voucher-view-table').DataTable();
 });
 
+$('#cv-master-checkbox').change(function(){
+	if(this.checked) $('.cv-checkbox').attr('checked', true);
+	else $('.cv-checkbox').attr('checked', false);
+});

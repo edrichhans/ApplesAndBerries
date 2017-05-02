@@ -39,7 +39,7 @@ block content
 					tr(style="background-color: #")
 						th
 							.ui.master.checkbox
-								input(type="checkbox", name="employee-master-checkbox")
+								input#employee-master-checkbox(type="checkbox", name="employee-master-checkbox")
 								label
 						th eID
 						th Name
@@ -54,7 +54,7 @@ block content
 						tr.employee
 							td
 								.ui.checkbox
-									input(type="checkbox", name="employee-checkbox")
+									input.employee-checkbox(type="checkbox", name="employee-checkbox")
 									label
 							td(data-eid=employee.eID)= employee.eID
 							td= employee.name
@@ -69,7 +69,7 @@ block content
 							if employee.status == 0
 								td Single
 							else if employee.status == 1
-								td Marries
+								td Married
 							td= employee.dependents
 							td= employee.salary
 

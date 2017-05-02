@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {"level":"info","message":"Employee added","timestamp":"2017-03-29T13:00:03.322Z"}
 {"issuedBy":"edrichhans","issuedTo":"6","level":"info","message":"Payslip Issued","timestamp":"2017-03-29T13:19:34.660Z"}
 {"level":"info","message":"Employee added","timestamp":"2017-03-29T13:27:58.301Z"}
@@ -952,5 +951,17 @@
 {"issuedBy":"edrichhans","level":"info","message":"SSS Updated!","timestamp":"2017-04-28T09:23:12.557Z"}
 {"issuedBy":"edrichhans","level":"info","message":"PhilHealth Updated!","timestamp":"2017-04-28T09:23:53.006Z"}
 {"issuedBy":"edrichhans","level":"info","message":"SSS Updated!","timestamp":"2017-04-28T09:24:04.533Z"}
-=======
->>>>>>> 3bcd0bcfaf028c64cdaaeb9244ef75a66add3587
+{"issuedBy":"edrichhans","issuedTo":"80","level":"info","message":"Payslip Edited","timestamp":"2017-04-30T16:50:45.962Z"}
+{"issuedBy":"edrichhans","issuedTo":"80","level":"info","message":"Payslip Edited","timestamp":"2017-04-30T16:51:25.564Z"}
+{"issuedBy":"edrichhans","issuedTo":"80","level":"info","message":"Payslip Edited","timestamp":"2017-05-01T06:09:11.978Z"}
+{"issuedBy":"edrichhans","issuedTo":"80","level":"info","message":"Payslip Edited","timestamp":"2017-05-01T06:09:52.383Z"}
+{"issuedBy":"edrichhans","issuedTo":"80","level":"info","message":"Payslip Edited","timestamp":"2017-05-01T06:12:53.801Z"}
+{"issuedBy":"edrichhans","issuedTo":"80","level":"info","message":"Payslip Edited","timestamp":"2017-05-01T06:21:34.222Z"}
+{"issuedBy":"edrichhans","level":"info","message":"BIR Updated!","timestamp":"2017-05-01T07:34:15.694Z"}
+{"issuedBy":"edrichhans","level":"info","message":"BIR Updated!","timestamp":"2017-05-01T08:39:59.295Z"}
+{"issuedBy":"edrichhans","level":"info","message":"BIR Updated!","timestamp":"2017-05-01T08:40:10.944Z"}
+{"issuedBy":"edrichhans","level":"info","message":"SSS Updated!","timestamp":"2017-05-01T08:40:31.769Z"}
+{"issuedBy":"edrichhans","level":"info","message":"SSS Updated!","timestamp":"2017-05-01T08:40:44.195Z"}
+{"issuedBy":"edrichhans","issuedTo":"12","level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-05-01T09:05:22.700Z"}
+{"issuedBy":"edrichhans","issuedTo":"12","level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-05-01T10:05:59.199Z"}
+{"issuedBy":"edrichhans","issuedTo":"12","level":"info","message":"Thirteenth Month Pay Issued","timestamp":"2017-05-01T10:08:42.466Z"}
