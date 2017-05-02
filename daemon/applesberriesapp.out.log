@@ -9852,3 +9852,86 @@
 [0mGET /backup/backupNow [36m304 [0m38.887 ms - -[0m
 [0mGET /backup [36m304 [0m13.756 ms - -[0m
 [0mGET /backup/backupSettings [36m304 [0m40.482 ms - -[0m
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
