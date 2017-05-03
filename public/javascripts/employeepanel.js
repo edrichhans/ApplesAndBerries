@@ -52,6 +52,11 @@ $('.submit#delete').click(function(){
 
 $(document).ready(function(){
 	$('#employee-view-table').DataTable();
+	// $('.dataTables_filter').addClass('search');
+});
+
+$(document).ready(function(){
+	// $('#employee-view-table').DataTable();
 
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
 	console.log("em", employee);
@@ -70,12 +75,9 @@ $(document).ready(function(){
 	$('form#editEmployee').removeClass('hide');
 });
 
-<<<<<<< HEAD
-=======
 
-$(document).ready(function(){
-	$('#employee-view-table').DataTable();
-});
+
+
 
 $('#employee-master-checkbox').change(function(){
 	if(this.checked) $('.employee-checkbox').attr('checked', true);
@@ -85,4 +87,3 @@ $('#employee-master-checkbox').change(function(){
 $('#print-employee-button').click(function(){
 	$('table#employee-view-table').printThis();
 });
->>>>>>> 03b84850f8994e457f838d22c8af65ad027e2a57
