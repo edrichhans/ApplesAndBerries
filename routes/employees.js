@@ -63,6 +63,7 @@ router.post('/editEmployee', function(req, res){
 	});
 });
 
+////
 router.get('/', function(req, res){
 	var db = req.db;
 	var Employees = db.get("Employees");
