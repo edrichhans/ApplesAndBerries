@@ -47,7 +47,7 @@ describe("Payslip", function(){
 					"allowance_name": ["allowance_name", "b"],
 					"allowance": [1000, 300],
 					"startDate": "March 1, 2017",
-					"endDate": "March 30, 2017",
+					"endDate": "March 30, 2017"
 				})
 			.end(function(err, res){
 				res.should.have.status(200);
@@ -56,8 +56,30 @@ describe("Payslip", function(){
 			financialwinston.info("Success insert to payslip. Response 200");
 		});
 	});
+	describe("Edit paySlip entry given an", function() {
+		it("should edit entry", function(done){
+			financialwinston.info("Editing payslip");
+			chai.request(server)
+			.post('/editPayslip')
+			.send({
+				"employeeDropdown": 11,
+				"companyDropdown": "Berries",
+				"deductibles_name": ["deductibles_name"],
+				"deductibles": [500],
+				"allowance_name": ["allowance_name", "b"],
+				"allowance": [1000, 300],
+				"startDate": "October 1, 2016",
+				"endDate": "October 30, 2016"
+			})
+			.end(function(err, res){
+				res.should.have.status(200);
+			})
+			done();
+		});
+	});
 	describe("Delete paySlip entry given list of advice numbers", function(){
 		it('should delete a signle entry', function(done){
+			financialwinston.info("Deleting payslip");
 			adviceNumbers.find({name: 'paySlip'}).then((adviceNumber) => {
 				console.log('DELETE', adviceNumber[0].number);
 				chai.request(server)
