@@ -12,6 +12,12 @@ a{
 	color: #372B62;
 }
 
+
+.ui.basic.circular.icon.button{
+	background-color: #FFF !important;
+}
+
+
 /*h1{
 	color: #453 !important;
 }*/
