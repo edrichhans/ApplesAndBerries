@@ -1,27 +1,15 @@
-extends layout_user
+extends layout
 
 block content
-	title Main Menu
+	title Manage Financials
 	// Title
 	.ui.middle.aligned.center.aligned.grid.stackable.doubling
 		// Title
 		.four.wide.column.row#menu-row
 			.ui.center.aligned.segment
-				h1 Main Menu 
+				h1 Manage Financials
 
-		// 1st ROW Buttons
 		.four.column.wide.row
-			.column
-				#payslip-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/payslip_view')")
-					.visible.content
-						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/payslip.png")
-						h3
-							| Payslip
-							br
-							| Module
-
-					.hidden.content
-						h3
 			.column
 				#AR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
 					.visible.content
@@ -31,13 +19,9 @@ block content
 							| Acknowledgment
 							br
 							| Receipt
-
 					.hidden.content
 						h3
 							| Issue Acknowledgment Receipt
-							| Issue Payslip
-		// 2nd ROW Buttons
-		.four.column.wide.row
 			.column
 				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
 					.visible.content
@@ -46,11 +30,9 @@ block content
 							| Check
 							br
 							| Voucher
-
 					.hidden.content
 						h3
 							| Issue Check Voucher
-
 			.column
 				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
 					.visible.content
@@ -64,4 +46,4 @@ block content
 							h3
 								| Issue Petty Cash
 
-	//- script(type='text/javascript', src='/javascripts/sorttable.js')
+	script(type='text/javascript', src='/javascripts/sorttable.js')

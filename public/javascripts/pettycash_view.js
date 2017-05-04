@@ -28,23 +28,30 @@ $('#print-petty-cash-button').click(function(){
 });
 
 $('#delete-petty-cash-button').click(function(){
-	var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
-		return $(element).data('an');
-	});
-	//- console.log(checkboxes);
-	sendAjax(checkboxes, '/deletePettycash', function(){
-		console.log('process success');
-		window.location.reload();
-	})
-	.then((data) => {
-		console.log(data);
-		console.log('process success');
+	$('#confirm-delete-modal').modal('show');
+
+	$('.submit#delete').click(function(){
+		var checkboxes = $('.ui.checkbox input:checked').map(function(i, element){
+			return $(element).data('an');
+		});
+		//- console.log(checkboxes);
+		sendAjax(checkboxes, '/deletePettycash', function(){
+			$('#alert-delete-modal').modal('show');
+			$('.submit#delete-alert').click(function(){
+				window.location.reload();
+			});
+		})
+		.then((data) => {
+			console.log(data);
+			console.log('process success');
+		});
 	});
 });
 
 $(document).ready(function(){
 	$('#petty-cash-view-table').DataTable();
 });
+
 
 $('#pettycash-master-checkbox').change(function(){
 	if(this.checked) $('.pettycash-checkbox').attr('checked', true);

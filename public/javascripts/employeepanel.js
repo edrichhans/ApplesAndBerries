@@ -34,9 +34,9 @@ $(".custom-menu li").click(function(){
 			window.location = '/employees/editEmployee?eID=' + eID;
 			break;
 		case "delete":
-			$('.small.modal').modal('show');
+			$('#confirm-delete-modal').modal('show');
 			break;
-	}			
+	}
 	$(".custom-menu").hide(100);
 });
 
@@ -45,18 +45,20 @@ $('.submit#delete').click(function(){
 	$.post('/employees/deleteEmployee', {
 		eID: eID
 	}, function(){
-		alert('delete success!');
-		window.location.reload();
+		$('#alert-delete-modal').modal('show');
+		$('.submit#delete-alert').click(function(){
+			window.location.reload();
+		});
 	});
 });
 
-$(document).ready(function(){
-	$('#employee-view-table').DataTable();
-	// $('.dataTables_filter').addClass('search');
-});
+// $(document).ready(function(){
+// 	$('#employee-view-table').DataTable();
+// 	// $('.dataTables_filter').addClass('search');
+// });
 
 $(document).ready(function(){
-	// $('#employee-view-table').DataTable();
+	$('#employee-view-table').DataTable();
 
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
 	console.log("em", employee);
@@ -74,8 +76,6 @@ $(document).ready(function(){
 	$('form#selectEmployee').addClass('hide');
 	$('form#editEmployee').removeClass('hide');
 });
-
-
 
 
 

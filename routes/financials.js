@@ -112,7 +112,7 @@ router.post('/thirteenth', function(req, res){
 		wlogger.log('info', 'Thirteenth Month Pay Issued', {
 			issuedBy: req.session.username,
 			issuedTo: req.body.employeeDropdown
-		});		
+		});
 		res.redirect('/');
 	});
 });
@@ -193,7 +193,7 @@ router.post('/pettycash', function(req, res){
 		wlogger.log('info', 'Petty Cash Issued', {
 			issuedBy: req.session.username,
 			issuedTo: req.body.name
-		});		
+		});
 		res.redirect('/pettycash');
 	});
 });
@@ -221,7 +221,7 @@ router.post('/AR', function(req, res){
 		wlogger.log('info', 'Acknowledgement Receipt Issued', {
 			issuedBy: req.session.username,
 			issuedTo: req.body.name
-		});		
+		});
 		res.redirect('/AR_view');
 	});
 });
@@ -269,7 +269,7 @@ router.post('/updateSSSComp', function(req, res){
 		else{
 			wlogger.log('info', 'SSS Updated!', {
 				issuedBy: req.session.username,
-			});		
+			});
 			res.redirect('/');
 		}
 	});
@@ -283,7 +283,7 @@ router.post('/updatePHComp', function(req, res){
 		else{
 			wlogger.log('info', 'PhilHealth Updated!', {
 				issuedBy: req.session.username,
-			});		
+			});
 			res.redirect('/');
 		}
 	});
@@ -295,7 +295,7 @@ router.post('/updateBIRComp', function(req, res){
 		else{
 			wlogger.log('info', 'BIR Updated!', {
 				issuedBy: req.session.username
-			});		
+			});
 			res.redirect('/');
 		}
 	});
@@ -377,6 +377,22 @@ router.get('/download', function(req, res, next){
 
 	res.download(p);
 	return;
+});
+
+router.get('/indexFinancials', function(req, res, next){
+	res.render('indexFinancials');
+});
+
+router.get('/updateTables', function(req, res, next){
+	res.render('updateTables');
+});
+
+router.get('/backUp', function(req, res, next){
+	res.render('backUp');
+});
+
+router.get('/activity_log', function(req, res, next){
+	res.render('activity_log');
 });
 
 module.exports = router;

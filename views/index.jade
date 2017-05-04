@@ -7,7 +7,7 @@ block content
 		// Title
 		.four.wide.column.row#menu-row
 			.ui.center.aligned.segment
-				h1 Main Menu 
+				h1 Main Menu
 
 		// 1st ROW Buttons
 		.four.column.wide.row
@@ -26,75 +26,82 @@ block content
 							| Employee
 							br
 							| Management
-					
+
 			.column
 				#payslip-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/payslip_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/payslip.png")
 						h3
-							| Payslip
+							| Issue
 							br
-							| Module
+							| Payslip
 
 					.hidden.content
 						h3
-							| Issue Payslip
+							| Payslip Module
 			.column
-				#control-panel-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/controlpanel')")
+				#control-panel-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/indexFinancials')")
 					.visible.content
-						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/settings.png")
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
 						h3
-							| Control
+							| Manage
 							br
-							| Panel
+							| Financials
 
 					.ui.hidden.content
 						.ui.center.aligned.fluid
 							h3
-								| Update Gov't Fees
+								| Issue Acknowledgment Receipt
 								br
-								| Add User
+								| Issue Check Voucher
 								br
-								| Backup
+								| Issue Petty Cash
+
 		// 2nd ROW Buttons
 		.four.column.wide.row
 			.column
-				#AR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
+				#manage-users-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/manageUsers')")
 					.visible.content
-						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
-
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/employee_white.png")
 						h3
-							| Acknowledgment
+							| Manage
 							br
-							| Receipt
+							| Users
 
 					.hidden.content
 						h3
-							| Issue Acknowledgment Receipt
+							| Add Users
+							br
+							| Delete Users
 			.column
-				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
+				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/updateTables')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
 						h3
-							| Check
+							| Update
 							br
-							| Voucher
+							| Tables
 
 					.hidden.content
 						h3
-							| Issue Check Voucher
-
+							| BIR
+							br
+							| SSS
+							br
+							| PhilHealth
 			.column
-				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
+				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/backUp')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
 						h3
-							| Petty
+							| Back Up
 							br
-							| Cash
+							| Data
 					.ui.hidden.content
 						.ui.text.container.fluid
 							h3
-								| Issue Petty Cash
+							| Back Up Locally
+							br
+							| Back Up to Cloud
 
-	script(type='text/javascript', src='/javascripts/sorttable.js')
+	//- script(type='text/javascript', src='/javascripts/sorttable.js')

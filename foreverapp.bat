@@ -1,1 +1,0 @@
-forever -l forever.log -v app.js

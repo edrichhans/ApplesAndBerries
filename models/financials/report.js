@@ -35,29 +35,35 @@ var check_date = function(arr, inputDate){
 
 var merge_paySlip = function(paySlipWorksheet){
 	var i = 2;
-	var start;
+	var start = i;
 	while(1){
-		var cell_A = paySlipWorksheet.getCell('A' + i.toString()).value;
-		var cell_B = paySlipWorksheet.getCell('B' + i.toString()).value;
-		var cell_R = paySlipWorksheet.getCell('R' + i.toString()).value;
-		if(cell_R == 'Total:'){
+		var cell_A_next = paySlipWorksheet.getCell('A' + (i+1).toString()).value;
+		var cell_B_next = paySlipWorksheet.getCell('B' + (i+1).toString()).value;
+		var cell_R_next = paySlipWorksheet.getCell('R' + (i+1).toString()).value;
+		if(cell_R_next == 'Total:'){
 			console.log('total: ', i);
 			break;
 		}
-		else if(cell_A != null){ //if main entry in row
+		else if(cell_B_next != null || cell_R_next == "Subtotal: 	"){ //if main entry in row
 			//operation here
+			console.log('start: ', start);
 			console.log('main entry: ', i);
-			var last_cell = i-1;
-			paySlipWorksheet.mergeCells('A' + start.toString() + ':H' + last_cell.toString());
-			paySlipWorksheet.mergeCells('M' + start.toString() + ':T' + last_cell.toString());
-			paySlipWorksheet.getRow(start).commit();
-			start = i;
-		}
-		else if(cell_A == null && cell_B != null){ //if date nasa row
-			console.log('date: ', i);
-			var last_cell = i-2;
-			paySlipWorksheet.mergeCells('A' + start.toString() + ':H' + last_cell.toString());		
-			paySlipWorksheet.mergeCells('M' + start.toString() + ':T' + last_cell.toString());		
+			paySlipWorksheet.mergeCells('A' + start.toString() + ':A' + i.toString());
+			paySlipWorksheet.mergeCells('B' + start.toString() + ':B' + i.toString());
+			paySlipWorksheet.mergeCells('C' + start.toString() + ':C' + i.toString());
+			paySlipWorksheet.mergeCells('D' + start.toString() + ':D' + i.toString());
+			paySlipWorksheet.mergeCells('E' + start.toString() + ':E' + i.toString());
+			paySlipWorksheet.mergeCells('F' + start.toString() + ':F' + i.toString());
+			paySlipWorksheet.mergeCells('G' + start.toString() + ':G' + i.toString());
+			paySlipWorksheet.mergeCells('H' + start.toString() + ':H' + i.toString());
+			paySlipWorksheet.mergeCells('M' + start.toString() + ':M' + i.toString());
+			paySlipWorksheet.mergeCells('N' + start.toString() + ':N' + i.toString());
+			paySlipWorksheet.mergeCells('O' + start.toString() + ':O' + i.toString());
+			paySlipWorksheet.mergeCells('P' + start.toString() + ':P' + i.toString());
+			paySlipWorksheet.mergeCells('Q' + start.toString() + ':Q' + i.toString());
+			paySlipWorksheet.mergeCells('R' + start.toString() + ':R' + i.toString());
+			paySlipWorksheet.mergeCells('S' + start.toString() + ':S' + i.toString());
+			paySlipWorksheet.mergeCells('T' + start.toString() + ':T' + i.toString());
 			paySlipWorksheet.getRow(start).commit();
 			start = i+1;
 		}
@@ -157,7 +163,7 @@ exports.report = function(req, res){
 						
 						// console.log("HI", paySlipData);
 						var paySlip_month = check_date(paySlipData, 'dateIssued');
-						// console.log("JELLOO", paySlip_month);
+						console.log("JELLOO", paySlip_month);
 						var total = 0;
 						for(month in paySlip_month){		
 							paySlipWorksheet.addRow({
@@ -167,6 +173,14 @@ exports.report = function(req, res){
 							for(var entry = 0; entry < paySlip_month[month].length; entry++){	
 								var paySlip_month_entry = paySlip_month[month][entry];
 								var entry_total = paySlip_month_entry.total;
+
+								if(paySlip_month_entry.deductibles_name === undefined){
+									paySlip_month_entry.deductibles_name = [];
+									paySlip_month_entry.deductibles = [];
+									paySlip_month_entry.allowance_name = [];
+									paySlip_month_entry.allowance = [];
+								}
+
 								paySlipWorksheet.addRow({
 									an: paySlip_month_entry.adviceNumber,
 									issued: paySlip_month_entry.issuedBy,
@@ -190,7 +204,8 @@ exports.report = function(req, res){
 									net: entry_total
 								}).commit();
 								var i = 1;
-								while(i < paySlip_month_entry.deductibles_name.length || i < paySlip_month_entry.allowance_name.length){
+								console.log("HEREEE");
+								while(i < paySlip_month_entry.deductibles.length || i < paySlip_month_entry.allowance.length){
 									paySlipWorksheet.addRow({
 										deduct: paySlip_month_entry.deductibles_name[i],
 										deduct_amt: paySlip_month_entry.deductibles[i],
@@ -242,7 +257,6 @@ exports.report = function(req, res){
 							part: "Total:",
 							amt: total
 						}).commit();
-
 						var checkVoucher_month = check_date(checkVoucherData, 'date');
 						total = 0;
 						for(month in checkVoucher_month){
@@ -295,6 +309,7 @@ exports.report = function(req, res){
 									amt: pettyCash_month_entry.items[0][1],
 									qty: pettyCash_month_entry.items[0][2]
 								}).commit();
+								console.log('HEREEE');
 								for(var item = 1; item < pettyCash_month_entry.items.length; item++){
 									pettyCashWorksheet.addRow({
 										part: pettyCash_month_entry.items[item][0],
@@ -302,6 +317,7 @@ exports.report = function(req, res){
 										qty: pettyCash_month_entry.items[item][2]
 									}).commit();
 								}
+								console.log('HEREEE after');
 								subtotal += parseFloat(entry_total);
 							}
 							total += subtotal;
@@ -316,8 +332,7 @@ exports.report = function(req, res){
 						}).commit();
 
 						merge_paySlip(paySlipWorksheet);
-						paySlipWorksheet.commit();
-
+						console.log('LAST');
 						workbook.xlsx.writeFile("uploads/report.xlsx");
 					});
 				});

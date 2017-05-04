@@ -1,0 +1,39 @@
+extends layout
+
+block content
+	title Control Panel
+
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		// Title
+
+		.seven.wide.column.row#menu-row(style="margin-top:17vh; margin-bottom:50;")
+			.section-title.ui.center.aligned.segment
+				h1 Update Tables
+
+
+		.four.column.wide.row
+			.column
+				#BIR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/BIR')")
+					.visible.content
+						.ui.container.main-menu-button
+							h1 B I R
+					.hidden.content
+						h4 Update tax rates
+			.column
+				#SSS-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/SSS')")
+					.visible.content
+						.main-menu-button.ui.container
+							h1 S S S
+					.hidden.content
+						h4 Update SSS fees
+			.floated.column
+				#PhilHealth-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/PH')")
+					.visible.content
+						.ui.container.main-menu-button
+							h1 PhilHealth
+					.ui.hidden.content
+						.ui.center.aligned.fluid
+							h4 Update PhilHealth
+
+
+		script(type='text/javascript', src='/javascripts/sorttable.js')
