@@ -42,14 +42,6 @@ $(".custom-menu li").click(function(){
 	$(".custom-menu").hide(100);
 });
 
-// <<<<<<< HEAD
-// $('.submit').click(function(){
-// 	$.post('/employees/deleteEmployee', {
-// 		eID: eID
-// 	});
-// });
-
-// =======
 var sendAjax = function(values, link, success_function){
 	return $.ajax({
 		url: link,

@@ -79,25 +79,28 @@ html
 							br
 							| Report
 
-				.ui.fourteen.wide.column
+				#main-container.ui.fourteen.wide.column
 					block content
 
 		script(type='text/javascript', src='/javascripts/layout.js')
 		script.
-			$(document).ready(function () {
-				if(window.location.href.indexOf("employee") > -1) {
-					$('#flm-employee-module-button').css({'background-color': '#d19992'});
-				}
-				if(window.location.href.indexOf("payslip") > -1) {
-					$('#flm-payslip-module-button').css({'background-color': '#d19992'});
-				}
-				if(window.location.href.indexOf("AR_view") > -1) {
-					$('#flm-AR-module-button').css({'background-color': '#d19992'});
-				}
-				if(window.location.href.indexOf("checkvoucher") > -1) {
-					$('#flm-check-voucher-module-button').css({'background-color': '#d19992'});
-				}
-				if(window.location.href.indexOf("pettycash_view") > -1) {
-					$('#flm-petty-cash-module-button').css({'background-color': '#d19992'});
-				}
-			})
+			var url= window.location.href;
+			if(url.length<=22){
+				$('#main-container').removeClass("ui fourteen wide column").addClass("ui sixteen wide column");
+				$('#left-menu-container').hide()
+			}
+			if(window.location.href.indexOf("employees") > -1) {
+				$('#flm-employee-module-button').css({'background-color': '#d19992'});
+			}
+			if(window.location.href.indexOf("payslip") > -1) {
+				$('#flm-payslip-module-button').css({'background-color': '#d19992'});
+			}
+			if(window.location.href.indexOf("AR_view") > -1) {
+				$('#flm-AR-module-button').css({'background-color': '#d19992'});
+			}
+			if(window.location.href.indexOf("checkvoucher") > -1) {
+				$('#flm-check-voucher-module-button').css({'background-color': '#d19992'});
+			}
+			if(window.location.href.indexOf("pettycash") > -1) {
+				$('#flm-petty-cash-module-button').css({'background-color': '#d19992'});
+			}
