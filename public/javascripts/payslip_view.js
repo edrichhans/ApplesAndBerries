@@ -2,11 +2,8 @@ $(document).ready(function(){
 	$('#payslip-view-table').DataTable();
 });
 
-
 var eID = -1;
-=======
 var an = -1;
->>>>>>> 03b84850f8994e457f838d22c8af65ad027e2a57
 // Trigger action when the contexmenu is about to be shown
 $('tr').on("contextmenu", function (event) {
 	an = parseInt($(this).attr('data-an'));
@@ -27,7 +24,7 @@ $(document).bind("mousedown", function (e) {
 	// If the clicked element is not the menu
 	if (!$(e.target).parents(".custom-menu").length > 0) {
 		// Hide it
-		e.preventDefault();
+		// e.preventDefault();
 		$(".custom-menu").hide(100);
 	}
 });
