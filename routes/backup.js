@@ -16,7 +16,7 @@ router.get('/backupSettings', function(req, res){
 
 /* local backup now. */
 router.get('/localbackup', function(req, res){
-	child_process.exec('../Backup_Bat_Files/localbackup.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/localbackup.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
@@ -29,7 +29,7 @@ router.get('/localbackup', function(req, res){
 
 /* cloud backup now. */
 router.get('/cloudbackup', function(req, res, next){
-	child_process.exec('../Backup_Bat_Files/cloudbackup.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/cloudbackup.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
@@ -41,7 +41,7 @@ router.get('/cloudbackup', function(req, res, next){
 });
 
 router.get('/sethourlylocal', function(req, res, next){
-	child_process.exec('../Backup_Bat_Files/hourlybackuplocal.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/hourlybackuplocal.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
@@ -53,7 +53,7 @@ router.get('/sethourlylocal', function(req, res, next){
 });
 
 router.get('/sethourlycloud', function(req, res, next){
-	child_process.exec('../Backup_Bat_Files/hourlybackupcloud.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/hourlybackupcloud.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
@@ -65,7 +65,7 @@ router.get('/sethourlycloud', function(req, res, next){
 });
 
 router.get('/setdailylocal', function(req, res, next){
-	child_process.exec('../Backup_Bat_Files/dailybackuplocal.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/dailybackuplocal.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
@@ -77,7 +77,7 @@ router.get('/setdailylocal', function(req, res, next){
 });
 
 router.get('/setdailycloud', function(req, res, next){
-	child_process.exec('../Backup_Bat_Files/dailybackupcloud.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/dailybackupcloud.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
@@ -89,7 +89,7 @@ router.get('/setdailycloud', function(req, res, next){
 });
 
 router.get('/setweeklylocal', function(req, res, next){
-	child_process.exec('../Backup_Bat_Files/weeklybackuplocal.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/weeklybackuplocal.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
@@ -101,7 +101,7 @@ router.get('/setweeklylocal', function(req, res, next){
 });
 
 router.get('/setweeklycloud', function(req, res, next){
-	child_process.exec('../Backup_Bat_Files/weeklybackupcloud.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/weeklybackupcloud.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
@@ -113,7 +113,7 @@ router.get('/setweeklycloud', function(req, res, next){
 });
 
 router.get('/setmonthlylocal', function(req, res, next){
-	child_process.exec('../Backup_Bat_Files/monthlybackuplocal.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/monthlybackuplocal.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
@@ -125,7 +125,31 @@ router.get('/setmonthlylocal', function(req, res, next){
 });
 
 router.get('/setmonthlycloud', function(req, res, next){
-	child_process.exec('../Backup_Bat_Files/monthlybackupcloud.bat', function(error, stdout, stderr) {
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/monthlybackupcloud.bat"', function(error, stdout, stderr) {
+    	if (error) {
+		    console.error(`exec error: ${error}`);
+		    res.status(500);
+		}
+		console.log(`stdout: ${stdout}`);
+		console.log(`stderr: ${stderr}`);
+	});
+	res.redirect("/");
+});
+
+router.get('/deletelocalbackup', function(req, res, next){
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/deletelocalbackup.bat"', function(error, stdout, stderr) {
+    	if (error) {
+		    console.error(`exec error: ${error}`);
+		    res.status(500);
+		}
+		console.log(`stdout: ${stdout}`);
+		console.log(`stderr: ${stderr}`);
+	});
+	res.redirect("/");
+});
+
+router.get('/deletecloudbackup', function(req, res, next){
+	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/deletecloudbackup.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);

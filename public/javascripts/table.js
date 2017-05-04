@@ -33,4 +33,4 @@ $('#print-button').click(function(){
 	$('table').printThis({
 		header: "<img style='width: 20%;' src='images/header.png'></img><div class='header-print'>Payslip</div>"
 	});
-});
+});	

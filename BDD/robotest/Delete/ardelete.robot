@@ -17,7 +17,7 @@ Check Add AR Status
 *** Keywords ***
 Delete AR Entry
     Select Checkbox            xpath=//table[@id="AR-view-table"]/tbody/tr/td/div/input
-    Click Element              delete-AR-button
+    Click Button               delete-AR-button
 	
 Go To AR Panel
     Click Element              AR-module-button

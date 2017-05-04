@@ -8,17 +8,17 @@ block content
 			.ui.container
 				h1.ui.dividing.header.center.aligned Petty Cash
 
-		// buttons
+		// buttons		
 		.ui.container.right.aligned
-				.search-bar.ui.action.input
-					input(type='search', placeholder='Search...' aria-controls="petty-cash-view-table")
-					button.ui.basic.circular.icon.button
-						i.search.icon
-				button#add-petty-cash-button.ui.basic.circular.icon.button(onclick="location.replace('/pettycash')")
+				//- .search-bar.ui.action.input
+				//- 	input(type='search', placeholder='Search...' aria-controls="petty-cash-view-table")
+				//- 	button.ui.basic.circular.icon.button
+				//- 		i.search.icon
+				button#add-petty-cash-button.ui.circular.icon.button(onclick="location.replace('/pettycash')")
 					i.plus.icon
-				button#edit-petty-cash-button.ui.basic.circular.icon.button
+				button#edit-petty-cash-button.ui.circular.icon.button
 					i.edit.icon
-				button#delete-petty-cash-button.ui.basic.circular.icon.button
+				button#delete-petty-cash-button.ui.circular.icon.button
 					i.trash.outline.icon
 
 		// Table Proper
@@ -86,5 +86,7 @@ block content
 		.actions
 			.ui.positive.submit.right.button#delete-alert OK
 
-	script(src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js")
+	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
+	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+	
 	script(type='text/javascript' src='javascripts/pettycash_view.js')

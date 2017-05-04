@@ -1,8 +1,5 @@
 extends layout
 
-
-//- link(rel='stylesheet', type='text/css', href='/stylesheets/dataTables.semanticui.min.css')
-
 block content
 	title EmployeePanel
 	ul.custom-menu
@@ -18,10 +15,10 @@ block content
 
 		// buttons
 		.ui.container.right.aligned
-			.search-bar.ui.action.input
-				input(type='text', placeholder='Search...')
-				button.ui.basic.circular.icon.button
-					i.search.icon
+			//- .search-bar.ui.action.input
+			//- 	input(type='text', placeholder='Search...')
+			//- 	button.ui.basic.circular.icon.button
+			//- 		i.search.icon
 			button#add-employee-button.ui.basic.circular.icon.button(onclick="location.replace('/employees/add')")
 				i.add.user.icon
 			//- button#edit-AR-button.ui.basic.circular.icon.button
@@ -82,16 +79,16 @@ block content
 		.ui.container
 			button.ui.button.right.floated.column.center.aligned#print-employee-button Print
 				i.print.icon
-		//- //PRINT BUTTON
-		//- .fifteen.wide.column(style="padding: 0 1em 1em 1em !important;")
-		//- 	button.ui.button.right.floated.column#print-employee-button Print
 
 	.ui.small.modal#confirm-delete-modal
 		.header Confirm
 		.content
 			| Confirm Unhiring Employee
 		.actions
-			.ui.positive.submit.right.button#delete OK
+			#delete.ui.positive.submit.right.button OK
+	
+
+			//- .ui.positive.submit.right.button#delete OK
 			.ui.red.right.cancel.button Cancel
 
 	.ui.small.modal#alert-delete-modal
@@ -101,4 +98,6 @@ block content
 		.actions
 			.ui.positive.submit.right.button#delete-alert OK
 
+	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
+	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
 	script(type='text/javascript', src='/javascripts/employeepanel.js')

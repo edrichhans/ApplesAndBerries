@@ -485,7 +485,7 @@ exports.edit = function(req, res){
 exports.editThirteenth = function(req, res, callBack){
 	var db = req.db;
 	var Employees = db.get('Employees');
-	// var eID = parseInt(req.body.employeeDropdown);
+	var eID = parseInt(req.body.employeeDropdown);
 	var company = req.body.companyDropdown;
 	var currentAdviceNumber = parseInt(req.body.an);
 	var m_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -507,7 +507,7 @@ exports.editThirteenth = function(req, res, callBack){
 		var months = dateIssued.getMonth() - m_names.indexOf(date[0]);
 		var years = dateIssued.getFullYear() - parseInt(date[2]);
 
-		var diff = years + months;
+		var diff = Math.abs(years + months);
 
 		var total = employee.salary/12 * thirteenthMonth(diff);
 

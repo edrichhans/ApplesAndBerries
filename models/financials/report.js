@@ -1,5 +1,8 @@
 var Excel = require('exceljs');
 var Promise = require('promise');
+require('datejs');
+var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X' ,'Y', 'Z'];
+
 
 function initialize(worksheet){
 	worksheet.properties.defaultRowHeight = 20;
@@ -35,35 +38,66 @@ var check_date = function(arr, inputDate){
 
 var merge_paySlip = function(paySlipWorksheet){
 	var i = 2;
-	var start;
+	var start = i;
 	while(1){
-		var cell_A = paySlipWorksheet.getCell('A' + i.toString()).value;
-		var cell_B = paySlipWorksheet.getCell('B' + i.toString()).value;
-		var cell_R = paySlipWorksheet.getCell('R' + i.toString()).value;
-		if(cell_R == 'Total:'){
+		var cell_A_next = paySlipWorksheet.getCell('A' + (i+1).toString()).value;
+		var cell_B_next = paySlipWorksheet.getCell('B' + (i+1).toString()).value;
+		var cell_R_next = paySlipWorksheet.getCell('R' + (i+1).toString()).value;
+		if(cell_R_next == 'Total:'){
 			console.log('total: ', i);
 			break;
 		}
-		else if(cell_A != null){ //if main entry in row
+		else if(cell_B_next != null || cell_R_next == "Subtotal:"){ //if main entry in row
+			if(cell_R_next == "Subtotal:"){
+				add_line(paySlipWorksheet, 0, 20, i);
+			}
 			//operation here
+			console.log('start: ', start);
 			console.log('main entry: ', i);
-			var last_cell = i-1;
-			paySlipWorksheet.mergeCells('A' + start.toString() + ':H' + last_cell.toString());
-			paySlipWorksheet.mergeCells('M' + start.toString() + ':T' + last_cell.toString());
-			paySlipWorksheet.getRow(start).commit();
-			start = i;
-		}
-		else if(cell_A == null && cell_B != null){ //if date nasa row
-			console.log('date: ', i);
-			var last_cell = i-2;
-			paySlipWorksheet.mergeCells('A' + start.toString() + ':H' + last_cell.toString());		
-			paySlipWorksheet.mergeCells('M' + start.toString() + ':T' + last_cell.toString());		
+			for(var letter = 0; letter < 8; letter ++){
+				paySlipWorksheet.mergeCells(alphabet[letter] + start.toString() + ':' + alphabet[letter] + i.toString());
+			}
+			for(var letter = 12; letter < 20; letter ++){
+				paySlipWorksheet.mergeCells(alphabet[letter] + start.toString() + ':' + alphabet[letter] + i.toString());
+			}
 			paySlipWorksheet.getRow(start).commit();
 			start = i+1;
 		}
 		i++;
 	}
 	// return;
+}
+
+var add_line_to_range = function(worksheet, subtotal_letter, end){
+	var i = 2;
+	var start = i;
+	while(1){
+		var cell_next = worksheet.getCell(subtotal_letter + (i+1).toString()).value;
+		if(cell_next == 'Total:'){
+			console.log('total: ', i);
+			break;
+		}
+		else if(cell_next == "Subtotal:"){ //if main entry in row
+			if(cell_next == "Subtotal:"){
+				add_line(worksheet, 0, end, i);
+			}
+			worksheet.getRow(start).commit();
+			start = i+1;
+		}
+		i++;
+	}
+}
+
+var add_line = function(worksheet, from, to, i){
+	for(var letter = from; letter < to; letter++){
+		var cell = alphabet[letter] + (i+1).toString();
+		console.log("CELL", cell);
+		worksheet.getCell(cell).border ={
+			top: {style: 'thin'},
+			bottom: {style: 'double'}
+		}
+		// paySlipWorksheet.getRow(i+1).commit();
+	}
 }
 
 exports.report = function(req, res){
@@ -107,7 +141,7 @@ exports.report = function(req, res){
 							{header: 'AN', key: 'an', width: 5},
 							{header: 'Issued By', key: 'issued', width: 15},
 							{header: 'Date Issued', key: 'date_issued', width: 15},
-							{header: 'Employee ID', key: 'eID', width: 5},
+							{header: 'eID', key: 'eID', width: 5},
 							{header: 'Name', key: 'name', width: 20},
 							{header: 'Base Salary', key: 'base', width: 10},
 							{header: 'Start Date', key: 'start', width: 15},
@@ -125,6 +159,20 @@ exports.report = function(req, res){
 							{header: 'BIR', key: 'bir', width: 10},
 							{header: 'Net', key: 'net', width: 10}
 						];
+						paySlipWorksheet.getColumn('base').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('deduct_amt').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('allow_amt').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('ph').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('hdmf').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('sss').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('er_ph').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('er_hdmf').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('er_sss').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('bir').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getColumn('net').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						paySlipWorksheet.getRow(1).alignment = {
+							horizontal: 'center'
+						}
 
 						ARWorksheet.columns = [
 							{header: 'AN', key: 'an', width: 5},
@@ -134,6 +182,10 @@ exports.report = function(req, res){
 							{header: 'Particulars', key: 'part', width: 15},
 							{header: 'Amount', key: 'amt', width: 10}
 						];
+						ARWorksheet.getColumn('amt').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						ARWorksheet.getRow(1).alignment = {
+							horizontal: 'center'
+						}
 						
 						checkVoucherWorksheet.columns = [
 							{header: 'AN', key: 'an', width: 5},
@@ -143,6 +195,10 @@ exports.report = function(req, res){
 							{header: 'Particulars', key: 'part', width: 15},
 							{header: 'Amount', key: 'amt', width: 10}
 						];
+						checkVoucherWorksheet.getColumn('amt').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						checkVoucherWorksheet.getRow(1).alignment = {
+							horizontal: 'center'
+						}
 
 						pettyCashWorksheet.columns = [
 							{header: 'AN', key: 'an', width: 5},
@@ -154,10 +210,15 @@ exports.report = function(req, res){
 							{header: 'Qty', key: 'qty', width: 10},
 							{header: 'Total', key: 'total', width: 15}
 						];
+						pettyCashWorksheet.getColumn('amt').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						pettyCashWorksheet.getColumn('total').numFmt = '#,##0.00;[Red]\-#,##0.00';
+						pettyCashWorksheet.getRow(1).alignment = {
+							horizontal: 'center'
+						}
 						
 						// console.log("HI", paySlipData);
 						var paySlip_month = check_date(paySlipData, 'dateIssued');
-						// console.log("JELLOO", paySlip_month);
+						console.log("JELLOO", paySlip_month);
 						var total = 0;
 						for(month in paySlip_month){		
 							paySlipWorksheet.addRow({
@@ -167,10 +228,18 @@ exports.report = function(req, res){
 							for(var entry = 0; entry < paySlip_month[month].length; entry++){	
 								var paySlip_month_entry = paySlip_month[month][entry];
 								var entry_total = paySlip_month_entry.total;
+
+								if(paySlip_month_entry.deductibles_name === undefined){
+									paySlip_month_entry.deductibles_name = [];
+									paySlip_month_entry.deductibles = [];
+									paySlip_month_entry.allowance_name = [];
+									paySlip_month_entry.allowance = [];
+								}
+
 								paySlipWorksheet.addRow({
 									an: paySlip_month_entry.adviceNumber,
 									issued: paySlip_month_entry.issuedBy,
-									date_issued: paySlip_month_entry.dateIssued.toString(),
+									date_issued: paySlip_month_entry.dateIssued.toString('MMMM d, yyyy'),
 									eID: paySlip_month_entry.eID,
 									name: employee[0].name,
 									base: employee[0].salary,
@@ -190,7 +259,8 @@ exports.report = function(req, res){
 									net: entry_total
 								}).commit();
 								var i = 1;
-								while(i < paySlip_month_entry.deductibles_name.length || i < paySlip_month_entry.allowance_name.length){
+								console.log("HEREEE");
+								while(i < paySlip_month_entry.deductibles.length || i < paySlip_month_entry.allowance.length){
 									paySlipWorksheet.addRow({
 										deduct: paySlip_month_entry.deductibles_name[i],
 										deduct_amt: paySlip_month_entry.deductibles[i],
@@ -242,7 +312,6 @@ exports.report = function(req, res){
 							part: "Total:",
 							amt: total
 						}).commit();
-
 						var checkVoucher_month = check_date(checkVoucherData, 'date');
 						total = 0;
 						for(month in checkVoucher_month){
@@ -252,14 +321,14 @@ exports.report = function(req, res){
 							var subtotal = 0;
 							for(var entry = 0; entry < checkVoucher_month[month].length; entry++){
 								var checkVoucher_month_entry = checkVoucher_month[month][entry];
-								var entry_total = checkVoucher_month_entry.amount;
+								var entry_total = parseFloat(checkVoucher_month_entry.amount);
 								checkVoucherWorksheet.addRow({
 									an: checkVoucher_month_entry.adviceNumber,
 									issued: checkVoucher_month_entry.issuedBy,
 									name: checkVoucher_month_entry.name,
 									date: checkVoucher_month_entry.date,
 									part: checkVoucher_month_entry.particulars,
-									amt: checkVoucher_month_entry.amount
+									amt: entry_total
 								}).commit();
 								subtotal += parseFloat(entry_total);
 							}
@@ -285,7 +354,7 @@ exports.report = function(req, res){
 							var subtotal = 0;
 							for(var entry = 0; entry < pettyCash_month[month].length; entry++){
 								var pettyCash_month_entry = pettyCash_month[month][entry];
-								var entry_total = checkVoucher_month_entry.amount;
+								var entry_total = parseFloat(pettyCash_month_entry.items[0][1]) * parseFloat(pettyCash_month_entry.items[0][2]);
 								pettyCashWorksheet.addRow({
 									an: pettyCash_month_entry.adviceNumber,
 									issued: pettyCash_month_entry.issuedBy,
@@ -293,31 +362,40 @@ exports.report = function(req, res){
 									date: pettyCash_month_entry.date,
 									part: pettyCash_month_entry.items[0][0],
 									amt: pettyCash_month_entry.items[0][1],
-									qty: pettyCash_month_entry.items[0][2]
+									qty: pettyCash_month_entry.items[0][2],
+									total: entry_total
 								}).commit();
+								console.log('HEREEE');
 								for(var item = 1; item < pettyCash_month_entry.items.length; item++){
+									var entry = parseFloat(pettyCash_month_entry.items[item][1]) * parseFloat(pettyCash_month_entry.items[item][2]);
+									entry_total += entry;
 									pettyCashWorksheet.addRow({
 										part: pettyCash_month_entry.items[item][0],
 										amt: pettyCash_month_entry.items[item][1],
-										qty: pettyCash_month_entry.items[item][2]
+										qty: pettyCash_month_entry.items[item][2],
+										total: entry
 									}).commit();
 								}
-								subtotal += parseFloat(entry_total);
+								console.log('HEREEE after');
+								subtotal += entry_total;
 							}
 							total += subtotal;
 							pettyCashWorksheet.addRow({
-								part: "Subtotal:",
-								amt: subtotal
+								qty: "Subtotal:",
+								total: subtotal
 							}).commit();
 						}
 						pettyCashWorksheet.addRow({
-							part: "Total:",
-							amt: total
+							qty: "Total:",
+							total: total
 						}).commit();
 
 						merge_paySlip(paySlipWorksheet);
-						paySlipWorksheet.commit();
+						add_line_to_range(ARWorksheet, 'E', 6);
+						add_line_to_range(checkVoucherWorksheet, 'E', 6);
+						add_line_to_range(pettyCashWorksheet, 'G', 8);
 
+						console.log('LAST');
 						workbook.xlsx.writeFile("uploads/report.xlsx");
 					});
 				});

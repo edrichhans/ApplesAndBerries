@@ -9789,3 +9789,66 @@
     at Function.Module._load (module.js:438:3)
     at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
 > server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\AF\Documents\CS Subjects\CS 192\Project\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+[0mGET / [36m302 [0m188.159 ms - 56[0m
+[0mGET /login [32m200 [0m11924.638 ms - 2218[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m161.073 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m151.731 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m169.077 ms - -[0m
+[0mGET /javascripts/scripts.js [36m304 [0m159.295 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m175.135 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m3.678 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m211.376 ms - -[0m
+[0mGET /javascripts/jquery.form.js [36m304 [0m1.829 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m2.211 ms - -[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m232.308 ms - -[0m
+[0mGET /favicon.ico [36m302 [0m1.662 ms - 28[0m
+[0mGET /login [36m304 [0m100.165 ms - -[0m
+[0mPOST /login [36m302 [0m2477.856 ms - 23[0m
+[0mGET / [32m200 [0m409.213 ms - 5155[0m
+[0mGET / [36m304 [0m315.150 ms - -[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m4.764 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m3.320 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m21.469 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m6.888 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m5.534 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m9.141 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m8.794 ms - -[0m
+[0mGET /javascripts/sorttable.js [36m304 [0m11.872 ms - -[0m
+[0mGET /javascripts/layout.js [36m304 [0m0.574 ms - -[0m
+[0mGET /images/Logo.png [36m304 [0m19.916 ms - -[0m
+[0mGET /icons/main_menu/settings.png [36m304 [0m9.216 ms - -[0m
+[0mGET /icons/main_menu/payslip.png [36m304 [0m46.686 ms - -[0m
+[0mGET /icons/main_menu/employee_white.png [36m304 [0m57.226 ms - -[0m
+[0mGET /icons/main_menu/receipt1.png [36m304 [0m46.431 ms - -[0m
+[0mGET /icons/main_menu/petty_cash.png [36m304 [0m10.760 ms - -[0m
+[0mGET /icons/main_menu/check_voucher1.png [36m304 [0m12.296 ms - -[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m1.137 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m77.053 ms - 4115[0m
+[0mGET /controlpanel [36m304 [0m236.877 ms - -[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m6.628 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m5.924 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m2.566 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m1.118 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m3.604 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m3.341 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m6.377 ms - -[0m
+[0mGET /javascripts/sorttable.js [36m304 [0m0.477 ms - -[0m
+[0mGET /javascripts/layout.js [36m304 [0m0.824 ms - -[0m
+[0mGET /images/Logo.png [36m304 [0m5.699 ms - -[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m0.777 ms - -[0m
+[0mGET /backup [36m304 [0m34.391 ms - -[0m
+[0mGET /backup/backupNow [36m304 [0m38.887 ms - -[0m
+[0mGET /backup [36m304 [0m13.756 ms - -[0m
+[0mGET /backup/backupSettings [36m304 [0m40.482 ms - -[0m
