@@ -13,10 +13,10 @@ block content
 
 		// buttons
 		.ui.container.right.aligned
-			.search-bar.ui.action.input
-				input(type='text', placeholder='Search...')
-				button.ui.basic.circular.icon.button
-					i.search.icon
+			//- .search-bar.ui.action.input
+			//- 	input(type='text', placeholder='Search...')
+			//- 	button.ui.basic.circular.icon.button
+			//- 		i.search.icon
 			button#add-payslip-button.ui.basic.circular.icon.button(onclick="location.replace('/payslip')")
 				i.plus.icon
 			button#edit-payslip-button.ui.basic.circular.icon.button
@@ -207,9 +207,11 @@ block content
 		.actions
 			.ui.positive.submit.right.button#delete-alert OK
 
+	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
+	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+	script(type='text/javascript', src='/javascripts/payslip_view.js')
+	script(src='javascripts/table.js')
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};
 		var transactions =!{JSON.stringify(transactions)};
 	//- script(type='text/javascript', src='/javascripts/sorttable.js')
-	script(src='javascripts/table.js')
-	script(type='text/javascript', src='/javascripts/payslip_view.js')
