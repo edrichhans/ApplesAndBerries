@@ -160,4 +160,8 @@ router.get('/deletecloudbackup', function(req, res, next){
 	res.redirect("/");
 });
 
+router.get('/restore', function(req, res){
+	res.redirect("/");
+});
+
 module.exports = router;
