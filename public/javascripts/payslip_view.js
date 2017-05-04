@@ -1,4 +1,12 @@
+$(document).ready(function(){
+	$('#payslip-view-table').DataTable();
+});
+
+
+var eID = -1;
+=======
 var an = -1;
+>>>>>>> 03b84850f8994e457f838d22c8af65ad027e2a57
 // Trigger action when the contexmenu is about to be shown
 $('tr').on("contextmenu", function (event) {
 	an = parseInt($(this).attr('data-an'));
@@ -42,15 +50,6 @@ $(".custom-menu li").click(function(){
 	$(".custom-menu").hide(100);
 });
 
-<<<<<<< HEAD
-$('.submit').click(function(){
-	$.post('/employees/deleteEmployee', {
-		eID: eID
-	});
-});
-
-=======
->>>>>>> 03b84850f8994e457f838d22c8af65ad027e2a57
 var sendAjax = function(values, link, success_function){
 	return $.ajax({
 		url: link,
@@ -147,9 +146,9 @@ $('#print-payslip-button').click(function(){
 	});
 });
 
-$(document).ready(function(){
+/*$(document).ready(function(){
 	$('#payslip-view-table').DataTable();
-});
+});*/
 
 $('#payslip-master-checkbox').change(function(){
 	if(this.checked) $('.payslip-checkbox').attr('checked', true);

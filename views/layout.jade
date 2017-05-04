@@ -1,27 +1,24 @@
 html
 	head
 		title= title
-		link(rel='stylesheet', type='text/css', href='/semantic/dist/semantic.min.css')
-		script.
-			#flm-employee-module-button{
-				background-color: #ff7a77 !important;
-			}
+		//- script.
+		//- 	#flm-employee-module-button{
+		//- 		background-color: #ff7a77 !important;
+		//- 	}
 		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
-		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
-
 		script(type='text/javascript', src='/javascripts/jquery-1.12.4.js')
-		script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
-		script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-
+		//- script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
+		//- script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
 		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
 
 
 		script(type='text/javascript', src='/javascripts/printThis.js')
 		script(type='text/javascript', src='/bower_components/semantic-ui-calendar/dist/calendar.min.js')
 
-		link(rel='stylesheet', type='text/css', href='/bower_components/semantic-ui-calendar/dist/calendar.min.css')
-		link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+		link(rel='stylesheet', type='text/css', href='/semantic/dist/semantic.min.css')
 		link(rel='stylesheet', type='text/css', href='/stylesheets/dataTables.semanticui.min.css')
+		link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+		link(rel='stylesheet', type='text/css', href='/bower_components/semantic-ui-calendar/dist/calendar.min.css')
 
 		//- https://github.com/mdehoog/Semantic-UI-Calendar3D3E3F
 	body
@@ -79,25 +76,28 @@ html
 							br
 							| Report
 
-				.ui.fourteen.wide.column
+				#main-container.ui.fourteen.wide.column
 					block content
 
 		script(type='text/javascript', src='/javascripts/layout.js')
 		script.
-			$(document).ready(function () {
-				if(window.location.href.indexOf("employee") > -1) {
-					$('#flm-employee-module-button').css({'background-color': '#d19992'});
-				}
-				if(window.location.href.indexOf("payslip") > -1) {
-					$('#flm-payslip-module-button').css({'background-color': '#d19992'});
-				}
-				if(window.location.href.indexOf("AR_view") > -1) {
-					$('#flm-AR-module-button').css({'background-color': '#d19992'});
-				}
-				if(window.location.href.indexOf("checkvoucher") > -1) {
-					$('#flm-check-voucher-module-button').css({'background-color': '#d19992'});
-				}
-				if(window.location.href.indexOf("pettycash_view") > -1) {
-					$('#flm-petty-cash-module-button').css({'background-color': '#d19992'});
-				}
-			})
+			var url= window.location.href;
+			if(url.length<=22){
+				$('#main-container').removeClass("ui fourteen wide column").addClass("ui sixteen wide column");
+				$('#left-menu-container').hide()
+			}
+			if(window.location.href.indexOf("employees") > -1) {
+				$('#flm-employee-module-button').css({'background-color': '#d19992'});
+			}
+			if(window.location.href.indexOf("payslip") > -1) {
+				$('#flm-payslip-module-button').css({'background-color': '#d19992'});
+			}
+			if(window.location.href.indexOf("AR_view") > -1) {
+				$('#flm-AR-module-button').css({'background-color': '#d19992'});
+			}
+			if(window.location.href.indexOf("checkvoucher") > -1) {
+				$('#flm-check-voucher-module-button').css({'background-color': '#d19992'});
+			}
+			if(window.location.href.indexOf("pettycash") > -1) {
+				$('#flm-petty-cash-module-button').css({'background-color': '#d19992'});
+			}

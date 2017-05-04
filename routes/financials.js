@@ -122,7 +122,7 @@ router.post('/editThirteenth', function(req, res){
 		wlogger.log('info', 'Thirteenth Month Pay Issued', {
 			issuedBy: req.session.username,
 			issuedTo: req.body.employeeDropdown
-		});		
+		});
 		res.redirect('/');
 	});
 });
@@ -377,6 +377,10 @@ router.get('/download', function(req, res, next){
 
 	res.download(p);
 	return;
+});
+
+router.get('/manageUsers', function(req, res, next){
+	res.render('manageUsers');
 });
 
 router.get('/indexFinancials', function(req, res, next){
