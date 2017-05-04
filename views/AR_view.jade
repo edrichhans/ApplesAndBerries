@@ -16,7 +16,7 @@ block content
 			//- 	input(type='text', placeholder='Search...')
 			//- 	button.ui.basic.circular.icon.button
 			//- 		i.search.icon
-			button#add-AR-button.ui.basic.circular.icon.button(onclick="location.replace('/AR')")
+			button#add-AR-button.ui.basic.circular.icon.button(onclick="location.assign('/AR')")
 				i.plus.icon
 			button#edit-AR-button.ui.basic.circular.icon.button
 				i.edit.icon
@@ -56,7 +56,7 @@ block content
 
 			//- .ui.segment.row
 			//- 	.view-table
-					
+
 		//PRINT BUTTON
 		.ui.container
 			button.ui.button.right.floated.column.center.aligned#print-AR-button Print
@@ -80,7 +80,7 @@ block content
 	//- script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-	
+
 	script(type='text/javascript' src='/javascripts/scripts.js')
 	script(type='text/javascript' src='/javascripts/AR_view.js')
 	//- script(type='text/javascript').

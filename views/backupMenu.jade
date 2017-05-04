@@ -1,12 +1,35 @@
-doctype html
-html(lang='en')
-  head
-    title Backup Menu
-  body
-    h1 BackUp Menu
-    #container.col
-      input(type='button', onclick="location.assign('/backup/backupNow');", value='Backup Now')
-    #container.col
-      input(type='button', onclick="location.assign('/backup/backupSettings');", value='Set Auto Backup Frequency')
-    #container.col
-      input(type='button', onclick="location.assign('/');", value='Cancel')
+extends layout
+
+block content
+	title Back Up Data
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		// Title
+
+		.seven.wide.column.row#menu-row(style="margin-top:17vh; margin-bottom:50;")
+			.section-title.ui.center.aligned.segment
+				h1 Back Up Data
+
+		.four.column.wide.row
+			.column
+				#back-up-type.col.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/backup/backupNow')" value='Backup Now')
+					.visible.content
+						.ui.container.main-menu-button
+							img.ui.tiny.centered.middle.aligned.image(src="icons/backup/backup_now.png")
+							h1 Back Up Now
+					.hidden.content
+						h4
+							| Back Up Locally
+							br
+							| Back Up to Cloud
+
+			.column
+				#back-up-settings.col.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/backup/backupSettings')" value='Set Auto Backup Frequency')
+					.visible.content
+						.ui.container.main-menu-button
+							img.ui.tiny.centered.middle.aligned.image(src="icons/backup/frequency.png")
+							h1 Edit Frequency
+					.hidden.content
+						h4 Set Back Up Frequency
+
+		.ui.container
+			button.ui.red.button.right.floated.column.center.aligned#backup-menu-cancel-button(onclick="location.assign('/')") Back

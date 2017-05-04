@@ -12,16 +12,18 @@ block content
 
 		.four.column.wide.row
 			.column
-				#add-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/addUser')")
+				#add-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/addUser')")
 					.visible.content
 						.ui.container.main-menu-button
+							img.ui.tiny.centered.middle.aligned.image(src="icons/manage_users/add_user.png")
 							h1 Add User
 					.hidden.content
 						h4 Create a new user
 			.column
-				#delete-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/deleteUser')")
+				#delete-user-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/deleteUser')")
 					.visible.content
 						.ui.container.main-menu-button
+							img.ui.tiny.centered.middle.aligned.image(src="icons/manage_users/delete_user.png")
 							h1 Delete User
 					.hidden.content
 						h4 Delete an existing user
