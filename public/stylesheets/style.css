@@ -26,29 +26,36 @@ a{
 /*[id^="*-label"] {
 	display: none;
 }*/
-#add-CV-label, #add-AR-label{
+#add-CV-label, #add-AR-label, #add-petty-cash-label, #add-payslip-label{
 	position: absolute;
 	top: 9.5vh;
 	right: 16vh;
 }
 
-#edit-CV-label, #edit-AR-label  {
+#edit-CV-label, #edit-AR-label, #edit-petty-cash-label, #edit-payslip-label {
 	position: absolute;
 	top: 9.5vh;
 	right: 10vh;
 }
 
-#delete-CV-label, #delete-AR-label  {
+#delete-CV-label, #delete-AR-label, #delete-petty-cash-label, #delete-payslip-label  {
 	position: absolute;
 	top: 9.5vh;
 	right: 2.75vh;
+}
+
+#add-employee-label {
+	position: absolute;
+	top: 9.5vh;
+	right: 1vh;
 }
 
 
 #add-employee-label, 
 #add-payslip-label, #edit-payslip-label, #delete-payslip-label,
 #add-CV-label, #edit-CV-label, #delete-CV-label,
-#add-AR-label, #edit-AR-label, #delete-AR-label
+#add-AR-label, #edit-AR-label, #delete-AR-label,
+#add-petty-cash-label, #edit-petty-cash-label, #delete-petty-cash-label
  {
 	display: none;
 }
