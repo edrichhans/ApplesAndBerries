@@ -19,7 +19,7 @@ $(document).bind("mousedown", function (e) {
 	// If the clicked element is not the menu
 	if (!$(e.target).parents(".custom-menu").length > 0) {
 		// Hide it
-		e.preventDefault();
+		// e.preventDefault();
 		$(".custom-menu").hide(100);
 	}
 });

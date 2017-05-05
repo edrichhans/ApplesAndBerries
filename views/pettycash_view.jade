@@ -22,7 +22,7 @@ block content
 					i.trash.outline.icon
 
 		// Table Proper
-		.ui.segment.container
+		.ui.segment.container.fortable
 			//- .ui.segment.row
 				.view-table
 			table#petty-cash-view-table.ui.table.fluid.selectable.sortable
@@ -68,7 +68,8 @@ block content
 
 		// PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-petty-cash-button Print
+			button#print-petty-cash-button.ui.right.labeled.icon.button.right.floated.print
+				|	Print
 				i.print.icon
 
 	.ui.small.modal#confirm-delete-modal

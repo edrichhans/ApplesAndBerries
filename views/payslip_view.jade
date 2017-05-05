@@ -26,7 +26,7 @@ block content
 
 		// Table Proper
 		.ui.container
-			table#payslip-view-table.ui.table.sortable.selectable
+			table#payslip-view-table.ui.table.selectable
 				thead
 					tr
 						th
@@ -87,7 +87,8 @@ block content
 
 		//PRINT BUTTON
 		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-payslip-button Print
+			button#print-payslip-button.ui.right.labeled.icon.button.right.floated.print
+				|	Print
 				i.print.icon
 
 		.ui.basic.modal.view
