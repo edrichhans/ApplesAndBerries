@@ -17,6 +17,46 @@ a{
 	color: #372B62;
 }
 
+.ui.container.right.aligned{
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/*[id^="*-label"] {
+	display: none;
+}*/
+#add-CV-label, #add-AR-label{
+	position: absolute;
+	top: 9.5vh;
+	right: 16vh;
+}
+
+#edit-CV-label, #edit-AR-label  {
+	position: absolute;
+	top: 9.5vh;
+	right: 10vh;
+}
+
+#delete-CV-label, #delete-AR-label  {
+	position: absolute;
+	top: 9.5vh;
+	right: 2.75vh;
+}
+
+
+#add-employee-label, 
+#add-payslip-label, #edit-payslip-label, #delete-payslip-label,
+#add-CV-label, #edit-CV-label, #delete-CV-label,
+#add-AR-label, #edit-AR-label, #delete-AR-label
+ {
+	display: none;
+}
+
+
+.ui.container.bottomprint{
+	padding: 0;
+}
 
 .ui.basic.circular.icon.button{
 	background-color: #FFF !important;
@@ -35,7 +75,8 @@ a{
 .ui.right.labeled.icon.button.right.floated.print:hover{
 	color:#9F3A38;
 	/*background-color: rgba(0,0,0,.01) !important;*/
-	background-color: #FCFCFC !important;
+	/*background-color: #FCFCFC !important;*/
+	background-color: #F8F8F8 !important;
 }
 
 
@@ -312,8 +353,13 @@ padding: 10 0 10 0 !important;}
 /*style = "background-color: #9F3A38 !important;"
 */
 #menu-row {
-	margin-top:9vh;
+	margin-top:8.5vh;
 	margin-bottom:0;
+	padding-bottom: 0;
+}
+
+.ui.dividing.header.center.aligned{
+	padding-bottom: 0;
 }
 
 .ui.red.button, .ui.red.buttons .button{

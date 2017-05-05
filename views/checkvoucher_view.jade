@@ -13,14 +13,22 @@ block content
 			//- 	input(type='text', placeholder='Search...')
 			//- 	button.ui.basic.circular.icon.button
 			//- 		i.search.icon
+			//- #add-CV-label.ui.right.pointing.red.basic.label
+			//- 	| Add CV
+			#add-CV-label.ui.pointing.below.red.basic.label
+				| Add CV
 			button#add-CV-button.ui.basic.circular.icon.button(onclick="location.replace('/checkvoucher')")
 				i.plus.icon
+			#edit-CV-label.ui.pointing.below.red.basic.label
+				| Edit CV
 			button#edit-CV-button.ui.basic.circular.icon.button
 				i.edit.icon
+			#delete-CV-label.ui.pointing.below.red.basic.label
+				| Delete CV
 			button#delete-CV-button.ui.basic.circular.icon.button
 				i.trash.outline.icon
 		// Table Proper
-		.ui.container
+		.ui.segment.container.fortable
 			table#check-voucher-view-table.ui.celled.table.selectable
 				thead
 					tr
@@ -53,7 +61,7 @@ block content
 
 
 		// PRINT BUTTON
-		.ui.container
+		.ui.container.bottomprint
 			button#print-check-voucher-button.ui.right.labeled.icon.button.right.floated.print
 				|	Print
 				i.print.icon

@@ -1,3 +1,24 @@
+$(document).ready(function(){
+	$('#employee-view-table').DataTable();
+
+	var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
+	console.log("em", employee);
+	employee = employee[0];
+
+	$('input#eID').val(employee.eID);
+	$('input#inputName').val(employee.name);
+	$('input#inputStartDate').val(employee.startDate);
+	$('input#inputBirthday').val(employee.birthday);
+	$('select#selectPosition').val((employee.position).toString()).change();
+	$('select#selectStatus').val((employee.status).toString()).change();
+	$('input#inputDependents').val(employee.dependents);
+	$('input#inputBaseSalary').val(employee.salary);
+
+	$('form#selectEmployee').addClass('hide');
+	$('form#editEmployee').removeClass('hide');
+});
+
+
 var eID = -1;
 // Trigger action when the contexmenu is about to be shown
 $('tr.employee').on("contextmenu", function (event) {
@@ -57,26 +78,11 @@ $('.submit#delete').click(function(){
 // 	// $('.dataTables_filter').addClass('search');
 // });
 
-$(document).ready(function(){
-	$('#employee-view-table').DataTable();
 
-	var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
-	console.log("em", employee);
-	employee = employee[0];
-
-	$('input#eID').val(employee.eID);
-	$('input#inputName').val(employee.name);
-	$('input#inputStartDate').val(employee.startDate);
-	$('input#inputBirthday').val(employee.birthday);
-	$('select#selectPosition').val((employee.position).toString()).change();
-	$('select#selectStatus').val((employee.status).toString()).change();
-	$('input#inputDependents').val(employee.dependents);
-	$('input#inputBaseSalary').val(employee.salary);
-
-	$('form#selectEmployee').addClass('hide');
-	$('form#editEmployee').removeClass('hide');
-});
-
+$('#add-employee-button').hover(
+	function(){ $('#add-employee-label').css('display','inline-block')},
+		function(){ $('#add-employee-label').css('display', 'none')
+	});
 
 
 $('#employee-master-checkbox').change(function(){
