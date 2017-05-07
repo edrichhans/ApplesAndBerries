@@ -18,7 +18,7 @@ block content
 			//- 		i.search.icon
 			#add-AR-label.ui.pointing.below.red.basic.label
 				| Add AR
-			button#add-AR-button.ui.basic.circular.icon.button(onclick="location.replace('/AR')")
+			button#add-AR-button.ui.basic.circular.icon.button(onclick="location.assign('/AR')")
 				i.plus.icon
 			#edit-AR-label.ui.pointing.below.red.basic.label
 				| Edit AR
@@ -56,13 +56,34 @@ block content
 							td= item.adviceNumber
 							td= item.issuedBy
 							td= item.name
-							td= item.date
+							td.date= item.date
 							td= item.particulars
 							td= item.amount
+						script.
+							function formatDate(date) {
+							  var monthNames = [
+							    "January", "February", "March",
+							    "April", "May", "June", "July",
+							    "August", "September", "October",
+							    "November", "December"
+							  ];
+
+							  var day = date.getDate();
+							  var monthIndex = date.getMonth();
+							  var year = date.getFullYear();
+
+							  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+							}
+
+							var item = !{JSON.stringify(item)};
+							d = new Date(item.date);
+							item.date = formatDate(d);
+							console.log(item.date);
+							$('td.date').last().text(item.date);
 
 			//- .ui.segment.row
 			//- 	.view-table
-					
+
 		//PRINT BUTTON
 		.ui.container.bottomprint
 			button#print-AR-button.ui.right.labeled.icon.button.right.floated.print
@@ -87,7 +108,7 @@ block content
 	//- script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-	
+
 	script(type='text/javascript' src='/javascripts/scripts.js')
 	script(type='text/javascript' src='/javascripts/AR_view.js')
 	//- script(type='text/javascript').

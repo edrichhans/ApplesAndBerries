@@ -15,7 +15,7 @@ block content
 		.ui.container.right.aligned
 			#add-payslip-label.ui.pointing.below.red.basic.label
 				| Add Payslip
-			button#add-payslip-button.ui.basic.circular.icon.button(onclick="location.replace('/payslip')")
+			button#add-payslip-button.ui.basic.circular.icon.button(onclick="location.assign('/payslip')")
 				i.plus.icon
 			#edit-payslip-label.ui.pointing.below.red.basic.label
 				| Edit Payslip
@@ -69,7 +69,7 @@ block content
 							td.eID(value=item.eID)= item.adviceNumber
 							//- td= item.issuedBy
 							//- td.eID(value=item.eID)= item.eID
-							td= item.startDate
+							td.startDate= item.startDate
 							td.endDate= item.endDate
 							//- td= item.deductibles_name
 							td
@@ -91,6 +91,30 @@ block content
 							//- td= item.EmployerHDMF
 							td= item.BIR
 							td= item.total
+						script.
+							function formatDate(date) {
+							  var monthNames = [
+							    "January", "February", "March",
+							    "April", "May", "June", "July",
+							    "August", "September", "October",
+							    "November", "December"
+							  ];
+
+							  var day = date.getDate();
+							  var monthIndex = date.getMonth();
+							  var year = date.getFullYear();
+
+							  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+							}
+
+							var item = !{JSON.stringify(item)};
+							d1 = new Date(item.startDate);
+							d2 = new Date(item.endDate);
+							item.startDate = formatDate(d1);
+							item.endDate = formatDate(d2);
+							//- console.log(item.date);
+							$('td.startDate').last().text(item.startDate);
+							$('td.endDate').last().text(item.endDate);
 
 		//PRINT BUTTON
 		.ui.container.bottomprint
@@ -215,11 +239,11 @@ block content
 		.actions
 			.ui.positive.submit.right.button#delete-alert OK
 
-	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
-	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+	script(type='text/javascript', src='/javascripts/table.js')
 	script(type='text/javascript', src='/javascripts/payslip_view.js')
-	script(src='javascripts/table.js')
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};
 		var transactions =!{JSON.stringify(transactions)};
 	//- script(type='text/javascript', src='/javascripts/sorttable.js')
+	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
+	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')

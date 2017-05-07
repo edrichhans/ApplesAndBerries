@@ -391,10 +391,6 @@ router.get('/updateTables', function(req, res, next){
 	res.render('updateTables');
 });
 
-router.get('/backUp', function(req, res, next){
-	res.render('backUp');
-});
-
 router.get('/activity_log', function(req, res, next){
 	res.render('activity_log');
 });

@@ -6,6 +6,7 @@ var path = require('path');
 var templatesDir = path.resolve(__dirname, '..', 'views/mailer');
 var emailTemplates = require('email-templates');
 var async = require('async');
+var bcrypt = require('bcrypt');
 var crypto = require('crypto');
 var Promise = require('promise');
 
@@ -20,7 +21,10 @@ var defaultTransport = nodemailer.createTransport({
 	auth: {
 		user: config.mailer.auth.user,
 		pass: config.mailer.auth.pass
-	}
+	},
+	tls: {
+    rejectUnauthorized: false
+  }
 });
 
 exports.forgot = function(req, res, callBack){
@@ -141,7 +145,7 @@ exports.reset = function(req, res, callBack){
           return callBack(500);
         }
         else{
-          User.update({resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.now()}}, {$set: {password: req.body.password, resetPasswordToken: undefined, resetPasswordExpires: undefined}});
+          User.update({resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.now()}}, {$set: {password: bcrypt.hashSync(req.body.password, 10), resetPasswordToken: undefined, resetPasswordExpires: undefined}});
         }
         done(err, user);
       })

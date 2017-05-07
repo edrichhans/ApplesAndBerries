@@ -5,15 +5,15 @@ block content
 	// Title
 	.ui.middle.aligned.center.aligned.grid.stackable.doubling
 		// Title
-		.four.wide.column.row#menu-row
-			.ui.center.aligned.segment
+		.seven.wide.column.row#menu-row(style="margin-top:17vh; margin-bottom:50;")
+			.section-title.ui.center.aligned.segment
 				h1 Manage Financials
 
 		.four.column.wide.row
 			.column
-				#AR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
+				#AR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/AR_view')")
 					.visible.content
-						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/AR.png")
 
 						h3
 							| Acknowledgment
@@ -23,7 +23,7 @@ block content
 						h3
 							| Issue Acknowledgment Receipt
 			.column
-				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
+				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/checkvoucher_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
 						h3
@@ -34,7 +34,7 @@ block content
 						h3
 							| Issue Check Voucher
 			.column
-				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
+				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.assign('/pettycash_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
 						h3
@@ -45,5 +45,35 @@ block content
 						.ui.text.container.fluid
 							h3
 								| Issue Petty Cash
+		.four.column.wide.row
+			.column
+				#report-module-button.ui.animated.fade.red.button.fluid(tabindex="0")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
+						h3
+							| Download Report
+					.hidden.content
+						h3
+							| Download Excel Report
+		.four.column.wide.row
+			//- .ui.selection.dropdown
+			//- 	input(type='hidden' name='Year')
+			//- 	i.dropdown.icon
+			//- 	.default.text Year
+			//- 	.menu
+			//- 		.item(data-value="1") Hello
+			//- 		.item(data-value="2") Hi
+			h2 Choose Year:
+			select#year.ui.dropdown
+				
 
 	script(type='text/javascript', src='/javascripts/sorttable.js')
+	script.
+		var curr = new Date();
+		var year = curr.getFullYear();
+		for(var c = 2017; c <= year; c++){
+			$('#year').append("<option value=" + c + ">" + c.toString())
+		}
+		$('#report-module-button').click(function(){
+			window.location = '/report?year=' + $('#year').val();
+		})

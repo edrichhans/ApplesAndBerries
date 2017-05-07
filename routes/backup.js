@@ -49,7 +49,6 @@ router.get('/sethourlylocal', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 router.get('/sethourlycloud', function(req, res, next){
@@ -61,7 +60,6 @@ router.get('/sethourlycloud', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 router.get('/setdailylocal', function(req, res, next){
@@ -73,7 +71,6 @@ router.get('/setdailylocal', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 router.get('/setdailycloud', function(req, res, next){
@@ -85,7 +82,6 @@ router.get('/setdailycloud', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 router.get('/setweeklylocal', function(req, res, next){
@@ -97,19 +93,18 @@ router.get('/setweeklylocal', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 router.get('/setweeklycloud', function(req, res, next){
+
 	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/weeklybackupcloud.bat"', function(error, stdout, stderr) {
-    	if (error) {
-		    console.error(`exec error: ${error}`);
-		    res.status(500);
+		if (error) {
+			console.error(`exec error: ${error}`);
+			res.status(500);
 		}
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 router.get('/setmonthlylocal', function(req, res, next){
@@ -121,7 +116,6 @@ router.get('/setmonthlylocal', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 router.get('/setmonthlycloud', function(req, res, next){
@@ -133,7 +127,6 @@ router.get('/setmonthlycloud', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 router.get('/deletelocalbackup', function(req, res, next){
@@ -145,7 +138,6 @@ router.get('/deletelocalbackup', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 router.get('/deletecloudbackup', function(req, res, next){
@@ -157,7 +149,6 @@ router.get('/deletecloudbackup', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
 });
 
 module.exports = router;

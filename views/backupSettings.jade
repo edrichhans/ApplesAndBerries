@@ -1,104 +1,36 @@
-doctype html
-html(lang='en')
-    head
-        title Backup Settings
-        style.
-            .dropdown {
-            float: left;
-            position: relative;
-            display: inline-block;
-            padding-right: 50px;
-            }
-            .dropbtn {
-            height: 50px;
-            }
-            .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            overflow: auto;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            }
-            .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            }
-            .dropdown-content1 {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            overflow: auto;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            }
-            .dropdown-content1 a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            }
-            .show {display:block;}
-            .wew {display: inline;}
-    body
-        h1 Set Backup Frequency
-        #container
-            .dropdown
-                button.dropbtn(onclick='myFunction()') Local Backup Frequency
-                #LfreqDropdown.dropdown-content
-                    a(href='/backup/sethourlylocal') Hourly
-                    a(href='/backup/setdailylocal') Daily
-                    a(href='/backup/setweeklylocal') Weekly
-                    a(href='/backup/setmonthlylocal') Monthly
-                    a(href='/backup/deletelocalbackup') No Auto Local Backup
+extends layout
 
-        #container
-            .dropdown
-                button.dropbtn(onclick='myFunction1()') Cloud Backup Frequency
-                #CfreqDropdown.dropdown-content1
-                    a(href='/backup/sethourlycloud') Hourly
-                    a(href='/backup/setdailycloud') Daily
-                    a(href='/backup/setweeklycloud') Weekly
-                    a(href='/backup/deletecloudbackup') No Auto Cloud Backup
-        #container.col
-            input(type='button', onclick="location.assign('/backup/backupNow');", value='Cancel')
+block content
+	title Add Employee
 
-        script.
-            /* When the user clicks on the button,
-            toggle between hiding and showing the dropdown content */
-            function myFunction() {
-            document.getElementById("LfreqDropdown").classList.toggle("show");
-            }
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-            }
-            }
-            }
-            }
-            function myFunction1() {
-            document.getElementById("CfreqDropdown").classList.toggle("show");
-            }
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content1");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-            }
-            }
-            }
-            }
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+
+		.seven.wide.column.row#menu-row(style="margin-top:17vh; margin-bottom:50;")
+			.section-title.ui.center.aligned.segment
+				h1 Auto Backup Settings
+
+		.four.column.wide.row
+			.column
+				h3 Local Backup Frequency
+				select.ui.two.wide.fluid.search.menu#local-backup-freq
+					option(value="") Select Option...
+					option(value = 1 href='/backup/setmonthlylocal') Monthly
+					option(value = 2 href='/backup/setweeklylocal') Weekly
+					option(value = 3 href='/backup/setdailylocal') Daily
+					option(value = 4 href='/backup/sethourlylocal') Hourly
+					option(value = 5 href='/backup/deletelocalbackup') No Auto Local Backup
+			.column
+				h3 Cloud Backup Frequency
+				select.ui.two.wide.fluid.search.menu#cloud-backup-freq
+					option(value="") Select Option...
+					option(value = 1 href='/backup/setmonthlycloud') Monthly
+					option(value = 2 href='/backup/setweeklycloud') Weekly
+					option(value = 3 href='/backup/setdailycloud') Daily
+					option(value = 4 href='/backup/sethourlycloud') Hourly
+					option(value = 5 href='/backup/deletecloudbackup') No Auto Cloud Backup
+
+		.ui.container.right.aligned
+			.ui.red.button.right.floated#backup-menu-cancel-button Back
+			.ui.green.button.right.floated#save-settings-button Save
+
+	script(type='text/javascript', src='/javascripts/backupSettings.js')

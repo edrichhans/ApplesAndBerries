@@ -18,7 +18,7 @@ exports.insert = function(req, res, callBack){
 			"adviceNumber": currentAdviceNumber,
 			"issuedBy": issuedBy,
 			"name": name,
-			"date": date,
+			"date": new Date(date),
 			"particulars": particulars,
 			"amount": amount
 		});
