@@ -166,3 +166,25 @@ $('#payslip-master-checkbox').change(function(){
 	if(this.checked) $('.payslip-checkbox').attr('checked', true);
 	else $('.payslip-checkbox').attr('checked', false);
 });
+
+$('#add-payslip-button').hover(
+	function(){ $('#add-payslip-label').css('display','inline-block')},
+		function(){ $('#add-payslip-label').css('display', 'none')
+});
+
+$('#edit-payslip-button').hover(
+	function(){ $('#edit-payslip-label').css('display','inline-block')},
+		function(){ $('#edit-payslip-label').css('display', 'none')
+});
+
+$('#delete-payslip-button').hover(
+	function(){ $('#delete-payslip-label').css('display','inline-block')},
+		function(){ $('#delete-payslip-label').css('display', 'none')
+});
+
+
+// $('#add-employee-button').hover(
+// 	function(){ $('#add-employee-label').css('display','inline-block')},
+// 		function(){ $('#add-employee-label').css('display', 'none')
+// 	});
+>>>>>>> origin/bernablues

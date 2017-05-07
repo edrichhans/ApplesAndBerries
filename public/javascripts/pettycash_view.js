@@ -57,3 +57,18 @@ $('#pettycash-master-checkbox').change(function(){
 	if(this.checked) $('.pettycash-checkbox').attr('checked', true);
 	else $('.pettycash-checkbox').attr('checked', false);
 });
+
+$('#add-petty-cash-button').hover(
+	function(){ $('#add-petty-cash-label').css('display','inline-block')},
+		function(){ $('#add-petty-cash-label').css('display', 'none')
+});
+
+$('#edit-petty-cash-button').hover(
+	function(){ $('#edit-petty-cash-label').css('display','inline-block')},
+		function(){ $('#edit-petty-cash-label').css('display', 'none')
+});
+
+$('#delete-petty-cash-button').hover(
+	function(){ $('#delete-petty-cash-label').css('display','inline-block')},
+		function(){ $('#delete-petty-cash-label').css('display', 'none')
+});

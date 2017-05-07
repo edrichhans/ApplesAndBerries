@@ -16,17 +16,23 @@ block content
 			//- 	input(type='text', placeholder='Search...')
 			//- 	button.ui.basic.circular.icon.button
 			//- 		i.search.icon
+			#add-AR-label.ui.pointing.below.red.basic.label
+				| Add AR
 			button#add-AR-button.ui.basic.circular.icon.button(onclick="location.replace('/AR')")
 				i.plus.icon
+			#edit-AR-label.ui.pointing.below.red.basic.label
+				| Edit AR
 			button#edit-AR-button.ui.basic.circular.icon.button
 				i.edit.icon
+			#delete-AR-label.ui.pointing.below.red.basic.label
+				| Delete AR
 			button#delete-AR-button.ui.basic.circular.icon.button
 				i.trash.outline.icon
 
 
 
 		// Table Proper
-		.ui.container
+		.ui.segment.container.fortable
 			table#AR-view-table.ui.celled.table.selectable
 				thead
 					tr
@@ -79,8 +85,9 @@ block content
 			//- 	.view-table
 					
 		//PRINT BUTTON
-		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-AR-button Print
+		.ui.container.bottomprint
+			button#print-AR-button.ui.right.labeled.icon.button.right.floated.print
+				|	Print
 				i.print.icon
 
 	.ui.small.modal#confirm-delete-modal

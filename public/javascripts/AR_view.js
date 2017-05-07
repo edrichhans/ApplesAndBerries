@@ -49,3 +49,19 @@ $('#ar-master-checkbox').change(function(){
 	if(this.checked) $('.ar-checkbox').attr('checked', true);
 	else $('.ar-checkbox').attr('checked', false);
 });
+
+
+$('#add-AR-button').hover(
+	function(){ $('#add-AR-label').css('display','inline-block')},
+		function(){ $('#add-AR-label').css('display', 'none')
+});
+
+$('#edit-AR-button').hover(
+	function(){ $('#edit-AR-label').css('display','inline-block')},
+		function(){ $('#edit-AR-label').css('display', 'none')
+});
+
+$('#delete-AR-button').hover(
+	function(){ $('#delete-AR-label').css('display','inline-block')},
+		function(){ $('#delete-AR-label').css('display', 'none')
+});
