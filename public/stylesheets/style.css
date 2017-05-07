@@ -1,5 +1,5 @@
 body{
-	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font: 14px Helvetica,"Lucida Grande", Arial, sans-serif;
 	/*background-color: #787554 !important;*/
 	/*background*//*-color: #FFEAEA;*/
 	/*background-image: url('/public/images/landing_bg.jpg');*/
@@ -8,9 +8,91 @@ body{
 	height: 100vh !important;
 }
 
+h1, h2, h3, h4, h5, h6{
+	font-style: Helvetica, "Lucida Grande",  Arial, sans-serif;
+	
+}
+
 a{
 	color: #372B62;
 }
+
+.ui.container.right.aligned{
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/*[id^="*-label"] {
+	display: none;
+}*/
+#add-CV-label, #add-AR-label, #add-petty-cash-label, #add-payslip-label{
+	position: absolute;
+	top: 9.5vh;
+	right: 16vh;
+}
+
+#edit-CV-label, #edit-AR-label, #edit-petty-cash-label, #edit-payslip-label {
+	position: absolute;
+	top: 9.5vh;
+	right: 10vh;
+}
+
+#delete-CV-label, #delete-AR-label, #delete-petty-cash-label, #delete-payslip-label  {
+	position: absolute;
+	top: 9.5vh;
+	right: 2.75vh;
+}
+
+#add-employee-label {
+	position: absolute;
+	top: 9.5vh;
+	right: 1vh;
+}
+
+
+#add-employee-label, 
+#add-payslip-label, #edit-payslip-label, #delete-payslip-label,
+#add-CV-label, #edit-CV-label, #delete-CV-label,
+#add-AR-label, #edit-AR-label, #delete-AR-label,
+#add-petty-cash-label, #edit-petty-cash-label, #delete-petty-cash-label
+ {
+	display: none;
+}
+
+
+.ui.container.bottomprint{
+	padding: 0;
+}
+
+.ui.basic.circular.icon.button{
+	background-color: #FFF !important;
+}
+.ui.basic.circular.icon.button: hover{
+	/*border-color: color:#9F3A38;*/
+	/*box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset;*/
+	box-shadow: 0px 0px 0px 1px #9F3A38 inset, 0px 0px 0px 0px #9F3A38 inset;
+}
+
+.ui.right.labeled.icon.button.right.floated.print{
+	background-color: #FFF !important;
+	border: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+.ui.right.labeled.icon.button.right.floated.print:hover{
+	color:#9F3A38;
+	/*background-color: rgba(0,0,0,.01) !important;*/
+	/*background-color: #FCFCFC !important;*/
+	background-color: #F8F8F8 !important;
+}
+
+
+
+/*.ui.segment.container.fortable{
+	background: #FCFCFC !important;
+}*/
+/*
+
 
 /*h1{
 	color: #453 !important;
@@ -278,8 +360,13 @@ padding: 10 0 10 0 !important;}
 /*style = "background-color: #9F3A38 !important;"
 */
 #menu-row {
-	margin-top:9vh;
+	margin-top:8.5vh;
 	margin-bottom:0;
+	padding-bottom: 0;
+}
+
+.ui.dividing.header.center.aligned{
+	padding-bottom: 0;
 }
 
 .ui.red.button, .ui.red.buttons .button{

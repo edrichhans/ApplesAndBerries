@@ -17,5 +17,4 @@ document.getElementById('save-settings-button').onclick = function(){
 	else if (cloud_choice == 4) location.assign('/backup/sethourlycloud');
 	else if (cloud_choice == 5) location.assign('/backup/deletecloudbackup');
 
-	location.assign('/')
 }
