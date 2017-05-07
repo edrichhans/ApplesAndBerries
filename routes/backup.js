@@ -137,7 +137,6 @@ router.get('/setmonthlycloud', function(req, res, next){
 });
 
 router.get('/deletelocalbackup', function(req, res, next){
-	console.log('kel');
 	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/deletelocalbackup.bat"', function(error, stdout, stderr) {
     	if (error) {
 		    console.error(`exec error: ${error}`);
@@ -150,7 +149,6 @@ router.get('/deletelocalbackup', function(req, res, next){
 });
 
 router.get('/deletecloudbackup', function(req, res, next){
-
 	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/deletecloudbackup.bat"', function(error, stdout, stderr) {
 		if (error) {
 		    console.error(`exec error: ${error}`);
