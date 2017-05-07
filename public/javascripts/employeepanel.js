@@ -93,3 +93,7 @@ $('#employee-master-checkbox').change(function(){
 $('#print-employee-button').click(function(){
 	$('table#employee-view-table').printThis();
 });
+
+$('#add-employee-button.ui.basic.circular.icon.button').click(function(){
+	$('#add-employee.ui.large.modal').modal('show');
+});
