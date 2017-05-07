@@ -10,28 +10,32 @@ block content
 
 		// Table Proper
 		.ui.container
-			table#AR-view-table.ui.celled.table.selectable
+			table#activity-log-table.ui.celled.table.selectable
 				thead
 					tr
 						th Type
 						th Issued By
 						th Date
 				tbody
-					each item, index in transactions
+					each item, index in log
 						tr.entry(data-an= item.adviceNumber)
-
 							td= item.message
 							td= item.issuedBy
 							td= item.timestamp
 
-			.actions
-				.ui.green.ok.inverted.button
-					i.checkmark.icon
-					| Done
-
 	script(type='text/javascript').
-		var employees =!{JSON.stringify(employees)};
-		var transactions =!{JSON.stringify(transactions)};
-	script(type='text/javascript', src='/javascripts/sorttable.js')
-	script(src='javascripts/table.js')
-	script(type='text/javascript', src='/javascripts/payslip_view.js')
+		var log;
+
+		$.ajax({
+			type: "GET",
+			url: "/log",
+			dataType: "json",
+			success: function(data) {
+				console.log(data);
+				log = data;
+			}
+		});
+
+		$(document).ready(function(){
+			$('#activity-log-table').DataTable();
+		});
