@@ -50,9 +50,30 @@ block content
 							td= item.adviceNumber
 							td= item.issuedBy
 							td= item.name
-							td= item.date
+							td.date= item.date
 							td= item.particulars
 							td= item.amount
+						script.
+							function formatDate(date) {
+							  var monthNames = [
+							    "January", "February", "March",
+							    "April", "May", "June", "July",
+							    "August", "September", "October",
+							    "November", "December"
+							  ];
+
+							  var day = date.getDate();
+							  var monthIndex = date.getMonth();
+							  var year = date.getFullYear();
+
+							  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+							}
+
+							var item = !{JSON.stringify(item)};
+							d = new Date(item.date);
+							item.date = formatDate(d);
+							console.log(item.date);
+							$('td.date').last().text(item.date);
 
 			//- .ui.segment.row
 			//- 	.view-table

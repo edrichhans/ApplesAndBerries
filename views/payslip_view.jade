@@ -62,7 +62,7 @@ block content
 							td.eID(value=item.eID)= item.adviceNumber
 							//- td= item.issuedBy
 							//- td.eID(value=item.eID)= item.eID
-							td= item.startDate
+							td.startDate= item.startDate
 							td.endDate= item.endDate
 							//- td= item.deductibles_name
 							td
@@ -84,6 +84,30 @@ block content
 							//- td= item.EmployerHDMF
 							td= item.BIR
 							td= item.total
+						script.
+							function formatDate(date) {
+							  var monthNames = [
+							    "January", "February", "March",
+							    "April", "May", "June", "July",
+							    "August", "September", "October",
+							    "November", "December"
+							  ];
+
+							  var day = date.getDate();
+							  var monthIndex = date.getMonth();
+							  var year = date.getFullYear();
+
+							  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+							}
+
+							var item = !{JSON.stringify(item)};
+							d1 = new Date(item.startDate);
+							d2 = new Date(item.endDate);
+							item.startDate = formatDate(d1);
+							item.endDate = formatDate(d2);
+							//- console.log(item.date);
+							$('td.startDate').last().text(item.startDate);
+							$('td.endDate').last().text(item.endDate);
 
 		//PRINT BUTTON
 		.ui.container

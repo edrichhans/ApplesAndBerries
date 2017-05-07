@@ -2,6 +2,21 @@ $(document).ready(function(){
 	$('#payslip-view-table').DataTable();
 });
 
+function formatDate(date) {
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+}
+
 var eID = -1;
 var an = -1;
 // Trigger action when the contexmenu is about to be shown
@@ -97,10 +112,10 @@ $('tr.entry').click(function(){
 		console.log(data.data);
 		$('#AN span').text(data.data[0].adviceNumber);
 		$('#name span').text(data.data[1].name);
-		$('#dateToday span').text((data.data[0].dateIssued).substring(0,10));
+		$('#dateToday span').text(formatDate(new Date(data.data[0].dateIssued)));
 		$('#company span').text(data.data[0].company);
-		$('#dateStart span').text(data.data[0].startDate);
-		$('#dateEnd span').text(data.data[0].endDate);
+		$('#dateStart span').text(formatDate(new Date(data.data[0].startDate)));
+		$('#dateEnd span').text(formatDate(new Date(data.data[0].endDate)));
 		$('#gross span').text(data.data[1].salary);
 		$('#philHealth span').text(data.data[0].PHreduc);
 		$('#SSS span').text(data.data[0].SSSreduc);
