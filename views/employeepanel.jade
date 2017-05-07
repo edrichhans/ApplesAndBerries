@@ -19,6 +19,8 @@ block content
 			//- 	input(type='text', placeholder='Search...')
 			//- 	button.ui.basic.circular.icon.button
 			//- 		i.search.icon
+			#add-employee-label.ui.pointing.below.red.basic.label
+				| Add Employee
 			button#add-employee-button.ui.basic.circular.icon.button(onclick="location.replace('/employees/add')")
 				i.add.user.icon
 			//- button#edit-AR-button.ui.basic.circular.icon.button
@@ -30,7 +32,7 @@ block content
 		//- 	button#add-employee-button.ui.basic.icon.button(onclick="location.replace('/employees/add')") Add Employee
 		//- 		i.add.user.icon
 		//Table Proper
-		.ui.container
+		.ui.segment.container.fortable
 			table#employee-view-table.ui.celled.table.selectable
 				thead
 					tr(style="background-color: #")
@@ -76,9 +78,11 @@ block content
 
 
 		//PRINT BUTTON
-		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-employee-button Print
+		.ui.container.bottomprint
+			button#print-employee-button.ui.right.labeled.icon.button.right.floated.print
+				|	Print
 				i.print.icon
+
 
 	.ui.small.modal#confirm-delete-modal
 		.header Confirm
@@ -86,9 +90,6 @@ block content
 			| Confirm Unhiring Employee
 		.actions
 			#delete.ui.positive.submit.right.button OK
-	
-
-			//- .ui.positive.submit.right.button#delete OK
 			.ui.red.right.cancel.button Cancel
 
 	.ui.small.modal#alert-delete-modal

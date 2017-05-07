@@ -44,3 +44,6 @@ Sat, 29 Apr 2017 02:35:32 GMT express-session deprecated undefined saveUninitial
 js-bson: Failed to load c++ bson extension, using pure JS version
 Sat, 29 Apr 2017 11:34:09 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
 Sat, 29 Apr 2017 11:34:09 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Fri, 05 May 2017 07:26:07 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Fri, 05 May 2017 07:26:07 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9

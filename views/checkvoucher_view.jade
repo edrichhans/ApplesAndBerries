@@ -13,14 +13,22 @@ block content
 			//- 	input(type='text', placeholder='Search...')
 			//- 	button.ui.basic.circular.icon.button
 			//- 		i.search.icon
+			//- #add-CV-label.ui.right.pointing.red.basic.label
+			//- 	| Add CV
+			#add-CV-label.ui.pointing.below.red.basic.label
+				| Add CV
 			button#add-CV-button.ui.basic.circular.icon.button(onclick="location.replace('/checkvoucher')")
 				i.plus.icon
+			#edit-CV-label.ui.pointing.below.red.basic.label
+				| Edit CV
 			button#edit-CV-button.ui.basic.circular.icon.button
 				i.edit.icon
+			#delete-CV-label.ui.pointing.below.red.basic.label
+				| Delete CV
 			button#delete-CV-button.ui.basic.circular.icon.button
 				i.trash.outline.icon
 		// Table Proper
-		.ui.container
+		.ui.segment.container.fortable
 			table#check-voucher-view-table.ui.celled.table.selectable
 				thead
 					tr
@@ -44,17 +52,39 @@ block content
 							td= item.adviceNumber
 							td= item.issuedBy
 							td= item.name
-							td= item.date
+							td.date= item.date
 							td= item.particulars
 							td= item.amount
+						script.
+							function formatDate(date) {
+							  var monthNames = [
+							    "January", "February", "March",
+							    "April", "May", "June", "July",
+							    "August", "September", "October",
+							    "November", "December"
+							  ];
+
+							  var day = date.getDate();
+							  var monthIndex = date.getMonth();
+							  var year = date.getFullYear();
+
+							  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+							}
+
+							var item = !{JSON.stringify(item)};
+							d = new Date(item.date);
+							item.date = formatDate(d);
+							console.log(item.date);
+							$('td.date').last().text(item.date);
 
 			//- .ui.segment.row
 			//- 	.view-table
 
 
 		// PRINT BUTTON
-		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-check-voucher-button Print
+		.ui.container.bottomprint
+			button#print-check-voucher-button.ui.right.labeled.icon.button.right.floated.print
+				|	Print
 				i.print.icon
 
 	.ui.small.modal#confirm-delete-modal

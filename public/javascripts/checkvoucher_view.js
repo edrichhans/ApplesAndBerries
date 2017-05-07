@@ -49,3 +49,19 @@ $('#cv-master-checkbox').change(function(){
 	if(this.checked) $('.cv-checkbox').attr('checked', true);
 	else $('.cv-checkbox').attr('checked', false);
 });
+
+$('#add-CV-button').hover(
+	function(){ $('#add-CV-label').css('display','inline-block')},
+		function(){ $('#add-CV-label').css('display', 'none')
+});
+
+$('#edit-CV-button').hover(
+	function(){ $('#edit-CV-label').css('display','inline-block')},
+		function(){ $('#edit-CV-label').css('display', 'none')
+});
+
+$('#delete-CV-button').hover(
+	function(){ $('#delete-CV-label').css('display','inline-block')},
+		function(){ $('#delete-CV-label').css('display', 'none')
+});
+

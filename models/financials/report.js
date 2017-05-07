@@ -1,8 +1,7 @@
 var Excel = require('exceljs');
 var Promise = require('promise');
-require('datejs');
+// require('datejs');
 var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X' ,'Y', 'Z'];
-
 
 function initialize(worksheet){
 	worksheet.properties.defaultRowHeight = 20;
@@ -24,6 +23,7 @@ var check_date = function(arr, inputDate){
 		else{
 			dateIssued = arr[i][inputDate];
 		}
+		// console.log("GETFULLYEAR", dateIssued.getFullYear());
 		var date = ("0" + (dateIssued.getMonth()+1)).slice(-2) + '-' + (dateIssued.getYear()+1900).toString();
 		console.log(date);
 		date = date.substring(0,7);
@@ -107,14 +107,20 @@ exports.report = function(req, res){
 	var checkVoucher = db.get('checkVoucher');
 	var pettyCash = db.get('pettyCash');
 	var employees = db.get('Employees');
+	var year = parseInt(req.query.year);
+	console.log("YEAR", year);
 
-	paySlip.find({}).then((paySlipData) => { 
-	// console.log('PASOK1');
-		AR.find({}).then((ARData) => {
+	var startYear = new Date(year, 1, 1);
+	var endYear = new Date(year+1, 1, 1);
+
+	
+	paySlip.find({dateIssued: {$gte: startYear, $lt: endYear}}).then((paySlipData) => { 
+		console.log(paySlipData);
+		AR.find({date: {$gte: startYear, $lt: endYear}}).then((ARData) => {
 		// console.log('PASOK2');
-			checkVoucher.find({}).then((checkVoucherData)=> {
+			checkVoucher.find({date: {$gte: startYear, $lt: endYear}}).then((checkVoucherData)=> {
 		// console.log('PASOK3');
-				pettyCash.find({}).then((pettyCashData) => {
+				pettyCash.find({date: {$gte: startYear, $lt: endYear}}).then((pettyCashData) => {
 		// console.log('PASOK4');
 					employees.find({}).then((employee) => {	
 		// console.log('PASOK5');
@@ -239,7 +245,7 @@ exports.report = function(req, res){
 								paySlipWorksheet.addRow({
 									an: paySlip_month_entry.adviceNumber,
 									issued: paySlip_month_entry.issuedBy,
-									date_issued: paySlip_month_entry.dateIssued.toString('MMMM d, yyyy'),
+									date_issued: paySlip_month_entry.dateIssued,
 									eID: paySlip_month_entry.eID,
 									name: employee[0].name,
 									base: employee[0].salary,

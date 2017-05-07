@@ -12,7 +12,7 @@ block content
 		// 1st ROW Buttons
 		.four.column.wide.row
 			.column
-				#payslip-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/payslip_view')")
+				#payslip-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/payslip_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/payslip.png")
 						h3
@@ -23,9 +23,9 @@ block content
 					.hidden.content
 						h3
 			.column
-				#AR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/AR_view')")
+				#AR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/AR_view')")
 					.visible.content
-						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/AR.png")
 
 						h3
 							| Acknowledgment
@@ -39,7 +39,7 @@ block content
 		// 2nd ROW Buttons
 		.four.column.wide.row
 			.column
-				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/checkvoucher_view')")
+				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/checkvoucher_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
 						h3
@@ -52,7 +52,7 @@ block content
 							| Issue Check Voucher
 
 			.column
-				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/pettycash_view')")
+				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.assign('/pettycash_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
 						h3

@@ -6,13 +6,13 @@ block content
 	.ui.middle.aligned.center.aligned.grid.stackable.doubling
 		// Title
 		.four.wide.column.row#menu-row
-			.ui.center.aligned.segment
+			.ui.center.aligned.container
 				h1 Main Menu
 
 		// 1st ROW Buttons
 		.four.column.wide.row
 			.column
-				button#employee-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/employees')")
+				button#employee-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/employees')")
 					.hidden.content
 						h3
 							| Add Employee
@@ -28,7 +28,7 @@ block content
 							| Management
 
 			.column
-				#payslip-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/payslip_view')")
+				#payslip-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/payslip_view')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/payslip.png")
 						h3
@@ -40,7 +40,7 @@ block content
 						h3
 							| Payslip Module
 			.column
-				#control-panel-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/indexFinancials')")
+				#control-panel-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.assign('/indexFinancials')")
 					.visible.content
 						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/receipt1.png")
 						h3
@@ -60,9 +60,9 @@ block content
 		// 2nd ROW Buttons
 		.four.column.wide.row
 			.column
-				#manage-users-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/manageUsers')")
+				#manage-users-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/manageUsers')")
 					.visible.content
-						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/employee_white.png")
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/manage_users.png")
 						h3
 							| Manage
 							br
@@ -74,9 +74,9 @@ block content
 							br
 							| Delete Users
 			.column
-				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.replace('/updateTables')")
+				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/updateTables')")
 					.visible.content
-						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/update_tables.png")
 						h3
 							| Update
 							br
@@ -90,9 +90,10 @@ block content
 							br
 							| PhilHealth
 			.column
-				#backup-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.replace('/backup/')")
+
+				#backup-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.assign('/backup')")
 					.visible.content
-						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/backup.png")
 						h3
 							| Back Up
 							br

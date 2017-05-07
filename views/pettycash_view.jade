@@ -8,21 +8,27 @@ block content
 			.ui.container
 				h1.ui.dividing.header.center.aligned Petty Cash
 
-		// buttons		
+		// buttons
 		.ui.container.right.aligned
 				//- .search-bar.ui.action.input
 				//- 	input(type='search', placeholder='Search...' aria-controls="petty-cash-view-table")
 				//- 	button.ui.basic.circular.icon.button
 				//- 		i.search.icon
-				button#add-petty-cash-button.ui.circular.icon.button(onclick="location.replace('/pettycash')")
+				#add-petty-cash-label.ui.pointing.below.red.basic.label
+					| Add PC
+				button#add-petty-cash-button.ui.basic.circular.icon.button(onclick="location.assign('/pettycash')")
 					i.plus.icon
-				button#edit-petty-cash-button.ui.circular.icon.button
+				#edit-petty-cash-label.ui.pointing.below.red.basic.label
+					| Edit PC
+				button#edit-petty-cash-button.ui.basic.circular.icon.button
 					i.edit.icon
-				button#delete-petty-cash-button.ui.circular.icon.button
+				#delete-petty-cash-label.ui.pointing.below.red.basic.label
+					| Delete PC
+				button#delete-petty-cash-button.ui.basic.circular.icon.button
 					i.trash.outline.icon
 
 		// Table Proper
-		.ui.segment.container
+		.ui.segment.container.fortable
 			//- .ui.segment.row
 				.view-table
 			table#petty-cash-view-table.ui.table.fluid.selectable.sortable
@@ -49,7 +55,7 @@ block content
 							td= item.adviceNumber
 							td= item.issuedBy
 							td= item.name
-							td= item.date
+							td.date= item.date
 							td
 								each i, index in item.items
 									if index != 0
@@ -65,12 +71,34 @@ block content
 									if index != 0
 										br
 									=i[2]
+						script.
+							function formatDate(date) {
+							  var monthNames = [
+							    "January", "February", "March",
+							    "April", "May", "June", "July",
+							    "August", "September", "October",
+							    "November", "December"
+							  ];
+
+							  var day = date.getDate();
+							  var monthIndex = date.getMonth();
+							  var year = date.getFullYear();
+
+							  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+							}
+
+							var item = !{JSON.stringify(item)};
+							d = new Date(item.date);
+							item.date = formatDate(d);
+							console.log(item.date);
+							$('td.date').last().text(item.date);
 
 		// PRINT BUTTON
-		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-petty-cash-button Print
+		.ui.container.bottomprint
+			button#print-petty-cash-button.ui.right.labeled.icon.button.right.floated.print
+				|	Print
 				i.print.icon
-
+			
 	.ui.small.modal#confirm-delete-modal
 		.header Confirm
 		.content
@@ -88,5 +116,5 @@ block content
 
 	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-	
+
 	script(type='text/javascript' src='javascripts/pettycash_view.js')

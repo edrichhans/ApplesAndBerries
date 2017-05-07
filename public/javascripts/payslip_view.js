@@ -2,11 +2,23 @@ $(document).ready(function(){
 	$('#payslip-view-table').DataTable();
 });
 
+function formatDate(date) {
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+}
 
 var eID = -1;
-=======
 var an = -1;
->>>>>>> 03b84850f8994e457f838d22c8af65ad027e2a57
 // Trigger action when the contexmenu is about to be shown
 $('tr').on("contextmenu", function (event) {
 	an = parseInt($(this).attr('data-an'));
@@ -27,7 +39,7 @@ $(document).bind("mousedown", function (e) {
 	// If the clicked element is not the menu
 	if (!$(e.target).parents(".custom-menu").length > 0) {
 		// Hide it
-		e.preventDefault();
+		// e.preventDefault();
 		$(".custom-menu").hide(100);
 	}
 });
@@ -100,10 +112,10 @@ $('tr.entry').click(function(){
 		console.log(data.data);
 		$('#AN span').text(data.data[0].adviceNumber);
 		$('#name span').text(data.data[1].name);
-		$('#dateToday span').text((data.data[0].dateIssued).substring(0,10));
+		$('#dateToday span').text(formatDate(new Date(data.data[0].dateIssued)));
 		$('#company span').text(data.data[0].company);
-		$('#dateStart span').text(data.data[0].startDate);
-		$('#dateEnd span').text(data.data[0].endDate);
+		$('#dateStart span').text(formatDate(new Date(data.data[0].startDate)));
+		$('#dateEnd span').text(formatDate(new Date(data.data[0].endDate)));
 		$('#gross span').text(data.data[1].salary);
 		$('#philHealth span').text(data.data[0].PHreduc);
 		$('#SSS span').text(data.data[0].SSSreduc);
@@ -154,3 +166,24 @@ $('#payslip-master-checkbox').change(function(){
 	if(this.checked) $('.payslip-checkbox').attr('checked', true);
 	else $('.payslip-checkbox').attr('checked', false);
 });
+
+$('#add-payslip-button').hover(
+	function(){ $('#add-payslip-label').css('display','inline-block')},
+		function(){ $('#add-payslip-label').css('display', 'none')
+});
+
+$('#edit-payslip-button').hover(
+	function(){ $('#edit-payslip-label').css('display','inline-block')},
+		function(){ $('#edit-payslip-label').css('display', 'none')
+});
+
+$('#delete-payslip-button').hover(
+	function(){ $('#delete-payslip-label').css('display','inline-block')},
+		function(){ $('#delete-payslip-label').css('display', 'none')
+});
+
+
+// $('#add-employee-button').hover(
+// 	function(){ $('#add-employee-label').css('display','inline-block')},
+// 		function(){ $('#add-employee-label').css('display', 'none')
+// 	});

@@ -1,13 +1,41 @@
-doctype html
-html(lang='en')
-  head
-    title Backup Now
-  body
-    h1 Local or Cloud Backup
-    #container.col
-      input(type='button', onclick="location.assign('/backup/localbackup');", value='Local Backup')
-    #container.col
-      input(type='button', onclick="location.assign('/backup/cloudbackup');", value='Cloud Backup')
-    #container.col
-      input(type='button', onclick="location.assign('/backup');", value='Cancel')
+extends layout
 
+block content
+	title Back Up Now
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+
+		.seven.wide.column.row#menu-row(style="margin-top:17vh; margin-bottom:50;")
+			.section-title.ui.center.aligned.segment
+				h1 Back Up Now
+
+		.four.column.wide.row
+			.column
+
+				#back-up-locally.col.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/backup/localbackup');", value='Local Backup')
+					.visible.content
+						.ui.container.main-menu-button
+							img.ui.tiny.centered.middle.aligned.image(src="icons/backup/download_arrow.png")
+							h1 Back Up Locally
+					.hidden.content
+						h4 Back Up to a Local File
+
+			.column
+				#back-up-to-cloud.col.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/backup/cloudbackup');", value='Cloud Backup')
+					.visible.content
+						.ui.container.main-menu-button
+							img.ui.tiny.centered.middle.aligned.image(src="icons/backup/upload_to_cloud.png")
+							h1 Back Up to Cloud
+					.hidden.content
+						h4 Back Up to an Online Server
+
+		.ui.container
+			button.ui.red.button.right.floated.column.center.aligned#backup-now-cancel-button(onclick="location.assign('/backup')") Back
+
+	.ui.small.modal#alert-backup-modal
+		.header Success
+		.content
+			| Update Successful
+		.actions
+			.ui.positive.submit.right.button#update-alert OK
+
+	script(type='text/javascript', src='/javascripts/backupNow.js')

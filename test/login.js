@@ -178,10 +178,10 @@ describe('mailer: models', function () {
 	describe('#sendOne()', function (done) {
 		it('should render the password reset templates correctly', function (done) {
 			var locals = {
-				email: 'edrichhans@gmail.com',
+				email: 'edrichhans@yahoo.com',
 				subject: 'Password reset',
 				name: 'Forgetful User',
-				resetUrl: 'http://localhost:8000/password_rest/000000000001|afdaevdae353'
+				resetUrl: 'http://localhost:8000/password_reset/000000000001|afdaevdae353'
 			};
 			mailer.sendOne('password_reset', locals, function (err, responseStatus, html, text) {
 				should.not.exist(err);

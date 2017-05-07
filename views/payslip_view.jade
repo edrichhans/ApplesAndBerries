@@ -13,20 +13,27 @@ block content
 
 		// buttons
 		.ui.container.right.aligned
+			#add-payslip-label.ui.pointing.below.red.basic.label
+				| Add Payslip
+			button#add-payslip-button.ui.basic.circular.icon.button(onclick="location.assign('/payslip')")
+				i.plus.icon
+			#edit-payslip-label.ui.pointing.below.red.basic.label
+				| Edit Payslip
+			button#edit-payslip-button.ui.basic.circular.icon.button
+				i.edit.icon
+			#delete-payslip-label.ui.pointing.below.red.basic.label
+				| Delete Payslip
+			button#delete-payslip-button.ui.basic.circular.icon.button
+				i.trash.outline.icon
 			//- .search-bar.ui.action.input
 			//- 	input(type='text', placeholder='Search...')
 			//- 	button.ui.basic.circular.icon.button
 			//- 		i.search.icon
-			button#add-payslip-button.ui.basic.circular.icon.button(onclick="location.replace('/payslip')")
-				i.plus.icon
-			button#edit-payslip-button.ui.basic.circular.icon.button
-				i.edit.icon
-			button#delete-payslip-button.ui.basic.circular.icon.button
-				i.trash.outline.icon
+			
 
 		// Table Proper
-		.ui.container
-			table#payslip-view-table.ui.table.sortable.selectable
+		.ui.segment.container.fortable
+			table#payslip-view-table.ui.table.selectable
 				thead
 					tr
 						th
@@ -62,7 +69,7 @@ block content
 							td.eID(value=item.eID)= item.adviceNumber
 							//- td= item.issuedBy
 							//- td.eID(value=item.eID)= item.eID
-							td= item.startDate
+							td.startDate= item.startDate
 							td.endDate= item.endDate
 							//- td= item.deductibles_name
 							td
@@ -84,10 +91,35 @@ block content
 							//- td= item.EmployerHDMF
 							td= item.BIR
 							td= item.total
+						script.
+							function formatDate(date) {
+							  var monthNames = [
+							    "January", "February", "March",
+							    "April", "May", "June", "July",
+							    "August", "September", "October",
+							    "November", "December"
+							  ];
+
+							  var day = date.getDate();
+							  var monthIndex = date.getMonth();
+							  var year = date.getFullYear();
+
+							  return monthNames[monthIndex] + ' ' + day + ', ' + year;
+							}
+
+							var item = !{JSON.stringify(item)};
+							d1 = new Date(item.startDate);
+							d2 = new Date(item.endDate);
+							item.startDate = formatDate(d1);
+							item.endDate = formatDate(d2);
+							//- console.log(item.date);
+							$('td.startDate').last().text(item.startDate);
+							$('td.endDate').last().text(item.endDate);
 
 		//PRINT BUTTON
-		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-payslip-button Print
+		.ui.container.bottomprint
+			button#print-payslip-button.ui.right.labeled.icon.button.right.floated.print
+				|	Print
 				i.print.icon
 
 		.ui.basic.modal.view
@@ -207,11 +239,11 @@ block content
 		.actions
 			.ui.positive.submit.right.button#delete-alert OK
 
-	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
-	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+	script(type='text/javascript', src='/javascripts/table.js')
 	script(type='text/javascript', src='/javascripts/payslip_view.js')
-	script(src='javascripts/table.js')
 	script(type='text/javascript').
 		var employees =!{JSON.stringify(employees)};
 		var transactions =!{JSON.stringify(transactions)};
 	//- script(type='text/javascript', src='/javascripts/sorttable.js')
+	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
+	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')

@@ -135,7 +135,8 @@
 
 .ui.input.focus input,
 .ui.input input:focus {
-  border-color: #85B7D9;
+  /*border-color: #85B7D9;*/
+  border-color: #9F3A38;
   background: #FFFFFF;
   color: rgba(0, 0, 0, 0.8);
   box-shadow: none;
