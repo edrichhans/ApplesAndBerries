@@ -15,7 +15,7 @@ block content
 		.ui.container.right.aligned
 			#add-payslip-label.ui.pointing.below.red.basic.label
 				| Add Payslip
-			button#add-payslip-button.ui.basic.circular.icon.button(onclick="location.replace('/payslip')")
+			button#add-payslip-button.ui.basic.circular.icon.button(onclick="location.assign('/payslip')")
 				i.plus.icon
 			#edit-payslip-label.ui.pointing.below.red.basic.label
 				| Edit Payslip
@@ -245,5 +245,8 @@ block content
 		var employees =!{JSON.stringify(employees)};
 		var transactions =!{JSON.stringify(transactions)};
 	//- script(type='text/javascript', src='/javascripts/sorttable.js')
+<<<<<<< HEAD
 	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+=======
+>>>>>>> origin/PedroPart

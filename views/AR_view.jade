@@ -18,7 +18,7 @@ block content
 			//- 		i.search.icon
 			#add-AR-label.ui.pointing.below.red.basic.label
 				| Add AR
-			button#add-AR-button.ui.basic.circular.icon.button(onclick="location.replace('/AR')")
+			button#add-AR-button.ui.basic.circular.icon.button(onclick="location.assign('/AR')")
 				i.plus.icon
 			#edit-AR-label.ui.pointing.below.red.basic.label
 				| Edit AR
@@ -83,7 +83,7 @@ block content
 
 			//- .ui.segment.row
 			//- 	.view-table
-					
+
 		//PRINT BUTTON
 		.ui.container.bottomprint
 			button#print-AR-button.ui.right.labeled.icon.button.right.floated.print
@@ -108,7 +108,7 @@ block content
 	//- script(type='text/javascript', src='/javascripts/sorttable.js')
 	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-	
+
 	script(type='text/javascript' src='/javascripts/scripts.js')
 	script(type='text/javascript' src='/javascripts/AR_view.js')
 	//- script(type='text/javascript').

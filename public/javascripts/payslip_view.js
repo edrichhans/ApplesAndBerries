@@ -187,4 +187,3 @@ $('#delete-payslip-button').hover(
 // 	function(){ $('#add-employee-label').css('display','inline-block')},
 // 		function(){ $('#add-employee-label').css('display', 'none')
 // 	});
->>>>>>> origin/bernablues

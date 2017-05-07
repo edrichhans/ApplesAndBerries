@@ -8,7 +8,7 @@ block content
 			.ui.container
 				h1.ui.dividing.header.center.aligned Petty Cash
 
-		// buttons		
+		// buttons
 		.ui.container.right.aligned
 				//- .search-bar.ui.action.input
 				//- 	input(type='search', placeholder='Search...' aria-controls="petty-cash-view-table")
@@ -16,7 +16,7 @@ block content
 				//- 		i.search.icon
 				#add-petty-cash-label.ui.pointing.below.red.basic.label
 					| Add PC
-				button#add-petty-cash-button.ui.basic.circular.icon.button(onclick="location.replace('/pettycash')")
+				button#add-petty-cash-button.ui.basic.circular.icon.button(onclick="location.assign('/pettycash')")
 					i.plus.icon
 				#edit-petty-cash-label.ui.pointing.below.red.basic.label
 					| Edit PC
@@ -116,5 +116,5 @@ block content
 
 	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-	
+
 	script(type='text/javascript' src='javascripts/pettycash_view.js')
