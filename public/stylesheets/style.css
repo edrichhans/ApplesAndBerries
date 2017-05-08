@@ -360,7 +360,8 @@ margin-left: 50;
 #current-user{
 	padding: 0;
 }
-#current-user-name{
+
+.current-user-name{
 	margin-bottom: 0;
 
 }
@@ -408,6 +409,9 @@ padding: 10 0 10 0 !important;}
 	/*background-color: #ff7a77;*/
 }
 
+.logoff{
+	text-align: center;
+}
 /*#current{
 	background-color: #ff7a77 !important;
 }*/

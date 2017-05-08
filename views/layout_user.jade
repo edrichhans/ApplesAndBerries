@@ -1,6 +1,6 @@
 html
 	head
-		title= title
+		title= non-admin-user-account
 		link(rel='stylesheet', type='text/css', href='/semantic/dist/semantic.min.css')
 		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
 		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
@@ -13,29 +13,26 @@ html
 	body
 		#main-grid.ui.two.column.grid
 			.row
-				#fixed-top-menu.ui.top.inverted.borderless.mini.menu.fixed.fluid
-					//- comment out hide show this via jquery this
-					//- a#flm-toggle-button.header.item.sidebar-button
-					//- 	i.sidebar.icon
-					.header.item(href="/")
+				#fixed-top-menu.ui.top.inverted.borderless.mini.menu.fixed
+					#img-logo.item(href="/")
 						img.logo(src='/images/Logo.png')
-					a#main-menu-button.header.item(href="/")
-						i.home.icon
-						h5 A&B
+					a.item(href="/")
+						i#home-logo.big.home.icon
+						//- | Apples & Berries
+						#company-name.item
+							h5 A & B
+
 					.ui.right.floated.item
-						.ui.simple.dropdown.item(class="tabindex=")
-							| Username
+						.ui.simple.dropdown.item(class="tabindex=0")
 							i.user.icon
+							p.current-user-name Username
 							i.dropdown.icon
 							.ui.menu
 								a.item(href="/logout")
-									| Sign Out
-									i.settings.icon
+									p(style="text-align:center;") Sign Out
+									//- i.settings.icon
 				#left-menu-container.ui.two.wide.column
 					#fixed-left-menu.ui.fluid.vertical.labeled.icon.menu
-						//- a#flm-employee-module-button.item(href='/employees')
-						//- 	i.users.icon
-						//- 	| Employees
 						a#flm-payslip-module-button-user.item(href = '/payslip_view')
 							i.money.icon
 							| Payslip
@@ -67,9 +64,6 @@ html
 			if(url.length<=22){
 				$('#main-container').removeClass("ui fourteen wide column").addClass("ui sixteen wide column");
 				$('#left-menu-container').hide()
-			}
-			if(window.location.href.indexOf("employees") > -1) {
-				$('#flm-employee-module-button').css({'color':'#C03130', 'border-bottom':'5px solid #C03130', 'background-color': '#F7F7F7'});
 			}
 			if(window.location.href.indexOf("payslip") > -1) {
 				$('#flm-payslip-module-button').css({'color':'#C03130', 'border-bottom':'5px solid #C03130', 'background-color': '#F7F7F7'});
