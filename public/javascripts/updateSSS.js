@@ -20,10 +20,10 @@ $(document).ready(function(){
 	sss.sort(compareCredit);
 	for(var i = 0; i < sss.length; i++){
 		if(sss[i].range.to != null){
-			$('#SSSTable').append('<tr><td><input class="from" type="number" value="' + parseFloat(sss[i].range.from) + '"></td><td><input class="to" type="number" value="' + parseFloat(sss[i].range.to) + '"></td><td><input class="credit" type="number" value="' + parseFloat(sss[i].credit) + '"></td><td><input class="totalER" type="number" value="' + parseFloat(sss[i].totalER) + '"></td><td><input class="totalEE" type="number" value="' + parseFloat(sss[i].totalEE) + '"></td><td><input class="EC" type="number" value="' + parseFloat(sss[i].EC) + '"></td><td><input class="total" type="number" value="' + parseFloat(sss[i].total) + '"></td>')
+			$('#SSSTable').append('<tr><td><input class="from" style="border:none;" type="number" value="' + parseFloat(sss[i].range.from) + '" disabled></td><td><input class="to" style="border:none;" type="number" value="' + parseFloat(sss[i].range.to) + '" disabled></td><td><input class="credit" style="border:none;" type="number" value="' + parseFloat(sss[i].credit) + '" disabled></td><td><input class="totalER" style="border:none;" type="number" value="' + parseFloat(sss[i].totalER) + '" disabled></td><td><input class="totalEE" style="border:none;" type="number" value="' + parseFloat(sss[i].totalEE) + '" disabled></td><td><input class="EC" style="border:none;" type="number" value="' + parseFloat(sss[i].EC) + '" disabled></td><td><input class="total" style="border:none;" type="number" value="' + parseFloat(sss[i].total) + '" disabled></td>')
 		}
 		else{
-			$('#SSSTable').append('<tr><td><input class="from" type="number" value="' + parseFloat(sss[i].range.from) + '"></td><td><input class="to" type="text" value="infinity" disabled></td><td><input class="credit" type="number" value="' + parseFloat(sss[i].credit) + '"></td><td><input class="totalER" type="number" value="' + parseFloat(sss[i].totalER) + '"></td><td><input class="totalEE" type="number" value="' + parseFloat(sss[i].totalEE) + '"></td><td><input class="EC" type="number" value="' + parseFloat(sss[i].EC) + '"></td><td><input class="total" type="number" value="' + parseFloat(sss[i].total) + '"></td>')
+			$('#SSSTable').append('<tr><td><input class="from" style="border:none;" type="number" value="' + parseFloat(sss[i].range.from) + '"></td><td><input class="to" style="border:none;" type="text" value="infinity" disabled></td><td><input class="credit" style="border:none;" type="number" value="' + parseFloat(sss[i].credit) + '"></td><td><input class="totalER" style="border:none;" type="number" value="' + parseFloat(sss[i].totalER) + '"></td><td><input class="totalEE" style="border:none;" type="number" value="' + parseFloat(sss[i].totalEE) + '"></td><td><input class="EC" style="border:none;" type="number" value="' + parseFloat(sss[i].EC) + '"></td><td><input class="total" style="border:none;" type="number" value="' + parseFloat(sss[i].total) + '"></td>')
 		}
 	}
 });
@@ -48,6 +48,13 @@ var sendAjax = function(values, link){
 		},
 	});
 }
+
+$('#SSSUpdate').click(function(event){
+	event.preventDefault();
+	$("input").css({'border': '1px solid rgba(34, 36, 38, 0.15)', 'border-radius': '0.28571429rem'}).prop('disabled', false);
+
+});
+
 
 $('#SSSSubmit.submit').click(function(){
 	$('.small.modal').modal('show');

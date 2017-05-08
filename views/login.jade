@@ -12,9 +12,8 @@ html
 				.five.wide.column(style="margin: 15vh 0 0 0;!important")
 					form.ui.large.form#login(name='login', method='post', action='/login')
 						.ui.stacked.segment
-							//- (style="background-color: #FFF6F6 !important")
 							.ui.basic.segment.center.aligned
-								h1(style="color:#932F2F !important")
+								h1#login-title
 									| Apples & Berries
 									br
 									| Payroll System
@@ -30,10 +29,7 @@ html
 						.ui.error.message
 					.ui.message
 						a(href="/forgot") Forgot Password
-				//- footer
-				//- .row
-				//- 	h5 sdfghjk
-			//- .ui.text.container.center.aligned(style="margin: 10 0 0 0")
+
 		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
 		script(type='text/javascript' src='javascripts/scripts.js')
 		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
