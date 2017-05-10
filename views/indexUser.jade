@@ -1,0 +1,61 @@
+extends layout_user
+
+block content
+	title Main Menu
+	// Title
+	.ui.middle.aligned.center.aligned.grid.stackable.doubling
+		// Title
+		.four.wide.column.row#menu-row
+			.ui.center.aligned.segment
+				h1 Main Menu
+
+		// 1st ROW Buttons
+		.four.column.wide.row
+			.column
+				#payslip-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/payslip_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/payslip.png")
+						h3
+							| Payslip
+							br
+							| Module
+
+					.hidden.content
+						h3 Issue Payslip
+			.column
+				#AR-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/AR_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/AR.png")
+
+						h3
+							| Acknowledgment
+							br
+							| Receipt
+
+					.hidden.content
+						h3 Issue Acknowledgment Receipt
+		// 2nd ROW Buttons
+		.four.column.wide.row
+			.column
+				#check-voucher-module-button.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/checkvoucher_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/check_voucher1.png")
+						h3
+							| Check
+							br
+							| Voucher
+
+					.hidden.content
+						h3 Issue Check Voucher
+
+			.column
+				#petty-cash-module-button.ui.animated.fade.button.red.fluid(button="", tabindex="0" onclick="location.assign('/pettycash_view')")
+					.visible.content
+						img.ui.tiny.centered.middle.aligned.image(src="icons/main_menu/petty_cash.png")
+						h3
+							| Petty
+							br
+							| Cash
+					.ui.hidden.content
+						.ui.text.container.fluid
+							h3 Issue Petty Cash
