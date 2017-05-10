@@ -165,7 +165,7 @@ router.get('/restore', function(req,res){
 	res.render('restore', {title: 'Restore A Backup File'});
 });
 
-router.get('/restorer', function(req, res){
+router.all('/restorer', function(req, res){
 	
 	// var month = req.body.month;
 	// var day = req.body.day;
@@ -196,22 +196,21 @@ router.get('/restorer', function(req, res){
 	// else{
 		var spawn = require('child_process').spawn;
 		// var filename = 'C:/MongoBackup/Date_'+month+'-'+day+'-'+year+'_Time_'+hour+'-'+minute;
-		console.log(req.body.filename);
 		var bufile = 'C:/MongoBackup/' + req.body.filename;
-		
+		console.log(bufile);
 		var args = [bufile, '--gzip'];
 		mongorestore = spawn('C:/Program Files/MongoDB/Server/3.4/bin/mongorestore', args);
 		
-		// mongorestore.stdout.on('data', function (data) {
-	 //      console.log('stdout: ' + data);
-	 //    });
-	 //    mongorestore.stderr.on('data', function (data) {
-	 //      console.log('stderr: ' + data);
-	 //    });
+		mongorestore.stdout.on('data', function (data) {
+	      console.log('stdout: ' + data);
+	    });
+	    mongorestore.stderr.on('data', function (data) {
+	      console.log('stderr: ' + data);
+	    });
 
-		// mongorestore.on('exit', function (code){
-		// 	console.log('mongorestore status code ' + code);
-		// });
+		mongorestore.on('exit', function (code){
+			console.log('mongorestore status code ' + code);
+		});
 	// }
 	res.redirect("/");
 });
