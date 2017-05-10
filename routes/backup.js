@@ -25,7 +25,7 @@ router.get('/localbackup', function(req, res){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
+	return;
 });
 
 /* cloud backup now. */
@@ -38,7 +38,7 @@ router.get('/cloudbackup', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	res.redirect("/");
+	return;
 });
 
 router.get('/sethourlylocal', function(req, res, next){
@@ -102,7 +102,6 @@ router.get('/setweeklylocal', function(req, res, next){
 });
 
 router.get('/setweeklycloud', function(req, res, next){
-
 	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/weeklybackupcloud.bat"', function(error, stdout, stderr) {
 		if (error) {
 			console.error(`exec error: ${error}`);
@@ -152,7 +151,7 @@ router.get('/deletelocalbackup', function(req, res, next){
 
 router.get('/deletecloudbackup', function(req, res, next){
 	child_process.exec('"C:/Users/AF/Documents/CS Subjects/CS 192/Project/Backup_Bat _Files/deletecloudbackup.bat"', function(error, stdout, stderr) {
-    	if (error) {
+		if (error) {
 		    console.error(`exec error: ${error}`);
 		    res.status(500);
 		}

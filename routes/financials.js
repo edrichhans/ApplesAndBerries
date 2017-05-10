@@ -394,4 +394,11 @@ router.get('/activity_log', function(req, res, next){
 	res.render('activity_log');
 });
 
+router.get('/log', function(req, res, next){
+	console.log("at log");
+	var p = path.resolve('../log.log');
+
+	res.sendFile(p);
+});
+
 module.exports = router;

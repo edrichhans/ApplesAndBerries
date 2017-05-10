@@ -30,14 +30,9 @@ html
 					.ui.left.floated.container
 						.header.item(href="/")
 							img.logo(src='/images/Logo.png')
-						//- a#main-menu-button.header.item(href="/")
-						//- 	i.home.icon
-						//- 		h5 A&B
 						a.header.item(href="/")
 							#main-menu-button
 								i.large.home.icon.h6 A&B
-							//- button#main-menu-button.ui.basic.icon.button(onclick="location.replace('/')")
-							//- 	i.home.icon A&B
 					.ui.right.floated.item
 						a#activity-log.item(href = '/activity_log')
 							| Activity Log
@@ -75,24 +70,3 @@ html
 					block content
 
 		script(type='text/javascript', src='/javascripts/layout.js')
-		script.
-			var url= window.location.href;
-			if(url.length<=22){
-				$('#main-container').removeClass("ui fourteen wide column").addClass("ui sixteen wide column");
-				$('#left-menu-container').hide()
-			}
-			if(window.location.href.indexOf("employees") > -1) {
-				$('#flm-employee-module-button').css({'background-color': '#d19992'});
-			}
-			if(window.location.href.indexOf("payslip") > -1) {
-				$('#flm-payslip-module-button').css({'background-color': '#d19992'});
-			}
-			if(window.location.href.indexOf("AR_view") > -1) {
-				$('#flm-AR-module-button').css({'background-color': '#d19992'});
-			}
-			if(window.location.href.indexOf("checkvoucher") > -1) {
-				$('#flm-check-voucher-module-button').css({'background-color': '#d19992'});
-			}
-			if(window.location.href.indexOf("pettycash") > -1) {
-				$('#flm-petty-cash-module-button').css({'background-color': '#d19992'});
-			}

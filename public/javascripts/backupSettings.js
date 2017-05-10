@@ -18,6 +18,4 @@ document.getElementById('save-settings-button').onclick = function(){
 	else if (cloud_choice == 3) location.assign('/backup/setdailycloud');
 	else if (cloud_choice == 4) location.assign('/backup/sethourlycloud');
 	else if (cloud_choice == 5) location.assign('/backup/deletecloudbackup');
-
-	
 }

@@ -10,150 +10,32 @@ block content
 
 		// Table Proper
 		.ui.container
-			.ui.segment.row
-				.view-table
-					table#payslip-view-table.ui.table.sortable.selectable
-						thead
-							tr
-								th
-									.ui.master.checkbox
-										input(type="checkbox", name="employee-master-checkbox")
-										label
-								th Type
-								th Issued By
-								th eID
-								th Date
-						tbody
-							each item, index in transactions
-								tr.entry(data-an= item.adviceNumber)
-									td
-										.ui.checkbox
-											input(type="checkbox", name="employee-checkbox", data-an=item.adviceNumber)
-											label
-									td= item.adviceNumber
-									td= item.issuedBy
-									td.eID(value=item.eID)= item.eID
-									td= item.startDate
-									td.endDate= item.endDate
-									td= item.total
-
-		//PRINT BUTTON
-		.ui.container
-			button.ui.button.right.floated.column.center.aligned#print-payslip-button Print
-				i.print.icon
-
-		.ui.basic.modal.view
-			//- .ui.icon.header
-			//- 	i.file.text.icon
-			//- 	| View Data
-			.ui.icon.header
-				h1
-					| View Data
-			.content
-				.ui.grid
-					.one.wide.column.right-align
-						| AN:
-					.two.wide.column
-						#AN.div-underline.center-align
-							span.center-align
-					.two.wide.column.right-align
-						| Name:
-					.four.wide.column
-						#name.div-underline.center-align
-							span.center-align
-					.three.wide.column.right-align
-						| Date Issued:
-					.four.wide.column
-						#dateToday.div-underline.center-align
-							span.center-align
-
-					.two.wide.column.right-align
-						| Company:
-					.fourteen.wide.column
-						#company.div-underline
-							span.indent
-					.two.wide.column.right-align
-						| Date Start:
-					.five.wide.column
-						#dateStart.div-underline.center-align
-							span.center-align
-					.three.wide.column.right-align
-						| Date End:
-					.six.wide.column
-						#dateEnd.div-underline.center-align
-							span.center-align
-					.two.wide.column.right-align
-						| Gross:
-					.fourteen.wide.column
-						#gross.div-underline
-							span.indent
-					.two.wide.column.right-align
-						| PhilHealth:
-					.two.wide.column
-						#philHealth.div-underline
-							span.indent-1
-					.one.wide.column.right-align
-						| SSS:
-					.three.wide.column
-						#SSS.div-underline.center-align
-							span
-					.two.wide.column.right-align
-						| HDMF:
-					.two.wide.column
-						#HDMF.div-underline.center-align
-							span
-					.one.wide.column.right-align
-						| BIR:
-					.three.wide.column
-						#BIR.div-underline.center-align
-							span
-
-					.four.wide.column
-						h3
-							b
-								| FOR EMPLOYERS:
-					.two.wide.column.right-align
-						| PhilHealth:
-					.two.wide.column
-						#philHealthER.div-underline
-							span.indent-1
-					.one.wide.column.right-align
-						| SSS:
-					.three.wide.column
-						#SSSER.div-underline.center-align
-							span
-					.two.wide.column.right-align
-						| HDMF:
-					.two.wide.column
-						#HDMFER.div-underline.center-align
-							span
-					.eight.wide.column
-						table.ui.small.compact.celled.inverted.table#deductibles-table
-							thead
-								tr
-									th Deductibles
-									th Amount
-							tbody
-					.eight.wide.column
-						table.ui.small.compact.celled.inverted.table#allowance-table
-							thead
-								tr
-									th Allowance
-									th Amount
-							tbody
-					br
-					.four.wide.right.floated.column
-						| Total:
-						#total.div-underline
-							span
-			.actions
-				.ui.green.ok.inverted.button
-					i.checkmark.icon
-					| Done
+			table#activity-log-table.ui.celled.table.selectable
+				thead
+					tr
+						th Type
+						th Issued By
+						th Date
+				tbody
+					each item, index in log
+						tr.entry(data-an= item.adviceNumber)
+							td= item.message
+							td= item.issuedBy
+							td= item.timestamp
 
 	script(type='text/javascript').
-		var employees =!{JSON.stringify(employees)};
-		var transactions =!{JSON.stringify(transactions)};
-	script(type='text/javascript', src='/javascripts/sorttable.js')
-	script(src='javascripts/table.js')
-	script(type='text/javascript', src='/javascripts/payslip_view.js')
+		var log;
+
+		$.ajax({
+			type: "GET",
+			url: "/log",
+			dataType: "json",
+			success: function(data) {
+				console.log(data);
+				log = data;
+			}
+		});
+
+		$(document).ready(function(){
+			$('#activity-log-table').DataTable();
+		});
