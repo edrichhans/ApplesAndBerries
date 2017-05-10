@@ -42,6 +42,9 @@ $('#print-check-voucher-button').click(function(){
 
 
 $(document).ready(function(){
+	$.fn.dataTable.moment('ll');
+	$.fn.dataTable.moment('LL');
+	
 	$('#check-voucher-view-table').DataTable();
 });
 

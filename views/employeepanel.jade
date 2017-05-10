@@ -21,7 +21,8 @@ block content
 			//- 		i.search.icon
 			#add-employee-label.ui.pointing.below.red.basic.label
 				| Add Employee
-			button#add-employee-button.ui.basic.circular.icon.button(onclick="location.replace('/employees/add')")
+			//- button#add-employee-button.ui.basic.circular.icon.button(onclick="location.replace('/employees/add')")
+			button#add-employee-button.ui.basic.circular.icon.button
 				i.add.user.icon
 			//- button#edit-AR-button.ui.basic.circular.icon.button
 			//- 	i.edit.icon
@@ -83,6 +84,30 @@ block content
 				|	Print
 				i.print.icon
 
+	#add-employee.ui.small.modal
+		.header Add Employee
+		.content
+			form.ui.form
+				.ten.wide.field
+					label Name
+					input(type="text", name="addemployee", method='post', action='/employees/addemployee' placeholder="Name")
+				.fields
+					.field
+						label Birthday
+						.ui.calendar#checkDate
+							.ui.input.left.icon
+								i.calendar.icon
+								input#birthday(name="birthday", type="text", placeholder="Date")
+					.field
+						label Civil Status
+						select#status(name='status').ui.fluid.search.dropdown
+							option(value="") Select Option...
+							option(value=0) Single
+							option(value=1) Married
+		.actions
+			#confirm.ui.primary.button Submit
+
+
 
 	.ui.small.modal#confirm-delete-modal
 		.header Confirm
@@ -101,4 +126,9 @@ block content
 
 	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+	//- script(type='text/javascript', src='/javascripts/moment.js')
+	script(type='text/javascript', src='/javascripts/moment.min.js')
+	script(type='text/javascript', src='/javascripts/datetime-moments.js')
 	script(type='text/javascript', src='/javascripts/employeepanel.js')
+	script(type='text/javascript' src='/javascripts/scripts.js')
+
