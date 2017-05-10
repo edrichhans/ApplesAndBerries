@@ -361,10 +361,9 @@ router.get('/SSS', function(req, res){
 	});
 });
 
-router.get('/report', function(req, res){
+router.post('/report', function(req, res){
 	reportRoute.report(req, res).then(r => {
-		res.redirect('/');
-		// res.send(200);
+		res.redirect('/download');
 	})
 	.catch(err => {
 		res.json({error: err})

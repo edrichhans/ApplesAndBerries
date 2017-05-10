@@ -13,15 +13,21 @@ function initialize(worksheet){
 	};
 }
 
+function add_eight(date){
+	//date = new Date(date);
+	date.setHours(date.getHours()+8);
+	return date;
+}
+
 var check_date = function(arr, inputDate){
 	var obj = {};
 	for(var i = 0; i < arr.length; i++){
 		var dateIssued;
 		if(inputDate == 'date'){
-			dateIssued = new Date(arr[i][inputDate]);
+			dateIssued = add_eight(new Date(arr[i][inputDate]));
 		}
 		else{
-			dateIssued = arr[i][inputDate];
+			dateIssued = add_eight(arr[i][inputDate]);
 		}
 		// console.log("GETFULLYEAR", dateIssued.getFullYear());
 		var date = ("0" + (dateIssued.getMonth()+1)).slice(-2) + '-' + (dateIssued.getYear()+1900).toString();
@@ -33,6 +39,7 @@ var check_date = function(arr, inputDate){
 			obj[date].push(arr[i]);
 		}
 	}
+	console.log(obj);
 	return obj;
 }
 
@@ -100,35 +107,41 @@ var add_line = function(worksheet, from, to, i){
 	}
 }
 
-exports.report = function(req, res){
+exports.report = function(req, res, callBack){
 	var db = req.db;
 	var paySlip = db.get('paySlip');
 	var AR = db.get('AR');
 	var checkVoucher = db.get('checkVoucher');
 	var pettyCash = db.get('pettyCash');
 	var employees = db.get('Employees');
-	var year = parseInt(req.query.year);
-	console.log("YEAR", year);
+	var startDate = req.body.start;
+	var endDate = req.body.end;
 
-	var startYear = new Date(year, 1, 1);
-	var endYear = new Date(year+1, 1, 1);
-
+	console.log('DATES', startDate, endDate);
+	if(startDate === "Invalid Date" || endDate === "Invalid Date"){
+		console.log('ayan nag return');
+		return;
+	}
+	else{
+		startDate = new Date(startDate);
+		endDate = new Date(endDate);
+	}
 	
-	paySlip.find({dateIssued: {$gte: startYear, $lt: endYear}}).then((paySlipData) => { 
-		console.log(paySlipData);
-		AR.find({date: {$gte: startYear, $lt: endYear}}).then((ARData) => {
+	paySlip.find({dateIssued: {$gte: startDate, $lt: endDate}}).then((paySlipData) => { 
+		// console.log(paySlipData);
+		AR.find({date: {$gte: startDate, $lt: endDate}}).then((ARData) => {
 		// console.log('PASOK2');
-			checkVoucher.find({date: {$gte: startYear, $lt: endYear}}).then((checkVoucherData)=> {
+			checkVoucher.find({date: {$gte: startDate, $lt: endDate}}).then((checkVoucherData)=> {
 		// console.log('PASOK3');
-				pettyCash.find({date: {$gte: startYear, $lt: endYear}}).then((pettyCashData) => {
+				pettyCash.find({date: {$gte: startDate, $lt: endDate}}).then((pettyCashData) => {
 		// console.log('PASOK4');
 					employees.find({}).then((employee) => {	
 		// console.log('PASOK5');
 						var workbook = new Excel.Workbook();
 						workbook.creator = 'Apples and Berries';
 						workbook.lastModifiedBy = 'Apples and Berries';
-						workbook.created = new Date();
-						workbook.modified = new Date();
+						workbook.created = add_eight(new Date());
+						workbook.modified = add_eight(new Date());
 						var paySlipSheet = workbook.addWorksheet('Pay Slip');
 						var ARSheet = workbook.addWorksheet('Ackowledgement Receipts');
 						var checkVoucherSheet = workbook.addWorksheet('Check Voucher');
@@ -245,12 +258,12 @@ exports.report = function(req, res){
 								paySlipWorksheet.addRow({
 									an: paySlip_month_entry.adviceNumber,
 									issued: paySlip_month_entry.issuedBy,
-									date_issued: paySlip_month_entry.dateIssued,
+									date_issued: add_eight(paySlip_month_entry.dateIssued),
 									eID: paySlip_month_entry.eID,
 									name: employee[0].name,
 									base: employee[0].salary,
-									start: paySlip_month_entry.startDate,
-									end: paySlip_month_entry.endDate,
+									start: add_eight(paySlip_month_entry.startDate),
+									end: add_eight(paySlip_month_entry.endDate),
 									deduct: (paySlip_month_entry.deductibles_name)[0],
 									deduct_amt: (paySlip_month_entry.deductibles)[0],
 									allow: (paySlip_month_entry.allowance_name)[0],
@@ -302,7 +315,7 @@ exports.report = function(req, res){
 									an: AR_month_entry.adviceNumber,
 									issued: AR_month_entry.issuedBy,
 									name: AR_month_entry.name,
-									date: AR_month_entry.date,
+									date: add_eight(AR_month_entry.date),
 									part: AR_month_entry.particulars,
 									amt: entry_total
 								}).commit();
@@ -332,7 +345,7 @@ exports.report = function(req, res){
 									an: checkVoucher_month_entry.adviceNumber,
 									issued: checkVoucher_month_entry.issuedBy,
 									name: checkVoucher_month_entry.name,
-									date: checkVoucher_month_entry.date,
+									date: add_eight(checkVoucher_month_entry.date),
 									part: checkVoucher_month_entry.particulars,
 									amt: entry_total
 								}).commit();
@@ -365,7 +378,7 @@ exports.report = function(req, res){
 									an: pettyCash_month_entry.adviceNumber,
 									issued: pettyCash_month_entry.issuedBy,
 									name: pettyCash_month_entry.name,
-									date: pettyCash_month_entry.date,
+									date: add_eight(pettyCash_month_entry.date),
 									part: pettyCash_month_entry.items[0][0],
 									amt: pettyCash_month_entry.items[0][1],
 									qty: pettyCash_month_entry.items[0][2],
@@ -401,14 +414,13 @@ exports.report = function(req, res){
 						add_line_to_range(checkVoucherWorksheet, 'E', 6);
 						add_line_to_range(pettyCashWorksheet, 'G', 8);
 
-						console.log('LAST');
 						workbook.xlsx.writeFile("uploads/report.xlsx");
+						console.log('LAST');
+						return callBack();
 					});
 				});
 			});
 		});
 	});
-	return new Promise((resolve, reject) => {
-		return resolve();
-	});
+	return;
 }

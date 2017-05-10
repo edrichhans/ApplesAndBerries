@@ -55,25 +55,29 @@ block content
 					.hidden.content
 						h3
 							| Download Excel Report
-		.four.column.wide.row
-			//- .ui.selection.dropdown
-			//- 	input(type='hidden' name='Year')
-			//- 	i.dropdown.icon
-			//- 	.default.text Year
-			//- 	.menu
-			//- 		.item(data-value="1") Hello
-			//- 		.item(data-value="2") Hi
-			h2 Choose Year:
-			select#year.ui.dropdown
+		.ui.grid
+			.eight.wide.column
+				| Choose Start Date:
+				.ui.calendar.monthonly
+					.ui.input.left.icon
+						i.calendar.icon
+						input#start(type="text" placeholder="Date")
+			.eight.wide.column
+				| Choose End Date:
+				.ui.calendar.monthonly
+					.ui.input.left.icon
+						i.calendar.icon
+						input#end(type="text" placeholder="Date")
 				
 
 	script(type='text/javascript', src='/javascripts/sorttable.js')
 	script.
-		var curr = new Date();
-		var year = curr.getFullYear();
-		for(var c = 2017; c <= year; c++){
-			$('#year').append("<option value=" + c + ">" + c.toString())
-		}
+		$('.monthonly').calendar({
+			type: 'date'
+		});
 		$('#report-module-button').click(function(){
-			window.location = '/report?year=' + $('#year').val();
+			$.post('/report', {
+				start: new Date($('#start').val()),
+				end: new Date($('#end').val())
+			})
 		})

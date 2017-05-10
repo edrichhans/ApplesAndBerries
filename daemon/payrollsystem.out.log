@@ -1,0 +1,201 @@
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\Asus\Documents\ApplesAndBerries\node_modules\mongodb\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\Asus\Documents\ApplesAndBerries\node_modules\mongodb\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\Asus\Documents\ApplesAndBerries\node_modules\mongodb\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\Asus\Documents\ApplesAndBerries\node_modules\mongodb\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+[0mGET / [36m302 [0m33.217 ms - 56[0m
+[0mGET /login [32m200 [0m1069.731 ms - 2218[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m4.772 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m8.027 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m10.115 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m5.616 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m6.885 ms - -[0m
+[0mGET /javascripts/scripts.js [36m304 [0m15.545 ms - -[0m
+[0mGET /javascripts/jquery.form.js [36m304 [0m2.909 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m50.833 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m35.324 ms - -[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m3.914 ms - -[0m
+[0mGET /favicon.ico [36m302 [0m35.674 ms - 28[0m
+[0mGET /login [36m304 [0m131.049 ms - -[0m
+[0mPOST /login [31m500 [0m2110.655 ms - 21[0m
+[0mPOST /login [36m302 [0m244.620 ms - 23[0m
+[0mGET / [32m200 [0m471.662 ms - 6083[0m
+[0mGET / [36m304 [0m374.176 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m8.873 ms - -[0m
+[0mGET /javascripts/jquery-1.12.4.js [36m304 [0m3.058 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m8.282 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m5.445 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m8.717 ms - -[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m1.937 ms - -[0m
+[0mGET /stylesheets/dataTables.semanticui.min.css [36m304 [0m1.503 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.800 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m1.420 ms - -[0m
+[0mGET /javascripts/layout.js [36m304 [0m1.153 ms - -[0m
+[0mGET /images/Logo.png [36m304 [0m1.320 ms - -[0m
+[0mGET /icons/main_menu/employee_white.png [36m304 [0m1.545 ms - -[0m
+[0mGET /icons/main_menu/payslip.png [36m304 [0m2.032 ms - -[0m
+[0mGET /icons/main_menu/receipt1.png [36m304 [0m1.365 ms - -[0m
+[0mGET /icons/main_menu/manage_users.png [36m304 [0m2.956 ms - -[0m
+[0mGET /icons/main_menu/update_tables.png [36m304 [0m2.195 ms - -[0m
+[0mGET /icons/main_menu/backup.png [36m304 [0m1.759 ms - -[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m1.073 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m570.614 ms - 4947[0m
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\Asus\Documents\ApplesAndBerries\node_modules\mongodb\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
+[0mGET / [36m302 [0m33.227 ms - 56[0m
+[0mGET /login [32m200 [0m1284.358 ms - 2218[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m8.829 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m9.690 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.616 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m3.045 ms - -[0m
+[0mGET /javascripts/scripts.js [36m304 [0m3.864 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m4.022 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m2.626 ms - -[0m
+[0mGET /javascripts/jquery.form.js [36m304 [0m3.150 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m5.945 ms - -[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m1.853 ms - -[0m
+[0mGET /favicon.ico [36m302 [0m4.404 ms - 28[0m
+[0mGET /login [36m304 [0m100.872 ms - -[0m
+[0mGET /login [36m304 [0m119.635 ms - -[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m9.964 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m9.617 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m12.490 ms - -[0m
+[0mGET /javascripts/scripts.js [36m304 [0m10.367 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m10.575 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m16.740 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m8.715 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m6.284 ms - -[0m
+[0mGET /javascripts/jquery.form.js [36m304 [0m1.098 ms - -[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m5.893 ms - -[0m
+[0mGET /favicon.ico [36m302 [0m2.713 ms - 28[0m
+[0mGET /login [36m304 [0m81.918 ms - -[0m
+[0mPOST /login [36m302 [0m250.204 ms - 23[0m
+[0mGET / [32m200 [0m316.989 ms - 6083[0m
+[0mGET / [36m304 [0m254.467 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m16.902 ms - -[0m
+[0mGET /javascripts/jquery-1.12.4.js [36m304 [0m15.357 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m16.135 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m16.562 ms - -[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m16.691 ms - -[0m
+[0mGET /stylesheets/dataTables.semanticui.min.css [36m304 [0m3.387 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m18.742 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m6.798 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m7.427 ms - -[0m
+[0mGET /javascripts/layout.js [36m304 [0m1.160 ms - -[0m
+[0mGET /images/Logo.png [36m304 [0m1.820 ms - -[0m
+[0mGET /icons/main_menu/employee_white.png [36m304 [0m12.631 ms - -[0m
+[0mGET /icons/main_menu/payslip.png [36m304 [0m8.035 ms - -[0m
+[0mGET /icons/main_menu/receipt1.png [36m304 [0m5.908 ms - -[0m
+[0mGET /icons/main_menu/manage_users.png [36m304 [0m5.431 ms - -[0m
+[0mGET /icons/main_menu/update_tables.png [36m304 [0m8.100 ms - -[0m
+[0mGET /icons/main_menu/backup.png [36m304 [0m8.179 ms - -[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m1.488 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m150.765 ms - 4947[0m
+[0mGET /indexFinancials [36m304 [0m201.489 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m1.748 ms - -[0m
+[0mGET /javascripts/jquery-1.12.4.js [36m304 [0m4.669 ms - -[0m
+[0mGET /semantic/dist/semantic.min.js [36m304 [0m6.971 ms - -[0m
+[0mGET /javascripts/printThis.js [36m304 [0m7.398 ms - -[0m
+[0mGET /semantic/dist/semantic.min.css [36m304 [0m8.973 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.js [36m304 [0m14.951 ms - -[0m
+[0mGET /stylesheets/dataTables.semanticui.min.css [36m304 [0m2.488 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.672 ms - -[0m
+[0mGET /bower_components/semantic-ui-calendar/dist/calendar.min.css [36m304 [0m1.474 ms - -[0m
+[0mGET /javascripts/sorttable.js [36m304 [0m1.237 ms - -[0m
+[0mGET /javascripts/layout.js [36m304 [0m1.184 ms - -[0m
+[0mGET /images/Logo.png [36m304 [0m0.896 ms - -[0m
+[0mGET /icons/main_menu/AR.png [36m304 [0m1.196 ms - -[0m
+[0mGET /icons/main_menu/check_voucher1.png [36m304 [0m1.336 ms - -[0m
+[0mGET /icons/main_menu/petty_cash.png [36m304 [0m1.498 ms - -[0m
+[0mGET /semantic/dist/themes/default/assets/fonts/icons.woff2 [36m304 [0m0.923 ms - -[0m
+[0mPOST /report [36m302 [0m15.370 ms - 23[0m
+[0mGET / [36m304 [0m167.259 ms - -[0m
+{}
+JELLOO {}
+{}
+{}
+{}
+pettyCash_month {}
+
+<--- Last few GCs --->
+
+ 8303891 ms: Mark-sweep 1258.2 (1434.3) -> 1253.1 (1434.3) MB, 3120.5 / 0.0 ms [allocation failure] [GC in old space requested].
+ 8307189 ms: Mark-sweep 1253.1 (1434.3) -> 1253.1 (1434.3) MB, 3298.1 / 0.0 ms [allocation failure] [GC in old space requested].
+ 8311426 ms: Mark-sweep 1253.1 (1434.3) -> 1263.8 (1415.3) MB, 4237.0 / 0.0 ms [last resort gc].
+ 8314785 ms: Mark-sweep 1263.8 (1415.3) -> 1274.9 (1415.3) MB, 3357.8 / 0.0 ms [last resort gc].
+
+
+<--- JS stacktrace --->
+
+==== JS stack trace =========================================
+
+Security context: 00000365AB6CFB49 <JS Object>
+    1: getCell [C:\Users\Asus\Documents\ApplesAndBerries\node_modules\exceljs\lib\doc\worksheet.js:~387] [pc=000003E8F9C1B4BF] (this=00000145A9ED1001 <JS Object>,r=000001514EA7D2E1 <String[8]: B1005845>,c=00000365AB604381 <undefined>)
+    2: arguments adaptor frame: 1->2
+    3: merge_paySlip [C:\Users\Asus\Documents\ApplesAndBerries\models\financials\report.js:~46] [pc=000003E8F9C1CC30] (this...
+
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\Asus\Documents\ApplesAndBerries\node_modules\mongodb\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000
