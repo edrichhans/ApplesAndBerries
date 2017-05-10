@@ -47,3 +47,22 @@ Sat, 29 Apr 2017 11:34:09 GMT express-session deprecated undefined saveUninitial
 js-bson: Failed to load c++ bson extension, using pure JS version
 Fri, 05 May 2017 07:26:07 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
 Fri, 05 May 2017 07:26:07 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Mon, 08 May 2017 03:54:42 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Mon, 08 May 2017 03:54:42 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
+js-bson: Failed to load c++ bson extension, using pure JS version
+Mon, 08 May 2017 03:58:34 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Mon, 08 May 2017 03:58:34 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
+js-bson: Failed to load c++ bson extension, using pure JS version
+Mon, 08 May 2017 03:59:18 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Mon, 08 May 2017 03:59:18 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
+js-bson: Failed to load c++ bson extension, using pure JS version
+Mon, 08 May 2017 04:00:19 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Mon, 08 May 2017 04:00:19 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
+js-bson: Failed to load c++ bson extension, using pure JS version
+Mon, 08 May 2017 04:01:33 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Mon, 08 May 2017 04:01:33 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9

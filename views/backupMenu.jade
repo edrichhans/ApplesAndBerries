@@ -30,6 +30,14 @@ block content
 							h1 Edit Frequency
 					.hidden.content
 						h4 Set Back Up Frequency
+			.column
+				#restore-backup.col.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/backup/restore')" value='Restore Backup File')
+					.visible.content
+						.ui.container.main-menu-button
+							img.ui.tiny.centered.middle.aligned.image(src="icons/backup/frequency.png")
+							h1 Restore
+					.hidden.content
+						h4 Restore Backup File
 
 		.ui.container
 			button.ui.red.button.right.floated.column.center.aligned#backup-menu-cancel-button(onclick="location.assign('/')") Back
