@@ -1,0 +1,9 @@
+doctype html
+html
+  body
+    form(action='/backup/restorer', method='post')
+      | Filename (backups found in C:/MongoBackup):
+      br
+      input(type='text', name='filename')
+      br
+      input(type='submit')
