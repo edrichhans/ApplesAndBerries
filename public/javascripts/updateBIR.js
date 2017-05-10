@@ -72,7 +72,7 @@ var sendAjax = function(values, link){
 
 $('#BIRSubmit.submit').click(function(){
 	$('.small.modal').modal('show');
-})
+});
 
 $('#BIRUpdate').click(function(event){
 	event.preventDefault();

@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	$.fn.dataTable.moment('ll');
+	$.fn.dataTable.moment('LL');
+	
 	$('#payslip-view-table').DataTable();
 });
 

@@ -1,5 +1,5 @@
 body{
-	font: 14px Helvetica,"Lucida Grande", Arial, sans-serif;
+	font-family: 14px Helvetica,"Lucida Grande", Arial, sans-serif;
 	/*background-color: #787554 !important;*/
 	/*background*//*-color: #FFEAEA;*/
 	/*background-image: url('/public/images/landing_bg.jpg');*/
@@ -8,23 +8,31 @@ body{
 	height: 100vh !important;
 }
 
-h1, h2, h3, h4, h5, h6{
-	font-style: Helvetica, "Lucida Grande",  Arial, sans-serif;
-	
+h1, h2, h3, h4, h5, h6, html{
+	font-family: Helvetica, "Lucida Grande",  Arial, sans-serif !important;
 }
+
+
 
 a{
 	color: #372B62;
 }
 
+#login-box.five.wide.column{
+	margin-top: 17vh !important;
+}
 
-#login-title{
-	color: #C03130;
+#login-title.ui.basic.segment.center.aligned{
+	color: #C03130 !important;
+	font-size: 2em;
+	font-weight: bold;
+	line-height: 100%;
 }
 
 #login-button{
 	background-color: #C03130;
 }
+
 
 .ui.container.right.aligned{
 	margin-bottom: 0;
@@ -240,8 +248,10 @@ background-color: #932F2F;
 	margin: 50 10 0 10;
 }
 
-
-
+/*.ui.input input:focus, .ui.input.focus input{
+	border-color: #C03130 !important;
+}
+*/
 #main-grid{
 background: #9E6363: !important;
 height:100vh; padding: 10 !important;

@@ -42,6 +42,10 @@ $('#delete-AR-button').click(function(){
 });
 
 $(document).ready(function(){
+
+	$.fn.dataTable.moment('ll');
+	$.fn.dataTable.moment('LL');
+
 	$('#AR-view-table').DataTable();
 });
 

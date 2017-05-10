@@ -1,5 +1,10 @@
 $(document).ready(function(){
+
+	$.fn.dataTable.moment('ll');
+	$.fn.dataTable.moment('LL');
+
 	$('#employee-view-table').DataTable();
+
 
 	var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID) });
 	console.log("em", employee);
@@ -95,5 +100,5 @@ $('#print-employee-button').click(function(){
 });
 
 $('#add-employee-button.ui.basic.circular.icon.button').click(function(){
-	$('#add-employee.ui.large.modal').modal('show');
+	$('#add-employee.ui.small	.modal').modal('show');
 });

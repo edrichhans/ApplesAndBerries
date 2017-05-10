@@ -1,10 +1,12 @@
 html
 	head
-		title= admin-user-account
+		title= adminUserAccount
 		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
 		script(type='text/javascript', src='/javascripts/jquery-1.12.4.js')
 		//- script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 		//- script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+		//- script(type='text/javascript', src='/javascripts/moment.min.js')
+		//- script(type='text/javascript', src='/javascripts/datetime-moments.js')
 		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
 
 
@@ -28,8 +30,6 @@ html
 						//- | Apples & Berries
 						#company-name.item
 							h5 A & B
-					
-
 
 					.ui.right.floated.item
 						a#activity-log.item(href = '/activity_log')
@@ -41,7 +41,6 @@ html
 							.ui.menu
 								a.item(href="/logout")
 									p.logoff Sign Out
-									//- i.sign.out.icon
 				#left-menu-container.ui.two.wide.column
 					#fixed-left-menu.ui.fluid.vertical.labeled.icon.menu
 						a#flm-employee-module-button.item(href='/employees')
