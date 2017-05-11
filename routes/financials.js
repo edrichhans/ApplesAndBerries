@@ -194,7 +194,7 @@ router.post('/pettycash', function(req, res){
 			issuedBy: req.session.username,
 			issuedTo: req.body.name
 		});
-		res.redirect('/pettycash');
+		res.redirect('/pettycash_view');
 	});
 });
 

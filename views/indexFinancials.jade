@@ -81,7 +81,7 @@ block content
 				end: new Date($('#end').val())
 			},function(){
 				console.log("success!!");
-				$(window).open('/download');
+				window.location.replace('/download');
 			}).done(function(){
 				console.log("done!");
 			}).fail(function(){
