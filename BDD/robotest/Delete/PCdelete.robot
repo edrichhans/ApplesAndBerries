@@ -18,8 +18,13 @@ Check Delete PC Status
 Delete PC Entry
     Select Checkbox            xpath=//table[@id="petty-cash-view-table"]/tbody/tr/td/div/input
     Click button               delete-pettyCash-button
+    Click Element              delete
+    Click Element              delete-alert
     
 Go To PC Panel
+    Click Element              control-panel-module-button
+    Wait Until Page Contains   Manage Financials
+    Location Should Be         ${INDEX FINANCIALS}
     Click Element              petty-cash-module-button
     Wait Until Page Contains   Petty Cash
     Location Should Be         ${PC URL}

@@ -32,7 +32,6 @@ Check Add CV Status
     Input Date     ${date}
     Input Particulars     ${particulars}       ${amount}
     Check Preview
-    Wait Until Page Contains   Apples and Berries Payroll System
     Location Should Be    ${WELCOME URL}
     [Teardown]      Close Browser
 
@@ -56,6 +55,9 @@ Check Preview
     Submit Form
 	
 Go To CV Panel
+    Click Element              control-panel-module-button
+    Wait Until Page Contains   Manage Financials
+    Location Should Be         ${INDEX FINANCIALS}
     Click Element              check-voucher-module-button
     Wait Until Page Contains   Check Voucher
     Location Should Be         ${CV URL}

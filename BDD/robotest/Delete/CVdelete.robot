@@ -20,8 +20,13 @@ Check Delete CV Status
 Delete CV Entry
     Select Checkbox             xpath=//table[@id="check-voucher-view-table"]/tbody/tr/td/div/input
     Click Button                delete-checkVoucher-button
+    Click Element              delete
+    Click Element              delete-alert
 	
 Go To CV Panel
+    Click Element              control-panel-module-button
+    Wait Until Page Contains   Manage Financials
+    Location Should Be         ${INDEX FINANCIALS}
     Click Element              check-voucher-module-button
     Wait Until Page Contains   Check Voucher
     Location Should Be         ${CV URL}

@@ -18,6 +18,8 @@ Check Delete Payslip Status
 Delete Payslip Entry
     Select Checkbox             xpath=//table[@id="payslip-view-table"]/tbody/tr/td/div/input
     Click Button                delete-payslip-button
+    Click Element              delete
+    Click Element              delete-alert
 	
 Go To Payslip Panel
     Click Element               payslip-module-button

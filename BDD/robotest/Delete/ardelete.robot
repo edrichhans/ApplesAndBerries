@@ -18,8 +18,13 @@ Check Add AR Status
 Delete AR Entry
     Select Checkbox            xpath=//table[@id="AR-view-table"]/tbody/tr/td/div/input
     Click Button               delete-AR-button
+    Click Element              delete
+    Click Element              delete-alert
 	
 Go To AR Panel
+    Click Element              control-panel-module-button
+    Wait Until Page Contains   Manage Financials
+    Location Should Be         ${INDEX FINANCIALS}
     Click Element              AR-module-button
     Wait Until Page Contains   Acknowledgment Receipt
     Location Should Be         ${AR URL}

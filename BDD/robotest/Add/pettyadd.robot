@@ -6,27 +6,27 @@ Documentation     A test suite with a single test for adding a Petty Cash.
 Test Template     Check Add PC Status
 Resource          menu_resource.robot
 
-*** Test Cases ***       Name            Date          Particulars           Amount
-Empty Name              ${EMPTY}       12/30/2017        Item                1000.00
-Empty Date              Client A       ${EMPTY}          Item                1000.00
-Empty Particulars       Client A       12/30/2017        ${EMPTY}            1000.00
-Empty Amount            Client A       12/30/2017        Item                ${EMPTY}
-Zero Amount             Client A       12/30/2017        Item                0.0
-Negative Amount         Client A       12/30/2017        Item                -1000.00
-Large Amount            Client A       12/30/2017        Item                999999999999999999.9999999999999
-Weird Amount            Client A       12/30/2017        Item                -00001234.-00001234
-Weird Amount 2          Client A       12/30/2017        Item                12345asdf
-Weird Amount 3          Client A       12/30/2017        Item                asd.123
-Correct Input           Client A       12/30/2017        Item                1000.1000
+*** Test Cases ***       Name            Date          Particulars           Amount      Qty
+Empty Name              ${EMPTY}       12/30/2017        Item                1000.00     5
+Empty Date              Client A       ${EMPTY}          Item                1000.00     5
+Empty Particulars       Client A       12/30/2017        ${EMPTY}            1000.00     5
+Empty Amount            Client A       12/30/2017        Item                ${EMPTY}    5
+Zero Amount             Client A       12/30/2017        Item                0.0         5
+Negative Amount         Client A       12/30/2017        Item                -1000.00    5
+Large Amount            Client A       12/30/2017        Item                999999999999999999.9999999999999    5
+Weird Amount            Client A       12/30/2017        Item                -00001234.-00001234     5
+Weird Amount 2          Client A       12/30/2017        Item                12345asdf   5
+Weird Amount 3          Client A       12/30/2017        Item                asd.123     5
+Correct Input           Client A       12/30/2017        Item                1000.1000    5
     
 *** Keywords ***
 Check Add PC Status
-    [Arguments]     ${name}      ${date}      ${particulars}       ${amount}
+    [Arguments]     ${name}      ${date}      ${particulars}       ${amount}    ${qty}
     Open Browser To Main Menu
     Go To PC Panel
     Input Name      ${name}
     Input Date      ${date} 
-    Input Particulars      ${particulars}       ${amount}
+    Input Particulars      ${particulars}       ${amount}     ${qty}
     Check Preview
     Wait Until Page Contains   Petty Cash
     Location Should Be    ${PC URL}
@@ -41,9 +41,10 @@ Input Date
     Input Text     date         ${date}
 
 Input Particulars
-    [Arguments]    ${particulars}       ${amount}
+    [Arguments]    ${particulars}       ${amount}     ${qty}
     Input Text     particulars     ${particulars}
     Input Text     amount          ${amount}
+    Input Text     qty             ${qty}
 
 Check Preview
     Click Element       pettyCash-preview
@@ -51,6 +52,9 @@ Check Preview
     Submit Form
     
 Go To PC Panel
+    Click Element              control-panel-module-button
+    Wait Until Page Contains   Manage Financials
+    Location Should Be         ${INDEX FINANCIALS}
     Click Element              petty-cash-module-button
     Wait Until Page Contains   Petty Cash
     Location Should Be         ${PC URL}

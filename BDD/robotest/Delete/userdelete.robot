@@ -18,14 +18,14 @@ Check Delete User Status
 *** Keywords ***
 Delete User
     Click Element              username
-    Click Element              xpath=//body/div/div[3]/div/form/div/select/option[5]
+    Click Element              xpath=//form[@name="deleteUser"]/div/select/option[2]
     Click Element              confirm
     Click Element              xpath=//body/div[2]/div/div[3]/div
 	
 Go To Control Panel
-    Click Element              control-panel-module-button
-    Wait Until Page Contains   Control Panel
-    Location Should Be         ${CONTROL PANEL URL}
+    Click Element              manage-users-button
+    Wait Until Page Contains   Manage Users
+    Location Should Be         ${MANAGE USERS}
     Click Element               delete-user-button
     Wait Until Page Contains    Delete User
     Location Should Be          ${DEL USER URL}

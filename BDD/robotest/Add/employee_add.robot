@@ -5,7 +5,7 @@ Documentation     A test suite with a single test for adding an employee.
 ...               the imported resource file.
 Suite Setup       Open Browser To Main Menu
 Suite Teardown	  Close Browser
-Test Template      Check Add Employee Status
+Test Template     Check Add Employee Status
 Resource          menu_resource.robot
 
 *** Test Cases ***         NAME              STARTDATE     BIRTHDAY    POSITION    STATUS    DEPENDENTS   SALARY      
@@ -70,6 +70,6 @@ Go To Employee Panel
     Click Element              employee-module-button
     Wait Until Page Contains   Employees
     Location Should Be         ${EMPLOY URL}
-    Click Element               xpath=//body/div/div[3]/div/div[2]/div
+    Click Button               add-employee-button
     Wait Until Page Contains    Add employee
     Location Should Be          ${ADD EMPLOY URL}

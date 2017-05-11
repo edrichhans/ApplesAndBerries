@@ -60,30 +60,38 @@ Input Date
 Input Particulars1
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div/div/input     item1
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div[2]/div/input          1000.1000
+    Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div[3]/div/input      5
     Click Element     add-field
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div/div/input     item2
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div[2]/div/input          2000.1000
+    Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div[3]/div/input      5
 
 Input Particulars2
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div/div/input     item1
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div[2]/div/input          1000.1000
+    Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div[3]/div/input      5
     Click Element     add-field
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div/div/input     ${EMPTY}
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div[2]/div/input          ${EMPTY}
+    Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div[3]/div/input      5
 
 Input Particulars3
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div/div/input     item1
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div[2]/div/input          1000.1000
+    Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div[3]/div/input      5
     Click Element     add-field
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div/div/input     item2
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div[2]/div/input          -2000.1000
+    Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div[3]/div/input      5
 
 Input Particulars4
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div/div/input     item1
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div[2]/div/input          1000.1000
+    Input Text     xpath=//div[@id="pettyCash-particulars"]/div/div[3]/div/input      5
     Click Element     add-field
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div/div/input     item2
     Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div[2]/div/input          adfhak
+    Input Text     xpath=//div[@id="pettyCash-particulars"]/div[2]/div[3]/div/input      5
 
 Check Preview
     Click Element       pettyCash-preview
@@ -91,6 +99,9 @@ Check Preview
     Submit Form
     
 Go To PC Panel
+    Click Element              control-panel-module-button
+    Wait Until Page Contains   Manage Financials
+    Location Should Be         ${INDEX FINANCIALS}
     Click Element              petty-cash-module-button
     Wait Until Page Contains   Petty Cash
     Location Should Be         ${PC URL}

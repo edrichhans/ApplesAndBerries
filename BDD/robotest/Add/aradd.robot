@@ -29,7 +29,6 @@ Check Add AR Status
     Input Date      ${date} 
     Input Particulars        ${particulars}      ${amount}
     Check Preview
-    Wait Until Page Contains   Acknowledgment Receipt
     Location Should Be    ${AR URL}
     [Teardown]              Close Browser
 
@@ -52,9 +51,11 @@ Check Preview
     Submit Form
 	
 Go To AR Panel
-    Click Element              AR-module-button
-    Wait Until Page Contains   Acknowledgment Receipt
-    Location Should Be         ${AR URL}
+    Click Element              control-panel-module-button
+    Wait Until Page Contains   Manage Financials
+    Location Should Be         ${INDEX FINANCIALS}
+    Click Element                AR-module-button
+    Wait Until Page Contains    Acknowledgment Receipt
+    Location Should Be          ${AR URL}
     Click Button                add-AR-button
     Wait Until Page Contains    Acknowledgement Receipt
-    Location Should Be          ${ADD AR URL}

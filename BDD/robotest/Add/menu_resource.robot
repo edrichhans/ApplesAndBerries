@@ -30,7 +30,9 @@ ${BIR URL}        http://localhost:8000/BIR
 ${PHILHEALTH URL}           http://localhost:8000/PH
 ${ADD USER URL}             http://localhost:8000/addUser
 ${DEL USER URL}             http://localhost:8000/deleteUser
-
+${INDEX FINANCIALS}         http://localhost:8000/indexFinancials
+${MANAGE USERS}             http://localhost:8000/manageUsers
+ 
 *** Keywords ***
 Open Browser To Main Menu
     Open Browser    ${LOGIN URL}    ${BROWSER}
@@ -39,7 +41,7 @@ Open Browser To Main Menu
     Input Username
     Input Password
     Submit Credentials
-    Wait Until Page Contains   Apples and Berries Payroll System
+    Wait Until Page Contains   Main Menu
     Location Should Be    ${WELCOME URL}
     
 
@@ -54,5 +56,5 @@ Submit Credentials
 
 Go Back Home
 	Click Element   xpath=//body/div/div/div/a[2]
-	Wait Until Page Contains   Apples and Berries Payroll System
+	Wait Until Page Contains   Main Menu
     Location Should Be    ${WELCOME URL}
