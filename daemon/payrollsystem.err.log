@@ -92,3 +92,6 @@ FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memo
 js-bson: Failed to load c++ bson extension, using pure JS version
 Wed, 10 May 2017 14:04:01 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
 Wed, 10 May 2017 14:04:01 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Thu, 11 May 2017 01:25:48 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Thu, 11 May 2017 01:25:48 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
