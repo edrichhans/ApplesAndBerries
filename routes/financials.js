@@ -362,19 +362,18 @@ router.get('/SSS', function(req, res){
 });
 
 router.post('/report', function(req, res){
-	reportRoute.report(req, res).then(r => {
-		res.redirect('/download');
-	})
-	.catch(err => {
-		res.json({error: err})
+	reportRoute.report(req, res, function(){
+		res.json({success: true});
 	});
 });
 
 router.get('/download', function(req, res, next){
 	var file = 'report.xlsx';
-	var p = path.resolve(".") + '/uploads/' + file
+	var p = path.resolve(".") + '/uploads/' + file;
 
-	res.download(p);
+	res.download(p, function(err){
+		console.log('download error! ', err);
+	});
 	return;
 });
 
