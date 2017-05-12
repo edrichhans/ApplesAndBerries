@@ -10,11 +10,6 @@ var reportRoute = require('../models/financials/report');
 var winston = require('winston');
 var path = require('path');
 var Promise = require('promise');
-const username = require('username');
-
-username().then(username => {
-	console.log(username);
-});
 
 var wlogger = new winston.Logger({
 	transports: [
