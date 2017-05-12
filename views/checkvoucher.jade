@@ -29,17 +29,8 @@ block content
 
 			.field
 				label Particulars
-				.ui.search.selection.dropdown#particularsDropdown
-					input(type='hidden', name='particulars')
-					i.dropdown.icon
-					.default.text
-						| Choose Particulars
-					.menu
-						for particular in metadata.items
-							.item(data-value=particular)= particular
-						.ui.left.icon.input
-							i.add.icon
-							input#addParticulars(type='text', name='add', placeholder='Add New')
+				.ui.input#particularsDropdown
+					input(name='particulars', type="text", placeholder="Particulars...")
 
 			.ui.modal
 				i.close.icon
@@ -48,31 +39,36 @@ block content
 					img.ui.centered.medium.image(src='images/header.png', style='padding-bottom: 1.5rem;')
 					.ui.grid
 						.one.wide.column.right-align
-							| AN:
+							b AN:
 						.two.wide.column
 							#AN.div-underline.center-align
 								span
 						.two.wide.column.right-align
-							| Name: 
+							b Name:
 						.four.wide.column
 							#name.div-underline.center-align
 								span
 						.three.wide.column.right-align
-							| Date Issued:
+							b Date Issued:
 						.four.wide.column
 							#dateToday.div-underline.center-align
 								span
-
 						.two.wide.column.right-align
-							| Particulars:
+							b Particulars:
 						.five.wide.column
 							#particulars.div-underline
 								span.indent
 						.three.wide.column.right-align
-							| Amount:
+							b Amount:
 						.six.wide.column
 							#amount.div-underline
 								span.indent
+						.eleven.wide.column
+						.five.wide.column
+							b Signature:
+							.div-underline
+								span
+									| &nbsp;
 				.actions
 					.ui.disabled.primary.button.submit Submit
 					.ui.button.print Print

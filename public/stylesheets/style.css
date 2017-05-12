@@ -1,5 +1,5 @@
 body{
-	font: 14px Helvetica,"Lucida Grande", Arial, sans-serif;
+	font-family: 14px Helvetica,"Lucida Grande", Arial, sans-serif;
 	/*background-color: #787554 !important;*/
 	/*background*//*-color: #FFEAEA;*/
 	/*background-image: url('/public/images/landing_bg.jpg');*/
@@ -8,14 +8,31 @@ body{
 	height: 100vh !important;
 }
 
-h1, h2, h3, h4, h5, h6{
-	font-style: Helvetica, "Lucida Grande",  Arial, sans-serif;
-	
+h1, h2, h3, h4, h5, h6, html{
+	font-family: Helvetica, "Lucida Grande",  Arial, sans-serif !important;
 }
+
+
 
 a{
 	color: #372B62;
 }
+
+#login-box.five.wide.column{
+	margin-top: 17vh !important;
+}
+
+#login-title.ui.basic.segment.center.aligned{
+	color: #C03130 !important;
+	font-size: 2em;
+	font-weight: bold;
+	line-height: 100%;
+}
+
+#login-button{
+	background-color: #C03130;
+}
+
 
 .ui.container.right.aligned{
 	margin-bottom: 0;
@@ -26,19 +43,38 @@ a{
 /*[id^="*-label"] {
 	display: none;
 }*/
-#add-CV-label, #add-AR-label, #add-petty-cash-label, #add-payslip-label{
+
+#add-payslip-label{
+	position: absolute;
+	top: 9.5vh;
+	right: 14vh;
+}
+
+#edit-payslip-label{
+	position: absolute;
+	top: 9.5vh;
+	right: 8.25vh;
+}
+
+#delete-payslip-label{
+	position: absolute;
+	top: 9.5vh;
+	right: 1vh;
+}
+
+#add-CV-label, #add-AR-label, #add-petty-cash-label{
 	position: absolute;
 	top: 9.5vh;
 	right: 16vh;
 }
 
-#edit-CV-label, #edit-AR-label, #edit-petty-cash-label, #edit-payslip-label {
+#edit-CV-label, #edit-AR-label, #edit-petty-cash-label {
 	position: absolute;
 	top: 9.5vh;
 	right: 10vh;
 }
 
-#delete-CV-label, #delete-AR-label, #delete-petty-cash-label, #delete-payslip-label  {
+#delete-CV-label, #delete-AR-label, #delete-petty-cash-label{
 	position: absolute;
 	top: 9.5vh;
 	right: 2.75vh;
@@ -60,6 +96,9 @@ a{
 	display: none;
 }
 
+.ui.basic.red.label{
+	color: #C03130 !important;
+}
 
 .ui.container.bottomprint{
 	padding: 0;
@@ -80,14 +119,17 @@ a{
 }
 
 .ui.right.labeled.icon.button.right.floated.print:hover{
-	color:#9F3A38;
+	/*color:#9F3A38;*/
+	color:#C03130;
 	/*background-color: rgba(0,0,0,.01) !important;*/
 	/*background-color: #FCFCFC !important;*/
 	background-color: #F8F8F8 !important;
 }
 
 
-
+i.red.icon{
+	color: #C03130 !important;
+}
 /*.ui.segment.container.fortable{
 	background: #FCFCFC !important;
 }*/
@@ -206,8 +248,10 @@ background-color: #932F2F;
 	margin: 50 10 0 10;
 }
 
-
-
+/*.ui.input input:focus, .ui.input.focus input{
+	border-color: #C03130 !important;
+}
+*/
 #main-grid{
 background: #9E6363: !important;
 height:100vh; padding: 10 !important;
@@ -266,8 +310,13 @@ height:100vh; padding: 10 !important;
 }
 
 /*.ui.link.menu .item:hover, .ui.menu .dropdown.item:hover, .ui.menu .link.item:hover,*/
-.ui.menu a.item:hover{
-	color: #9F3A38;
+#fixed-left-menu.ui.menu a.item:hover{
+	/*color: #9F3A38;*/
+	color: #C03130;
+	border-bottom: 5px solid #C03130;
+	/*border-top: 3px solid #C03130;*/
+	/*border-color: #C03130;*/
+	background-color: transparent !important;
 }
 
 /*.ui.link.menu .item:active, .ui.menu .link.item:active,
@@ -285,7 +334,11 @@ height:100vh; padding: 10 !important;
 }
 
 #fixed-top-menu{
-	background-color:#9F3A38;
+	/*background-color:#9F3A38;*/
+	/*background-color:#BD1337;*/
+	/*background-color: #C0313D;*/
+	background-color: #C03130;
+	
 	right: 40;
 	left: 0;
 }
@@ -298,10 +351,30 @@ height:100vh; padding: 10 !important;
 	margin-left: 20;
 }
 */
-#fixed-top-menu>.item:first-child{
+/*#fixed-top-menu>.item:first-child{
 margin-left: 50;
+}*/
+#img-logo{
+	margin-left: 10;
+}
+#home-logo{
+	margin: 0 !important;
+}
+#company-name{
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	padding-left: 5;
 }
 
+#current-user{
+	padding: 0;
+}
+
+.current-user-name{
+	margin-bottom: 0;
+
+}
 #flm-toggle-button.header.item.sidebar-button{
 	margin-left: 20;
 	margin-right: 0;
@@ -346,6 +419,9 @@ padding: 10 0 10 0 !important;}
 	/*background-color: #ff7a77;*/
 }
 
+.logoff{
+	text-align: center;
+}
 /*#current{
 	background-color: #ff7a77 !important;
 }*/
@@ -370,12 +446,16 @@ padding: 10 0 10 0 !important;}
 }
 
 .ui.red.button, .ui.red.buttons .button{
-background-color: #9F3A38;
+/*background-color: #9F3A38;*/
+/*background-color: #C0313D;*/
+background-color: #C03130;
+/*background-color: #BD1337;*/
 color: #FFF;
 }
 /*hovering effect over buttons*/
 .ui.red.button:hover, .ui.red.buttons .button:hover {
-    background-color: #9F3A30;
+    /*background-color: #9F3A32;*/
+    background-color: #C0312F;
     /*text color*/
     color: #FFF;
     text-shadow: none;

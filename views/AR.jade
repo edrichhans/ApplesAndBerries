@@ -21,7 +21,6 @@ block content
 						i.calendar.icon
 						input(name="date", type="text", placeholder="Date")
 
-
 			.field#pettyCash-particulars
 				.two.fields
 					.field
@@ -32,7 +31,7 @@ block content
 					.field
 						label Amount
 						.ui.input#amount-input
-							input(name="amount", type="number", placeholder="Amount...")
+							input(name="amount", type="number", placeholder="Amount...", min="0")
 
 			.ui.modal
 				i.close.icon
@@ -46,7 +45,7 @@ block content
 							#AN.div-underline.center-align
 								span
 						.two.wide.column.right-align
-							b Name: 
+							b Name:
 						.four.wide.column
 							#name.div-underline.center-align
 								span
@@ -55,7 +54,6 @@ block content
 						.four.wide.column
 							#dateToday.div-underline.center-align
 								span
-
 						.two.wide.column.right-align
 							b Particulars:
 						.five.wide.column
@@ -66,6 +64,12 @@ block content
 						.six.wide.column
 							#amount.div-underline.center-align
 								span
+						.eleven.wide.column
+						.five.wide.column
+							b Signature:
+							.div-underline
+								span
+									| &nbsp;
 				.actions
 					.ui.disabled.primary.button.submit Submit
 					.ui.button.print Print

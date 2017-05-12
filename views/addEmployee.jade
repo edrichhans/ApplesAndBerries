@@ -54,23 +54,21 @@ block content
 			.ui.error.message
 			.ui.primary.button#confirm Submit
 
-			.ui.small.modal#confirm-add-modal
-				.header Confirm
-				.content
-					| Confirm Add Employee
-				.actions
-					.ui.positive.submit.right.button OK
-					.ui.red.right.cancel.button Cancel
+	.ui.small.modal#confirm-add-modal
+		.header Confirm
+		.content
+			| Confirm Add Employee
+		.actions
+			.ui.positive.submit.right.button OK
+			.ui.red.right.cancel.button Cancel
 
-			// Alert Message
-			.ui.small.modal#success
-				.header Add Successful
-				.content
-					| Add Employee Successful
-				.actions
-					.ui.positive.submit.right.button#add-alert OK
-
-
+	// Alert Message
+	.ui.small.modal#success
+		.header Add Successful
+		.content
+			| Add Employee Successful
+		.actions
+			.ui.positive.submit.right.button#add-alert OK
 
 	script(type='text/javascript' src='/javascripts/scripts.js')
 	script.

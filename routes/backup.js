@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var child_process = require('child_process');
+var addEmployeeRoute = require('../models/employees/addEmployee');
 
 router.get('/', function(req, res){
 	res.render('backupMenu', {title: 'Backup Menu'});
@@ -49,7 +50,7 @@ router.get('/sethourlylocal', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
 });
 
 router.get('/sethourlycloud', function(req, res, next){
@@ -61,7 +62,7 @@ router.get('/sethourlycloud', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
 });
 
 router.get('/setdailylocal', function(req, res, next){
@@ -73,7 +74,7 @@ router.get('/setdailylocal', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
 });
 
 router.get('/setdailycloud', function(req, res, next){
@@ -85,7 +86,7 @@ router.get('/setdailycloud', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
 });
 
 router.get('/setweeklylocal', function(req, res, next){
@@ -97,7 +98,7 @@ router.get('/setweeklylocal', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
 });
 
 router.get('/setweeklycloud', function(req, res, next){
@@ -109,7 +110,7 @@ router.get('/setweeklycloud', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
 });
 
 router.get('/setmonthlylocal', function(req, res, next){
@@ -121,7 +122,7 @@ router.get('/setmonthlylocal', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
 });
 
 router.get('/setmonthlycloud', function(req, res, next){
@@ -133,7 +134,7 @@ router.get('/setmonthlycloud', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
 });
 
 router.get('/deletelocalbackup', function(req, res, next){
@@ -145,7 +146,7 @@ router.get('/deletelocalbackup', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
 });
 
 router.get('/deletecloudbackup', function(req, res, next){
@@ -157,7 +158,61 @@ router.get('/deletecloudbackup', function(req, res, next){
 		console.log(`stdout: ${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
-	return;
+	res.redirect("/");
+});
+
+router.get('/restore', function(req,res){
+	res.render('restore', {title: 'Restore A Backup File'});
+});
+
+router.all('/restorer', function(req, res){
+	
+	// var month = req.body.month;
+	// var day = req.body.day;
+	// var year = req.body.year;
+	// var hour = req.body.hour;
+	// var minute = req.body.minute;
+	// var second = req.body.second;
+
+	// if (parseInt(month) < 10){
+	// 	month = '0'+month
+	// }
+
+	// if (parseInt(day) < 10){
+	// 	day = '0'+day
+	// }
+
+	// if (parseInt(minute) < 10){
+	// 	minute = '0'+minute
+	// }
+
+	// if (parseInt(second) < 10){
+	// 	second = '0'+second
+	// }
+
+	// if (month == null || day == null || year == null || hour == null || minute == null || second == null){
+	// 	return res.status(500)
+	// }
+	// else{
+		var spawn = require('child_process').spawn;
+		// var filename = 'C:/MongoBackup/Date_'+month+'-'+day+'-'+year+'_Time_'+hour+'-'+minute;
+		var bufile = 'C:/MongoBackup/' + req.body.filename;
+		console.log(bufile);
+		var args = [bufile, '--gzip'];
+		mongorestore = spawn('C:/Program Files/MongoDB/Server/3.4/bin/mongorestore', args);
+		
+		mongorestore.stdout.on('data', function (data) {
+	      console.log('stdout: ' + data);
+	    });
+	    mongorestore.stderr.on('data', function (data) {
+	      console.log('stderr: ' + data);
+	    });
+
+		mongorestore.on('exit', function (code){
+			console.log('mongorestore status code ' + code);
+		});
+	// }
+	res.redirect("/");
 });
 
 module.exports = router;

@@ -67,7 +67,7 @@ block content
 			if (!url) {
 				url = window.location.href;
 			}
-			name = name.assign(/[\[\]]/g, "\\$&");
+			name = name.replace(/[\[\]]/g, "\\$&");
 			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
 					results = regex.exec(url);
 			if (!results) return null;
@@ -75,6 +75,7 @@ block content
 			return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
 		var eID = getParameterByName('eID');
+		console.log(eID);
 		$('#eID').val(eID);
 		var employee = $.grep(employees, function(e){ return e.eID === parseInt(eID); });
 		console.log(employee);

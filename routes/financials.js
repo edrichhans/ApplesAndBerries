@@ -10,6 +10,11 @@ var reportRoute = require('../models/financials/report');
 var winston = require('winston');
 var path = require('path');
 var Promise = require('promise');
+const username = require('username');
+
+username().then(username => {
+	console.log(username);
+});
 
 var wlogger = new winston.Logger({
 	transports: [
@@ -194,7 +199,7 @@ router.post('/pettycash', function(req, res){
 			issuedBy: req.session.username,
 			issuedTo: req.body.name
 		});
-		res.redirect('/pettycash');
+		res.redirect('/pettycash_view');
 	});
 });
 
@@ -361,21 +366,19 @@ router.get('/SSS', function(req, res){
 	});
 });
 
-router.get('/report', function(req, res){
-	reportRoute.report(req, res).then(r => {
-		res.redirect('/');
-		// res.send(200);
-	})
-	.catch(err => {
-		res.json({error: err})
+router.post('/report', function(req, res){
+	reportRoute.report(req, res, function(){
+		res.json({success: true});
 	});
 });
 
 router.get('/download', function(req, res, next){
 	var file = 'report.xlsx';
-	var p = path.resolve(".") + '/uploads/' + file
+	var p = path.resolve(".") + '/uploads/' + file;
 
-	res.download(p);
+	res.download(p, function(err){
+		console.log('download error! ', err);
+	});
 	return;
 });
 
@@ -397,7 +400,7 @@ router.get('/activity_log', function(req, res, next){
 
 router.get('/log', function(req, res, next){
 	console.log("at log");
-	var p = path.resolve('../log.log');
+	var p = path.resolve('log.log');
 
 	res.sendFile(p);
 });

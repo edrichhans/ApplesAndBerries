@@ -4,6 +4,8 @@ document.getElementById('backup-menu-cancel-button').onclick = function(){
 document.getElementById('save-settings-button').onclick = function(){
 	var local_choice = $('#local-backup-freq').val();
 	var cloud_choice = $('#cloud-backup-freq').val();
+	console.log(local_choice);
+	console.log(cloud_choice);
 
 	if (local_choice == 1) location.assign('/backup/setmonthlylocal');
 	else if (local_choice == 2) location.assign('/backup/setweeklylocal');
@@ -16,5 +18,4 @@ document.getElementById('save-settings-button').onclick = function(){
 	else if (cloud_choice == 3) location.assign('/backup/setdailycloud');
 	else if (cloud_choice == 4) location.assign('/backup/sethourlycloud');
 	else if (cloud_choice == 5) location.assign('/backup/deletecloudbackup');
-
 }

@@ -21,9 +21,9 @@ $(document).ready(function(){
 
 	for(var i = 0; i < philHealth.length; i++){
 		if(philHealth[i].range.to != null)
-			$('#PHTable').append('<tr><td><input class="bracket" type="number" value="' + parseFloat(philHealth[i].bracket) + '"></td><td><input class="from" type="number" value="' + parseFloat(philHealth[i].range.from) + '"></td><td><input class="to" type="number" value="' + parseFloat(philHealth[i].range.to) + '"></td><td><input class="base" type="number" value="' + parseFloat(philHealth[i].base) + '"></td><td><input class="premium" type="number" value="' + parseFloat(philHealth[i].premium) + '"></td><td><input class="share" type="number" value="' + parseFloat(philHealth[i].share) + '"></td>');
+			$('#PHTable').append('<tr><td><input class="bracket" style="border:none;" type="number" value="' + parseFloat(philHealth[i].bracket) + '" disabled></td><td><input class="from" style="border:none;" type="number" value="' + parseFloat(philHealth[i].range.from) + '" disabled></td><td><input class="to" style="border:none;" type="number" value="' + parseFloat(philHealth[i].range.to) + '" disabled></td><td><input class="base" style="border:none;" type="number" value="' + parseFloat(philHealth[i].base) + '" disabled></td><td><input class="premium" style="border:none;" type="number" value="' + parseFloat(philHealth[i].premium) + '" disabled></td><td><input class="share" style="border:none;" type="number" value="' + parseFloat(philHealth[i].share) + '" disabled></td>');
 		else{
-			$('#PHTable').append('<tr><td><input class="bracket" type="number" value="' + parseFloat(philHealth[i].bracket) + '"></td><td><input class="from" type="number" value="' + parseFloat(philHealth[i].range.from) + '"></td><td><input class="to " type="text" value="infinity" disbaled></td><td><input class="base" type="number" value="' + parseFloat(philHealth[i].base) + '"></td><td><input class="premium" type="number" value="' + parseFloat(philHealth[i].premium) + '"></td><td><input class="share" type="number" value="' + parseFloat(philHealth[i].share) + '"></td>');
+			$('#PHTable').append('<tr><td><input class="bracket" style="border:none;" type="number" value="' + parseFloat(philHealth[i].bracket) + '" disabled></td><td><input class="from" style="border:none;" type="number" value="' + parseFloat(philHealth[i].range.from) + '" disabled></td><td><input class="to " style="border:none;" type="text" value="infinity" disbaled disabled></td><td><input class="base" style="border:none;" type="number" value="' + parseFloat(philHealth[i].base) + '" disabled></td><td><input class="premium" style="border:none;" type="number" value="' + parseFloat(philHealth[i].premium) + '" disabled></td><td><input class="share" style="border:none;" type="number" value="' + parseFloat(philHealth[i].share) + '" disabled></td>');
 		}
 	}
 
@@ -50,6 +50,12 @@ var sendAjax = function(values, link){
 		},
 	});
 }
+
+$('#PHUpdate').click(function(event){
+	event.preventDefault();
+	$("input").css({'border': '1px solid rgba(34, 36, 38, 0.15)', 'border-radius': '0.28571429rem'}).prop('disabled', false);
+
+});
 
 $('#PHSubmit.submit').click(function(){
 	$('.small.modal').modal('show');

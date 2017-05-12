@@ -1,14 +1,12 @@
 html
 	head
-		title= title
-		//- script.
-		//- 	#flm-employee-module-button{
-		//- 		background-color: #ff7a77 !important;
-		//- 	}
+		title= adminUserAccount
 		script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
 		script(type='text/javascript', src='/javascripts/jquery-1.12.4.js')
 		//- script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 		//- script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
+		//- script(type='text/javascript', src='/javascripts/moment.min.js')
+		//- script(type='text/javascript', src='/javascripts/datetime-moments.js')
 		script(type='text/javascript', src='/semantic/dist/semantic.min.js')
 
 
@@ -24,26 +22,24 @@ html
 	body
 		#main-grid.ui.two.column.grid
 			.row
-				#fixed-top-menu.ui.top.inverted.borderless.mini.menu.fixed.fluid
-					//- a#flm-toggle-button.header.item.sidebar-button
-					//- 	i.sidebar.icon
-					.ui.left.floated.container
-						.header.item(href="/")
-							img.logo(src='/images/Logo.png')
-						a.header.item(href="/")
-							#main-menu-button
-								i.large.home.icon.h6 A&B
+				#fixed-top-menu.ui.top.inverted.borderless.mini.menu.fixed
+					#img-logo.item(href="/")
+						img.logo(src='/images/Logo.png')
+					a.item(href="/")
+						i#home-logo.big.home.icon
+						//- | Apples & Berries
+						#company-name.item
+							h5 A & B
 					.ui.right.floated.item
 						a#activity-log.item(href = '/activity_log')
-							| Activity Log
-						.ui.simple.dropdown.item(class="tabindex=")
-							| Username
-							i.user.icon
+							p Activity Log
+						.ui.simple.dropdown.item(class="tabindex=0")
+							i.large.user.icon
+							p#current-user-name Admin
 							i.dropdown.icon
 							.ui.menu
 								a.item(href="/logout")
-									| Sign Out
-									i.settings.icon
+									p.logoff Sign Out
 				#left-menu-container.ui.two.wide.column
 					#fixed-left-menu.ui.fluid.vertical.labeled.icon.menu
 						a#flm-employee-module-button.item(href='/employees')
@@ -70,3 +66,27 @@ html
 					block content
 
 		script(type='text/javascript', src='/javascripts/layout.js')
+		script.
+			var url= window.location.href;
+			if(url.length<=22){
+				$('#main-container').removeClass("ui fourteen wide column").addClass("ui sixteen wide column");
+				$('#left-menu-container').hide()
+			}
+			if(window.location.href.indexOf("employees") > -1) {
+				$('#flm-employee-module-button').css({'color':'#C03130', 'border-bottom':'5px solid #C03130'});
+			}
+			if(window.location.href.indexOf("payslip") > -1) {
+				$('#flm-payslip-module-button').css({'color':'#C03130', 'border-bottom':'5px solid #C03130'});
+			}
+			if(window.location.href.indexOf("AR_view") > -1) {
+				$('#flm-AR-module-button').css({'color':'#C03130', 'border-bottom':'5px solid #C03130'});
+			}
+			if(window.location.href.indexOf("checkvoucher") > -1) {
+				$('#flm-check-voucher-module-button').css({'color':'#C03130', 'border-bottom':'5px solid #C03130'});
+			}
+			if(window.location.href.indexOf("pettycash") > -1) {
+				$('#flm-petty-cash-module-button').css({'color':'#C03130', 'border-bottom':'5px solid #C03130'});
+			}
+		script.
+
+			document.getElementById("current-user-name").innerHTML = username;

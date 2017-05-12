@@ -77,7 +77,7 @@ $('#pettyCash-preview').click(function(){
 $('#checkVoucher-preview').click(function(){
 	$('#name span').text($('#name-input input').val());
 	$('#dateToday span').text($('#date-input input').val());
-	$('#particulars span').text($('#particularsDropdown').val());
+	$('#particulars span').text($('#particularsDropdown input').val());
 	$('#amount span').text($('#amount-input input').val());
 	$('#AN span').text(an.number);
 
@@ -261,64 +261,9 @@ $('#payslip-preview').click(function(){
 		.modal('show');
 });
 
-$('.ui.form#payslip')
-	.form({
-		employeeDropdown:{
-			identifier: 'employeeDropdown',
-			rules:[
-				{
-					type: 'empty',
-					prompt: 'Please select an employee'
-				}
-			]
-		},
-		companyDropdown:{
-			identifier: 'companyDropdown',
-			rules:[
-				{
-					type: 'empty',
-					prompt: 'Please select an company'
-				}
-			]
-		},
-		// deductibles:{
-		// 	identifier: 'deductibles',
-		// 	rules:[
-		// 		{
-		// 			type: 'empty',
-		// 			prompt: 'Please enter deductibles'
-		// 		}
-		// 	]
-		// },
-		// allowance:{
-		// 	identifier: 'allowance',
-		// 	rules:[
-		// 		{
-		// 			type: 'empty',
-		// 			prompt: 'Please enter allowance'
-		// 		}
-		// 	]
-		// },
-		startDate:{
-			identifier: 'startDate',
-			rules:[
-				{
-					type: 'empty',
-					prompt: 'Please enter start date'
-				}
-			]
-		},
-		endDate:{
-			identifier: 'endDate',
-			rules:[
-				{
-					type: 'empty',
-					prompt: 'Please enter end date'
-				}
-			]
-		},
-	});
 
+
+	
 $('.ui.form#AR')
 	.form({
 		name:{
@@ -353,7 +298,7 @@ $('.ui.form#AR')
 			rules:[
 				{
 					type: 'empty',
-					prompt: 'Please enter amount'
+					prompt: 'Please enter a valid amount'
 				}
 			]
 		},
@@ -393,7 +338,7 @@ $('.ui.form#pettycash')
 			rules:[
 				{
 					type: 'empty',
-					prompt: 'Please enter amount'
+					prompt: 'Please enter a valid amount'
 				}
 			]
 		},
@@ -433,7 +378,7 @@ $('.ui.form#checkvoucher')
 			rules:[
 				{
 					type: 'empty',
-					prompt: 'Please enter amount'
+					prompt: 'Please enter a valid amount'
 				}
 			]
 		},
