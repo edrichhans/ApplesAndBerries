@@ -10,23 +10,29 @@ block content
 
 		.four.column.wide.row
 			.column
-
-				#back-up-locally.col.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/backup/localbackup');", value='Local Backup')
+				#back-up-locally.ui.animated.fade.red.button(tabindex="0" onclick="location.assign('/backup/localbackup');", value='Local Backup')
 					.visible.content
-						.ui.container.main-menu-button
-							img.ui.tiny.centered.middle.aligned.image(src="icons/backup/download-arrow.png")
-							h1 Back Up Locally
-					.hidden.content
-						h4 Back Up to a Local File
+							//- img.ui.tiny.centered.middle.aligned.image(src="icons/backup/download-arrow.png")
+							i.massive.download.icon
 
+							h2 Back Up Locally
+					.hidden.content
+						h4 
+							| Back Up
+							br
+							| to a Local File
 			.column
-				#back-up-to-cloud.col.ui.animated.fade.red.button.fluid(tabindex="0" onclick="location.assign('/backup/cloudbackup');", value='Cloud Backup')
+				#back-up-to-cloud.ui.animated.fade.red.button(tabindex="0" onclick="location.assign('/backup/cloudbackup');", value='Cloud Backup')
 					.visible.content
-						.ui.container.main-menu-button
-							img.ui.tiny.centered.middle.aligned.image(src="icons/backup/upload_to_cloud.png")
-							h1 Back Up to Cloud
+						//- .ui.container.main-menu-button
+							//- img.ui.tiny.centered.middle.aligned.image(src="icons/backup/upload_to_cloud.png")
+						i.massive.cloud.upload.icon
+						h2 Cloud Back Up
 					.hidden.content
-						h4 Back Up to an Online Server
+						h4 
+							|Back Up
+							br
+							|to an Online Server
 
 		.ui.container
 			button.ui.red.button.right.floated.column.center.aligned#backup-now-cancel-button(onclick="location.assign('/backup')") Back
