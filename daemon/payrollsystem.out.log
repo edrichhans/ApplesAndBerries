@@ -199,3 +199,15 @@ Security context: 00000365AB6CFB49 <JS Object>
     at Function.Module._load (module.js:438:3)
     at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
 > server running on port 8000
+{ Error: Cannot find module '../build/Release/bson'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (C:\Users\Asus\Documents\ApplesAndBerries\node_modules\mongodb\node_modules\bson\ext\index.js:15:10)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at require (internal/module.js:20:19) code: 'MODULE_NOT_FOUND' }
+> server running on port 8000

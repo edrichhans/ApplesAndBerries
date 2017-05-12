@@ -79,5 +79,12 @@ block content
 			$.post('/report', {
 				start: new Date($('#start').val()),
 				end: new Date($('#end').val())
-			})
-		})
+			},function(){
+				console.log("success!!");
+				window.location.replace('/download');
+			}).done(function(){
+				console.log("done!");
+			}).fail(function(){
+				console.log("error!")
+			});
+		});

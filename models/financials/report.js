@@ -46,6 +46,10 @@ var check_date = function(arr, inputDate){
 var merge_paySlip = function(paySlipWorksheet){
 	var i = 2;
 	var start = i;
+	var cell_R = paySlipWorksheet.getCell('R' + (i).toString()).value;
+	if(cell_R == "Total:"){
+		return;
+	}
 	while(1){
 		var cell_A_next = paySlipWorksheet.getCell('A' + (i+1).toString()).value;
 		var cell_B_next = paySlipWorksheet.getCell('B' + (i+1).toString()).value;
@@ -78,6 +82,11 @@ var merge_paySlip = function(paySlipWorksheet){
 var add_line_to_range = function(worksheet, subtotal_letter, end){
 	var i = 2;
 	var start = i;
+	var cell_next = worksheet.getCell(subtotal_letter + (i).toString()).value;
+	if(cell_next == "Total:"){
+		return;
+	}
+
 	while(1){
 		var cell_next = worksheet.getCell(subtotal_letter + (i+1).toString()).value;
 		if(cell_next == 'Total:'){
@@ -409,11 +418,11 @@ exports.report = function(req, res, callBack){
 							total: total
 						}).commit();
 
+						console.log("BAGO MAGWRITE");
 						merge_paySlip(paySlipWorksheet);
 						add_line_to_range(ARWorksheet, 'E', 6);
 						add_line_to_range(checkVoucherWorksheet, 'E', 6);
 						add_line_to_range(pettyCashWorksheet, 'G', 8);
-
 						workbook.xlsx.writeFile("uploads/report.xlsx");
 						console.log('LAST');
 						return callBack();

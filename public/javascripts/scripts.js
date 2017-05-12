@@ -77,7 +77,7 @@ $('#pettyCash-preview').click(function(){
 $('#checkVoucher-preview').click(function(){
 	$('#name span').text($('#name-input input').val());
 	$('#dateToday span').text($('#date-input input').val());
-	$('#particulars span').text($('#particularsDropdown').val());
+	$('#particulars span').text($('#particularsDropdown input').val());
 	$('#amount span').text($('#amount-input input').val());
 	$('#AN span').text(an.number);
 
