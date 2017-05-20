@@ -66,3 +66,30 @@ FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memo
 js-bson: Failed to load c++ bson extension, using pure JS version
 Mon, 08 May 2017 04:01:33 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
 Mon, 08 May 2017 04:01:33 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sat, 13 May 2017 05:14:10 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Sat, 13 May 2017 05:14:10 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sat, 13 May 2017 05:22:42 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Sat, 13 May 2017 05:22:42 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sat, 13 May 2017 14:21:02 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Sat, 13 May 2017 14:21:02 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sat, 13 May 2017 18:08:30 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Sat, 13 May 2017 18:08:30 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sat, 13 May 2017 21:17:03 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Sat, 13 May 2017 21:17:03 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sat, 13 May 2017 23:42:46 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Sat, 13 May 2017 23:42:46 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sun, 14 May 2017 08:57:20 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Sun, 14 May 2017 08:57:20 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sun, 14 May 2017 09:10:23 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Sun, 14 May 2017 09:10:23 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+js-bson: Failed to load c++ bson extension, using pure JS version
+Sun, 14 May 2017 09:38:14 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Sun, 14 May 2017 09:38:14 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
