@@ -9,9 +9,9 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To Petty Cash Panel
-    Click Element              control-panel-module-button
-    Wait Until Page Contains   Control Panel
-    Location Should Be         ${CONTROL PANEL URL}
+    Click Element              manage-users-button
+    Wait Until Page Contains   Manage Users
+    Location Should Be         ${MANAGE USERS}
     Click Element              delete-user-button
     Wait Until Page Contains   Delete User
     Location Should Be         ${DEL USER URL}

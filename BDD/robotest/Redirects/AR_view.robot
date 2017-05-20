@@ -9,10 +9,11 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To AR Panel
+	Click Element              control-panel-module-button
     Click Element              AR-module-button
-    Wait Until Page Contains   AR View
+    Wait Until Page Contains   Acknowledgment Receipt
     Location Should Be         ${AR URL}
-    Click Button               xpath=//body/div/div/div[3]/div/div[2]/button
+    Click Button               add-AR-button
     Wait Until Page Contains   Add AR
     Location Should Be         ${ADD AR URL}
     Go Back Home

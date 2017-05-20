@@ -24,6 +24,3 @@ Click Sidebar Options
     Click Element              flm-petty-cash-button
     Wait Until Page Contains   PettyCash View
     Go Back Home
-    Click Element              flm-control-panel-module-button
-    Wait Until Page Contains   Control Panel
-    Go Back Home

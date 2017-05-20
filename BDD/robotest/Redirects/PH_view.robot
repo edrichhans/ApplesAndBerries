@@ -9,9 +9,9 @@ Resource          menu_resource.robot
 
 *** Test Cases ***
 Go To Petty Cash Panel
-    Click Element              control-panel-module-button
-    Wait Until Page Contains   Control Panel
-    Location Should Be         ${CONTROL PANEL URL}
+    Click Element              check-voucher-module-button
+    Wait Until Page Contains   Update Tables
+    Location Should Be         ${UPDATE TABLES}
     Click Element              PhilHealth-module-button
     Wait Until Page Contains   PH View
     Location Should Be         ${PHILHEALTH URL}

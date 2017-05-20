@@ -12,7 +12,7 @@ Go To Payslip Panel
     Click Element              payslip-module-button
     Wait Until Page Contains   Payslip View
     Location Should Be         ${PAYSLIP URL}
-    Click Button               xpath=//body/div/div/div[3]/div/div[2]/button
+    Click Button               xpath=add-payslip-button
     Wait Until Page Contains   Add Payslip
     Location Should Be         ${ADD PAYSLIP URL}
     Go Back Home
