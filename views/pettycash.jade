@@ -29,20 +29,22 @@ block content
 						.ui.input.particulars-input
 							input(name='particulars', type='text', placeholder='Name')
 
-					.five.wide.field
-						label Amount
-						.ui.input.amount-input
-							input(name="amount", type="number", placeholder="Php")
-
 					.three.wide.field
 						label Qty
 						.ui.input.qty-input
-							input(name="qty", type="number", placeholder="Pcs")
+							input(name="qty", type="number", placeholder="1")
+
+					.five.wide.field
+						label Amount
+						.ui.input.amount-input
+							input(name="amount", type="number", placeholder="PHP")
+
 
 			.field
 				.ui.button#add-field Add Field
 				.ui.button#remove-field Remove Field
-				.ui.primary.button#pettyCash-preview Preview
+
+			.ui.primary.button#pettyCash-preview Preview
 
 			.ui.error.message
 
