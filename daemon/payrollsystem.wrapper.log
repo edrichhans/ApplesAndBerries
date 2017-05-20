@@ -32,3 +32,50 @@ Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInter
    at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
    at winsw.WrapperService.StopIt()
    at winsw.WrapperService.OnShutdown()
+2017-05-12 19:25:00 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Asus\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\Asus\Documents\ApplesAndBerries\app.js --log "PayrollSystem wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2017-05-12 19:25:09 - Started 2212
+2017-05-19 14:11:39 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Asus\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\Asus\Documents\ApplesAndBerries\app.js --log "PayrollSystem wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2017-05-19 14:11:40 - Started 2544
+2017-05-19 14:47:36 - Stopping payrollsystem.exe
+2017-05-19 14:47:36 - ProcessKill 2544
+2017-05-19 14:47:38 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2017-05-19 14:48:51 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Asus\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\Asus\Documents\ApplesAndBerries\app.js --log "PayrollSystem wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2017-05-19 14:48:58 - Started 2392
+2017-05-19 21:48:15 - Stopping payrollsystem.exe
+2017-05-19 21:48:15 - ProcessKill 2392
+2017-05-19 21:48:17 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2017-05-19 21:49:31 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Asus\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\Asus\Documents\ApplesAndBerries\app.js --log "PayrollSystem wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2017-05-19 21:50:08 - Started 3120
+2017-05-19 22:54:19 - Stopping payrollsystem.exe
+2017-05-19 22:54:19 - ProcessKill 3120
+2017-05-19 22:54:20 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()

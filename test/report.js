@@ -19,10 +19,29 @@ describe("Report", function(){
 	describe("Generate Excel File", function(){
 		it("creates a file in uploads folder", function(done){
 			chai.request(server)
-			.get('/report')
+			.post('/report')
+			.send({
+				start: new Date("January 1, 2017"),
+				end: new Date("December 31, 2017")
+			})
 			.end(function(err, res){
 				res.should.have.status(200);
-				expect(file('uploads/report.xlsx')).to.exist;
+				expect(file('public/report.xlsx')).to.exist;
+				done();
+			});
+		});
+	});
+	describe("Generate Excel File with Invalid dates", function(){
+		it("should still return 200", function(done){
+			chai.request(server)
+			.post('/report')
+			.send({
+				start: new Date("Invalid Date"),
+				end: new Date("Invalid Date")
+			})
+			.end(function(err, res){
+				res.should.have.status(200);
+				expect(file('public/report.xlsx')).to.exist;
 				done();
 			});
 		});
