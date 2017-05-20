@@ -9,12 +9,6 @@ block content
 				h1.ui.dividing.header.center.aligned Check Voucher
 		// buttons
 		.ui.container.right.aligned
-			//- .search-bar.ui.action.input
-			//- 	input(type='text', placeholder='Search...')
-			//- 	button.ui.basic.circular.icon.button
-			//- 		i.search.icon
-			//- #add-CV-label.ui.right.pointing.red.basic.label
-			//- 	| Add CV
 			#add-CV-label.ui.pointing.below.red.basic.label
 				| Add CV
 			button#add-CV-button.ui.basic.circular.icon.button(onclick="location.replace('/checkvoucher')")
@@ -106,10 +100,7 @@ block content
 
 	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-	
-	//- script(type='text/javascript', src='/javascripts/moment.js')
 	script(type='text/javascript', src='/javascripts/moment.min.js')
 	script(type='text/javascript', src='/javascripts/datetime-moments.js')
-
 	script(type='text/javascript' src='javascripts/checkvoucher_view.js')
 	script(type='text/javascript' src='/javascripts/scripts.js')

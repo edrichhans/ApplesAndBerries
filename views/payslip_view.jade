@@ -24,11 +24,6 @@ block content
 				| Delete Payslip
 			button#delete-payslip-button.ui.basic.circular.icon.button
 				i.trash.outline.icon
-			//- .search-bar.ui.action.input
-			//- 	input(type='text', placeholder='Search...')
-			//- 	button.ui.basic.circular.icon.button
-			//- 		i.search.icon
-			
 
 		// Table Proper
 		.ui.segment.container.fortable
@@ -40,22 +35,15 @@ block content
 								input#payslip-master-checkbox(type="checkbox", name="payslip-master-checkbox")
 								label
 						th AN
-						//- th Issued By
-						//- th eID
 						th Name
 						th Base Salary
 						th Start Date
 						th End Date
 						th Deductibles
-						//- th Amount
 						th Allowance
-						//- th Amount
 						th PhilHealth
 						th SSS
 						th HDMF
-						//- th ER PhilHealth
-						//- th ER SSS
-						//- th ER HDMF
 						th BIR Tax
 						th Net
 				tbody
@@ -66,17 +54,13 @@ block content
 									input.payslip-checkbox(type="checkbox", name="payslip-checkbox")
 									label
 							td.eID(value=item.eID)= item.adviceNumber
-							//- td= item.issuedBy
-							//- td.eID(value=item.eID)= item.eID
 							td.startDate= item.startDate
 							td.endDate= item.endDate
-							//- td= item.deductibles_name
 							td
 								each i, index in item.deductibles
 									if index != 0
 										br
 									=i
-							//- td= item.allowance_name
 							td
 								each i, index in item.allowance
 									if index != 0
@@ -85,9 +69,6 @@ block content
 							td= item.PHreduc
 							td= item.SSSreduc
 							td= item.HDMFreduc
-							//- td= item.EmployerPH
-							//- td= item.EmployerSSS
-							//- td= item.EmployerHDMF
 							td= item.BIR
 							td= item.total
 						script.
@@ -122,9 +103,6 @@ block content
 				i.print.icon
 
 		.ui.basic.modal.view
-			//- .ui.icon.header
-			//- 	i.file.text.icon
-			//- 	| View Data
 			.ui.icon.header
 				h1 View Data
 			.content
@@ -245,11 +223,5 @@ block content
 		var transactions =!{JSON.stringify(transactions)};
 	script(type='text/javascript', src='/javascripts/jquery.dataTables.min.js')
 	script(type='text/javascript', src='/javascripts/dataTables.semantic-ui.min.js')
-
-
-	//- script(type='text/javascript', src='/javascripts/moment.js')
 	script(type='text/javascript', src='/javascripts/moment.min.js')
 	script(type='text/javascript', src='/javascripts/datetime-moments.js')
-
-	//- script(type='text/javascript' src='javascripts/checkvoucher_view.js')
-	//- script(type='text/javascript' src='/javascripts/scripts.js')

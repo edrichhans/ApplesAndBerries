@@ -395,7 +395,7 @@ router.get('/activity_log', function(req, res, next){
 
 router.get('/log', function(req, res, next){
 	console.log("at log");
-	var p = path.resolve('../log.log');
+	var p = path.resolve('log.log');
 
 	res.sendFile(p);
 });

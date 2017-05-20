@@ -35,7 +35,7 @@ html
 							p Activity Log
 						.ui.simple.dropdown.item(class="tabindex=0")
 							i.large.user.icon
-							p.current-user-name Username
+							p#current-user-name Admin
 							i.dropdown.icon
 							.ui.menu
 								a.item(href="/logout")
@@ -87,3 +87,6 @@ html
 			if(window.location.href.indexOf("pettycash") > -1) {
 				$('#flm-petty-cash-module-button').css({'color':'#C03130', 'border-bottom':'5px solid #C03130'});
 			}
+		script.
+
+			document.getElementById("current-user-name").innerHTML = username;
