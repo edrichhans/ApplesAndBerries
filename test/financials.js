@@ -40,8 +40,8 @@ describe("Payslip", function(){
 			chai.request(server)
 				.post('/payslip')
 				.send({
-					"employeeDropdown": 11,
-					"companyDropdown": "Apples",
+					"employeeDropdown": "1",
+					"companyDropdown": "apples",
 					"deductibles_name": ["deductibles_name", "a"],
 					"deductibles": [500, 100],
 					"allowance_name": ["allowance_name", "b"],
@@ -62,8 +62,8 @@ describe("Payslip", function(){
 			chai.request(server)
 			.post('/editPayslip')
 			.send({
-				"employeeDropdown": 11,
-				"companyDropdown": "Berries",
+				"employeeDropdown": "1",
+				"companyDropdown": "berries",
 				"deductibles_name": ["deductibles_name"],
 				"deductibles": [500],
 				"allowance_name": ["allowance_name", "b"],
@@ -140,8 +140,10 @@ describe("Thirteenth", function(){
 			chai.request(server)
 				.post('/thirteenth')
 				.send({
-					"employeeDropdown": 11,
-					"companyDropdown": "Apples"
+					"employeeDropdown": 1,
+					"companyDropdown": "Apples",
+					"startDate": "October 1, 2016",
+					"endDate": "October 30, 2016"
 				})
 			.end(function(err, res){
 				res.should.have.status(200);
@@ -206,7 +208,7 @@ describe("AR", function(){
 					"name": "Edrich Chua",
 					"date": "March 1, 2017",
 					"amount": 500,
-					"particulars": ['food', '500']
+					"particulars": 'food'
 				})
 			.end(function(err, res){
 				res.should.have.status(200);
@@ -337,7 +339,7 @@ describe("Check Voucher", function(){
 					"name": "Edrich Chua",
 					"date": "March 1, 2017",
 					"amount": 500,
-					"particulars": ['food', '500']
+					"particulars": 'food'
 				})
 			.end(function(err, res){
 				res.should.have.status(200);

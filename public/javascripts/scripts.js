@@ -504,7 +504,7 @@ $('.ui.form#editEmployee')
 			rules:[
 				{
 					type: 'empty',
-					type   : 'integer[0..]',
+					type   : 'decimal[0..]',
 					prompt: 'Please enter salary'
 				}
 			]

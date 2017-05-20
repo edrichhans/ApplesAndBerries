@@ -78,17 +78,15 @@ $('.submit#delete').click(function(){
 	});
 });
 
-// $(document).ready(function(){
-// 	$('#employee-view-table').DataTable();
-// 	// $('.dataTables_filter').addClass('search');
-// });
-
 
 $('#add-employee-button').hover(
 	function(){ $('#add-employee-label').css('display','inline-block')},
 		function(){ $('#add-employee-label').css('display', 'none')
 	});
 
+$('#add-employee-button.ui.basic.circular.icon.button').click(function(){
+	$('#add-employee-modal.ui.small.modal').modal('show');
+});
 
 $('#employee-master-checkbox').change(function(){
 	if(this.checked) $('.employee-checkbox').attr('checked', true);
@@ -97,8 +95,4 @@ $('#employee-master-checkbox').change(function(){
 
 $('#print-employee-button').click(function(){
 	$('table#employee-view-table').printThis();
-});
-
-$('#add-employee-button.ui.basic.circular.icon.button').click(function(){
-	$('#add-employee.ui.small	.modal').modal('show');
 });

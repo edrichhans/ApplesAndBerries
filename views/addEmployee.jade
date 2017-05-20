@@ -2,7 +2,6 @@ extends layout
 
 block content
 	title Add Employee
-	//- .ui.middle.center.aligned.grid.container.stackable.doubling
 	.block-content-container.ui.container
 		.two.fields.center2
 			.field
@@ -10,47 +9,49 @@ block content
 			.field
 				h2.ui.dividing.header Add employee
 		form.ui.form.box.center2#addemployee(name='addemployee', method='post', action='/employees/addemployee')
-			.field
+			.twelve.wide.field
 				label Name
 				.ui.input
 					input#name(name="name", type='text', placeholder='Name')
+			.field
+				.fields
+					.five.wide.field
+						label Birthday
+						.ui.calendar#checkDate
+							.ui.input.left.icon
+								i.calendar.icon
+								input#birthday(name="birthday", type="text", placeholder="Date")
+					.three.wide.field
+						label Civil Status
+						select#status(name='status').ui.search.dropdown
+							option(value="") Select Option...
+							option(value=0) Single
+							option(value=1) Married
+
 			.two.fields
-				.field
+				.five.wide.field
 					label Start Date of Employment
 					.ui.calendar#startDate
 						.ui.input.left.icon
 							i.calendar.icon
 							input#startdate(name="start", type="text", placeholder="Date")
-
-				.field
-					label Birthday
-					.ui.calendar#checkDate
-						.ui.input.left.icon
-							i.calendar.icon
-							input#birthday(name="birthday", type="text", placeholder="Date")
-
-			.fields
-				.field
+				.four.wide.field
 					label Position
-					select#position(name='position').ui.fluid.search.dropdown
+					select#position(name='position').ui.search.dropdown
 						option(value="") Select Option...
 						option(value=0) Teacher
 						option(value=1) Admin
 						option(value=2) Staff
-				.field
-					label Civil Status
-					select#status(name='status').ui.fluid.search.dropdown
-						option(value="") Select Option...
-						option(value=0) Single
-						option(value=1) Married
 			.field
-				label Dependents
-					.ui.input
-						input#dependents(name="dependents", type="number", placeholder="How many?" min="0")
-			.field
-				label Base Salary
-					.ui.input
-						input#salary(name="salary", type="number", placeholder="Salary" min="0")
+				.fields
+					.three.wide.field
+						label Dependents
+							.ui.input
+								input#dependents(name="dependents", type="number", placeholder="0" min="0")
+					.seven.wide.field
+						label Base Salary
+							.ui.input
+								input#salary(name="salary", type="number", placeholder="Salary" min="0")
 			.ui.error.message
 			.ui.primary.button#confirm Submit
 

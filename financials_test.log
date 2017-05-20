@@ -4878,3 +4878,266 @@
 {"level":"info","message":"Reacher PhilHealth table view. Response 200","timestamp":"2017-05-07T10:56:16.270Z"}
 {"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-07T10:56:16.322Z"}
 {"level":"info","message":"Success inserting to PhilHealth table. Response 200","timestamp":"2017-05-07T10:56:16.325Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:09:52.980Z"}
+{"level":"info","message":"Displaying payslip page","timestamp":"2017-05-12T03:09:54.882Z"}
+{"level":"info","message":"Page displayed successfully","timestamp":"2017-05-12T03:09:54.885Z"}
+{"level":"info","message":"Inserting to payslip","timestamp":"2017-05-12T03:09:54.985Z"}
+{"level":"info","message":"Success insert to payslip. Response 200","timestamp":"2017-05-12T03:09:54.988Z"}
+{"level":"info","message":"Editing payslip","timestamp":"2017-05-12T03:09:57.044Z"}
+{"level":"info","message":"Deleting payslip","timestamp":"2017-05-12T03:09:57.063Z"}
+{"level":"info","message":"Inserting to thirteenth month pay","timestamp":"2017-05-12T03:10:03.222Z"}
+{"level":"info","message":"Success insert to thirteenth month pay. Response 200","timestamp":"2017-05-12T03:10:03.224Z"}
+{"level":"info","message":"Going to AR table page","timestamp":"2017-05-12T03:10:03.385Z"}
+{"level":"info","message":"AR table page reached. Response 200","timestamp":"2017-05-12T03:10:03.388Z"}
+{"level":"info","message":"Going to petty cash table page","timestamp":"2017-05-12T03:10:03.507Z"}
+{"level":"info","message":"Petty cash table page reached. Response 200","timestamp":"2017-05-12T03:10:03.510Z"}
+{"level":"info","message":"Going to petty cash table page","timestamp":"2017-05-12T03:10:03.511Z"}
+{"level":"info","message":"Petty cash table page reached. Response 200","timestamp":"2017-05-12T03:10:03.513Z"}
+{"level":"info","message":"Inserting to AR","timestamp":"2017-05-12T03:10:03.698Z"}
+{"level":"info","message":"Success inserting to AR. Response 200","timestamp":"2017-05-12T03:10:03.701Z"}
+{"level":"info","message":"Inserting to AR","timestamp":"2017-05-12T03:10:03.703Z"}
+{"level":"info","message":"Success inserting to AR. Response 200","timestamp":"2017-05-12T03:10:03.706Z"}
+{"level":"info","message":"Inserting to petty cash","timestamp":"2017-05-12T03:10:03.908Z"}
+{"level":"info","message":"Success inserting to petty cash. Response 200","timestamp":"2017-05-12T03:10:03.911Z"}
+{"level":"info","message":"Inserting to petty cash","timestamp":"2017-05-12T03:10:03.913Z"}
+{"level":"info","message":"Success inserting to petty cash. Response 200","timestamp":"2017-05-12T03:10:03.915Z"}
+{"level":"info","message":"Going to check voucher table page","timestamp":"2017-05-12T03:10:04.151Z"}
+{"level":"info","message":"Check voucher table page reached. Response 200","timestamp":"2017-05-12T03:10:04.154Z"}
+{"level":"info","message":"Going to check voucher form page","timestamp":"2017-05-12T03:10:04.250Z"}
+{"level":"info","message":"Check voucher form page reached. Response 200","timestamp":"2017-05-12T03:10:04.253Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:10:04.256Z"}
+{"level":"error","message":"Inserting to BIR table failed. Character in hash. Response 500","timestamp":"2017-05-12T03:10:04.260Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:10:04.344Z"}
+{"level":"error","message":"Inserting to BIR table failed. Character in range. Response 500","timestamp":"2017-05-12T03:10:04.347Z"}
+{"level":"info","message":"Inserting to check voucher","timestamp":"2017-05-12T03:10:04.416Z"}
+{"level":"info","message":"Success inserting to check voucher. Response 200","timestamp":"2017-05-12T03:10:04.418Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:10:04.439Z"}
+{"level":"error","message":"Inserting to BIR table failed. Null character in hash. Response 500","timestamp":"2017-05-12T03:10:04.441Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:10:04.535Z"}
+{"level":"error","message":"Inserting to BIR table failed. Null in range. Response 500","timestamp":"2017-05-12T03:10:04.539Z"}
+{"level":"info","message":"Going to BIR table view","timestamp":"2017-05-12T03:10:04.613Z"}
+{"level":"info","message":"Reached BIR table view. Response 200","timestamp":"2017-05-12T03:10:04.618Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:10:04.629Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in credit. Response 500","timestamp":"2017-05-12T03:10:04.632Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:10:04.716Z"}
+{"level":"info","message":"Success inserting to BIR table. Response 200","timestamp":"2017-05-12T03:10:04.718Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:10:04.719Z"}
+{"level":"info","message":"Success inserting to BIR table. Response 200","timestamp":"2017-05-12T03:10:04.722Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:10:05.035Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in to. Response 500","timestamp":"2017-05-12T03:10:05.038Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:10:05.040Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in base. Response 500","timestamp":"2017-05-12T03:10:05.042Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:10:05.053Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in totalERR. Response 500","timestamp":"2017-05-12T03:10:05.055Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:10:05.066Z"}
+{"level":"error","message":"Inserting to SSS table failed. Blank totalEE. Response 500","timestamp":"2017-05-12T03:10:05.071Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:10:05.084Z"}
+{"level":"error","message":"Inserting to SSS table failed. No EC field. Response 500","timestamp":"2017-05-12T03:10:05.087Z"}
+{"level":"info","message":"Going to SSS table view","timestamp":"2017-05-12T03:10:05.093Z"}
+{"level":"info","message":"Reached SSS table view. Response 200","timestamp":"2017-05-12T03:10:05.097Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:10:05.188Z"}
+{"level":"info","message":"Success inserting to SSS table. Response 200","timestamp":"2017-05-12T03:10:05.191Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:39:07.919Z"}
+{"level":"info","message":"Displaying payslip page","timestamp":"2017-05-12T03:39:11.342Z"}
+{"level":"info","message":"Page displayed successfully","timestamp":"2017-05-12T03:39:11.355Z"}
+{"level":"info","message":"Inserting to payslip","timestamp":"2017-05-12T03:39:11.679Z"}
+{"level":"info","message":"Success insert to payslip. Response 200","timestamp":"2017-05-12T03:39:11.682Z"}
+{"level":"info","message":"Editing payslip","timestamp":"2017-05-12T03:39:13.686Z"}
+{"level":"info","message":"Deleting payslip","timestamp":"2017-05-12T03:39:13.738Z"}
+{"level":"info","message":"Inserting to thirteenth month pay","timestamp":"2017-05-12T03:39:20.225Z"}
+{"level":"info","message":"Success insert to thirteenth month pay. Response 200","timestamp":"2017-05-12T03:39:20.227Z"}
+{"level":"info","message":"Going to AR table page","timestamp":"2017-05-12T03:39:20.564Z"}
+{"level":"info","message":"AR table page reached. Response 200","timestamp":"2017-05-12T03:39:20.567Z"}
+{"level":"info","message":"Go to AR form page","timestamp":"2017-05-12T03:39:20.626Z"}
+{"level":"info","message":"AR form page reached. Response 200","timestamp":"2017-05-12T03:39:20.628Z"}
+{"level":"info","message":"Inserting to AR","timestamp":"2017-05-12T03:39:20.772Z"}
+{"level":"info","message":"Success inserting to AR. Response 200","timestamp":"2017-05-12T03:39:20.775Z"}
+{"level":"info","message":"Going to petty cash table page","timestamp":"2017-05-12T03:39:21.104Z"}
+{"level":"info","message":"Petty cash table page reached. Response 200","timestamp":"2017-05-12T03:39:21.122Z"}
+{"level":"info","message":"Going to petty cash form page","timestamp":"2017-05-12T03:39:21.254Z"}
+{"level":"info","message":"Petty cash form page reached. Response 200","timestamp":"2017-05-12T03:39:21.258Z"}
+{"level":"info","message":"Inserting to petty cash","timestamp":"2017-05-12T03:39:21.452Z"}
+{"level":"info","message":"Success inserting to petty cash. Response 200","timestamp":"2017-05-12T03:39:21.454Z"}
+{"level":"info","message":"Going to check voucher table page","timestamp":"2017-05-12T03:39:21.764Z"}
+{"level":"info","message":"Check voucher table page reached. Response 200","timestamp":"2017-05-12T03:39:21.767Z"}
+{"level":"info","message":"Going to check voucher form page","timestamp":"2017-05-12T03:39:21.960Z"}
+{"level":"info","message":"Check voucher form page reached. Response 200","timestamp":"2017-05-12T03:39:21.962Z"}
+{"level":"info","message":"Inserting to check voucher","timestamp":"2017-05-12T03:39:22.098Z"}
+{"level":"info","message":"Success inserting to check voucher. Response 200","timestamp":"2017-05-12T03:39:22.101Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:39:22.234Z"}
+{"level":"error","message":"Inserting to BIR table failed. Character in hash. Response 500","timestamp":"2017-05-12T03:39:22.237Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:39:22.249Z"}
+{"level":"error","message":"Inserting to BIR table failed. Character in range. Response 500","timestamp":"2017-05-12T03:39:22.252Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:39:22.266Z"}
+{"level":"error","message":"Inserting to BIR table failed. Null character in hash. Response 500","timestamp":"2017-05-12T03:39:22.268Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:39:22.279Z"}
+{"level":"error","message":"Inserting to BIR table failed. Null in range. Response 500","timestamp":"2017-05-12T03:39:22.281Z"}
+{"level":"info","message":"Going to BIR table view","timestamp":"2017-05-12T03:39:22.289Z"}
+{"level":"info","message":"Reached BIR table view. Response 200","timestamp":"2017-05-12T03:39:22.293Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:39:22.352Z"}
+{"level":"info","message":"Success inserting to BIR table. Response 200","timestamp":"2017-05-12T03:39:22.354Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:39:22.462Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in credit. Response 500","timestamp":"2017-05-12T03:39:22.465Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:39:22.486Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in from. Response 500","timestamp":"2017-05-12T03:39:22.488Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:39:22.496Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in to. Response 500","timestamp":"2017-05-12T03:39:22.499Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:39:22.510Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in totalERR. Response 500","timestamp":"2017-05-12T03:39:22.513Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:39:22.527Z"}
+{"level":"error","message":"Inserting to SSS table failed. Blank totalEE. Response 500","timestamp":"2017-05-12T03:39:22.530Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:39:22.538Z"}
+{"level":"error","message":"Inserting to SSS table failed. No EC field. Response 500","timestamp":"2017-05-12T03:39:22.542Z"}
+{"level":"info","message":"Going to SSS table view","timestamp":"2017-05-12T03:39:22.550Z"}
+{"level":"info","message":"Reached SSS table view. Response 200","timestamp":"2017-05-12T03:39:22.553Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:39:22.616Z"}
+{"level":"info","message":"Success inserting to SSS table. Response 200","timestamp":"2017-05-12T03:39:22.619Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:39:22.710Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in base. Response 500","timestamp":"2017-05-12T03:39:22.713Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in premium. Response 500","timestamp":"2017-05-12T03:39:22.739Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:39:22.753Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in share. Response 500","timestamp":"2017-05-12T03:39:22.755Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:39:22.780Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in from. Response 500","timestamp":"2017-05-12T03:39:22.783Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:39:22.791Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in to. Response 500","timestamp":"2017-05-12T03:39:22.794Z"}
+{"level":"info","message":"Going to PhilHealth table view","timestamp":"2017-05-12T03:39:22.803Z"}
+{"level":"info","message":"Reacher PhilHealth table view. Response 200","timestamp":"2017-05-12T03:39:22.806Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:39:22.884Z"}
+{"level":"info","message":"Success inserting to PhilHealth table. Response 200","timestamp":"2017-05-12T03:39:22.888Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:52:52.082Z"}
+{"level":"info","message":"Displaying payslip page","timestamp":"2017-05-12T03:52:53.397Z"}
+{"level":"info","message":"Page displayed successfully","timestamp":"2017-05-12T03:52:53.400Z"}
+{"level":"info","message":"Inserting to payslip","timestamp":"2017-05-12T03:52:53.458Z"}
+{"level":"info","message":"Success insert to payslip. Response 200","timestamp":"2017-05-12T03:52:53.460Z"}
+{"level":"info","message":"Editing payslip","timestamp":"2017-05-12T03:52:55.463Z"}
+{"level":"info","message":"Deleting payslip","timestamp":"2017-05-12T03:52:55.489Z"}
+{"level":"info","message":"Inserting to thirteenth month pay","timestamp":"2017-05-12T03:53:01.585Z"}
+{"level":"info","message":"Success insert to thirteenth month pay. Response 200","timestamp":"2017-05-12T03:53:01.589Z"}
+{"level":"info","message":"Going to AR table page","timestamp":"2017-05-12T03:53:01.749Z"}
+{"level":"info","message":"AR table page reached. Response 200","timestamp":"2017-05-12T03:53:01.752Z"}
+{"level":"info","message":"Go to AR form page","timestamp":"2017-05-12T03:53:01.798Z"}
+{"level":"info","message":"AR form page reached. Response 200","timestamp":"2017-05-12T03:53:01.800Z"}
+{"level":"info","message":"Inserting to AR","timestamp":"2017-05-12T03:53:01.857Z"}
+{"level":"info","message":"Success inserting to AR. Response 200","timestamp":"2017-05-12T03:53:01.859Z"}
+{"level":"info","message":"Going to petty cash table page","timestamp":"2017-05-12T03:53:01.960Z"}
+{"level":"info","message":"Petty cash table page reached. Response 200","timestamp":"2017-05-12T03:53:01.962Z"}
+{"level":"info","message":"Going to petty cash form page","timestamp":"2017-05-12T03:53:02.015Z"}
+{"level":"info","message":"Petty cash form page reached. Response 200","timestamp":"2017-05-12T03:53:02.017Z"}
+{"level":"info","message":"Inserting to petty cash","timestamp":"2017-05-12T03:53:02.063Z"}
+{"level":"info","message":"Success inserting to petty cash. Response 200","timestamp":"2017-05-12T03:53:02.065Z"}
+{"level":"info","message":"Going to check voucher table page","timestamp":"2017-05-12T03:53:02.157Z"}
+{"level":"info","message":"Check voucher table page reached. Response 200","timestamp":"2017-05-12T03:53:02.159Z"}
+{"level":"info","message":"Going to check voucher form page","timestamp":"2017-05-12T03:53:02.206Z"}
+{"level":"info","message":"Check voucher form page reached. Response 200","timestamp":"2017-05-12T03:53:02.208Z"}
+{"level":"info","message":"Inserting to check voucher","timestamp":"2017-05-12T03:53:02.259Z"}
+{"level":"info","message":"Success inserting to check voucher. Response 200","timestamp":"2017-05-12T03:53:02.263Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:53:02.338Z"}
+{"level":"error","message":"Inserting to BIR table failed. Character in hash. Response 500","timestamp":"2017-05-12T03:53:02.342Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:53:02.352Z"}
+{"level":"error","message":"Inserting to BIR table failed. Character in range. Response 500","timestamp":"2017-05-12T03:53:02.356Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:53:02.371Z"}
+{"level":"error","message":"Inserting to BIR table failed. Null character in hash. Response 500","timestamp":"2017-05-12T03:53:02.373Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:53:02.380Z"}
+{"level":"error","message":"Inserting to BIR table failed. Null in range. Response 500","timestamp":"2017-05-12T03:53:02.382Z"}
+{"level":"info","message":"Going to BIR table view","timestamp":"2017-05-12T03:53:02.389Z"}
+{"level":"info","message":"Reached BIR table view. Response 200","timestamp":"2017-05-12T03:53:02.392Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:53:02.453Z"}
+{"level":"info","message":"Success inserting to BIR table. Response 200","timestamp":"2017-05-12T03:53:02.456Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:53:02.518Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in credit. Response 500","timestamp":"2017-05-12T03:53:02.521Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:53:02.527Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in from. Response 500","timestamp":"2017-05-12T03:53:02.530Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:53:02.535Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in to. Response 500","timestamp":"2017-05-12T03:53:02.538Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:53:02.544Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in totalERR. Response 500","timestamp":"2017-05-12T03:53:02.547Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:53:02.554Z"}
+{"level":"error","message":"Inserting to SSS table failed. Blank totalEE. Response 500","timestamp":"2017-05-12T03:53:02.558Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:53:02.564Z"}
+{"level":"error","message":"Inserting to SSS table failed. No EC field. Response 500","timestamp":"2017-05-12T03:53:02.568Z"}
+{"level":"info","message":"Going to SSS table view","timestamp":"2017-05-12T03:53:02.575Z"}
+{"level":"info","message":"Reached SSS table view. Response 200","timestamp":"2017-05-12T03:53:02.577Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:53:02.632Z"}
+{"level":"info","message":"Success inserting to SSS table. Response 200","timestamp":"2017-05-12T03:53:02.635Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:53:02.734Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in base. Response 500","timestamp":"2017-05-12T03:53:02.737Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in premium. Response 500","timestamp":"2017-05-12T03:53:02.756Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:53:02.763Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in share. Response 500","timestamp":"2017-05-12T03:53:02.765Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:53:02.787Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in from. Response 500","timestamp":"2017-05-12T03:53:02.791Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:53:02.797Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in to. Response 500","timestamp":"2017-05-12T03:53:02.800Z"}
+{"level":"info","message":"Going to PhilHealth table view","timestamp":"2017-05-12T03:53:02.807Z"}
+{"level":"info","message":"Reacher PhilHealth table view. Response 200","timestamp":"2017-05-12T03:53:02.810Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:53:02.868Z"}
+{"level":"info","message":"Success inserting to PhilHealth table. Response 200","timestamp":"2017-05-12T03:53:02.871Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:56:57.804Z"}
+{"level":"info","message":"Displaying payslip page","timestamp":"2017-05-12T03:56:59.100Z"}
+{"level":"info","message":"Page displayed successfully","timestamp":"2017-05-12T03:56:59.103Z"}
+{"level":"info","message":"Inserting to payslip","timestamp":"2017-05-12T03:56:59.170Z"}
+{"level":"info","message":"Success insert to payslip. Response 200","timestamp":"2017-05-12T03:56:59.172Z"}
+{"level":"info","message":"Editing payslip","timestamp":"2017-05-12T03:56:59.301Z"}
+{"level":"info","message":"Deleting payslip","timestamp":"2017-05-12T03:56:59.327Z"}
+{"level":"info","message":"Inserting to thirteenth month pay","timestamp":"2017-05-12T03:57:05.489Z"}
+{"level":"info","message":"Success insert to thirteenth month pay. Response 200","timestamp":"2017-05-12T03:57:05.493Z"}
+{"level":"info","message":"Going to AR table page","timestamp":"2017-05-12T03:57:05.647Z"}
+{"level":"info","message":"AR table page reached. Response 200","timestamp":"2017-05-12T03:57:05.651Z"}
+{"level":"info","message":"Go to AR form page","timestamp":"2017-05-12T03:57:05.724Z"}
+{"level":"info","message":"AR form page reached. Response 200","timestamp":"2017-05-12T03:57:05.726Z"}
+{"level":"info","message":"Inserting to AR","timestamp":"2017-05-12T03:57:05.781Z"}
+{"level":"info","message":"Success inserting to AR. Response 200","timestamp":"2017-05-12T03:57:05.786Z"}
+{"level":"info","message":"Going to petty cash table page","timestamp":"2017-05-12T03:57:05.875Z"}
+{"level":"info","message":"Petty cash table page reached. Response 200","timestamp":"2017-05-12T03:57:05.877Z"}
+{"level":"info","message":"Going to petty cash form page","timestamp":"2017-05-12T03:57:05.947Z"}
+{"level":"info","message":"Petty cash form page reached. Response 200","timestamp":"2017-05-12T03:57:05.950Z"}
+{"level":"info","message":"Inserting to petty cash","timestamp":"2017-05-12T03:57:05.997Z"}
+{"level":"info","message":"Success inserting to petty cash. Response 200","timestamp":"2017-05-12T03:57:06.002Z"}
+{"level":"info","message":"Going to check voucher table page","timestamp":"2017-05-12T03:57:06.078Z"}
+{"level":"info","message":"Check voucher table page reached. Response 200","timestamp":"2017-05-12T03:57:06.080Z"}
+{"level":"info","message":"Going to check voucher form page","timestamp":"2017-05-12T03:57:06.142Z"}
+{"level":"info","message":"Check voucher form page reached. Response 200","timestamp":"2017-05-12T03:57:06.144Z"}
+{"level":"info","message":"Inserting to check voucher","timestamp":"2017-05-12T03:57:06.220Z"}
+{"level":"info","message":"Success inserting to check voucher. Response 200","timestamp":"2017-05-12T03:57:06.223Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:57:06.300Z"}
+{"level":"error","message":"Inserting to BIR table failed. Character in hash. Response 500","timestamp":"2017-05-12T03:57:06.302Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:57:06.314Z"}
+{"level":"error","message":"Inserting to BIR table failed. Character in range. Response 500","timestamp":"2017-05-12T03:57:06.316Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:57:06.325Z"}
+{"level":"error","message":"Inserting to BIR table failed. Null character in hash. Response 500","timestamp":"2017-05-12T03:57:06.327Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:57:06.337Z"}
+{"level":"error","message":"Inserting to BIR table failed. Null in range. Response 500","timestamp":"2017-05-12T03:57:06.340Z"}
+{"level":"info","message":"Going to BIR table view","timestamp":"2017-05-12T03:57:06.348Z"}
+{"level":"info","message":"Reached BIR table view. Response 200","timestamp":"2017-05-12T03:57:06.350Z"}
+{"level":"info","message":"Inserting to BIR table","timestamp":"2017-05-12T03:57:06.411Z"}
+{"level":"info","message":"Success inserting to BIR table. Response 200","timestamp":"2017-05-12T03:57:06.414Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:57:06.526Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in credit. Response 500","timestamp":"2017-05-12T03:57:06.530Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:57:06.537Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in from. Response 500","timestamp":"2017-05-12T03:57:06.541Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:57:06.562Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in to. Response 500","timestamp":"2017-05-12T03:57:06.566Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:57:06.573Z"}
+{"level":"error","message":"Inserting to SSS table failed. Char in totalERR. Response 500","timestamp":"2017-05-12T03:57:06.580Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:57:06.587Z"}
+{"level":"error","message":"Inserting to SSS table failed. Blank totalEE. Response 500","timestamp":"2017-05-12T03:57:06.591Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:57:06.602Z"}
+{"level":"error","message":"Inserting to SSS table failed. No EC field. Response 500","timestamp":"2017-05-12T03:57:06.605Z"}
+{"level":"info","message":"Going to SSS table view","timestamp":"2017-05-12T03:57:06.617Z"}
+{"level":"info","message":"Reached SSS table view. Response 200","timestamp":"2017-05-12T03:57:06.619Z"}
+{"level":"info","message":"Inserting to SSS table","timestamp":"2017-05-12T03:57:06.715Z"}
+{"level":"info","message":"Success inserting to SSS table. Response 200","timestamp":"2017-05-12T03:57:06.717Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:57:06.796Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in base. Response 500","timestamp":"2017-05-12T03:57:06.798Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in premium. Response 500","timestamp":"2017-05-12T03:57:06.811Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:57:06.820Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in share. Response 500","timestamp":"2017-05-12T03:57:06.822Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:57:06.832Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in from. Response 500","timestamp":"2017-05-12T03:57:06.835Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:57:06.843Z"}
+{"level":"error","message":"Inserting to PhilHealth table failed. Char in to. Response 500","timestamp":"2017-05-12T03:57:06.846Z"}
+{"level":"info","message":"Going to PhilHealth table view","timestamp":"2017-05-12T03:57:06.854Z"}
+{"level":"info","message":"Reacher PhilHealth table view. Response 200","timestamp":"2017-05-12T03:57:06.856Z"}
+{"level":"info","message":"Inserting to PhilHealth table","timestamp":"2017-05-12T03:57:06.921Z"}
+{"level":"info","message":"Success inserting to PhilHealth table. Response 200","timestamp":"2017-05-12T03:57:06.924Z"}

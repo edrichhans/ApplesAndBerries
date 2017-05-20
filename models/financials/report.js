@@ -423,7 +423,7 @@ exports.report = function(req, res, callBack){
 						add_line_to_range(ARWorksheet, 'E', 6);
 						add_line_to_range(checkVoucherWorksheet, 'E', 6);
 						add_line_to_range(pettyCashWorksheet, 'G', 8);
-						workbook.xlsx.writeFile("uploads/report.xlsx");
+						workbook.xlsx.writeFile("public/report.xlsx");
 						console.log('LAST');
 						return callBack();
 					});
