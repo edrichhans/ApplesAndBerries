@@ -99,6 +99,9 @@ exports.updateBIR = function(req, res, callBack){
 	metadata.remove({"name": "BIR"});
 	BIR.remove({});
 
+	console.log("NEW BODY", body);
+	console.log("NEW BODY2", body[1]);
+
 	metadata.insert(body[0]);
 	BIR.insert(body[1], function(){
 		callBack();

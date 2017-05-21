@@ -97,39 +97,6 @@ describe("Payslip", function(){
 			});
 		});
 	});
-	describe("View paySlip entry given advice number", function(){
-		it('should return success status', function(done){
-			chai.request(server)
-			.post('/viewAllPaySlip')
-			.send({'0': 597})
-			.end(function(err, res){
-				// console.log("res.bodyyyy", res.body);
-				res.should.have.status(200);
-				res.should.be.json;
-				res.body.should.have.property('status');
-				done();
-			});
-		});
-		it('should have data to return', function(done){
-			chai.request(server)
-			.post('/viewAllPaySlip')
-			.send({'0': 597})
-			.end(function(err, res){
-				res.body.should.have.property('data');
-				res.body.data.should.be.a('array');
-				done();
-			});
-		})
-		it('should have equal eID for the data and employee data.', function(done){
-			chai.request(server)
-			.post('/viewAllPaySlip')
-			.send({'0': 597})
-			.end(function(err, res){
-				res.body.data[0].eID.should.equal(res.body.data[1].eID);
-				done();
-			});
-		});
-	});
 });
 
 describe("Thirteenth", function(){
