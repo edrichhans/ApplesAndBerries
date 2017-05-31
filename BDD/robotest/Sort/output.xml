@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170601 01:19:16.462" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
+<suite source="/home/bernablues/Desktop/ApplesAndBerries/BDD/robotest/Sort/payslip_sort_ascending.robot" id="s1" name="Payslip Sort Ascending">
+<test id="s1-t1" name="Ascending Sort by AN">
+<kw name="Payslip Sort Ascending Order">
+<arguments>
+<arg>2</arg>
+<arg>597</arg>
+<arg>609</arg>
+<arg>+sort_AN</arg>
+</arguments>
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170601 01:19:16.643" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170601 01:19:22.266" starttime="20170601 01:19:16.642"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 01:19:22.267" starttime="20170601 01:19:22.266"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170601 01:19:22.269" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170601 01:19:23.407" starttime="20170601 01:19:22.269"></status>
+</kw>
+<status status="PASS" endtime="20170601 01:19:23.407" starttime="20170601 01:19:22.267"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170601 01:19:23.409" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170601 01:19:24.510" starttime="20170601 01:19:23.408"></status>
+</kw>
+<status status="PASS" endtime="20170601 01:19:24.510" starttime="20170601 01:19:23.407"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170601 01:19:24.512" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170601 01:19:25.933" starttime="20170601 01:19:24.511"></status>
+</kw>
+<status status="PASS" endtime="20170601 01:19:25.933" starttime="20170601 01:19:24.511"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Main Menu</arg>
+</arguments>
+<status status="PASS" endtime="20170601 01:19:27.120" starttime="20170601 01:19:25.933"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170601 01:19:27.426" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170601 01:19:27.427" starttime="20170601 01:19:27.120"></status>
+</kw>
+<status status="PASS" endtime="20170601 01:19:27.427" starttime="20170601 01:19:16.642"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>payslip-module-button</arg>
+</arguments>
+<msg timestamp="20170601 01:19:27.428" level="INFO">Clicking element 'payslip-module-button'.</msg>
+<status status="PASS" endtime="20170601 01:19:29.365" starttime="20170601 01:19:27.427"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Payslip</arg>
+</arguments>
+<status status="PASS" endtime="20170601 01:19:29.695" starttime="20170601 01:19:29.365"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PAYSLIP URL}</arg>
+</arguments>
+<msg timestamp="20170601 01:19:30.001" level="INFO">Current location is 'http://localhost:8000/payslip_view'.</msg>
+<status status="PASS" endtime="20170601 01:19:30.002" starttime="20170601 01:19:29.695"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//table[@id='payslip-view-table']/thead/tr/th[${Current Sorted Column}]</arg>
+</arguments>
+<msg timestamp="20170601 01:19:30.002" level="INFO">Clicking element 'xpath=//table[@id='payslip-view-table']/thead/tr/th[2]'.</msg>
+<status status="PASS" endtime="20170601 01:19:30.730" starttime="20170601 01:19:30.002"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-${Filename}.png</arg>
+</arguments>
+<msg timestamp="20170601 01:19:31.134" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-%2Bsort_AN.png"&gt;&lt;img src="selenium-screenshot-%2Bsort_AN.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170601 01:19:31.134" starttime="20170601 01:19:30.730"></status>
+</kw>
+<kw name="Check if Ascending Order">
+<arguments>
+<arg>${Current Sorted Column}</arg>
+<arg>${First Expected Value}</arg>
+<arg>${Last Expected Value}</arg>
+</arguments>
+<kw name="Table Cell Should Contain" library="Selenium2Library">
+<doc>Verifies that a certain cell in a table contains `expected`.</doc>
+<arguments>
+<arg>xpath=//table[@id='payslip-view-table']</arg>
+<arg>2</arg>
+<arg>${Current Sorted Column}</arg>
+<arg>${First Expected Value}</arg>
+</arguments>
+<msg timestamp="20170601 01:19:33.153" level="INFO">Cell contains 597.</msg>
+<status status="PASS" endtime="20170601 01:19:33.154" starttime="20170601 01:19:31.135"></status>
+</kw>
+<kw name="Table Cell Should Contain" library="Selenium2Library">
+<doc>Verifies that a certain cell in a table contains `expected`.</doc>
+<arguments>
+<arg>xpath=//table[@id='payslip-view-table']</arg>
+<arg>-1</arg>
+<arg>${Current Sorted Column}</arg>
+<arg>${Last Expected Value}</arg>
+</arguments>
+<msg timestamp="20170601 01:19:35.430" level="INFO">Cell contains 609.</msg>
+<status status="PASS" endtime="20170601 01:19:35.430" starttime="20170601 01:19:33.154"></status>
+</kw>
+<status status="PASS" endtime="20170601 01:19:35.431" starttime="20170601 01:19:31.135"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170601 01:19:35.788" starttime="20170601 01:19:35.431"></status>
+</kw>
+<status status="PASS" endtime="20170601 01:19:35.789" starttime="20170601 01:19:16.641"></status>
+</kw>
+<status status="PASS" endtime="20170601 01:19:35.789" critical="yes" starttime="20170601 01:19:16.640"></status>
+</test>
+<test id="s1-t2" name="Ascending Sort by Name">
+<kw name="Payslip Sort Ascending Order">
+<arguments>
+<arg>3</arg>
+<arg>Adrian Sing</arg>
+<arg>HOHOHO</arg>
+<arg>+sort_Name</arg>
+</arguments>
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170601 01:19:35.792" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" endtime="20170601 01:19:40.465" starttime="20170601 01:19:40.463"></status>
+</kw>
+<msg timestamp="20170601 01:19:40.466" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<status status="FAIL" endtime="20170601 01:19:40.467" starttime="20170601 01:19:35.791"></status>
+</kw>
+<status status="FAIL" endtime="20170601 01:19:40.467" starttime="20170601 01:19:35.791"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170601 01:19:40.469" starttime="20170601 01:19:40.468"></status>
+</kw>
+<status status="FAIL" endtime="20170601 01:19:40.470" starttime="20170601 01:19:35.791"></status>
+</kw>
+<status status="FAIL" endtime="20170601 01:19:40.470" critical="yes" starttime="20170601 01:19:35.790">Execution terminated by signal</status>
+</test>
+<test id="s1-t3" name="Ascending Sort by Base Salary">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.476" critical="yes" starttime="20170601 01:19:40.472">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="Ascending Sort by Start Date">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.481" critical="yes" starttime="20170601 01:19:40.477">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="Ascending Sort by End Date">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.488" critical="yes" starttime="20170601 01:19:40.483">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t6" name="Ascending Sort by Deductibles">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.490" critical="yes" starttime="20170601 01:19:40.489">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t7" name="Ascending Sort by Allowance">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.492" critical="yes" starttime="20170601 01:19:40.491">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t8" name="Ascending Sort by PhilHealth">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.496" critical="yes" starttime="20170601 01:19:40.495">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t9" name="Ascending Sort by SSS">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.498" critical="yes" starttime="20170601 01:19:40.497">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t10" name="Ascending Sort by HDMF">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.500" critical="yes" starttime="20170601 01:19:40.499">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t11" name="Ascending Sort by BIR Tax">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.502" critical="yes" starttime="20170601 01:19:40.501">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t12" name="Ascending Sort by Net">
+<tags>
+<tag>robot-exit</tag>
+</tags>
+<status status="FAIL" endtime="20170601 01:19:40.504" critical="yes" starttime="20170601 01:19:40.503">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>A test suite with ascending test cases for the sorting feature in the payslip module.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" endtime="20170601 01:19:40.506" starttime="20170601 01:19:16.465"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="11" pass="1">Critical Tests</stat>
+<stat fail="11" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat info="combined" fail="1" combined="NOT robot-exit" pass="1">NOT robot-exit</stat>
+<stat fail="10" pass="0">robot-exit</stat>
+</tag>
+<suite>
+<stat fail="11" id="s1" name="Payslip Sort Ascending" pass="1">Payslip Sort Ascending</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20170601 01:19:40.466" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+</errors>
+</robot>

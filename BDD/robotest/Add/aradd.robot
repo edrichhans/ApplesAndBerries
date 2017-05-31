@@ -52,6 +52,7 @@ Check Preview
     Submit Form
 	
 Go To AR Panel
+    Click Element              manage-financials-module-button
     Click Element              AR-module-button
     Wait Until Page Contains   Acknowledgment Receipt
     Location Should Be         ${AR URL}

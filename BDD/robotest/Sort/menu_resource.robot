@@ -34,7 +34,7 @@ ${DEL USER URL}             http://localhost:8000/deleteUser
 *** Keywords ***
 Open Browser To Main Menu
     Open Browser    ${LOGIN URL}    ${BROWSER}
-    Maximize Browser Window
+    
     Set Selenium Speed    ${DELAY}
     Input Username
     Input Password

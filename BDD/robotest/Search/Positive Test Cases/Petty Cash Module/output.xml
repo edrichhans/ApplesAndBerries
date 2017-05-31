@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170601 03:04:46.870" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
+<suite source="/home/bernablues/Desktop/ApplesAndBerries/BDD/robotest/Search/Positive Test Cases/Petty Cash Module/PC_search_positive.robot" id="s1" name="PC search positive">
+<test id="s1-t1" name="Search: AN Item Exists">
+<kw name="PC Search">
+<arguments>
+<arg>303</arg>
+<arg>AN</arg>
+</arguments>
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170601 03:04:47.052" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170601 03:04:52.209" starttime="20170601 03:04:47.051"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170601 03:04:52.423" starttime="20170601 03:04:52.209"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:04:52.424" starttime="20170601 03:04:52.423"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170601 03:04:52.425" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170601 03:04:53.558" starttime="20170601 03:04:52.425"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:04:53.559" starttime="20170601 03:04:52.424"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170601 03:04:53.560" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170601 03:04:54.666" starttime="20170601 03:04:53.560"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:04:54.666" starttime="20170601 03:04:53.559"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170601 03:04:54.667" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170601 03:04:56.121" starttime="20170601 03:04:54.667"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:04:56.121" starttime="20170601 03:04:54.667"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Main Menu</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:04:57.521" starttime="20170601 03:04:56.121"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:04:57.828" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170601 03:04:57.828" starttime="20170601 03:04:57.521"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:04:57.828" starttime="20170601 03:04:47.050"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>manage-financials-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:04:57.829" level="INFO">Clicking element 'manage-financials-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:04:59.517" starttime="20170601 03:04:57.829"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>petty-cash-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:04:59.518" level="INFO">Clicking element 'petty-cash-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:01.240" starttime="20170601 03:04:59.517"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:01.583" starttime="20170601 03:05:01.240"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:01.889" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170601 03:05:01.889" starttime="20170601 03:05:01.583"></status>
+</kw>
+<kw name="Input Search Item">
+<arguments>
+<arg>${search_input}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Search Input Text Locator}</arg>
+<arg>${search_input}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:01.891" level="INFO">Typing text '303' into text field 'jquery=input:first'</msg>
+<status status="PASS" endtime="20170601 03:05:03.052" starttime="20170601 03:05:01.890"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:03.052" starttime="20170601 03:05:01.889"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-positive_search-${Filename}.png</arg>
+</arguments>
+<msg timestamp="20170601 03:05:03.827" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-positive_search-AN.png"&gt;&lt;img src="selenium-screenshot-positive_search-AN.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170601 03:05:03.827" starttime="20170601 03:05:03.052"></status>
+</kw>
+<kw name="Table Should Contain" library="Selenium2Library">
+<doc>Verifies that `expected` can be found somewhere in the table.</doc>
+<arguments>
+<arg>petty-cash-view-table</arg>
+<arg>${search_input}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:04.555" starttime="20170601 03:05:03.828"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170601 03:05:04.976" starttime="20170601 03:05:04.555"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:04.976" starttime="20170601 03:04:47.049"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:04.976" critical="yes" starttime="20170601 03:04:47.048"></status>
+</test>
+<test id="s1-t2" name="Search: Issued By Item Exists">
+<kw name="PC Search">
+<arguments>
+<arg>edrichhans</arg>
+<arg>Issued By</arg>
+</arguments>
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:04.984" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170601 03:05:09.762" starttime="20170601 03:05:04.983"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170601 03:05:10.287" starttime="20170601 03:05:09.763"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:10.288" starttime="20170601 03:05:10.287"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:10.290" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170601 03:05:11.515" starttime="20170601 03:05:10.289"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:11.516" starttime="20170601 03:05:10.289"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:11.517" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170601 03:05:12.659" starttime="20170601 03:05:11.517"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:12.659" starttime="20170601 03:05:11.516"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170601 03:05:12.661" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:14.120" starttime="20170601 03:05:12.660"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:14.120" starttime="20170601 03:05:12.660"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Main Menu</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:15.289" starttime="20170601 03:05:14.121"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:15.596" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170601 03:05:15.596" starttime="20170601 03:05:15.289"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:15.596" starttime="20170601 03:05:04.983"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>manage-financials-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:05:15.597" level="INFO">Clicking element 'manage-financials-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:17.016" starttime="20170601 03:05:15.596"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>petty-cash-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:05:17.017" level="INFO">Clicking element 'petty-cash-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:19.090" starttime="20170601 03:05:17.016"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:19.431" starttime="20170601 03:05:19.091"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:19.737" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170601 03:05:19.737" starttime="20170601 03:05:19.431"></status>
+</kw>
+<kw name="Input Search Item">
+<arguments>
+<arg>${search_input}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Search Input Text Locator}</arg>
+<arg>${search_input}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:19.739" level="INFO">Typing text 'edrichhans' into text field 'jquery=input:first'</msg>
+<status status="PASS" endtime="20170601 03:05:21.141" starttime="20170601 03:05:19.738"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:21.141" starttime="20170601 03:05:19.737"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-positive_search-${Filename}.png</arg>
+</arguments>
+<msg timestamp="20170601 03:05:21.745" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-positive_search-Issued%20By.png"&gt;&lt;img src="selenium-screenshot-positive_search-Issued%20By.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170601 03:05:21.745" starttime="20170601 03:05:21.141"></status>
+</kw>
+<kw name="Table Should Contain" library="Selenium2Library">
+<doc>Verifies that `expected` can be found somewhere in the table.</doc>
+<arguments>
+<arg>petty-cash-view-table</arg>
+<arg>${search_input}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:22.548" starttime="20170601 03:05:21.746"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170601 03:05:22.931" starttime="20170601 03:05:22.549"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:22.931" starttime="20170601 03:05:04.978"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:22.932" critical="yes" starttime="20170601 03:05:04.977"></status>
+</test>
+<test id="s1-t3" name="Search: Name Item Exists">
+<kw name="PC Search">
+<arguments>
+<arg>Ian Veneracion</arg>
+<arg>Name</arg>
+</arguments>
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:22.936" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170601 03:05:28.162" starttime="20170601 03:05:22.935"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170601 03:05:28.636" starttime="20170601 03:05:28.162"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:28.637" starttime="20170601 03:05:28.636"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:28.638" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170601 03:05:29.911" starttime="20170601 03:05:28.638"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:29.912" starttime="20170601 03:05:28.637"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:29.913" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170601 03:05:31.027" starttime="20170601 03:05:29.913"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:31.027" starttime="20170601 03:05:29.912"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170601 03:05:31.029" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:32.478" starttime="20170601 03:05:31.028"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:32.478" starttime="20170601 03:05:31.027"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Main Menu</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:33.820" starttime="20170601 03:05:32.478"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:34.128" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170601 03:05:34.128" starttime="20170601 03:05:33.820"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:34.128" starttime="20170601 03:05:22.934"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>manage-financials-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:05:34.129" level="INFO">Clicking element 'manage-financials-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:34.903" starttime="20170601 03:05:34.129"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>petty-cash-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:05:34.904" level="INFO">Clicking element 'petty-cash-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:37.212" starttime="20170601 03:05:34.903"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:37.576" starttime="20170601 03:05:37.212"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:37.882" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170601 03:05:37.882" starttime="20170601 03:05:37.576"></status>
+</kw>
+<kw name="Input Search Item">
+<arguments>
+<arg>${search_input}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Search Input Text Locator}</arg>
+<arg>${search_input}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:37.884" level="INFO">Typing text 'Ian Veneracion' into text field 'jquery=input:first'</msg>
+<status status="PASS" endtime="20170601 03:05:39.265" starttime="20170601 03:05:37.884"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:39.265" starttime="20170601 03:05:37.883"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-positive_search-${Filename}.png</arg>
+</arguments>
+<msg timestamp="20170601 03:05:39.801" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-positive_search-Name.png"&gt;&lt;img src="selenium-screenshot-positive_search-Name.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170601 03:05:39.802" starttime="20170601 03:05:39.265"></status>
+</kw>
+<kw name="Table Should Contain" library="Selenium2Library">
+<doc>Verifies that `expected` can be found somewhere in the table.</doc>
+<arguments>
+<arg>petty-cash-view-table</arg>
+<arg>${search_input}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:40.505" starttime="20170601 03:05:39.802"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170601 03:05:40.875" starttime="20170601 03:05:40.506"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:40.875" starttime="20170601 03:05:22.934"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:40.876" critical="yes" starttime="20170601 03:05:22.933"></status>
+</test>
+<test id="s1-t4" name="Search: Date Item Exists">
+<kw name="PC Search">
+<arguments>
+<arg>May 15, 2017</arg>
+<arg>Date</arg>
+</arguments>
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:40.879" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170601 03:05:46.358" starttime="20170601 03:05:40.879"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170601 03:05:46.824" starttime="20170601 03:05:46.358"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:46.825" starttime="20170601 03:05:46.825"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:46.827" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170601 03:05:47.955" starttime="20170601 03:05:46.827"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:47.956" starttime="20170601 03:05:46.825"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:47.957" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170601 03:05:49.074" starttime="20170601 03:05:47.957"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:49.074" starttime="20170601 03:05:47.956"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170601 03:05:49.076" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:50.637" starttime="20170601 03:05:49.075"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:50.637" starttime="20170601 03:05:49.075"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Main Menu</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:52.045" starttime="20170601 03:05:50.637"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:52.352" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170601 03:05:52.352" starttime="20170601 03:05:52.045"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:52.353" starttime="20170601 03:05:40.878"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>manage-financials-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:05:52.353" level="INFO">Clicking element 'manage-financials-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:54.063" starttime="20170601 03:05:52.353"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>petty-cash-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:05:54.063" level="INFO">Clicking element 'petty-cash-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:05:55.763" starttime="20170601 03:05:54.063"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:56.107" starttime="20170601 03:05:55.763"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:56.414" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170601 03:05:56.414" starttime="20170601 03:05:56.108"></status>
+</kw>
+<kw name="Input Search Item">
+<arguments>
+<arg>${search_input}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Search Input Text Locator}</arg>
+<arg>${search_input}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:56.416" level="INFO">Typing text 'May 15, 2017' into text field 'jquery=input:first'</msg>
+<status status="PASS" endtime="20170601 03:05:57.759" starttime="20170601 03:05:56.415"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:57.759" starttime="20170601 03:05:56.414"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-positive_search-${Filename}.png</arg>
+</arguments>
+<msg timestamp="20170601 03:05:58.370" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-positive_search-Date.png"&gt;&lt;img src="selenium-screenshot-positive_search-Date.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170601 03:05:58.370" starttime="20170601 03:05:57.759"></status>
+</kw>
+<kw name="Table Should Contain" library="Selenium2Library">
+<doc>Verifies that `expected` can be found somewhere in the table.</doc>
+<arguments>
+<arg>petty-cash-view-table</arg>
+<arg>${search_input}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:05:59.135" starttime="20170601 03:05:58.371"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170601 03:05:59.494" starttime="20170601 03:05:59.136"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:59.494" starttime="20170601 03:05:40.878"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:05:59.495" critical="yes" starttime="20170601 03:05:40.877"></status>
+</test>
+<test id="s1-t5" name="Search: Items Item Exists">
+<kw name="PC Search">
+<arguments>
+<arg>Milo</arg>
+<arg>Items</arg>
+</arguments>
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170601 03:05:59.499" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170601 03:06:04.707" starttime="20170601 03:05:59.498"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170601 03:06:05.160" starttime="20170601 03:06:04.707"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:05.160" starttime="20170601 03:06:05.160"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:05.161" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170601 03:06:06.286" starttime="20170601 03:06:05.161"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:06.287" starttime="20170601 03:06:05.160"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:06.288" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170601 03:06:07.413" starttime="20170601 03:06:06.288"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:07.413" starttime="20170601 03:06:06.287"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170601 03:06:07.415" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170601 03:06:08.859" starttime="20170601 03:06:07.414"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:08.859" starttime="20170601 03:06:07.414"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Main Menu</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:10.093" starttime="20170601 03:06:08.860"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:10.400" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170601 03:06:10.400" starttime="20170601 03:06:10.093"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:10.400" starttime="20170601 03:05:59.498"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>manage-financials-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:06:10.401" level="INFO">Clicking element 'manage-financials-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:06:11.710" starttime="20170601 03:06:10.401"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>petty-cash-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:06:11.710" level="INFO">Clicking element 'petty-cash-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:06:13.188" starttime="20170601 03:06:11.710"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:13.549" starttime="20170601 03:06:13.188"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:13.857" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170601 03:06:13.858" starttime="20170601 03:06:13.549"></status>
+</kw>
+<kw name="Input Search Item">
+<arguments>
+<arg>${search_input}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Search Input Text Locator}</arg>
+<arg>${search_input}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:13.859" level="INFO">Typing text 'Milo' into text field 'jquery=input:first'</msg>
+<status status="PASS" endtime="20170601 03:06:15.005" starttime="20170601 03:06:13.859"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:15.005" starttime="20170601 03:06:13.858"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-positive_search-${Filename}.png</arg>
+</arguments>
+<msg timestamp="20170601 03:06:15.668" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-positive_search-Items.png"&gt;&lt;img src="selenium-screenshot-positive_search-Items.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170601 03:06:15.668" starttime="20170601 03:06:15.005"></status>
+</kw>
+<kw name="Table Should Contain" library="Selenium2Library">
+<doc>Verifies that `expected` can be found somewhere in the table.</doc>
+<arguments>
+<arg>petty-cash-view-table</arg>
+<arg>${search_input}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:16.447" starttime="20170601 03:06:15.669"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170601 03:06:16.812" starttime="20170601 03:06:16.448"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:16.812" starttime="20170601 03:05:59.497"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:16.812" critical="yes" starttime="20170601 03:05:59.496"></status>
+</test>
+<test id="s1-t6" name="Search: Price Item Exists">
+<kw name="PC Search">
+<arguments>
+<arg>150</arg>
+<arg>Price</arg>
+</arguments>
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:16.816" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170601 03:06:21.435" starttime="20170601 03:06:16.816"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170601 03:06:21.974" starttime="20170601 03:06:21.435"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:21.974" starttime="20170601 03:06:21.974"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:21.975" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170601 03:06:23.072" starttime="20170601 03:06:21.975"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:23.073" starttime="20170601 03:06:21.974"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:23.074" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170601 03:06:24.245" starttime="20170601 03:06:23.073"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:24.246" starttime="20170601 03:06:23.073"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170601 03:06:24.247" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170601 03:06:25.631" starttime="20170601 03:06:24.247"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:25.632" starttime="20170601 03:06:24.246"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Main Menu</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:26.560" starttime="20170601 03:06:25.632"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:26.866" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170601 03:06:26.866" starttime="20170601 03:06:26.561"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:26.866" starttime="20170601 03:06:16.815"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>manage-financials-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:06:26.867" level="INFO">Clicking element 'manage-financials-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:06:28.210" starttime="20170601 03:06:26.867"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>petty-cash-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:06:28.211" level="INFO">Clicking element 'petty-cash-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:06:30.119" starttime="20170601 03:06:28.211"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:30.450" starttime="20170601 03:06:30.119"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:30.755" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170601 03:06:30.755" starttime="20170601 03:06:30.451"></status>
+</kw>
+<kw name="Input Search Item">
+<arguments>
+<arg>${search_input}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Search Input Text Locator}</arg>
+<arg>${search_input}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:30.757" level="INFO">Typing text '150' into text field 'jquery=input:first'</msg>
+<status status="PASS" endtime="20170601 03:06:31.954" starttime="20170601 03:06:30.756"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:31.954" starttime="20170601 03:06:30.755"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-positive_search-${Filename}.png</arg>
+</arguments>
+<msg timestamp="20170601 03:06:32.513" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-positive_search-Price.png"&gt;&lt;img src="selenium-screenshot-positive_search-Price.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170601 03:06:32.513" starttime="20170601 03:06:31.955"></status>
+</kw>
+<kw name="Table Should Contain" library="Selenium2Library">
+<doc>Verifies that `expected` can be found somewhere in the table.</doc>
+<arguments>
+<arg>petty-cash-view-table</arg>
+<arg>${search_input}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:33.235" starttime="20170601 03:06:32.513"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170601 03:06:33.617" starttime="20170601 03:06:33.235"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:33.617" starttime="20170601 03:06:16.814"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:33.620" critical="yes" starttime="20170601 03:06:16.813"></status>
+</test>
+<test id="s1-t7" name="Search: Qty Item Exists">
+<kw name="PC Search">
+<arguments>
+<arg>856</arg>
+<arg>Qty</arg>
+</arguments>
+<kw name="Open Browser To Main Menu" library="menu_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:33.625" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/login'</msg>
+<status status="PASS" endtime="20170601 03:06:39.007" starttime="20170601 03:06:33.624"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170601 03:06:39.482" starttime="20170601 03:06:39.008"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:39.483" starttime="20170601 03:06:39.483"></status>
+</kw>
+<kw name="Input Username" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:39.485" level="INFO">Typing text 'edrichhans' into text field 'username'</msg>
+<status status="PASS" endtime="20170601 03:06:40.554" starttime="20170601 03:06:39.484"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:40.555" starttime="20170601 03:06:39.484"></status>
+</kw>
+<kw name="Input Password" library="menu_resource">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:40.556" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20170601 03:06:41.654" starttime="20170601 03:06:40.555"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:41.654" starttime="20170601 03:06:40.555"></status>
+</kw>
+<kw name="Submit Credentials" library="menu_resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login-button</arg>
+</arguments>
+<msg timestamp="20170601 03:06:41.655" level="INFO">Clicking button 'login-button'.</msg>
+<status status="PASS" endtime="20170601 03:06:43.024" starttime="20170601 03:06:41.655"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:43.024" starttime="20170601 03:06:41.654"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Main Menu</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:44.450" starttime="20170601 03:06:43.025"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:44.757" level="INFO">Current location is 'http://localhost:8000/'.</msg>
+<status status="PASS" endtime="20170601 03:06:44.758" starttime="20170601 03:06:44.450"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:44.758" starttime="20170601 03:06:33.623"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>manage-financials-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:06:44.759" level="INFO">Clicking element 'manage-financials-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:06:46.478" starttime="20170601 03:06:44.758"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>petty-cash-module-button</arg>
+</arguments>
+<msg timestamp="20170601 03:06:46.479" level="INFO">Clicking element 'petty-cash-module-button'.</msg>
+<status status="PASS" endtime="20170601 03:06:48.137" starttime="20170601 03:06:46.478"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Petty Cash</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:48.490" starttime="20170601 03:06:48.137"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${PC URL}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:48.796" level="INFO">Current location is 'http://localhost:8000/pettycash_view'.</msg>
+<status status="PASS" endtime="20170601 03:06:48.796" starttime="20170601 03:06:48.490"></status>
+</kw>
+<kw name="Input Search Item">
+<arguments>
+<arg>${search_input}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Search Input Text Locator}</arg>
+<arg>${search_input}</arg>
+</arguments>
+<msg timestamp="20170601 03:06:48.797" level="INFO">Typing text '856' into text field 'jquery=input:first'</msg>
+<status status="PASS" endtime="20170601 03:06:49.859" starttime="20170601 03:06:48.797"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:49.859" starttime="20170601 03:06:48.796"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-positive_search-${Filename}.png</arg>
+</arguments>
+<msg timestamp="20170601 03:06:50.293" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-positive_search-Qty.png"&gt;&lt;img src="selenium-screenshot-positive_search-Qty.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170601 03:06:50.293" starttime="20170601 03:06:49.859"></status>
+</kw>
+<kw name="Table Should Contain" library="Selenium2Library">
+<doc>Verifies that `expected` can be found somewhere in the table.</doc>
+<arguments>
+<arg>petty-cash-view-table</arg>
+<arg>${search_input}</arg>
+</arguments>
+<status status="PASS" endtime="20170601 03:06:51.028" starttime="20170601 03:06:50.294"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170601 03:06:51.442" starttime="20170601 03:06:51.029"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:51.442" starttime="20170601 03:06:33.623"></status>
+</kw>
+<status status="PASS" endtime="20170601 03:06:51.442" critical="yes" starttime="20170601 03:06:33.622"></status>
+</test>
+<doc>A test suite with positive test cases for the search feature in the PC module.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" endtime="20170601 03:06:51.445" starttime="20170601 03:04:46.873"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="7">Critical Tests</stat>
+<stat fail="0" pass="7">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="PC search positive" pass="7">PC search positive</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
