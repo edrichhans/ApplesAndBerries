@@ -205,7 +205,7 @@ $('#payslip-preview').click(function(){
 		}
 		bracket -= 1;
 
-		var tax = ((employee[0].salary - (birVal[0].ranges)[bracket]) * hash[bracket][1]) + hash[bracket][0];
+		var tax = (((employee[0].salary - deductibles_sum + allowance_sum - parseFloat(phVal[0].share) - parseFloat(sssVal[0].totalEE) - parseFloat(hdmfVal)) - (birVal[0].ranges)[bracket]) * hash[bracket][1]) + hash[bracket][0];
 		tax = Math.round(tax*100)/100
 
 		console.log(tax);

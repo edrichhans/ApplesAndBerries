@@ -228,12 +228,12 @@ exports.insert = function(req, res){
 		// return false;
 		// return false;
 		i -= 1;
-		var tax = ((employee.salary - range[i]) * hash[i][1]) + hash[i][0];
-		tax = Math.round(tax*100)/100
-
 		var EE = parseFloat(SSSdoc.totalEE);
 		var ER = parseFloat(SSSdoc.totalER);
 		var HDMF = getHDMF(employee.salary);
+		var tax = ((employee.salary - getSum(deductibles) + getSum(allowance) - PHdoc.share - EE - HDMF - range[i]) * hash[i][1]) + hash[i][0];
+		tax = Math.round(tax*100)/100
+
 		HDMF = Math.round(HDMF*100)/100;
 
 		jsondata = {
